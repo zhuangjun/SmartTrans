@@ -11,9 +11,9 @@ Markdownifier 可以将大部分网页一件转成Markdown， 转出的Markdown�
 
 **http://brettterpstra.com/2013/07/30/precise-web-clipping-to-markdown-with-bullseye/**
 
-Bullseye是一个基于Markdownifier的工具。 对于Markdownifier不能转换的网页， 可以使用它。
+Bullseye是一个基于Markdownifier的工具。 对于Markdownifier不能转换的网页， 可以使用它。
 
-使用方法：添加到书签。 打开待翻译网页， 点击书签， 选择要翻译的部分， 即转成MD.
+使用方法：添加到书签。 打开待翻译网页， 点击书签， 选择要翻译的部分， 即转成MD.
 
 ### Step 2: 翻译Markdown
 
@@ -30,12 +30,12 @@ pip install googletrans
 ```
 
 ```
-# 127.0.0.1:1087 替换成你的翻墙代理地址
-export http_proxy=127.0.0.1:1087
+# 127.0.0.1:1087 替换成你的翻墙代理地址
+export http_proxy=127.0.0.1:1087
 export https_proxy=127.0.0.1:1087
 
-# 将需要翻译的文章MD放进input.md
+# 将需要翻译的文章MD放进input.md
 python trans.py
-# 程序运行完后输出“Translated. Please check output.md!”
+# 程序运行完后输出“Translated. Please check output.md!”
 ```
 
