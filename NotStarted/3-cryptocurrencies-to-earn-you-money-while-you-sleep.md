@@ -2,6 +2,7 @@
 # 3 Cryptocurrencies To Earn You Money While You Sleep — Part&nbsp;1
 
 哈哈
+
 There are numerous of ways to earn money in the cryptocurrency space, including, long-term investments, day-trading, arbitrage etc. A little known fact (especially for newcomers), is that certain cryptocurrencies allow you to earn a passive income; merely money that you earn without doing much to earn it. In this post, I will highlight 3 cryptocurrencies that allow you to do exactly this. Before proceeding, I'd like to quote Warren Buffett — _"If you don't find a way to make money while you sleep, you will work until you die"_.
 
 ![][2]
