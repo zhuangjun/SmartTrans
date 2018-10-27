@@ -1,11 +1,4 @@
-> 本文翻译自：https://medium.com/@vechainofficial/vechain-technical-ama-software-questions-part-1-cb17c830e458
-> 
-> 译者：[区块链中文字幕组](https://github.com/BlockchainTranslator/EOS) [小丹](https://github.com/zhuangjun)
-> 
-> 翻译时间：2018-03-04
 
-
-----------------------------------------------------
 
 #### 区块链中文字幕组
 
@@ -17,7 +10,7 @@
 
 #### 本文译者简介
 
-小丹 区块链技术爱好者  热衷于区块链底层技术研究 ， 欢迎加微信号 zhuangjun0606
+小丹 区块链技术爱好者  热衷于区块链底层技术研究
 
 版权所有，转载需完整注明以上内容。
 
