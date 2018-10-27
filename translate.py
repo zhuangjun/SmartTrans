@@ -3,8 +3,8 @@ import codecs
 
 translator = translate.Client()
 
-file_input="source.md"
-file_output="translated.md"
+file_input="work/source.md"
+file_output="work/translated.md"
 
 def require_translate(content):
     return content and not content.startswith("[") and not content.startswith("!")
@@ -40,9 +40,4 @@ with codecs.open(file_input,'r',encoding='utf8') as fi:
 
             i += 1
 
-            # fo.write(source_items[i]+"\n")
-            # fo.write(translated_items[i]+"\n")
-
-            # i += 1
-
-    # print("Translated.")
+    print("Translated.")

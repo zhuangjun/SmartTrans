@@ -1,7 +1,7 @@
 import codecs
 
-file_input="translated.md"
-file_output="published.md"
+file_input="work/translated.md"
+file_output="work/published.md"
 
 def require_translate(content):
     return content and not content.startswith("[") and not content.startswith("!")
