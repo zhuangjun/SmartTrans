@@ -1,12 +1,356 @@
-# The Ethereum Blockchain and ERC20 Tokens: Technical Challenges and Solutions for 2019 and Beyond
+Different Blockchains  [Smart contracts][3] and the [blockchain technology][4] are all the rage right now. More and more people are trying to get into this amazing space for one reason or another. If you are new to this technology and are looking for a quick primer on blockchain-based developing platforms then this guide is perfect for you. The platforms that we are going to be focussing on and comparing are:
 
-![][2]
+* [Ethereum][5]
+* [Cosmos][6]
+* [Cardano][7]
+* [EOS][8]
+* [Hyperledger][9]
 
-POA Network is working to increase blockchain interoperability.
+![Different Blockchains: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][10]
 
-DAI is an ERC20 Stablecoin pegged to the value of $1 USD.
+## Different Blockchains
 
-[22]: https://cdn-images-1.medium.com/freeze/max/75/1*Dp4qpjqC_yFuQ6jczHOkbA.png?q=20
-[23]: https://cdn-images-1.medium.com/max/2000/1*Dp4qpjqC_yFuQ6jczHOkbA.png
-[24]: https://cdn-images-1.medium.com/freeze/max/75/1*iulXWRTkLA2f3viTfN6lag.gif?q=20
-[25]: https://cdn-images-1.medium.com/max/2000/1*iulXWRTkLA2f3viTfN6lag.gif
+## Blockchain Battle: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger
+
+
+So, why have we decided to focus on these 5? We feel that this group gives a healthy mixture of usability and functionality. Yes, we know that some of these projects are not exactly live, but we still feel that the potential of the projects is enough to warrant a place on our list. We are going to go through each and every platform and then compare them at the end.
+
+## Ethereum
+
+![Different Blockchains: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][11]
+
+_**Token: ETH**_
+
+Ethereum is, without a doubt, the big daddy of [smart contract platforms][12]. The main man behind [Ethereum][13] is Vitalik Buterin. Buterin was fascinated with Bitcoin, but he realized that the blockchain technology had far more use than being a mere facilitator of a payment protocol. He realized that one can use the blockchain technology to create decentralized applications. That was when he was inspired to create [Ethereum][13].
+
+Ethereum, like Bitcoin, was a cryptocurrency, however, that's where the similarity ends. Because while Bitcoin is a "first-generation" blockchain, Ethereum broke the mold by becoming the first ever second-generation blockchain. Ethereum revolutionized the crypto-space by bringing in [smart contracts][3] on the blockchain.
+
+[Smart contracts][14] were first conceptualized by Nick Szabo. The idea is simple, have a set of self-executing instructions between two parties which don't need to be supervised or enforced by a third-party. The idea seems pretty straightforward, right? However, smart contracts enabled Ethereum to create an environment wherein developers from around the world could create their own [decentralized][15] application aka Dapps.
+
+## Dapps and Smart Contracts
+
+Dapp creation is one of the most important features of Ethereum.  Along with being decentralized, there are certain other features that a Dapp must have:
+
+* The source code of the Dapp should be open to all
+* The application must have some sort of tokens to fuel itself
+* The App must be able to generate its own tokens and have an inbuilt consensus mechanism
+
+Sounds pretty awesome right? So, how exactly can you build them? You need to[ code smart contract][3]s using [solidity][16].
+
+Developers use a programming language called Solidity which is a purposefully slimmed down, loosely-typed language with a syntax very similar to ECMAScript (Javascript).
+
+Along with creating the smart contract, you must have an environment where you can execute it. However, there are some properties that this execution environment must have. These properties are:
+
+* Deterministic.
+* Terminable.
+* Isolated.
+
+_属性 #1: Deterministic_
+
+A program is deterministic if it gives the same output to a given input every single time. Eg. If 3+1 = 4 then 3+1 will ALWAYS be 4 (assuming the same base). So when a program gives the same output to the same set of inputs in different computers, the program is called deterministic. The environment must make sure that execution of the smart contract is always deterministic.
+
+_属性 #2: Terminable_
+
+In mathematical logic, we have an error called "halting problem". Basically, it states that there is an inability to know whether or not a given program can execute its function within a time limit. In 1936, Alan Turing deduced, using Cantor's Diagonal Problem, that there is no way to know whether a given program can finish in a time limit or not.
+
+This is obviously a problem with smart contracts because, contracts by definition, must be capable of termination in a given time limit. So the environment must be able to halt the operation of the smart contract.
+
+_属性 #3: Isolated_
+
+In a blockchain, anyone and everyone can upload a smart contract. However, because of this the contracts may, knowingly and unknowingly contain virus and bugs.
+
+If the contract is not isolated, this may hamper the whole system. Hence, it is critical for a contract to be kept isolated in a sandbox to save the entire environment from any negative effects.
+
+Ethereum executes its smart contracts using a virtual machine called Ethereum Virtual Machine (EVM).
+
+The next core Ethereum concept that one must understand is [gas][5].
+
+## What is Ethereum Gas?
+
+Remember the "Terminable" 属性 of smart contract environments? Well, Ethereum smart contract achieves this 属性 by utilizing gas. Each and every line that is coded in the smart contract requires a certain amount of gas to execute. So, when a developer submits a smart contract for execution, they also specify the maximum gas limit.
+
+Think of the gas limit as the fuel you fill up in your car before going for a drive, the moment the fuel runs out, the car stops working. Each and every line in the smart contract requires a certain amount of gas to execute. Once the gas runs out, the smart contract stops executing.
+
+## Ethereum and ICOs
+
+We have covered this topic at length before so we will just go over this very briefly. One of the most alluring features of Ethereum is initial coin offering or [ICO][17]s. Developers around the world can use Ethereum's virtual machine to power their smart contracts and use the platform to raise lots of money in a crowded sale with relative ease. Because of this very feature, Ethereum's adoption has gone through the roof.
+
+### Ethereum Mining
+
+Ethereum as of right now is using the [Proof-of-Work][18] mining, i.e. the same mining process used by [Bitcoin][19]. Basically, miners compete to find the next block in the chain by using their processing power to solve complex cryptographic puzzles.
+
+Ethereum is eventually going to move on to Proof-of-Stake by utilizing the [Casper protocol][20]. POS is far more environmentally friendly than POW and is a lot more scalable.
+
+### Main Problems
+
+There is no doubt of the impact that [Ethereum][13] has had on the crypto-space, however, there are some major problems surrounding its performance. As of right now, Ethereum fails when it comes to scalability. They can only manage 25 transactions per second, which is not ideal for Dapps who want mainstream adoption. On top of that, Ethereum can be expensive for developers. The gas prices for the execution of Dapps can go through the roof.
+
+Along with these, there is one more problem that affects Ethereum and other [cryptocurrencies][21]. This problem is interoperability. As of right now, if Alice owns Bitcoin and Bob owns Ethereum, then there is no easy and direct way for the two to interact with each other. This is a really big issue because in the future, there may be thousands of blockchains running in parallel and there should be a way for them to interact seamlessly with each other.
+
+One project that is aiming to solve this interoperability problem is Cosmos.
+
+## Cosmos
+
+![Blockchain Battle: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][22]
+
+Token: ATOM
+
+[Cosmos][6] aims to become an "internet of blockchains" which is going to solve these problems once and for all. Cosmos's architecture consists of several independent blockchains called "Zones" attached to a central blockchain called "Hub".
+
+![Blockchain Battle: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][23]
+
+_Image Credit: Cosmos Video_
+
+> According to the Cosmos whitepaper,** "The zones are powered by Tendermint Core, which provides a high-performance, consistent, secure PBFT-like consensus engine, where strict fork-accountability guarantees hold over the behavior of malicious actors. Tendermint Core's BFT consensus algorithm is well suited for scaling public proof-of-stake blockchains."**
+
+The brains behind this project are CEO Jae Kwon and CTO Ethan Buchman and the Interchain Foundation team.
+
+### What is Tendermint?
+
+Tendermint is a variant of PBFT i.e. Practical Byzantine Fault Tolerance. A Byzantine Fault Tolerance, or BFT, the system is a system which has successfully answered the Byzantine Generals Problem. We have covered the Byzantine Generals Problem in [detail here.][24] To keep things short, for a decentralized peer-to-peer system to function in a trustless manner, it is imperative for them to find the solution to the Byzantine's Generals Problem.
+
+As the cosmos whitepaper states:
+
+> **"Tendermint provides exceptional performance. In benchmarks of 64 nodes distributed across 7 data centers on 5 continents, on commodity cloud instances, Tendermint consensus can process thousands of transactions per second, with commit latencies on the order of one to two seconds. Notably, the performance of well over a thousand transactions per second is maintained even in harsh adversarial conditions, with validators crashing or broadcasting maliciously crafted votes."**
+
+The graph below support the claim made above:
+
+![Different Blockchains: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][25]
+
+_Image Credit: Cosmos Whitepaper_
+
+### Benefits of Tendermint
+
+* Tendermint can handle transaction volume at the rate of 10,000 transactions per second for 250byte transactions.
+
+ 
+
+* Better and simple light client security which makes it ideal for mobile and IoT use cases. In contrast, Bitcoin light clients require a lot more work and have lots of demands which makes it impractical for certain use cases.
+
+ 
+
+* Tendermint has fork-accountability which stops attacks such as long-range-nothing-at-stake double spends and censorship.
+
+ 
+
+* Tendermint is implemented via Tendermint core which is an "application-agnostic consensus engine." It can basically turn any deterministic blackbox application into a distributedly replicated blockchain.
+
+ 
+
+* Tendermint Core connects to blockchain applications via the Application Blockchain Interface (ABCI).
+
+ 
+
+### Inter-Blockchain Communication
+
+As we have mentioned before, Cosmos's architecture will follow the Hub and Zones method. There will be multiple parallel blockchains connected to one central Hub blockchain. Think of the Sun and the solar system.
+
+The Cosmos hub is a distributed ledger where individual users or the Zones themselves can hold their tokens. The zones can interact with each other through the Hub using IBC or Inter Blockchain Communication.
+
+![Blockchain Battle: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][26]
+
+See the diagram above?
+
+This is a very simplified version of how two Zones communicate with each other via IBC.
+
+### Cosmos Use Cases
+
+The interoperability achieved by Cosmos has some extremely interesting use-cases:
+
+* DEX: Since Cosmos is linking so many blockchains with each other, it goes without saying that it can easily enable different ecosystems to interact with one another. This a perfect setting for a decentralized exchange.
+
+ 
+
+* Cross chain transactions: Similarly, one zone can avail the services of another zone through the Cosmos hub.
+
+ 
+
+* Ethereum Scaling: This is one of the more use cases. Any EVM based zone which is connected to the Cosmos hub will be, as per the architecture, powered by the Tendermint consensus system as well. This will enable these zones to scale up faster.
+
+## Cardano
+
+![Blockchain Battle: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][27]
+
+Token: ADA
+
+The brainchild of Ethereum co-founder Charles Hoskinson, [Cardano][7] is a [smart contract platform][12] however, Cardano offers scalability and security through layered architecture. Cardano's approach is unique in the space itself since it is built on scientific philosophy and peer-reviewed academic research.
+
+Cardano is a third-generation blockchain which is focussed on bringing scalability and interoperability to the blockchain space. There are three organizations which work full time to develop and take care of Cardano:
+
+* The Cardano Foundation.
+* IOHK.
+* Emurgo.
+
+These three organizations work in synergy to make sure that Cardano development is going on at a good pace.
+
+### Functional Programming
+
+There is one really interesting quality that makes Cardano unique as compared to the other smart contract platforms. Majority of the other smart contract platforms are coded via imperial programming language. Cardano uses Haskell for its source code, which is a functional programming language. For its smart contracts, Cardano uses Plutus, which is also a functional language.
+
+Let us explain the difference between the two types of languages in a straightforward way.
+
+In imperative languages, addition works like this:
+
+_**int a = 5;**_
+
+_**int b = 3;**_
+
+_**int c;**_
+
+_**c= a + b;**_
+
+As you can see, it takes a lot of steps. Now, how will that work in a functional language?
+
+Suppose there is a function f(x) that we want to use to calculate a function g(x) and then we want to use that to work with a function h(x). Instead of solving all of those in a sequence, we can simply club all of them together in a single function like this:
+
+h(g(f(x)))
+
+This makes the functional approach easier to reason mathematically.
+
+Functional languages helps with scalability and it also helps in making the program far more precise.
+
+### Scalability
+
+Cardano uses a new proof of stake algorithm called Ouroboros, which determines how individual nodes reach consensus about the network. The protocol has been designed by a team led by OHK Chief Scientist, Professor Aggelos Kiayias.
+
+Ouroboros is the first proof of stake protocol that has mathematically been shown to be provably secure, and the first to have gone through peer review through its acceptance to Crypto 2017, the leading cryptography conference.
+
+### Interoperability
+
+The way Cardano plans to execute interoperability is by implementing sidechains.
+
+Sidechain as a concept has been in the crypto circles for quite some time now. The idea is very straightforward; you have a parallel chain which runs along with the main chain. The side chain will be attached to the main chain via a two-way peg.
+
+Cardano will support sidechains based on the research by Kiayias, Miller, and Zindros (KMZ) involving "non-interactive proofs of proofs of work".
+
+According to Hoskinson, the idea of sidechains comes from two things:
+
+* Getting a compressed version of a blockchain.
+* Creating interoperability between chains.
+
+## EOS
+
+![Blockchain Battle: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][28]
+
+Token: EOS
+
+[EOS][8] are aiming to become a decentralized operating system which can support industrial-scale decentralized applications. The driving force behind EOS is Dan Larimer (the creator of BitShares and Steemit) and Block.One. [EOS][29] recently came into the spotlight for their year-long ICO which raised a record-breaking $4 billion.
+
+That sounds pretty amazing but what has really captured the public's imagination is the following two claims:
+
+* They are claiming to have the ability to conduct millions of transactions per second.
+* They are planning to completely remove transaction fees.
+
+### Scalability Through DPOS
+
+EOS achieves its scalability via the utilization of the delegated [proof-of-stake][30] (DPOS) consensus mechanism, which is a variation of the traditional proof-of-stake. It can theoretically do millions of transactions per second.
+
+So, how is DPOS different from traditional POS? While in POS the entire network will have to take care of the consensus, in DPOS all the EOS holders will elect 21 block producers who will be in charge of taking care of the consensus and general network health. Anyone can participate in the block producer election and they will be given an opportunity to produce blocks proportional to the total votes they receive relative to all other producers.
+
+The DPOS system doesn't experience a fork because instead of competing to find blocks, the producers will have to co-operate instead. In the event of a fork, the consensus switches automatically to the longest chain.
+
+As you can imagine, the importance of these block producers definitely can't be underestimated. Not only do they take care of consensus, but they take care of overall network health as well. This is why it is extremely important that each and every single vote that has been cast has proper weightage.
+
+This is why, Larimer introduced the idea of Voter Decay, which will reduce the weightage of old votes over time. The only way that one can maintain the strength of votes is by regular voting.
+
+The Voter Decay mechanism leads to two great advantages:
+
+* Firstly, as we have seen time and again, elected officials may become corrupt and change their tune after getting elected. The vote decay system gives the voters a chance to reconsider their vote every week. This keeps the block producers accountable and on their toes.
+
+ 
+
+* Secondly, people simply change over time. Maybe the political beliefs and ideologies that someone has today is completely different than what they had a year ago. The vote decay system will allow people to vote for someone who is more congruent with their newly evolved ideologies.
+
+This has the potential to be a truly revolutionary concept and can change decentralized voting (maybe even voting) forever.
+
+### Removal of Transaction Fees
+
+EOS works on an ownership model where users own and are entitled to use resources proportional to their stake, rather than having to pay for every transaction. So, in essence, if you hold N tokens of EOS then you are entitled to N*k transactions. This, in essence, eliminates transaction fees.
+
+On staking EOS tokens you get certain computational resources in exchange. You will get:
+
+* RAM
+* Network Bandwidth
+* Computational Bandwidth.
+
+EOS tokens, along with payment coins, can also be used as a toll to get all these resources.
+
+ 
+
+## Hyperledger
+
+![Different Blockchains: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][31]
+
+Finally, we have Hyperledger.
+
+Hyperledger, to be very frank, is extremely different from all the platforms that we have talked about so far. While Ethereum, Cardano, and EOS are proper cryptocurrencies and have their own blockchains, Hyperledger is not a cryptocurrency, and nor does it have its own blockchain. Hyperledger is an open-sourced project by the Linux Foundation. On their [website][32], Hyperledger describes itself as
+
+> **"an open source collaborative effort created to advance cross-industry blockchain technologies. It is a global collaboration, hosted by The Linux Foundation, including leaders in finance, banking, Internet of Things, supply chains, manufacturing, and Technology."**
+
+ 
+
+### The Need For Permissioned Blockchain
+
+Platforms like Ethereum, EOS etc. are all public blockchains, meaning, anyone can choose to join the network. However, for big enterprises who need their own blockchain infrastructure, this is highly undesirable.
+
+Think of a blockchain conglomerate of banks.
+
+Banks need to deal with sensitive data every single day. From their internal transactional records to KYC data, there are lots of items which they simply can't reveal to the public. Plus, only banks that have been vetted by the other banks present in the network should be allowed inside the network.
+
+Also, as we have already covered before, public blockchains are slow and have performance issues, which is again a big no-no for large-scale companies.
+
+Hyperledger allows these companies to create their own high-performance permissioned blockchain (aka blockchains where each and every node must be vetted properly before entering).
+
+### Interesting Projects Under Hyperledger
+
+Maybe the most interesting project in the Hyperledger family is IBM's Fabric. Rather than a single blockchain Fabric is a base for the development of blockchain based solutions with a modular architecture.
+
+With Fabric different components of Blockchains, like consensus and membership services can become plug-and-play. Fabric is designed to provide a framework with which enterprises can put together their own, individual blockchain network that can quickly scale to more than 1,000 transactions per second.
+
+Along with Fabric you also have:
+
+* **Sawtooth**: Developed by Intel and uses Proof-of-Elapsed time consensus mechanism
+* **Iroha**: Asn easy-to-use blockchain framework developed by a couple of Japanese companies.
+* **Burrow**: Creates a permissible smart contract machine along the specification of Ethereum.
+
+## Different Blockchains: Comparing all the Platforms
+
+Alright, so now that we have somewhat familiarized ourselves with these platforms, let's compare all of them.
+
+![Different Blockchains: Ethereum vs Cosmos vs Cardano vs EOS vs Hyperledger][33]
+
+[1]: https://www.facebook.com/share.php?u=https%3A%2F%2Fblockgeeks.com%2Fguides%2Fdifferent-blockchains%2F
+[2]: https://www.linkedin.com/cws/share?url=https%3A%2F%2Fblockgeeks.com%2Fguides%2Fdifferent-blockchains%2F
+[3]: https://blockgeeks.com/webinars/code-your-first-smart-contract/
+[4]: https://blockgeeks.com/guides/blockchain-applications-real-world/
+[5]: https://blockgeeks.com/guides/ethereum-gas-step-by-step-guide/
+[6]: https://blockgeeks.com/guides/what-is-cosmos-blockchain/
+[7]: https://blockgeeks.com/guides/what-is-cardano/
+[8]: https://blockgeeks.com/guides/eos-beginners-guide-part-1/
+[9]: https://blockgeeks.com/guides/what-is-hyperledger/
+[10]: https://blockgeeks.com/wp-content/uploads/2018/08/eye-Makeup-tutorial-3.png
+[11]: https://blockgeeks.com/wp-content/uploads/2018/08/image2-1.png
+[12]: https://blockgeeks.com/guides/different-smart-contract-platforms/
+[13]: https://blockgeeks.com/guides/what-is-ethereum-classic/
+[14]: http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart_contracts_2.html
+[15]: https://blockgeeks.com/guides/decentralized-exchanges/
+[16]: https://blockgeeks.com/guides/solidity/
+[17]: https://blockgeeks.com/guides/why-most-icos-will-fail/
+[18]: https://blockgeeks.com/guides/ethereum-mining-proof-stake/
+[19]: https://blockgeeks.com/guides/bitcoin-forks-guide/
+[20]: https://blockgeeks.com/guides/ethereum-casper/
+[21]: https://blockgeeks.com/guides/how-to-invest-in-cryptocurrencies/
+[22]: https://blockgeeks.com/wp-content/uploads/2018/08/image3-1.png
+[23]: https://blockgeeks.com/wp-content/uploads/2018/08/image6.png
+[24]: https://blockgeeks.com/guides/blockchain-consensus/
+[25]: https://blockgeeks.com/wp-content/uploads/2018/08/image5-1.png
+[26]: https://blockgeeks.com/wp-content/uploads/2018/08/image7.png
+[27]: https://blockgeeks.com/wp-content/uploads/2018/08/image8.png
+[28]: https://blockgeeks.com/wp-content/uploads/2018/08/image4-2.png
+[29]: https://blockgeeks.com/guides/eos-beginners-guide-part-2/
+[30]: https://blockgeeks.com/guides/proof-of-work-vs-proof-of-stake/
+[31]: https://blockgeeks.com/wp-content/uploads/2018/08/image1-2.png
+[32]: https://www.hyperledger.org/
+[33]: https://blockgeeks.com/wp-content/uploads/2018/08/Screen-Shot-2018-08-31-at-1.46.17-PM.png
+
+  
