@@ -1,219 +1,282 @@
-# What's really happening when you add a file to IPFS?
+https://hackernoon.com/getting-deep-into-ethereum-how-data-is-stored-in-ethereum-e3f669d96033
 
-## From raw data to Merkle DAGs and a few steps in between
+This post is a continuation of my **_Getting Deep Into Series _**started in an effort to provide a deeper understanding of the internal workings and other cool stuff about Ethereum and blockchain in general which you will not find easily on the web. Here are the other parts of the Series:
 
-![][2]
+[**Getting Deep Into Geth: Why Syncing Ethereum Node Is Slow**  
+_Downloading the blocks is just a small part. There is a lot of stuff going on... This post marks the first in a new…_hackernoon.com][1]
 
-Photo by [Johannes Plenio][3] on [Unsplash][4]
+[**Getting Deep Into EVM: How Ethereum Works Backstage**  
+_An Ultimate, In-depth Explanation of What EVM is and How EVM Works._hackernoon.com][2]
 
-When you ask someone for their favorite [cat video][5], they probably aren't going to say something like "_oh haha, the one on this server, at this sub-domain, under this file path, slash hilarious dash cat dot mp4_". Instead, they're probably going to describe the content of the video: "_oh haha, the one where the cat knocks the glass off the counter, [__thug style_][6]_… classic_". This is obviously an intuitive way to think about content for humans, but is generally _not_ how we access content on the web today. Having said that, decentralized protocols such as [IPFS][7] actually _do_ use this type of [_content addressin_][8]_g_ to find content on the decentralized web. In this article, we'll explore a little bit how this whole process works, taking a look under-the-hood to find out exactly what happens when you add a file to IPFS. While we're at it we'll spend a good chunk of time learning about IPLD, the underlying data structure of the Interplanetary File System.
+In this post we will dive into Ethereum's data storage layer. We will introduce the concept of blockchain "state". We will cover the theory behind the Patricia 特里结构 data structure and demonstrate Ethereum's concrete implementation of 特里结构s using Google's leveldb database.
 
-#### Fingerprinting
+### What do we store in storage layer?
 
-So, first things first, to support content addressing, we need to come up with some way to create a 'fingerprint' or summary of the content that we can use to reference said content. Similarly to finding a book, where we use ISPN numbers. In practice, content addressing systems on the web such as IPFS use cryptographic hashing functions to create fingerprints. Basically, we take the raw content (in this case, a cat photo), and run that data through a [hash function][9], to produce a digest. This digest is guaranteed to be cryptographically unique to the contents of the file (or image or whatever), and that file only. If I change that file by even one bit, the hash will become something completely different.
+First of all we have to see that what all things we need to store for making the blockchain system work. Let's take a simple example of Alice giving Bob 10$.
 
-![][12]
+![][3]![][4]![][4]
 
-From raw image to cryptographic digest to content id (multihash).
+As we can see here that we can change the state by executing a transaction on it.
 
-So we've hashed out image (created a digest), now what? We'll, what we're after is a content address/identifier. So we need to now take that digest, and convert it into something that IPFS and other systems can use to locate it… but this is not all that simple. What if things change in the future, and we want to change the way we address content? What if someone invents a better hash function? Even the IP system we have now has had to undergo upgrades. We'll the good folks at IPFS have thought of this too!
+Here we have to keep track of the balances and other details of different people(**states**) and the details of what happens between them on blockchain(**transactions**). Different platforms handle this differently. Here we will see how Bitcoin and Ethereum handle this.
 
-#### Multihashing
+### Bitcoin
 
-Have you ever noticed that IPFS hashes all seem to start with `Qm`? This is because those hashes are actually something called a [multihash][13]. This is cool, because the hash itself specifies which hash function it used, and the length of the resultant hash in the first two bytes of the multihash. In most of our examples, the first part in hex is 12, where 12 denotes that this is the [`SHA256][14][` hash function][14], and the output length is 20 in hex (or 32 bytes)… which is where we get the `Qm` from when we [base58 encode][15] the whole thing. So then you might ask, why base58 encode the whole thing? Well, because similar-looking letters are omitted: 0 (zero), O (capital o), I (capital i) and l (lower case L), and non-alphanumeric characters + (plus) and / (slash) are dropped, making it slightly more human readable. And all of this because we want a future-proof system that allows for multiple different fingerprinting mechanisms to coexist. So if that awesome new hashing function does get invented, we'll simple change the first few bytes of the multihash, and voila… IPFS hashes no longer start with `Qm…` but because we are using multihashes, the old ones will still work, along _with_ the new ones… cool!
+Bitcoin's "state" is represented by its global collection of Unspent Transaction Outputs (UTXOs). The transfer of value in bitcoin is actioned through transactions. More specifically, a bitcoin user can spend one or more of their UTXOs by creating a transaction and adding one or more of their UTXOs as the transaction's input.
 
-#### Merkle DAG ➞ IPLD
+This model of UTXO makes Bitcoin different from Ethereum. Let's see some examples to understand the difference.
 
-Ok, so I've got my file, I've hashed and encoded it. But that's not really the whole story. What is _actually_ happening is something more like this…
+Firstly, bitcoin UTXOs can not be partially spent. If a bitcoin user spends 0.5 bitcoin (using their only UTXO which is worth 1 bitcoin) they have to deliberately self-address (send themselves) 0.5 bitcoin in return change. If they don't send themselves change, they will loose the 0.5 bitcoin change to the bitcoin miner who mines their transaction.
 
-![][17]
+![][5]![][6]![][6]
 
-Large files are chunked, hashed, and organized into an IPLD (Merkle DAG object).
+UTXO transaction
 
-The content is chunked up into smaller parts (about 256k each), each part is hashed, a CID is created for each chunk, and then these chunks are combined into a hierarchical data structure, for which a single, base CID is computed.  
-This data structure is essentially something called a [Merkle DAG][18], or [directed acyclic graph][19].
+Secondly, at the most fundamental level, bitcoin does not maintain user account balances. With bitcoin, a user simply holds the private keys to one or more UTXO at any given point in time. **_Digital wallets make it seem like the bitcoin blockchain automatically stores and organizes user account balances and so forth. This is not the case._**
 
-Here's an awesome video of Juan Benet of protocol labs explaining how IPFS uses Merkle DAGs as their core data structure… for what is called the [Interplanetary Linked Data (or IPLD)][20] structure:
+![][7]![][8]![][8]
 
-![][21]
+A visualization of how wallets work in bitcoin
 
-#### Linked Data
+The UTXO system in bitcoin works well, in part, due to the fact that digital wallets are able to facilitate most of the tasks associated with transactions. Including but not limited to:
 
-Linked data is actually something that folks in the decentralized web community have been talking about for quite some time. It's something Tim Berners-Lee has been working on for ages, and his new company, [Solid][22], is building a business around it.
+a) handling UTXOs
 
-Essentially what we are talking about, is a structure that models everything as a series of linked objects. In the IPLD world, we have objects, each with `Data` and `Links` fields (where `Data` can be a small blob of unstructured, arbitrary binary data, and `Links` is an array of `Link` structures, which are simply links to other IPFS objects). Speaking of which, `Links` each have a `Name`, a `Hash` (or CID) of the linked object, and a `Size`, which represents the size of the linked object. This last bit of info is really just so we can estimate object/file sizes without having to pre-fetch too much data, but its extremely nice to have.
+b) storing keys
 
-IPLD (objects)
+c) setting transaction fees
 
-* `Data` — blob of unstructured binary data of size < 256 kB.
-* `Links` — array of Link structures. These are links to other IPFS objects.
+d) providing return change addresses
 
-A Link structure has three data fields
+e) aggregating UTXOs (to show available, pending and total balances)
 
-* `Name` — name of the Link
-* `Hash` — hash of the linked IPFS object
-* `Size `— cumulative size of linked IPFS object, including following _its_ links
+One analogy for the transactions in the UTXO model is paper bills (banknotes). Each account keeps track of how much money it has by adding up the amount of bills (UTXOs) in the purse (associated with this address/wallet). When we want to spend money, we use one or more bills (existing UTXOs), enough to cover the cost and maybe receive some change back (new UTXO). Each bill can only be spent once since, once spent, the UTXO is removed from the pool.
 
-#### Learning by doing
+To summarize, we know that:
 
-We can actually explore IPLD objects using the IPFS command line tools. So first, make sure you have IPFS installed and are comfortable with playing around with the command line. If you need an introductory tutorial, check out [Session 1 of our Textile Build Series][23]. Once you're ready, we'll take a quick look at the object structure for a different cat image (uses [handy dandy jq tool][24]). Start with the following command, which pipes (`|`) the result from getting the IPFS object to the `jq` command.
-    
-    
-    ipfs object get QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ | jq
+* the bitcoin blockchain does not hold account balances
+* bitcoin [wallets hold keys][9] to UTXOs
+* if included in a transaction, an entire UTXO is spent (in some cases partially received back as "change" in the form of a brand new UTXO)
 
-Producing the following output:
-    
-    
-    {  
-      "Links": [  
-        {  
-          "Name": "cat.jpg",  
-          "Hash": "Qmd286K6pohQcTKYqnS1YhWrCiS4gz7Xi34sdwMe9USZ7u",  
-          "Size": 443362  
-        }  
-      ],  
-      "Data": "bu0001"  
-    }
+### Ethereum
 
-Notice that this object contains a single `Link`, which we can further explore using the same commands:
-    
-    
-    ipfs object get Qmd286K6pohQcTKYqnS1YhWrCiS4gz7Xi34sdwMe9USZ7u | jq
+In contrast to the information above, the Ethereum world state is able to manage account balances, and more. The state of Ethereum is not an abstract concept. It is part of Ethereum's base layer protocol. As the yellow paper mentions, Ethereum is a transaction-based "state" machine; a technology on which all transaction based state machine concepts may be built.
 
-Which in turn, produces the following output. Notice the two `Links` are each < 256K in size:
-    
-    
-    {  
-      "Links": [  
-        {  
-          "Name": "",  
-          "Hash": "QmPEKipMh6LsXzvtLxunSPP7ZsBM8y9xQ2SQQwBXy5UY6e",  
-          "Size": 262158  
-        },  
-        {  
-          "Name": "",  
-          "Hash": "QmT8onRUfPgvkoPMdMvCHPYxh98iKCfFkBYM1ufYpnkHJn",  
-          "Size": 181100  
-        }  
-      ],  
-      "Data": "bu0002u0018ކu001b ��u0010 ކu000b"  
-    }
+Let's start at the beginning. As with all other blockchains, the Ethereum blockchain begins life at its own genesis block. From this point (genesis state at block 0) onward, activities such as transactions, contracts and mining will continually change the state of the Ethereum blockchain. In Ethereum, an example of this would be an account balance (stored in the state 特里结构) which changes every time a transaction, in relation to that account, takes place.
 
-This is pretty cool, and due to the flexible nature of DAGs (simple link-based graphs), we can represent just about any data structure we want using IPLD. For instance, let's say you had the following directory structure, and you wanted to add it to IPFS. Firstly, it's amazingly easy to do this (see below), and secondly, the benefits of using a DAG to represent data in IPFS become immediately apparent, as we'll see in a moment.
-    
-    
-    test_dir/  
-    ├── bigfile.js  
-    ├── *hello.txt  
-    └── my_dir  
-        ├── *my_file.txt  
-        └── *testing.txt
+Importantly, data such as account balances are not stored directly in the blocks of the Ethereum blockchain. Only the root node hashes of the transaction 特里结构, state 特里结构 and receipts 特里结构 are stored directly in the blockchain. This is illustrated in the diagram below.
 
-In this example, assume that all three files with an asterisk (`*`) — `hello.txt`, `my_file.txt`, and `testing.txx`— contain the same text: "`Hello World!/n`". Now let's add them to IPFS:
-    
-    
-    ipfs add -r test_dir/
+![][10]![][11]![][12]
 
-When you do this, you end up with a DAG that looks something like this:
+You will also notice, from the above diagram, that the root node hash of the storage 特里结构 (where all of the smart contract data is kept) actually points to the state 特里结构, which in turn points to the blockchain. We will zoom in and cover all of this in more detail soon.
 
-![][26]
+There are two vastly different types of data in Ethereum; permanent data and ephemeral data. An example of permanent data would be a transaction. Once a transaction has been fully confirmed, it is recorded in the transaction 特里结构; it is never altered. An example of ephemeral data would be the balance of a particular Ethereum account address. The balance of an account address is stored in the state 特里结构 and is altered whenever transactions against that particular account occur. It makes sense that permanent data, like mined transactions, and ephemeral data, like account balances, should be stored separately. Ethereum uses 特里结构 data structures to manage data.
 
-Graph of directory structure, originally from [ConsenSys blog][27].
+The record-keeping for Ethereum is just like that in a bank. An analogy is using an ATM/debit card. The bank tracks how much money each debit card has, and when we need to spend money, the bank checks its record to make sure we have enough balance before approving the transaction.
 
-Where (depending on the actual contents of the files in your directory), you end up with a series of objects, linked via their CIDs. At the top level we have the actual folder, without a name but with a CID. From there we have direct links to `bigfile.js`, the underlying `my_dir`, and `hello.txt`. From `my_dir` (in the middle) we have links to `my_file.txt` and `testing.txt`, both of which actually reference the same CID! This is pretty cool. Because we reference _content (_not the files themselves_)_, we get deduplication 'for free'! Lastly, on the bottom left, we have our `bigfile.js`, which has been chunked into three smaller pieces, each of which has its own CID, which together form the larger file. If you follow all of these CIDs up the tree, you get a CID that describes the contents below it. This is a critical concept…
+### A Comparison between UTXO and Account approach
 
-The fact that we have `Data` and `Links` gives our collection of IPFS objects a graph-like structure (or a tree). Again, DAG means **D**irected **A**cyclic **G**raph, and Merkle comes from the name of the inventor, [Ralph Merkle][18], who actually patented hash trees in 1979. Anyway, what Merkle DAGs get us is _content addressing_, such that all content is uniquely identified by its cryptographic hash, including links to things it references. This makes the structure _tamper proof_, because all content is verified with its hash — right hash, right content. And again, since we are hashing the contents of the files, we have no duplication, because in the Merkle DAG world, all objects that hold the same content are considered equal (i.e. their hash values are the same), and so we only store them once. _De-duplication_ by design.
+The benefits of the UTXO Model:
 
-We can play around with this idea of Merkle DAGs and chunking up large objects ourselves from the command line. For example, let's grab a nice big jpg to play with. You can `ipfs cat` it, or just [download it directly from GitHub][28] if you want:
-    
-    
-    ipfs cat QmWNj1pTSjbauDHpdyg5HQ26vYcNWnubg1JehmwAE9NnU9 > cosmos.jpg
+* **_Scalability_** — Since it is possible to process multiple UTXOs at the same time, it enables parallel transactions and encourages scalability innovation.
+* **_Privacy_** — Even Bitcoin is not a completely anonymous system, but UTXO provides a higher level of privacy, as long as the users use new addresses for each transaction. If there is a need for enhanced privacy, more complex schemes, such as ring signatures, can be considered.
 
-Now you can `add` it locally, and if you `cat`'d it initially, make sure the hashes match (here we're assigning the returned hash to the env variable `hash`):
-    
-    
-    hash=`ipfs add -q cosmos.jpg`  
-    echo $hash
+The benefits of the Account/Balance Model:
 
-You should get back a CID hash that looks exactly like this one (plus some progress):
-    
-    
-    QmWNj1pTSjbauDHpdyg5HQ26vYcNWnubg1JehmwAE9NnU9
+* **_Simplicity_** — Ethereum opted for a more intuitive model for the benefit of developers of complex smart contracts, especially those that require state information or involve multiple parties. An example is a smart contract that keeps track of states to perform different tasks based on them. UTXO's stateless model would force transactions to include state information, and this unnecessarily complicates the design of the contracts.
+* **_Efficiency_** — In addition to simplicity, the Account/Balance Model is more efficient, as each transaction only needs to validate that the sending account has enough balance to pay for the transaction.
 
-Now, let's take a look at the underlying `ipfs object` for that particular image:
-    
-    
-    ipfs ls -v $hash
+One drawback for the Account/Balance Model is the exposure to double spending attacks. An incrementing nonce can be implemented to counteract this type of attack. In Ethereum, every account has a public viewable nonce and every time a transaction is made, the nonce is increased by one. This can prevent the same transaction being submitted more than once. (Note, this nonce is different from the Ethereum proof of work nonce, which is a random value.)
 
-Note that each linked object is about 256k. Together, these chunks make up the whole image. So when requesting this file from the network, we can actually grab bits from different peers, and then our peer will put it all together at the and to give us the file we want. Truly decentralized!
-    
-    
-    Hash                                           Size   Name  
-    QmPHPs1P3JaWi53q5qqiNauPhiTqa3S1mbszcVPHKGNWRh 262158   
-    QmPCuqUTNb21VDqtp5b8VsNzKEMtUsZCCVsEUBrjhERRSR 262158   
-    QmS7zrNSHEt5GpcaKrwdbnv1nckBreUxWnLaV4qivjaNr3 262158   
-    QmQQhY1syuqo9Sq6wLFAupHBEeqfB8jNnzYUSgZGARJrYa 76151
+Like most things in computer architecture, both models have trade-offs. Some blockchains, notably Hyperledger, adopt UTXO because they can benefit from the innovation derived from the Bitcoin blockchain. We will look into more technologies that are built on top of these two record-keeping models.
 
-You can also use this [super new and fun tool][29] to explore DAGs (IPLD obejcts) in the browser. Check out the git example for a fun one. Or even better, explore the [above DAG object][30].
+### A closer look at the 特里结构 structure in Ethereum
 
-Now, just to show you that the above four chunks do indeed make up the single image, you can use the following code to 'manually' join the chunks together to create the image file — which is essentially what `cat` is doing in the background when you reference the base CID:
-    
-    
-    ipfs cat   
-    QmPHPs1P3JaWi53q5qqiNauPhiTqa3S1mbszcVPHKGNWRh   
-    QmPCuqUTNb21VDqtp5b8VsNzKEMtUsZCCVsEUBrjhERRSR   
-    QmS7zrNSHEt5GpcaKrwdbnv1nckBreUxWnLaV4qivjaNr3   
-    QmQQhY1syuqo9Sq6wLFAupHBEeqfB8jNnzYUSgZGARJrYa   
-    > cat-cosmos.jpg  
-    open cat-cosmos.jpg
+Let's look at the state, storage and transaction 特里结构s in a bit more depth.
 
-Alternatively, you could do this more succinctly using pipes again:
-    
-    
-    ipfs refs $hash | ipfs cat > test.jpg ; open test.jpg
+#### State 特里结构 — the one and only
 
-There you go. It's links all the way down. And on top of that we've learned a few many IPFS command-line tools to manipulate IPFS DAG objects. Handy!
+There is one, and one only, global state 特里结构 in Ethereum.
 
-#### Recap
+This global state 特里结构 is constantly updated.
 
-So let's do a quick recap. Merkle DAGs are a core concept of IPFS, but they are also at the core of many other technologies like git, bitcoin, dat, etc. These DAGs are basically hash 'trees' made up of content blocks, each with a unique hash. You can reference any block within that tree, which means you can build up a tree from any combination of subblocks. Which brings us to another awesome thing about DAGs, particularly when working with large files: to reference a large data file, all you need is the _base CID_, and you actually have a verified reference to the whole object. For large, popular files stored in multiple places on a network, sending around CIDs and then requesting bits from multiple peers makes file sharing a breeze, and means you only need to share around a few bytes, rather than a whole file.
+The state 特里结构 contains a key and value pair for every account which exists on the Ethereum network.
 
-But of course, you will rarely interact with DAGs or objects directly. Most of the time, your friendly `ipfs add` command will simply create the merkle DAG from data in files that you specify, creating the underlying IPNS objects for you, and you'll go on your merry way. So the answer to the question "what's really happening when you add a file to IPFS?" is… cryptography, math, networking, and some magic!
+The "key" is a single 160 bit identifier (the address of an Ethereum account).
 
-And that's all folks. You now know pretty much exactly what happens when you add a file to IPFS. What happens _next _is a topic for a future post. In the mean time, why not check out [some of our other stories][31], or sign up for our [Textile Photos waitlist][32] to see what we're building with IPFS. While you're at it, [drop us a line][33] and tell us what cool distributed web projects _you're_ working on— we'd love to hear about it!
+The "value" in the global state 特里结构 is created by encoding the following account details of an Ethereum account (using the Recursive-Length Prefix encoding (RLP) method):  
+\- nonce  
+\- balance  
+\- storageRoot  
+\- codeHash
 
-[1]: https://cdn-images-1.medium.com/freeze/max/75/0*vLVPilab5OAlKSLR?q=20
-[2]: https://cdn-images-1.medium.com/max/2000/0*vLVPilab5OAlKSLR
-[3]: https://unsplash.com/@jplenio?utm_source=medium&utm_medium=referral
-[4]: https://unsplash.com?utm_source=medium&utm_medium=referral
-[5]: https://en.wikipedia.org/wiki/Cats_and_the_Internet
-[6]: https://youtu.be/UoUEQYjYgf4
-[7]: https://ipfs.io/
-[8]: https://medium.com/textileio/enabling-the-distributed-web-abf7ab33b638
-[9]: https://en.wikipedia.org/wiki/Hash_function
-[10]: https://cdn-images-1.medium.com/freeze/max/75/1*CsNzyMTjpZGUOqV7NAT-mg.png?q=20
-[11]: https://medium.com/textileio/undefined
-[12]: https://cdn-images-1.medium.com/max/2000/1*CsNzyMTjpZGUOqV7NAT-mg.png
-[13]: https://multiformats.io/multihash/
-[14]: https://en.wikipedia.org/wiki/SHA-2
-[15]: https://en.wikipedia.org/wiki/Base58
-[16]: https://cdn-images-1.medium.com/freeze/max/75/1*47aWoFnX2SqRda94YXCcnw.png?q=20
-[17]: https://cdn-images-1.medium.com/max/2000/1*47aWoFnX2SqRda94YXCcnw.png
-[18]: https://en.wikipedia.org/wiki/Merkle_tree
-[19]: https://en.wikipedia.org/wiki/Directed_acyclic_graph
-[20]: https://ipld.io
-[21]: https://i.embed.ly/1/display/resize?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FBqs_LzBjQyk%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07&width=40
-[22]: https://solid.mit.edu
-[23]: https://youtu.be/gOzAYiT1Z4U
-[24]: https://stedolan.github.io/jq/
-[25]: https://cdn-images-1.medium.com/freeze/max/75/1*qyB8tGXLa_55MMG4su_FLg.jpeg?q=20
-[26]: https://cdn-images-1.medium.com/max/2000/1*qyB8tGXLa_55MMG4su_FLg.jpeg
-[27]: https://medium.com/@ConsenSys/an-introduction-to-ipfs-9bba4860abd0
-[28]: https://raw.githubusercontent.com/flyingzumwalt/decentralized-web-primer/master/samples/tree-in-cosmos.jpg
-[29]: https://explore.ipld.io
-[30]: https://explore.ipld.io/#/explore/QmWNj1pTSjbauDHpdyg5HQ26vYcNWnubg1JehmwAE9NnU9
-[31]: https://medium.com/textileio
-[32]: https://textile.photos/join
-[33]: https://www.textile.io
+The state 特里结构's root node ( a hash of the entire state 特里结构 at a given point in time) is used as a secure and unique identifier for the state 特里结构; the state 特里结构's root node is cryptographically dependent on all internal state 特里结构 data.
+
+![][13]![][11]![][14]
+
+Relationship between the State 特里结构 (leveldb implementation of a Merkle Patricia 特里结构) and an Ethereum block
+
+![][15]![][11]![][16]
+
+State 特里结构 — Keccak-256-bit hash of the state 特里结构's root node stored as the "stateRoot" value in a given block. stateRoot: '0x8c77785e3e9171715dd34117b047dffe44575c32ede59bde39fbf5dc074f2976'
+
+#### Storage 特里结构 — where the contract data lives
+
+A storage 特里结构 is where all of the contract data lives. Each Ethereum account has its own storage 特里结构. A 256-bit hash of the storage 特里结构's root node is stored as the storageRoot value in the global state 特里结构 (which we just discussed).
+
+![][17]![][11]![][18]
+
+#### Transaction 特里结构 — one per block
+
+Each Ethereum block has its own separate transaction 特里结构. A block contains many transactions. The order of the transactions in a block are of course decided by the miner who assembles the block. The path to a specific transaction in the transaction 特里结构, is via (the RLP encoding of) the index of where the transaction sits in the block. Mined blocks are never updated; the position of the transaction in a block is never changed. This means that once you locate a transaction in a block's transaction 特里结构, you can return to the same path over and over to re特里结构ve the same result.
+
+![][19]![][11]![][20]
+
+### Concrete examples of 特里结构s in Ethereum
+
+The main Ethereum clients use two different database software solutions to store their 特里结构s. Ethereum's Rust client Parity uses rocksdb. Whereas Ethereum's Go, C++ and Python clients all use leveldb.
+
+#### Ethereum and rocksdb
+
+Rocksdb is out of scope for this post. This may be covered at a later date, but for now, let's explore how 3 out of the 4 major Ethereum clients utilize leveldb.
+
+#### Ethereum and leveldb
+
+LevelDB is an open source Google key-value storage library which provides, amongst other things, forward and backward iterations over data, ordered mapping from string keys to string values, custom comparison functions and automatic compression. The data is automatically compressed using "Snappy" an open source Google compression/decompression library. Whilst Snappy does not aim for maximum compression, it aims for very high speeds. Leveldb is an important storage and re特里结构val mechanism which manages the state of the Ethereum network. As such, leveldb is a dependency for the most popular Ethereum clients (nodes) such as go-ethereum, cpp-ethereum and pyethereum.
+
+> Whilst the implementation of the 特里结构 data structure can be done on disk (using database software such as leveldb) it is important to note that there is a difference between traversing a 特里结构 and simply looking at the flat key/value database.
+
+To learn more, we have to access the data in leveldb using the appropriate Patricia 特里结构 libraries. To do this we will need an Ethereum installation.
+
+Here is a easy to follow tutorial for setting up your own Ethereum private network.
+
+[**How To: Create Your Own Private Ethereum Blockchain**  
+_Dev highlights of this week_medium.com][21]
+
+Once you have set up your Ethereum private network, you will be able to execute transactions and explore how Ethereum's "state" responds to network activities such as transactions, contracts and mining. If you are not in a position to install an Ethereum private network, that's OK. We will provide our code examples and screen captures from our Ethereum private network.
+
+### Analysing the Ethereum database
+
+As we mentioned previously there are many Merkle Patricia 特里结构s (referenced in **each** block) within the Ethereum blockchain:
+* State 特里结构
+* Storage 特里结构
+* Transaction 特里结构
+* Receipts 特里结构
+
+**_The following sections assume that you have [_****_installed and configured your very own Ethereum private network_**][22]**_, or that you are happy to just follow along as we run some software and talk to Ethereum's leveldb database._**
+
+To reference a particular Merkle Patricia 特里结构 in a particular block we need to obtain its root hash, as a reference. The following commands allow us to obtain the root hashes of the state, transaction and receipt 特里结构s in the genesis block.
+
+![][23]
+
+![][24]![][11]![][25]
+
+**Note:** If you would like the root hashes of the **latest** block (instead of the genesis block), please use the following command.
+
+![][23]
+
+#### Installing npm, node, level and ethereumjs
+
+We will be using a combination of nodejs, level and [ethereumjs][26] (which implements Ethereum's VM in Javascript) to inspect the leveldb database. The following commands will further prepare our environment.
+
+![][23]
+
+From this point, running the following code will print a list of the Ethereum account keys (which are stored in the state root of your Ethereum private network). The code connects to Ethereum's leveldb database, enters Ethereum's world state (using a stateRoot value from a block in the blockchain) and then accesses the keys to all accounts on the Ethereum private network.
+
+![][23]
+
+![][27]
+
+Output for the above code
+
+> Interestingly, accounts in Ethereum are only added to the state 特里结构 once a transaction has taken place (in relation to that specific account). For example, just creating a new account using "geth account new" will not include that account in the state 特里结构; even after many blocks have been mined. However, if a successful transaction (one which costs gas **and** is included in a mined block) is recorded against that account, then and only then will that account appear in the state 特里结构. This is clever logic which protects against malicious attackers continuously creating new accounts and bloating the state 特里结构.
+
+#### Decoding the data
+
+You will have noticed that querying leveldb returns encoded results. This is due to the fact that Ethereum uses its own specially "Modified Merkle Patricia 特里结构" implementation when interacting with leveldb. The Ethereum Wiki provides information in relation to the design and implementation of both Ethereum's [Modified Merkle Patricia 特里结构][28] and [Recursive Length Prefix (RLP) encoding][29]. In short, Ethereum have extended on the 特里结构 data structures. For example the Modified Merkle Patricia contains a method which can shortcut the descent (down the 特里结构) through the use of an "extension" node.
+
+In Ethereum, a single Modified Merkle Patricia 特里结构 node is either:
+
+* an empty string (referred to as NULL)
+* an array which contains 17 items (referred to as a branch)
+* an array which contains 2 items (referred to as a leaf)
+* an array which contains 2 items (referred to as an extension)
+
+As Ethereum's 特里结构s are designed and constructed with rigid rules, the best way to inspection them is through the use of computer code. The following example uses ethereumjs. The ethereumjs repositories are easy to install and use; they will be perfect for us to quickly peer into Ethereum leveldb database.
+
+The code below (when provided with a particular block's stateRoot as well as an Ethereum account address) will return that account's correct balance in a human readable form.
+
+![][30]
+
+Output from the following code (account balance for address `0xccc6b46fa5606826ce8c18fece6f519064e6130b)`
+
+![][23]
+
+### Conclusion
+
+We have demonstrated above that Ethereum has the ability to manage its "state". This clever upfront design has many advantages.
+
+#### Mobility
+
+Given that mobile devices and Internet of Things (IoT) devices are now ubiquitous, the future of e-commerce depends on safe, robust and fast mobile applications.
+
+![][31]![][11]![][32]
+
+As we acknowledge advances in mobility, we also acknowledge that the constant increase in blockchain size is inevitable. It is not practicable to store entire blockchains on everyday mobile devices.
+
+#### Speed, without compromising security
+
+The design of Ethereum's world state and its use of the Modified Merkle Patricia 特里结构 provides many opportunities in this space. Every function (put, update and delete) performed on a 特里结构 in Ethereum utilizes a deterministic cryptographic hash. Further, the unique cryptographic hash of a 特里结构's root node can be used as evidence that the 特里结构 has not been tampered with.
+
+For example any changes to a 特里结构's data, at any level (such as increasing an accounts balance in the leveldb database) will completely change the root hash. This cryptographic feature provides an opportunity for light clients (devices which do not store the entire blockchain) to quickly and reliably query the blockchain i.e. does account "0x … 4857" have enough funds to complete this purchase at block height "5044866"?
+
+> "The size complexity of a Merkle proof is logarithmic in the quantity of data stored. This means that, even if the entire state tree is a few gigabytes in size, if a node receives a state root from a trusted source that node has the ability to know with full certainty the validity of any information with the tree by only downloading a few kilobytes of data in a proof."
+
+#### Spend limits
+
+An interesting idea, mentioned in the Ethereum white paper is the notion of a savings account. In this scenario two users (perhaps a husband and wife, or business partners) can each withdraw 1% of the accounts total balance per day. This idea is only mentioned in the "further applications" section of the white paper, but it sparks interest because of the fact that, in theory, it could be implemented as part of Ethereum's base protocol layer (as apposed to having to be written as part of a second layer solution or third-party wallet). You may recall our discussion about bitcoin UTXOs at the start of this article. UTXOs are blind to blockchain data, and as we discussed, the bitcoin blockchain does not actually store a users account balance. For this reason the base protocol layer of bitcoin is far less likely (or perhaps unable to) implement any sort of daily spend limits.
+
+#### Consumer confidence
+
+As work continues in this space we will see a lot of development in light clients. More specifically, safe, robust and fast mobile applications, which can interact with blockchain technologies.
+
+![][33]![][11]![][34]
+
+A successful blockchain implementation in the e-commerce space must bolster speed, safety and usability. It is always possible to improve consumer confidence as well as increase mainstream adoption by providing superior usability, safety and performance through smart design.
+
+[1]: https://hackernoon.com/getting-deep-into-geth-why-syncing-ethereum-node-is-slow-1edb04f9dc5 "https://hackernoon.com/getting-deep-into-geth-why-syncing-ethereum-node-is-slow-1edb04f9dc5"
+[2]: https://hackernoon.com/getting-deep-into-evm-how-ethereum-works-backstage-ac7efa1f0015 "https://hackernoon.com/getting-deep-into-evm-how-ethereum-works-backstage-ac7efa1f0015"
+[3]: https://cdn-images-1.medium.com/freeze/max/75/1*fLjE6g-m_YTTXTXqLnpA0w.png?q=20
+[4]: https://cdn-images-1.medium.com/max/2000/1*fLjE6g-m_YTTXTXqLnpA0w.png
+[5]: https://cdn-images-1.medium.com/freeze/max/75/1*8ckJdAnUMNNd190LNJLz7Q.png?q=20
+[6]: https://cdn-images-1.medium.com/max/2000/1*8ckJdAnUMNNd190LNJLz7Q.png
+[7]: https://cdn-images-1.medium.com/freeze/max/75/1*0doOO9uDGB3yqfPnsUrAEA.png?q=20
+[8]: https://cdn-images-1.medium.com/max/2000/1*0doOO9uDGB3yqfPnsUrAEA.png
+[9]: https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch05.asciidoc#wallet-technology-overview
+[10]: https://cdn-images-1.medium.com/freeze/max/75/1*f0vOn0lRgrY5NjFlbUMBFg.jpeg?q=20
+[11]: https://hackernoon.com/undefined
+[12]: https://cdn-images-1.medium.com/max/2000/1*f0vOn0lRgrY5NjFlbUMBFg.jpeg
+[13]: https://cdn-images-1.medium.com/freeze/max/75/1*-Q00GpGTphTOtBWPRu1e3g.png?q=20
+[14]: https://cdn-images-1.medium.com/max/2000/1*-Q00GpGTphTOtBWPRu1e3g.png
+[15]: https://cdn-images-1.medium.com/freeze/max/75/1*NFM4Cb5eJdzJXvj9-dUorg.png?q=20
+[16]: https://cdn-images-1.medium.com/max/2000/1*NFM4Cb5eJdzJXvj9-dUorg.png
+[17]: https://cdn-images-1.medium.com/freeze/max/75/1*9AvbCSNqn5m9z0qhWjE6cg.png?q=20
+[18]: https://cdn-images-1.medium.com/max/2000/1*9AvbCSNqn5m9z0qhWjE6cg.png
+[19]: https://cdn-images-1.medium.com/freeze/max/75/1*dWv4-5OQoa52QE03G9Qkwg.png?q=20
+[20]: https://cdn-images-1.medium.com/max/2000/1*dWv4-5OQoa52QE03G9Qkwg.png
+[21]: https://medium.com/mercuryprotocol/how-to-create-your-own-private-ethereum-blockchain-dad6af82fc9f "https://medium.com/mercuryprotocol/how-to-create-your-own-private-ethereum-blockchain-dad6af82fc9f"
+[22]: https://medium.com/mercuryprotocol/how-to-create-your-own-private-ethereum-blockchain-dad6af82fc9f
+[23]: https://i.embed.ly/1/display/resize?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F28847087%3Fs%3D400%26v%3D4&key=a19fcc184b9711e1b4764040d3dc5c07&width=40
+[24]: https://cdn-images-1.medium.com/freeze/max/75/1*IbnRm4TYAY55u7Ax2ZL_6A.png?q=20
+[25]: https://cdn-images-1.medium.com/max/2000/1*IbnRm4TYAY55u7Ax2ZL_6A.png
+[26]: https://github.com/ethereumjs/ethereumjs-vm
+[27]: https://cdn-images-1.medium.com/max/2000/1*zEIgr2MNmtt_OWGpPe1NJg.png
+[28]: https://github.com/ethereum/wiki/wiki/Patricia-Tree
+[29]: https://github.com/ethereum/wiki/wiki/RLP
+[30]: https://cdn-images-1.medium.com/max/2000/1*xioZ7tF-WJ1cu2XomZjPog.png
+[31]: https://cdn-images-1.medium.com/freeze/max/75/1*LUDKKtihxxLFpjz80zf0ag.jpeg?q=20
+[32]: https://cdn-images-1.medium.com/max/2000/1*LUDKKtihxxLFpjz80zf0ag.jpeg
+[33]: https://cdn-images-1.medium.com/freeze/max/75/1*I-fz7QPeEHWtEk6BKW-rVA.jpeg?q=20
+[34]: https://cdn-images-1.medium.com/max/2000/1*I-fz7QPeEHWtEk6BKW-rVA.jpeg
 
   
