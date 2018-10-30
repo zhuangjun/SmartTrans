@@ -8,10 +8,10 @@ __PUBLIC CONSULTING VERSION from the Russian community__
 来自俄罗斯社区的__PUBLIC CONSULTING VERSION__
 
 __Based on EOS Charter from EOS Amsterdam.__
-_基于EOS Amsterdam的EOS Charter \.___
+_基于EOS Amsterdam的EOS Charter \.__
 
 1. __Applicability__
-1. __适用性___
+1. __适用性__
 1. This Constitution applies to EOS<a id="footnote-ref-0"></a>[\[1\]](#footnote-0). Anyone who uses EOS or provides development services or other services relative to EOS is and will be connected by the EOS community and is a Member<a id="footnote-ref-1"></a>[\[2\]](#footnote-1). Any code written on the basis of EOS does not contradict the Constitution.
 1. 本宪法适用于EOS <a id="footnote-ref-0"></a>[\[1\]](#footnote-0).使用EOS或提供与EOS相关的开发服务或其他服务的任何人都将被EOS社区连接并成为会员<a id="footnote-ref-1"></a> [\[2\]](#footnote-1).任何以EOS为基础编写的代码都不违反宪法.
 2. This Constitution also applies to the use of EOS by third parties who, not being members of the EOS network, use EOS.
@@ -43,7 +43,7 @@ __ __
 __ __
 
 1. __Ownership__
-1. __所有权___
+1. __所有权__
 
 -
 -
@@ -112,7 +112,7 @@ __ __
 6. 大区块生产者对损失或损害不承担责任，除非他们是故意或重大过失造成的. <a id="footnote-ref-11"></a> [\[12\]](#footnote-11)
 
 1. __Liability of developers__
-1. _开发商的责任___
+1. _开发商的责任__
 
 -
 -
@@ -126,7 +126,7 @@ __ __
 2. WPS will work completely independently. WPS must have sufficient funds to pay out of \{\{% inflation\}\} \- \{\{% amount of the block producers reward\}\} of the inflation specified in Article 5.2. No block producer is allowed to influence its operation in any way. The distribution of WPS must be settled independently of the producer unit; an additional agreement determines the distribution of WPS.
 2. WPS将完全独立工作. WPS必须有足够的资金来支付第5条\.2 \中指定的通货膨胀的\ {\ {通胀\} \} \  -  \ {\ {块数量的区块生产者奖励\}.不允许区块生产者以任何方式影响其操作. WPS的分配必须独立于生产者单位进行结算;另外一项协议决定了WPS的分配情况.
 2. __Intellectual property__
-2. __知识产权___
+2. __知识产权__
 1. All code paid by WPS must be open and free to use at EOS for all parties. A party that publishes any other code or other material on EOS grants all parties the non\-exclusive right to use such code or material in EOS as intended.
 1. WPS支付的所有代码必须是开放的，并且可以在EOS中免费用于所有各方.在EOS上发布任何其他代码或其他材料的一方授予所有各方在EOS中按预期使用此类代码或材料的非独家权利.
 3. __Dispute resolution__
@@ -173,7 +173,7 @@ __ __
 6. 仲裁系统可以对相关案件实行强制调解<a id="footnote-ref-18"></a> [\[19\]](#footnote-18).
 
 1. __Constitution change management__
-1. __组织变更管理___
+1. __组织变更管理__
 
 __ __
 __ __
@@ -184,7 +184,7 @@ __ __
 1. 本章程可以通过代币持有人的投票进行更改或修改，其中不少于10％的EOS代币投票，并且在120天内连续30天持续不少于10％的肯定而不是无投票. .
 
 1. __Further rules and protocols__
-1. __更多规则和协议___
+1. __更多规则和协议__
 
 -
 -
