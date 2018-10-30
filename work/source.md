@@ -1,177 +1,171 @@
-https://thecontrol.co/an-overview-of-privacy-in-cryptocurrencies-893dc078d0d7
+__EOS Constitution__
 
-# An Overview of Privacy in Cryptocurrencies
+__AKA EOS Constitution version 3\.1__
 
-> _"I see privacy as a way to prevent signaling concerns from encompassing all of our activity, and creating spheres where we are free to optimize for our own happiness and just our own happiness, and not what other people think about us." — [__Vitalik Buterin_][1]
+__PUBLIC CONSULTING VERSION from the Russian community__
 
-It's no secret that privacy is an important topic in cryptocurrencies these days. Neither companies nor individuals want to publish all of their information onto a public blockchain that can be arbitrarily read without any restrictions by one's own government, foreign governments, family members, coworkers, or business competitors.
+__Based on EOS Charter from EOS Amsterdam\.__
 
-There's currently lots of experimentation and research going into various approaches to privacy on blockchains, but we haven't seen a comprehensive overview of the category. In this piece we'll cover the latest experimentation and research in four areas of the privacy landscape: 1) privacy coins, 2) smart contract privacy, 3) privacy infrastructure, and 4) privacy research.
+1. __Applicability__
+	1. This Constitution applies to EOS<a id="footnote-ref-0"></a>[\[1\]](#footnote-0)\. Anyone who uses EOS or provides development services or other services relative to EOS is and will be connected by the EOS community and is a Member<a id="footnote-ref-1"></a>[\[2\]](#footnote-1)\. Any code written on the basis of EOS does not contradict the Constitution\.
+	2. This Constitution also applies to the use of EOS by third parties who, not being members of the EOS network, use EOS\.
+	3. The EOS network member \(s\) is the subject \(s\) who has access to sign a transaction on behalf of an account on the EOS network\. 
+	4. Network members, when interacting with third parties who are not members of the network within EOS, are obliged to ensure the applicability of this Constitution\.
 
-![][2]![][3]![][3]
+1. __Contract__
 
-### Privacy (or lack thereof) in Bitcoin
+- 
+	1. This Constitution is a multi\-party contract\. It does not terminate until the moment there are no Members on the EOS network\. 
+__ __
 
-Bitcoin was originally developed as a pseudonymous cryptocurrency that maintained privacy as long as real-world identities couldn't be linked to Bitcoin addresses. Due to the public nature of the Bitcoin blockchain, however, it quickly became clear that it was possible to identify individuals based on usage patterns of certain addresses and transactions. In addition, nodes leak their IP addresses when broadcasting transactions.
+1. __Freedom__
 
-![][4]![][5]![][5]
+- 
+	1. All parties are free to use EOS, subject to the fair use of EOS, without violating the rights of other Members and observing this Constitution\.  
 
-Each node represents an address and each edge represents a transaction. Many nodes such as Mt. Gox, Silk Road, and Satoshi Dice have been deanonymized from transaction patterns.
+__ __
 
-In 2013, Meiklejohn et. al. [successfully identified clusters][6] belonging to online wallets, merchants, and other service providers. Nowadays, services such as [Chainalysis][7] and [Elliptic][8] deanonymize blockchains to detect money laundering, fraud, and compliance violations.
+1. __Ownership__
 
-![][9]![][10]![][10]
+- 
+	1. EOS does not belong to anyone\.
+	2. EOS tokens have owners<a id="footnote-ref-2"></a>[\[3\]](#footnote-2)\.
+	3. No one should directly or indirectly own more than 10% of EOS tokens<a id="footnote-ref-3"></a>[\[4\]](#footnote-3)\.
 
-In this example, an observer could see that {Alice, Bob} sent Bitcoin to {Carol, Ted} but could not tell exactly who sent money to whom. Repeat this process several times with different users and the anonymity set grows.
+1. __Inflation__
 
-In response to the erosion of Bitcoin privacy, tumbler services, such as [CoinJoin][11], were created to improve anonymity in Bitcoin. In CoinJoin, users jointly create transactions that permute ownership of their coins, making each user anonymous within a set. This process is then repeated among different users to grow the anonymity set. Tumbler services have historically been used by criminals to mix identifiable Bitcoin with other funds in order to obscure the trail back to the fund's original source.
+5\.1\. EOS on an ongoing basis releases \{\{% inflation\}\} in one calendar year from all already issued EOS tokens, but not more than 5% \(with the possibility of being tied to EOS capitalization\)\.
 
-Yet CoinJoin has its flaws. The privacy of CoinJoin relies of the anonymity set being huge. But in practice there are only 2–4 participants on average per CoinJoin transaction, and thus researchers were able to [deanonymize 67% of CoinJoin transactions][12]. Later improvements upon CoinJoin inspired the design of better cryptocurrency tumblers such as [TumbleBit][13], but TumbleBit has limitations as well.
+5\.2\. The block producers' reward considered to \{\{% remuneration\}\}, which should be distributed among the block producers who have exceeded the daily reward threshold of the block producers of 100 EOS tokens\.
 
-### Privacy Coins
+5\.3\. The \{\{% inflation\}\} \- \{\{% reward\}\} rate is WPS\. Tokens from WPS are redistributed according to the decision of network members\. The solution is described in the WPS Agreement document\.
 
-Given the lack of privacy in Bitcoin and no immediate plans to improve its privacy at the protocol level, several new cryptocurrencies have emerged to support private transactions.
+1. __Votes__
 
-[Zcash][14] is built by a strong team of academic cryptographers using zk-SNARKs. The original groundbreaking idea of [zero-knowledge proofs][15] was developed in 1985 by [Goldwasser, Micali, and Rackoff][16]. [zk-SNARKs][17], developed by Eli Ben-Sasson et al. in 2015, is an improvement on zero-knowledge proofs by enabling someone to succinctly and non-interactively prove that he/she knows something without revealing what the information is. zk-SNARKs provide the technical underpinning for many privacy-related projects and can also compact the size of blockchains using a technique called [recursive composition][18].
+- 
+	1. One EOS token has the power of one vote\.
+	2. No one should directly or indirectly control more than 1% of the vote<a id="footnote-ref-4"></a>[\[5\]](#footnote-4) whether through ownership, consent or organized voting<a id="footnote-ref-5"></a>[\[6\]](#footnote-5)\.  
+	3. Voices cast through a proxy are valid if:
+		1. Owners are free to choose a proxy; or
+		2. Owners are free to provide instructions for voting to their proxies and receive information about this right when concluding an agreement with this trustee and thereafter at least once every twelve months\.<a id="footnote-ref-6"></a>[\[7\]](#footnote-6) 
+		3. The proxy server publishes its voting system so that it is easy to find and open to the general public\.
 
-Currently the Zcash team is working on [Sapling][19], a performance upgrade to the network that will improve the performance and functionality of shielded (encrypted) transactions, and is scheduled to activate in October 2018. Sending shielded transactions is computationally expensive given that [roughly 85% of Zcash transactions][20] are still sent in the clear, so Sapling will hopefully increase the number of shielded transactions.
+- 
+	1. Owners, In this article, should include beneficiaries for whom third parties own tokens\. This third party is considered a trustee and in order for the votes to be valid, such a party must comply with the previous Article<a id="footnote-ref-7"></a>[\[8\]](#footnote-7)\.
 
-[Monero][21] is another privacy coin that uses ring signatures instead of zk-SNARKs. Currently the Monero team is building [Kovri][22] to enable privacy-preserving packet routing so that users can hide their geographical locations and IP addresses. Anonymizing users' network traffic will greatly increase the security of the Monero network and protect users from being arrested or physically harmed for using Monero.
+1. __Block producers__
 
-Zcash and Monero are often compared to each other. Both communities are led by big Twitter personalities — [Zooko Wilcox][23] for Zcash and [Riccardo "fluffypony" Spagni][24] for Monero — but unlike how Zcash is backed by a company and a foundation, Monero only has an organic community of core developers. Both projects even had flaws in their anonymity that have since been fixed — researchers were able to associate [69% of Zcash shielded transactions][25] with founders/miners as well as deanonymize [62% of all Monero transactions][26].
+- 
+	1. Each owner of a token is entitled to vote for block producers\. 
+	2. Block producers shall use commercially reasonable efforts to perform their block producing duties as detailed further in the block producer agreement\.
+	3. Block producers shall not share control with other block producers, whether through ownership, agreement or orchestrated behaviour<a id="footnote-ref-8"></a>[\[9\]](#footnote-8)\. Block producers shall publish a comprehensive schedule of their group and a list of ultimate beneficiaries with an interest of 10% or more\.  
+	4. Block producers must execute the code unless:
+		1. An executable arbitrator’s award indicates otherwise<a id="footnote-ref-9"></a>[\[10\]](#footnote-9);
+		2. The block producers become aware of a clear violation of the intent of the code or the rights of a party or a third party, or of its threat, while there are no alternative means to stop or prevent such a violation\. In such a case, such a block producer must immediately notify another active block producers and the selected arbitration system\.<a id="footnote-ref-10"></a>[\[11\]](#footnote-10)\.
+	5. Block producers must comply with the award provided through the selected arbitration system\.
+	6. Block producers are not liable for loss or damage unless they are the result of their intent or gross negligence\.<a id="footnote-ref-11"></a>[\[12\]](#footnote-11)
 
-Yet both projects are fundamentally taking very different approaches to privacy with different sets of tradeoffs, and so far there hasn't been a clear case for why one project will win over the other in the long-term. In my view Zcash and Monero will continue to coexist like Coke and Pepsi.
+1. __Liability of developers__
 
-![][27]![][28]![][29]
+- 
+	1. Unless the parties agree otherwise, the developers<a id="footnote-ref-12"></a>[\[13\]](#footnote-12) are not liable for damages and losses unless they are the result of their intent or gross negligence\.
 
-Mimblewimble refers to the tongue-tying curse in _Harry Potter. _Tom Elvis Jedusor is Lord Voldemort's French name and Ignotus Peverell is the original owner of the invisibility cloak.
+1. __WPS__
+	1. Consensus of Block Producers should create proposals and structure for WPS that do not conflict with the “WPS Agreement”\.
+	2. WPS will work completely independently\. WPS must have sufficient funds to pay out of \{\{% inflation\}\} \- \{\{% amount of the block producers reward\}\} of the inflation specified in Article 5\.2\. No block producer is allowed to influence its operation in any way\. The distribution of WPS must be settled independently of the producer unit; an additional agreement determines the distribution of WPS\.
+2. __Intellectual property__
+	1. All code paid by WPS must be open and free to use at EOS for all parties\. A party that publishes any other code or other material on EOS grants all parties the non\-exclusive right to use such code or material in EOS as intended\.
+3. __Dispute resolution__
+	1. Every EOS dispute should be resolved by an arbitration system appointed by the parties to such a dispute<a id="footnote-ref-13"></a>[\[14\]](#footnote-13)\.
+	2. If the parties have not agreed upon the arbitration provider, all disputes arising in connection with this constitution and / or EOS, or in connection with further agreements arising from it, are resolved in accordance with the arbitration rules<a id="footnote-ref-14"></a>[\[15\]](#footnote-14),
+	3. The consensus of the block producers should implement an arbitration system that allows one or more arbitration providers to participate based on their registration with EOS and further on the quality and procedural requirements specified in Articles 11\.4 and 11\.5\. The arbitration providers that are selected under this system are in this constitution, which is called the “selected arbitration provider”\. 
+	4. The selected arbitration provider may be removed from the EOS Arbitration System only without its consent:
+		1. if it stops meeting these requirements and / or additional requirements \(if any\) established by this constitution and / or the Ricardian contract of the arbitration system; or 
+		2. by vote of the EOS Community Members  
 
-Mimblewimble is a new privacy-focused blockchain project that is based on Bitcoin's design. On July 19, 2016, "Tom Elvis Jedusor" dropped the [whitepaper][30] into a Bitcoin research channel and disappeared. Later, "Ignotus Peverell" started a Github project called [Grin][31] and began turning the Mimblewimble paper into a real implementation. Andrew Poelstra of Blockstream presented the work at the [2017 Stanford][32] [BPASE Conference][33], after which Grin began getting lots of mainstream attention. Grin's third testnet has been released, and **the mainnet is expected to debut in early 2019.**
+	5. The arbitration provider \(s\) must resolve disputes in all fairness, without being bound by strict rules of law<a id="footnote-ref-15"></a>[\[16\]](#footnote-15)\. The arbitration system carries out proper procedures\. The arbitration system should at least: 
+		1. Ensure the strict independence of the arbitrator \(s\);
+		2. Ensure that there are sufficient arbitrators who will have the necessary skills and are trained to understand the EOS and the principles of due process and the role of the arbitrator;
+		3. Collection of fees that are reasonably taken into account on the merits of the relevant cases;<a id="footnote-ref-16"></a>[\[17\]](#footnote-16)
+		4. Allow the parties to dispute the person of the arbitrator if they believe that such person is not independent;
+		5. Provide reasonable deadlines for detailed statements and protection and further documentation;
+		6. Allow the hearing by electronic means or, if both parties wish: for those where both parties are physically present;
+		7. To prohibit one party to interact in any way with the arbitrator \(s\) without the other party being present or, in the case of written interaction, to simultaneously inform;
+		8. Provide a reasoning for resolving the dispute;
+		9. Allow parties to choose a language, provided that such choice is limited to the main languages;
+		10. Allow the appeal<a id="footnote-ref-17"></a>[\[18\]](#footnote-17); 
+		11. Allow preliminary measures\.  
 
-Mimblewimble/Grin is an improvement upon [confidential transactions][34] and CoinJoin from Bitcoin. Key features include no public addresses, complete privacy, and a compact blockchain. There has been a lot of excitement around Grin mining lately since Grin coins, like Bitcoin, can only be created through PoW mining. Grin uses the [Cuckoo Cycle][35] PoW algorithm, which was originally designed to be ASIC-resistant but is now considered to be [ASIC-friendly][36].
+	6. The arbitration system may introduce mandatory mediation for relevant cases<a id="footnote-ref-18"></a>[\[19\]](#footnote-18)\.
 
-Overall, Grin combines the social features that make Bitcoin so powerful — anonymous founder, leaderless development team, PoW consensus, no ICO, no on-chain governance — with technical improvements over Zcash and Monero. Unlike Bitcoin, Grin's overall supply is unlimited and its [monetary policy][37] is a linear supply schedule, meaning that inflation is very high early on but gradually approaches (without reaching) zero over time. Early inflation incentives spending rather than speculating after the network is launched. While perpetual inflation doesn't make Grin an ideal store of value, it avoids the [instability of Bitcoin][38] once Bitcoin's block reward disappears and miners only earn transaction fees.
+1. __Constitution change management__
 
-Grin's novel monetary policy avoids the controversial [Zcash Founder's reward][39] where 20% of newly minted ZECs are given to the project developers in the first four years. The size of the MimbleWimble blockchain also scales with the number of users rather than the number of transactions, avoiding the [UTXO set scaling problem][40] with Monero's ring signatures.
+__ __
 
-Other interesting privacy coins that are relatively early in their development include [MobileCoin][41] and [BEAM][42].
+- 
+	1. This Constitution may be changed or amended by a vote of the token holders with no less than 10% of the EOS tokens staked voting and no fewer than 10% more Yes than No votes, sustained for 30 continuous days within a 120 day period\.
 
-### Privacy in Smart Contracts
+1. __Further rules and protocols__
 
-Privacy in smart contracts is different than privacy in payments since smart contracts publicly contain program code. Unfortunately, program obfuscation is [proven to be impossible][43], and as a result smart contracts currently lack both confidentiality (hiding payment amounts) and anonymity (hiding the identities of senders and recipients).
+- 
+	1. The consensus of the block producers has the right to provide additional rules and protocols, including the agreement of producers of blocks\. The consensus of the producers of the blocks has the right to set the code\. The established rules, protocols and code will fully comply with this constitution\.<a id="footnote-ref-19"></a>[\[20\]](#footnote-19)
 
-In my view strong demand for smart contract privacy will come when enterprise businesses are ready to build dApps at scale and need to hide their customers' activity; right now there isn't much downside to everyone seeing the [usage of dApps][44] like CryptoKitties. This may be similar to how the Internet first launched using HTTP for basic websites and then later introduced HTTPS for websites that needed encrypted web traffic for activities like e-commerce.
+1. __Applicable law<a id="footnote-ref-20"></a>[\[21\]](#footnote-20)__
+	1. This Constitution replaces all national laws\.  
 
-![][45]![][28]![][46]
+	2. If the law has binding provisions that impede the implementation of this Constitution, the parties, if and to the extent possible: 
+		1. Choose a law that does not do this, or if it is impossible;
+		2. Modify this Constitution in a way that is closest in its meaning to such mandatory provisions, despite the fact that the arbitrator has the right to resolve the dispute fairly, without being tied to strict legal norms\.
 
-Without privacy in Ethereum, everyone can see the usage of dApps on DappRadar.
+1. __Transition article__  
 
-In the case of Ethereum, Zether is an ongoing research by [Benedikt Bünz][47] at Stanford on a private payment mechanism that is fully compatible with Ethereum and can provide both confidentiality and anonymity to Ethereum smart contracts. Zether will be implemented as an Ethereum smart contract and will use minimal amounts of gas. Zether is also versatile in that it can add provable privacy to common applications such as payment channels.
+	1. This statute replaces the interim Constitution at the date of its election by the community, unless the referendum system indicated otherwise\.  
 
-[Keep][48] is another project building a privacy layer for Ethereum by creating off-chain containers for private data. This allows contracts to manage and use private data without exposing the data to the public blockchain.
+	2. Until additional rules are adopted in accordance with this Constitution, all the rules in force remain as they are in conformity with this Constitution\. Any rights and obligations arising from this Constitution shall enter into force shall be respected\.  
 
-While privacy is the #2 priority for Ethereum right now after Casper, the Ethereum Foundation has been slow to implement Casper and the risk is that privacy won't become a core feature in Ethereum until many years later. If privacy in smart contracts becomes something the crypto community desperately needs in the meantime, then new privacy smart contract platforms will emerge to fill this void, similar to how Zcash and Monero emerged for private payments instead of Bitcoin. [Enigma][49], [Origo][50], and [Covalent][51] are all new smart contract platforms that are trying to implement privacy natively into the blockchain.
+	3. The ECAF remains the chosen arbitrator in accordance with this Constitution until the EOS Community Members establish an arbitration system through a referendum\.
 
-[Oasis Labs][52] is another exciting privacy project building out [Ekiden][53], a new smart contract platform that separates smart contract execution from the underlying consensus mechanism. The smart contracts run inside an isolated piece of hardware (such as Intel SGX) called a secure enclave. The enclave acts like a black box, keeping the computation private from other applications. It also generates a cryptographic proof that the program was executed correctly, and the proof is then stored on the blockchain. By decoupling smart contract execution from consensus, Ekiden is compatible with different underlying blockchains including Ethereum.
+--------
 
-### Privacy Infrastructure
+1. <a id="footnote-0"></a>  We all know what the EOS governed blockchain is, but it is difficult to describe EOS in a decisive way\. That’s why we have left this open\. There will be some sort of a grey area that needs to be filled in by jurisprudence but we believe that would also have been there, should we have tried to nail down all the EOS elements relevant for this constitution\. [↑](#footnote-ref-0)
 
-In addition to privacy coins and private smart contracts, there are other important privacy infrastructure projects for the [Web 3 stack][54] that are worth mentioning.
+2. <a id="footnote-1"></a> Member is an individual who directly or indirectly uses EOS\. [↑](#footnote-ref-1)
 
-[Orchid][55] is attempting to build a better version of Tor where users earn tokens from renting out their extra bandwidth to be relayers inside the Orchid network. The problem with Tor is that there are only around [6000 relay nodes][56] and under [2000 bridge nodes][56], so the Chinese government can just blacklist all relay and bridge nodes and thus prevent its citizens from accessing Tor. Using token economics to incentivize lots of people to become relayers makes it more difficult to block Orchid without subsequently blocking large portions of the Internet.
+3. <a id="footnote-2"></a> Ownership is an open concept\. It is the most comprehensive set of rights a person \(legal entity or human being\) has regarding a good or right, an asset\. The owner of the house is the person registered in the public registry \(in Europe at least\)\. The owner of a bike is the person that is entitled to sell it and use it \(unless he has rented it out\)\. The owner of a token is the person that is entitled to sell it and is entitled to receive the sales price\. That person could be the key holder to such token, but the key holder could also hold the token for someone else\. Than that someone else is the real owner\. [↑](#footnote-ref-2)
 
-[BOLT][57] is building a private payment channel that uses blind signatures and zero-knowledge proofs to hide participants when they open, transact, and close the payment channels. The initial payment channel is being built on top of Zcash but will be able to interoperate with Bitcoin and Ethereum.
+4. <a id="footnote-3"></a> This is to ensure EOS is not taken over by one party\. It might be difficult to establish but we believe that the legal challenges \(including claims for damages\) an owner of more than 10% will encounter, are of such a magnitude that it is not worth taking the risk\. We distinguished between ownership and voting\. [↑](#footnote-ref-3)
 
-[NuCypher][58] is building a decentralized key management system using proxy re-encryption to provide the same functionality as HTTPS. Proxy re-encryption is a type of public-key encryption that allows someone to transform ciphertexts from one public key to another without learning anything about the underlying message.
+5. <a id="footnote-4"></a> So if a Member owns two companies that each own 0,7% of the issued EOS tokens, both companies together can only cast 1% of the issued EOS tokens\.  [↑](#footnote-ref-4)
 
-[Starkware][59] is implementing [zk-STARKs][60] in various blockchains including Ethereum. The advantage of zk-STARKs over zk-SNARKs is that it doesn't require a trusted setup, although the cryptographic proof sizes become much larger.
+6. <a id="footnote-5"></a> These elements are often used to determine whether or not someone has a cartel in the off chain world\. I am not fond of more or less subjective norms but they are needed to stop unwanted behaviour that falls outside of the clearly forbidden actions\.  [↑](#footnote-ref-5)
 
-### Privacy Research
+7. <a id="footnote-6"></a> This would mean that the instructions need to be given in the language of the agreement\. Otherwise the proxy cannot proof that the owner did get the instructions\. [↑](#footnote-ref-6)
 
-Academic research in cryptography is what drives innovation in privacy. Privacy research mainly falls under the topics of zero-knowledge, multiparty computation, and fully homomorphic encryption.
+8. <a id="footnote-7"></a> Proxy voting is acceptable\. Also if such proxy were to cast more than 5% of the votes\. But voters shouldn’t be locked in\. In other words: a combination of an exchange service and proxy voting will mean that the owner cannot freely choose his or hers proxy since that would mean they would have to leave the exchange which is burdensome\. So in that event the exchange shall have to allow for voting instructions by such owner\. This is loosely based on general notices in the law about the way power of attorneys work \(which a proxy is\)\.  [↑](#footnote-ref-7)
 
-In addition to zk-SNARKs and zk-STARKs, [Bulletproofs][61] are a new form of short non-interactive zero-knowledge proofs. Like zk-STARKs, Bulletproofs require no trusted setup, but verifying Bulletproofs is more time consuming than verifying zk-SNARK proofs. Bulletproofs are designed to enable efficient confidential transactions in cryptocurrencies and shrink the size of the proof from over 10 KB to 1–2 KB. If all Bitcoin transactions were confidential and used Bulletproofs, then the total size of the UTXO set would be only 17 GB, compared to 160 GB with the currently used proofs.
+9. <a id="footnote-8"></a> Common control would diminish competition between the block producers\. Also it could make the chain vulnerable to outside pressures since the chain is being operated by fewer parties\. That’s why we have introduced a ban on common control\. To know if there is common control, we suggested simple measures\. A block producer has to publish its group structure\. \(A group meaning entities that are under common control and/or work as an economic entity\)\. As well as their ultimate beneficiaries\.  [↑](#footnote-ref-8)
 
-![][62]![][28]![][63]
+10. <a id="footnote-9"></a> This doesn’t mean a BP is obliged to follow arbitrator’s award\. That is up to their own discretion\. However, if a verdict clearly shows that e\.g\. theft has taken place, a BP will act accordingly\. It is further possible that a BP is a party to certain proceedings\. Then also this clause ensures that they do not become liable if they act in accordance with the outcome of such proceedings\. They only must follow an arbitrator’s award under this charter if it has been provided by a selected arbitrator\. That is in the following paragraph \(7\.4\)\. [↑](#footnote-ref-9)
 
-Tradeoffs for different zero-knowledge proof systems.
+11. <a id="footnote-10"></a> This clause is only applicable if and in as far there is no arbitrator’s order yet\. Please note further that in the event the block producer makes a mistake here, the block producer may become liable\. But if in the event of a clear infringement of which the block producer is aware, the block producer refrains from action such block producer may become liable also\.  [↑](#footnote-ref-10)
 
-[Multiparty computation][64] allows a group of people to jointly compute a function over their inputs without each person revealing their own input. An example is when Alice and Bob want to find out who owns more Bitcoin without each person revealing how much Bitcoin he/she owns. Unfortunately, the current limitation of multiparty computation is that it's extremely inefficient to use in practice.
+12. <a id="footnote-11"></a> This is meant generally and, for the avoidance of doubt, is also applicable to the decision whether or not to execute the code taken in 7\.3\.2\. So unless the BP takes that decision intently wrong \(or grossly negligently wrong\), the BP is not liable\. [↑](#footnote-ref-11)
 
-[Fully homomorphic encryption][65] allows someone to compute on encrypted data. It was an open problem in cryptography for several decades until 2009 when [Craig Gentry][66], a Stanford PhD student, used lattices to construct the first fully homomorphic encryption scheme. An example when this is useful is if Bob wants to perform arbitrary computations, such as training a machine learning model, on Alice's data without Alice having to reveal her plaintext data. Fully homomorphic encryption, like multiparty computation, is still very theoretical right now and too inefficient to use in practice.
+13. <a id="footnote-12"></a>Developer \- a person or company that creates innovate products, such as software\.This is to encourage the writing of code and \(smart\) contracts\. Who shall be considered to be a developer shall have to be broadly interpreted \(and include also the writers of this constitution\)\. [↑](#footnote-ref-12)
 
-### So what?
+14. <a id="footnote-13"></a>The arbitration system is a set of rules \(on the EOS network\) that the members of the EOS community obey in case of disputes\. The arbitration system allows you to participate in resolving a dispute of any number of arbitration providers\. Arbitration providers can compete with each other and demonstrate differences from other providers\. So the principle is that the parties themselves choose their dispute resolution\. They are free to do so\. Even if it concerns EOS\. Even if it regards disputes about this charter or the execution of the EOS core code\. That must be done in their agreements and, in the event they have not done so, they can do so once the dispute has occurred\. If they do not do so, the default dispute resolution comes into play\. In the event of theft, there is no agreement between the parties \(parties here being the thief and his victim\) and therefore the default forum shall apply\. Please note that the BPs are not obliged to follow awards from arbitrators other than those of the selected arbitration provider\. We believe it is necessary to have one or more default arbitration providers\. If not, this could lead to an unnecessary level of insecurity about the forum in the event the parties do not choose a forum or in the event such choice is invalid\. [↑](#footnote-ref-13)
 
-Overall, privacy is one of the most exciting areas of cryptography research right now, and there is much work to be done on optimizing the efficiency of these theoretical techniques to be practical to use in the real-world. Research labs, such as the [Stanford Center for Blockchain Research][67], are actively making progress in this field and it will be exciting to see what major breakthroughs will happen over the next few years.
+15. <a id="footnote-14"></a>Arbitration rules are described in detail in the RDR Rules of Dispute Resolution\. ECAF is there now\. When this charter is in force, the block producers meeting shall have to formally appoint ECAF should they want them to be \(one of the\) arbitration providers\. I have introduced language that allows for ECAF to continue until the block producers meeting has provided another selected arbitration provider\.   
+It will be possible to have various providers for various problems\. E\.g\. WIPO \(World Intellectual Property Organization\) arbitration could be used for pure intellectual property disputes\. Further, the arbitration system shall have to mention the costs\. Those may vary in accordance with the complexity of the case\. It should be very clear that dispute resolution is costly, though\. this shouldn’t be a major issue if the amounts are considerable\. With smaller amounts, costs will start to hurt\. That’s why many dispute resolution providers offer simple, straightforward business\-consumer solutions against far lower costs\. The BPs meeting can introduce such low\-cost arbitration for low\-level disputes\. [↑](#footnote-ref-14)
 
-The benefit of cryptocurrencies is that it provides a direct application for the latest privacy research. Many of the privacy techniques used in coins, smart contracts, and infrastructure were only invented a few years ago. Given how fast this space is moving, privacy will continue to be more and more integral to the design of crypto projects.
+16. <a id="footnote-15"></a> An arbitrator can rule in accordance with the law or in fairness\. This is EOS\. We don’t want legal small print that complicates so many court cases\. That’s why we choose for fairness\. [↑](#footnote-ref-15)
 
-[1]: https://www.reddit.com/r/ethereum/comments/8m3wj1/rothschilds_in_crypto_goodbadneutral/dzmspgv/
-[2]: https://cdn-images-1.medium.com/freeze/max/75/0*xlIW0lPlISMpuL9f?q=20
-[3]: https://cdn-images-1.medium.com/max/2000/0*xlIW0lPlISMpuL9f
-[4]: https://cdn-images-1.medium.com/freeze/max/75/0*sYA3Yq2mUvznpnQb?q=20
-[5]: https://cdn-images-1.medium.com/max/1500/0*sYA3Yq2mUvznpnQb
-[6]: https://cseweb.ucsd.edu/~smeiklejohn/files/imc13.pdf
-[7]: https://www.chainalysis.com/
-[8]: https://www.elliptic.co/
-[9]: https://cdn-images-1.medium.com/freeze/max/75/0*baJEIodQ3lwematW?q=20
-[10]: https://cdn-images-1.medium.com/max/1500/0*baJEIodQ3lwematW
-[11]: https://en.wikipedia.org/wiki/CoinJoin
-[12]: https://academic.oup.com/cybersecurity/article/3/2/127/4057584
-[13]: https://cs-people.bu.edu/heilman/tumblebit/
-[14]: https://blog.keep.network/zero-knowledge-proofs-zcash-and-ethereum-f6d89fa7cba8
-[15]: https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/
-[16]: https://groups.csail.mit.edu/cis/pubs/shafi/1985-stoc.pdf
-[17]: https://eprint.iacr.org/2013/879.pdf
-[18]: https://codaprotocol.com/
-[19]: https://blog.z.cash/whats-new-in-sapling/
-[20]: https://explorer.zcha.in/statistics/usage
-[21]: https://blog.keep.network/mixers-and-ring-signatures-51f3f125485b
-[22]: https://getkovri.org/
-[23]: https://twitter.com/zooko
-[24]: https://twitter.com/fluffypony
-[25]: https://docs.google.com/presentation/d/1Q-8DhxGxnaiNnFY8KfINvh0ZnL2wI_Xqf1zktQF7HyI/edit#slide=id.p1
-[26]: https://arxiv.org/pdf/1704.04299.pdf
-[27]: https://cdn-images-1.medium.com/freeze/max/75/0*gjSbPyOCbwK4GWoy?q=20
-[28]: https://thecontrol.co/undefined
-[29]: https://cdn-images-1.medium.com/max/1500/0*gjSbPyOCbwK4GWoy
-[30]: https://download.wpsoftware.net/bitcoin/wizardry/mimblewimble.txt
-[31]: https://grin-tech.org/
-[32]: https://cyber.stanford.edu/sites/default/files/andrewpoelstra.pdf
-[33]: https://www.youtube.com/watch?v=XiUGu48JTd0&feature=youtu.be
-[34]: https://bitcoinmagazine.com/articles/confidential-transactions-how-hiding-transaction-amounts-increases-bitcoin-privacy-1464892525/
-[35]: https://github.com/tromp/cuckoo
-[36]: https://github.com/tromp/cuckoo/blob/master/README.md
-[37]: https://www.tokendaily.co/blog/on-grin-mimblewimble-and-monetary-policy
-[38]: http://randomwalker.info/publications/mining_CCS.pdf
-[39]: https://www.tokendaily.co/blog/zcash-analysis
-[40]: https://www.tokendaily.co/blog/monero-analysis
-[41]: https://www.mobilecoin.com/
-[42]: https://www.beam-mw.com/
-[43]: https://blog.cryptographyengineering.com/2014/02/21/cryptographic-obfuscation-and/
-[44]: https://dappradar.com/
-[45]: https://cdn-images-1.medium.com/freeze/max/75/0*R0TsO-pYLhVAiwuS?q=20
-[46]: https://cdn-images-1.medium.com/max/2000/0*R0TsO-pYLhVAiwuS
-[47]: https://crypto.stanford.edu/~buenz/
-[48]: https://keep.network/
-[49]: https://enigma.co/
-[50]: https://origo.network/
-[51]: http://covalent.ai/
-[52]: https://www.oasislabs.com/
-[53]: https://arxiv.org/pdf/1804.05141.pdf
-[54]: https://medium.com/l4-media/making-sense-of-web-3-c1a9e74dcae
-[55]: https://www.orchid.com/
-[56]: https://metrics.torproject.org/networksize.html
-[57]: https://blog.z.cash/bolt-private-payment-channels/
-[58]: https://www.nucypher.com/
-[59]: https://www.starkware.co/
-[60]: https://vitalik.ca/general/2017/11/09/starks_part_1.html
-[61]: https://crypto.stanford.edu/bulletproofs/
-[62]: https://cdn-images-1.medium.com/freeze/max/75/0*kYgUQHiM8Qxwnuvl?q=20
-[63]: https://cdn-images-1.medium.com/max/2000/0*kYgUQHiM8Qxwnuvl
-[64]: https://en.wikipedia.org/wiki/Secure_multi-party_computation
-[65]: https://blog.cryptographyengineering.com/2012/01/02/very-casual-introduction-to-fully/
-[66]: https://crypto.stanford.edu/craig/easy-fhe.pdf
-[67]: https://cbr.stanford.edu/
+17. <a id="footnote-16"></a> One may have cheap and simple proceedings for simple cases \(e\.g\. theft\) and extensive \(and therefore expensive\) proceedings for complicated cases \(e\.g\. the question whether or not block producers voted in an orchestrated way\)\.   [↑](#footnote-ref-16)
 
-  
+18. <a id="footnote-17"></a> Appeal is essential in an emerging legal system\. It is needed to align the various verdicts and work towards clear and predictable rules\.   [↑](#footnote-ref-17)
+
+19. <a id="footnote-18"></a> We believe mediation often provides quick and cheap dispute resolution; [↑](#footnote-ref-18)
+
+20. <a id="footnote-19"></a> As for the Sudo discussion: \(if we are correctly informed\), Sudo provides a way of exercising BPs powers that BPs already have but do it in a more streamlined manner\. Such a system wouldn’t be against this Constitution\. [↑](#footnote-ref-19)
+
+21. <a id="footnote-20"></a> There is no applicable law stipulated here\. That means that this charter should be interpreted literally in as far is possible under the applicable law found by applying applicable conflict of law\. In the event of mandatory provisions that run contrary to this charter, the parties should try and circumvent those\.That will not be easy\.  This means that it is hard to predict if this charter shall function in all jurisdictions as it is meant to\. This lead to uncertainty\. To avoid such uncertainty, generally speaking, it is better to choose an applicable law system aforehand\. We understand however that the community believes, understandably also,  that a choice of law would lead to too much centralization and to unfair advantages for some\.  [↑](#footnote-ref-20)
