@@ -1,43 +1,47 @@
 __EOS Constitution__
-__EOS Constitution__
+__EOS 宪法__
 
 __AKA EOS Constitution version 3.1__
-__AKA EOS宪法第3版\.1__
+__EOS宪法第3.1版__
 
 __PUBLIC CONSULTING VERSION from the Russian community__
-来自俄罗斯社区的__PUBLIC CONSULTING VERSION__
+__来自俄罗斯社区的公共咨询版__
 
 __Based on EOS Charter from EOS Amsterdam.__
-_基于EOS Amsterdam的EOS Charter \.__
+__基于EOS Amsterdam的EOS宪章 \.__
 
 1. __Applicability__
 1. __适用性__
 1. This Constitution applies to EOS<a id="footnote-ref-0"></a>[\[1\]](#footnote-0). Anyone who uses EOS or provides development services or other services relative to EOS is and will be connected by the EOS community and is a Member<a id="footnote-ref-1"></a>[\[2\]](#footnote-1). Any code written on the basis of EOS does not contradict the Constitution.
-1. 本宪法适用于EOS <a id="footnote-ref-0"></a>[\[1\]](#footnote-0).使用EOS或提供与EOS相关的开发服务或其他服务的任何人都将被EOS社区连接并成为会员<a id="footnote-ref-1"></a> [\[2\]](#footnote-1).任何以EOS为基础编写的代码都不违反宪法.
+
+1. 本宪法适用于EOS.每个使用EOS或提供与EOS相关的开发服务或其他服务的人都将被EOS社区连接并成为社区一员<a id="footnote-ref-1"></a> [\[2\]](#footnote-1).任何以EOS为基础编写的代码都不违反宪法.
+
 2. This Constitution also applies to the use of EOS by third parties who, not being members of the EOS network, use EOS.
-2. 本章程也适用于第三方使用EOS，而第三方不是EOS网络的成员，使用EOS .
+2. 本宪法也适用于非EOS网络成员的第三方使用EOS.
+
 3. The EOS network member \(s\) is the subject \(s\) who has access to sign a transaction on behalf of an account on the EOS network.
-3. EOS网络成员\(s \)是有权代表EOS网络上的帐户签署交易的主题\(s \).
+3. EOS网络成员(们)是有权代表EOS网络上的帐户签署交易的主体(们).
+
 4. Network members, when interacting with third parties who are not members of the network within EOS, are obliged to ensure the applicability of this Constitution.
-4. 网络成员在与EOS内不是网络成员的第三方进行互动时，有义务确保本宪法的适用性.
+4. 网络成员在EOS内与不是网络成员的第三方进行互动时，有义务确保本宪法的适用性.
 
 1. __Contract__
-1. __Contract__
+1. __合约__
 
 -
 -
 1. This Constitution is a multi\-party contract. It does not terminate until the moment there are no Members on the EOS network.
-这部宪法是一份多方合同.直到EOS网络上没有会员时才会终止.
+本宪法是一份多方合约.直到EOS网络上没有成员时才会终止.
 __ __
 __ __
 
 1. __Freedom__
-1. __Freedom__
+1. __自由性__
 
 -
 -
 1. All parties are free to use EOS, subject to the fair use of EOS, without violating the rights of other Members and observing this Constitution.
-1. 各方均可自由使用EOS，但须合理使用EOS，不得侵犯其他会员的权利并遵守本宪法.
+1. 各方均可自由使用EOS，但须合理使用EOS，不得侵犯其他成员的权利并遵守本宪法.
 
 __ __
 __ __
@@ -49,38 +53,48 @@ __ __
 -
 1. EOS does not belong to anyone.
 1. EOS不属于任何人.
+
 2. EOS tokens have owners<a id="footnote-ref-2"></a>[\[3\]](#footnote-2).
-2. EOS代币拥有所有者<a id="footnote-ref-2"></a> [\[3\]](#footnote-2).
+2. EOS代币属于其所有者<a id="footnote-ref-2"></a> [\[3\]](#footnote-2).
+
 3. No one should directly or indirectly own more than 10% of EOS tokens<a id="footnote-ref-3"></a>[\[4\]](#footnote-3).
 3. 任何人都不应直接或间接拥有超过10％的EOS代币<a id="footnote-ref-3"></a> [\[4\]](#footnote-3).
 
 1. __Inflation__
-1. __Inflation__
+1. __通货膨胀__
 
 5.1. EOS on an ongoing basis releases \{\{% inflation\}\} in one calendar year from all already issued EOS tokens, but not more than 5% \(with the possibility of being tied to EOS capitalization\).
-5.1. EOS持续在一个日历年内从所有已发布的EOS代币发布\ {\ {％inflation \} \}，但不超过5％\(可能与EOS资本化相关联).
+5.1. 每一日历年增发已发行代币总量的\ {\ {％通胀率 \} \}，但不超过5％\(可能与EOS资本化相关联).
 
 5.2. The block producers' reward considered to \{\{% remuneration\}\}, which should be distributed among the block producers who have exceeded the daily reward threshold of the block producers of 100 EOS tokens.
-5.2.区块生产者的奖励被认为是{{\ {％payuneration \} \}，应该在已经超过100个EOS代币的区块生产者的每日奖励阈值的区块生产者之间分配.
+5.2.区块生产者的通胀率被认为是{{\ {报酬 \} \}，在每日奖励达到100个EOS门槛的区块生产者之间分配.
 
 5.3. The \{\{% inflation\}\} \- \{\{% reward\}\} rate is WPS. Tokens from WPS are redistributed according to the decision of network members. The solution is described in the WPS Agreement document.
-5.3. \ {\ {inflation \} \} \  -  \ {\ {%% \} \}费率为WPS . WPS的代币根据网络成员的决定重新分配.该解决方案在WPS协议文档中描述.
+5.3. \ {\ {通胀率 \} \} \  -  \ {\ {通胀率 \} \}费率为WPS(工人提案系统) . WPS的代币根据网络成员的决定重新分配.该解决方案在WPS协议文档中描述.
 
 1. __Votes__
-1. __Votes__
+1. __投票__
 
 -
 -
 1. One EOS token has the power of one vote.
-1. 一个EOS代币具有一票的权力.
+1. 一个EOS代币具有一票的票权.
 2. No one should directly or indirectly control more than 1% of the vote<a id="footnote-ref-4"></a>[\[5\]](#footnote-4) whether through ownership, consent or organized voting<a id="footnote-ref-5"></a>[\[6\]](#footnote-5).
-2. 没有人应该直接或间接控制超过1％的选票<a id="footnote-ref-4"></a> [\[5\]](#footnote-4)是否通过所有权，同意或有组织的投票<a id="footnote-ref-5"></a> [\[6\]](#footnote-5).
+2. 无论是通过所有权、协议或协调行为，任何人不得直接或间接控制超过1％的选票。
 3. Voices cast through a proxy are valid if:
-3. 如果符合以下条件，通过代理投出的声音有效：
+3. 通过代理投票也视为有效，如果条件满足：
 1. Owners are free to choose a proxy; or
-1. 业主可以自由选择代理人;要么
+1. 所有者有权自由选择此类代理人; 或者
 2. Owners are free to provide instructions for voting to their proxies and receive information about this right when concluding an agreement with this trustee and thereafter at least once every twelve months.<a id="footnote-ref-6"></a>[\[7\]](#footnote-6)
-2. 业主可以自由地向其代理人提供投票指示，并在与该受托人达成协议时获得有关此权利的信息，此后至少每12个月一次. <a id="footnote-ref-6"></a> [\[7\]](#footnote-6)
+2. 所有者有权自由地向他们的代理人提供投票指示，并在他们与该代理人达成协议时被告知该权利，之后至少每12个月一次。如被要求，代理人必须证明其符合本款规定。代理人发布的投票系统应通过易被找到和大众都可进入的渠道发布。
+
+
+----End Here
+
+
+
+
+
 3. The proxy server publishes its voting system so that it is easy to find and open to the general public.
 3. 代理服务器发布其投票系统，以便于查找和向公众开放.
 
@@ -219,28 +233,32 @@ __ __
 --------
 
 1. <a id="footnote-0"></a>  We all know what the EOS governed blockchain is, but it is difficult to describe EOS in a decisive way. That’s why we have left this open. There will be some sort of a grey area that needs to be filled in by jurisprudence but we believe that would also have been there, should we have tried to nail down all the EOS elements relevant for this constitution. [↑](#footnote-ref-0)
-1. <a id="footnote-0"></a>我们都知道EOS管理区块链是什么，但很难以决定性的方式描述EOS .这就是为什么我们离开这个开放.如果我们试图确定与该宪法相关的所有EOS要素，我们相信也会存在某种灰色区域需要由法理学填补. [↑](#footnote-REF-0)
+
+1. <a id="footnote-0"></a>我们特意没有给EOS下定义。我们都知道EOS这个受管理的区块链是什么，但很难以决定性的方式描述EOS。这就是为什么我们将它留有议论余地。即使我们试图确定与该章程相关的所有EOS要素，我们相信也会存在某种灰色区域需要由法理学填补。 [↑](#footnote-REF-0)
 
 2. <a id="footnote-1"></a> Member is an individual who directly or indirectly uses EOS. [↑](#footnote-ref-1)
-2. <a id="footnote-1"></a>会员是直接或间接使用EOS \的个人. [↑](#footnote-REF-1)
+2. <a id="footnote-1"></a>成员是直接或间接使用EOS的个体. [↑](#footnote-REF-1)
 
 3. <a id="footnote-2"></a> Ownership is an open concept. It is the most comprehensive set of rights a person \(legal entity or human being\) has regarding a good or right, an asset. The owner of the house is the person registered in the public registry \(in Europe at least\). The owner of a bike is the person that is entitled to sell it and use it \(unless he has rented it out\). The owner of a token is the person that is entitled to sell it and is entitled to receive the sales price. That person could be the key holder to such token, but the key holder could also hold the token for someone else. Than that someone else is the real owner. [↑](#footnote-ref-2)
-3. <a id="footnote-2"></a>所有权是一个开放的概念.它是一个人(法律实体或人类)对权利或资产的最全面的权利集合.房屋的所有者是在公共登记处登记的人\(在欧洲至少\).自行车的拥有者是有权出售并使用它的人(除非他已将其出租\).代币的所有者是有权出售它的人，并有权获得销售价格.那个人可能是这种代币的钥匙持有人，但钥匙持有人也可以为其他人持有代币.比那个人是真正的主人. [↑](#footnote-REF-2)
+3. <a id="footnote-2"></a>所有权是一个开放的概念。它是一个人（法人或人类）对一个物品，权利或资产的最全面的一系列权利。房屋所有者是在公共登记处登记的人（至少在欧洲）。自行车的拥有者是有权出售并使用它的人（除非他出租了）。代币的所有者是有权出售它的人，并有权获得销售价格。那个人可能是此代币的密钥持有者。但是密钥持有人也可能手持他人代币。因此他人才是真正的所有者。 [↑](#footnote-REF-2)
+
 
 4. <a id="footnote-3"></a> This is to ensure EOS is not taken over by one party. It might be difficult to establish but we believe that the legal challenges \(including claims for damages\) an owner of more than 10% will encounter, are of such a magnitude that it is not worth taking the risk. We distinguished between ownership and voting. [↑](#footnote-ref-3)
-4. <a id="footnote-3"></a>这是为了确保EOS不被一方接管.可能很难确定，但我们认为超过10％的所有者所遇到的法律挑战(包括损害赔偿要求)将会如此严重，以至于不值得承担风险.我们区分所有权和投票. [↑](#footnote-REF-3)
+4. <a id="footnote-3"></a>这是为了确保EOS不被一方接管。可能很难确定，但我们认为超过10％的所有者将面临的法律挑战（包括损害索赔）的规模如此严重，以至于不值得承担风险。我们区分了所有权和投票权。[↑](#footnote-REF-3)
 
 5. <a id="footnote-4"></a> So if a Member owns two companies that each own 0,7% of the issued EOS tokens, both companies together can only cast 1% of the issued EOS tokens.  [↑](#footnote-ref-4)
-5. <a id="footnote-4"></a>因此，如果一个会员拥有两家公司，每家公司拥有已发行的EOS代币的0.7％，那么这两家公司一起只能投出1％的已发行EOS代币. [↑](#footnote-REF-4)
+5. <a id="footnote-4"></a>因此，如果一个成员拥有两家公司，每家公司拥有已发行的EOS代币的0.7％，那么这两家公司一起只能投出1％的已发行EOS代币. [↑](#footnote-REF-4)
 
 6. <a id="footnote-5"></a> These elements are often used to determine whether or not someone has a cartel in the off chain world. I am not fond of more or less subjective norms but they are needed to stop unwanted behaviour that falls outside of the clearly forbidden actions.  [↑](#footnote-ref-5)
-6. <a id="footnote-5"></a>这些元素通常用于确定某人是否在脱链世界中有一个卡特尔.我不喜欢或多或少的主观规范，但他们需要阻止那些不属于明显禁止的行为的不受欢迎的行为. [↑](#footnote-REF-5)
+6. <a id="footnote-5"></a>这些元素通常用于确定某个成员是否在链下参与了卡特尔联盟.我不喜欢或多或少的主观规范，但他们需要停止不必要的行为, 在明确禁止的行动之外. [↑](#footnote-REF-5)
 
 7. <a id="footnote-6"></a> This would mean that the instructions need to be given in the language of the agreement. Otherwise the proxy cannot proof that the owner did get the instructions. [↑](#footnote-ref-6)
-7. <a id="footnote-6"></a>这意味着指令需要以协议语言提供.否则代理无法证明所有者确实获得了指令. [↑](#footnote-REF-6)
+7. <a id="footnote-6"></a>这意味着需要用协议的语言来说明这些指示。否则代理无法证明所有者确实得到了指示. [↑](#footnote-REF-6)
 
 8. <a id="footnote-7"></a> Proxy voting is acceptable. Also if such proxy were to cast more than 5% of the votes. But voters shouldn’t be locked in. In other words: a combination of an exchange service and proxy voting will mean that the owner cannot freely choose his or hers proxy since that would mean they would have to leave the exchange which is burdensome. So in that event the exchange shall have to allow for voting instructions by such owner. This is loosely based on general notices in the law about the way power of attorneys work \(which a proxy is\).  [↑](#footnote-ref-7)
-8. <a id="footnote-7"></a>代理投票是可以接受的.如果这样的代理人投票超过5％的票数.但选民不应该被锁定.换句话说：交换服务和代理投票的组合将意味着所有者不能自由选择他或她的代理，因为这意味着他们将不得不离开交易繁琐的交易.因此，在这种情况下，交易所必须允许该所有者的投票指示.这基于法律中关于律师工作方式的一般通知\(代理人是\). [↑](#footnote-REF-7)
+8. <a id="footnote-7"></a>代理投票是允许的。此外，如果这样的代理人投票超过5％的选票也是允许的。但选民不应该被锁住。换句话说：交易所和代理投票的组合将意味着所有者不能自由选择其代理，因为这意味着他们将不得不离开交易所，是非常繁琐的。因此，在这种情况下，交易所必须允许该所有者的投票指示。这是基于法律中有关律师工作方式（代理人的工作方式）的一般性通知。. [↑](#footnote-REF-7)
+ 
+
 
 9. <a id="footnote-8"></a> Common control would diminish competition between the block producers. Also it could make the chain vulnerable to outside pressures since the chain is being operated by fewer parties. That’s why we have introduced a ban on common control. To know if there is common control, we suggested simple measures. A block producer has to publish its group structure. \(A group meaning entities that are under common control and/or work as an economic entity\). As well as their ultimate beneficiaries.  [↑](#footnote-ref-8)
 9. <a id="footnote-8"></a>共同控制将减少区区块生产者之间的竞争.此外，它可能使链条容易受到外部压力，因为链条由较少的政党操作.这就是为什么我们引入了禁止共同控制的原因.要知道是否有共同控制，我们建议采取简单措施.区块生产者必须发布其组结构. \(一组意味着受共同控制和/或作为经济实体工作的实体\).以及他们的最终受益者. [↑](#footnote-REF-8)
