@@ -1,8 +1,8 @@
 __EOS Constitution__
-__EOS 宪法__
+__EOS 公约__
 
 __AKA EOS Constitution version 3.1__
-__EOS宪法第3.1版__
+__EOS公约第3.1版__
 
 __PUBLIC CONSULTING VERSION from the Russian community__
 __来自俄罗斯社区的公共咨询版__
@@ -14,16 +14,16 @@ __基于EOS Amsterdam的EOS宪章 \.__
 1. __适用性__
 1. This Constitution applies to EOS<a id="footnote-ref-0"></a>[\[1\]](#footnote-0). Anyone who uses EOS or provides development services or other services relative to EOS is and will be connected by the EOS community and is a Member<a id="footnote-ref-1"></a>[\[2\]](#footnote-1). Any code written on the basis of EOS does not contradict the Constitution.
 
-1. 本宪法适用于EOS.每个使用EOS或提供与EOS相关的开发服务或其他服务的人都将被EOS社区连接并成为社区一员<a id="footnote-ref-1"></a> [\[2\]](#footnote-1).任何以EOS为基础编写的代码都不违反宪法.
+1. 本公约适用于EOS.每个使用EOS或提供与EOS相关的开发服务或其他服务的人都将被EOS社区连接并成为社区一员<a id="footnote-ref-1"></a> [\[2\]](#footnote-1).任何以EOS为基础编写的代码都不违反公约.
 
 2. This Constitution also applies to the use of EOS by third parties who, not being members of the EOS network, use EOS.
-2. 本宪法也适用于非EOS网络成员的第三方使用EOS.
+2. 本公约也适用于非EOS网络成员的第三方使用EOS.
 
 3. The EOS network member \(s\) is the subject \(s\) who has access to sign a transaction on behalf of an account on the EOS network.
 3. EOS网络成员(们)是有权代表EOS网络上的帐户签署交易的主体(们).
 
 4. Network members, when interacting with third parties who are not members of the network within EOS, are obliged to ensure the applicability of this Constitution.
-4. 网络成员在EOS内与不是网络成员的第三方进行互动时，有义务确保本宪法的适用性.
+4. 网络成员在EOS内与不是网络成员的第三方进行互动时，有义务确保本公约的适用性.
 
 1. __Contract__
 1. __合约__
@@ -31,7 +31,7 @@ __基于EOS Amsterdam的EOS宪章 \.__
 -
 -
 1. This Constitution is a multi\-party contract. It does not terminate until the moment there are no Members on the EOS network.
-本宪法是一份多方合约.直到EOS网络上没有成员时才会终止.
+本公约是一份多方合约.直到EOS网络上没有成员时才会终止.
 __ __
 __ __
 
@@ -41,7 +41,7 @@ __ __
 -
 -
 1. All parties are free to use EOS, subject to the fair use of EOS, without violating the rights of other Members and observing this Constitution.
-1. 各方均可自由使用EOS，但须合理使用EOS，不得侵犯其他成员的权利并遵守本宪法.
+1. 各方均可自由使用EOS，但须合理使用EOS，不得侵犯其他成员的权利并遵守本公约.
 
 __ __
 __ __
@@ -55,22 +55,22 @@ __ __
 1. EOS不属于任何人.
 
 2. EOS tokens have owners<a id="footnote-ref-2"></a>[\[3\]](#footnote-2).
-2. EOS代币属于其所有者<a id="footnote-ref-2"></a> [\[3\]](#footnote-2).
+2. EOS通证属于其所有者<a id="footnote-ref-2"></a> [\[3\]](#footnote-2).
 
 3. No one should directly or indirectly own more than 10% of EOS tokens<a id="footnote-ref-3"></a>[\[4\]](#footnote-3).
-3. 任何人都不应直接或间接拥有超过10％的EOS代币<a id="footnote-ref-3"></a> [\[4\]](#footnote-3).
+3. 任何人都不应直接或间接拥有超过10％的EOS通证<a id="footnote-ref-3"></a> [\[4\]](#footnote-3).
 
 1. __Inflation__
 1. __通货膨胀__
 
 5.1. EOS on an ongoing basis releases \{\{% inflation\}\} in one calendar year from all already issued EOS tokens, but not more than 5% \(with the possibility of being tied to EOS capitalization\).
-5.1. 每一日历年增发已发行代币总量的\ {\ {％通胀率 \} \}，但不超过5％\(可能与EOS资本化相关联).
+5.1. 每一日历年增发已发行通证总量的\ {\ {％通胀率 \} \}，但不超过5％\(可能与EOS资本化相关联).
 
 5.2. The block producers' reward considered to \{\{% remuneration\}\}, which should be distributed among the block producers who have exceeded the daily reward threshold of the block producers of 100 EOS tokens.
 5.2.区块生产者的通胀率被认为是{{\ {报酬 \} \}，在每日奖励达到100个EOS门槛的区块生产者之间分配.
 
 5.3. The \{\{% inflation\}\} \- \{\{% reward\}\} rate is WPS. Tokens from WPS are redistributed according to the decision of network members. The solution is described in the WPS Agreement document.
-5.3. \ {\ {通胀率 \} \} \  -  \ {\ {通胀率 \} \}费率为WPS(工人提案系统) . WPS的代币根据网络成员的决定重新分配.该解决方案在WPS协议文档中描述.
+5.3. \ {\ {通胀率 \} \} \  -  \ {\ {通胀率 \} \}费率为WPS(工人提案系统) . WPS的通证根据网络成员的决定重新分配.该解决方案在WPS协议文档中描述.
 
 1. __Votes__
 1. __投票__
@@ -78,7 +78,7 @@ __ __
 -
 -
 1. One EOS token has the power of one vote.
-1. 一个EOS代币具有一票的票权.
+1. 一个EOS通证具有一票的票权.
 2. No one should directly or indirectly control more than 1% of the vote<a id="footnote-ref-4"></a>[\[5\]](#footnote-4) whether through ownership, consent or organized voting<a id="footnote-ref-5"></a>[\[6\]](#footnote-5).
 2. 无论是通过所有权、协议或协调行为，任何人不得直接或间接控制超过1％的选票。
 3. Voices cast through a proxy are valid if:
@@ -101,7 +101,7 @@ __ __
 -
 -
 1. Owners, In this article, should include beneficiaries for whom third parties own tokens. This third party is considered a trustee and in order for the votes to be valid, such a party must comply with the previous Article<a id="footnote-ref-7"></a>[\[8\]](#footnote-7).
-1. 在本文中，业主应包括第三方拥有代币的受益人.该第三方被视为受托人，并且为了使投票有效，该方必须遵守先前的条款<a id="footnote-ref-7"></a> [\[8\]](#footnote-7).
+1. 在本文中，业主应包括第三方拥有通证的受益人.该第三方被视为受托人，并且为了使投票有效，该方必须遵守先前的条款<a id="footnote-ref-7"></a> [\[8\]](#footnote-7).
 
 1. __Block producers__
 1. __区块生产者__
@@ -109,7 +109,7 @@ __ __
 -
 -
 1. Each owner of a token is entitled to vote for block producers.
-1. 代币的每个所有者都有权投票给区块生产者.
+1. 通证的每个所有者都有权投票给区块生产者.
 2. Block producers shall use commercially reasonable efforts to perform their block producing duties as detailed further in the block producer agreement.
 2. 区块生产者应使用商业上合理的努力履行其块生产职责，如区块生产者协议中进一步详细说明的那样.
 3. Block producers shall not share control with other block producers, whether through ownership, agreement or orchestrated behaviour<a id="footnote-ref-8"></a>[\[9\]](#footnote-8). Block producers shall publish a comprehensive schedule of their group and a list of ultimate beneficiaries with an interest of 10% or more.
@@ -148,13 +148,13 @@ __ __
 1. Every EOS dispute should be resolved by an arbitration system appointed by the parties to such a dispute<a id="footnote-ref-13"></a>[\[14\]](#footnote-13).
 1. 每个EOS争议应由争议各方指定的仲裁系统解决<a id="footnote-ref-13"></a> [\[14\]](#footnote-13).
 2. If the parties have not agreed upon the arbitration provider, all disputes arising in connection with this constitution and / or EOS, or in connection with further agreements arising from it, are resolved in accordance with the arbitration rules<a id="footnote-ref-14"></a>[\[15\]](#footnote-14),
-2. 如果双方未就仲裁提供者达成协议，则与本宪法和/或EOS有关的所有争议，或与其产生的进一步协议有关的争议均按照仲裁规则解决. <a id="footnote-ref-14"></a> [\[15\]](#footnote-14)，
+2. 如果双方未就仲裁提供者达成协议，则与本公约和/或EOS有关的所有争议，或与其产生的进一步协议有关的争议均按照仲裁规则解决. <a id="footnote-ref-14"></a> [\[15\]](#footnote-14)，
 3. The consensus of the block producers should implement an arbitration system that allows one or more arbitration providers to participate based on their registration with EOS and further on the quality and procedural requirements specified in Articles 11.4 and 11.5. The arbitration providers that are selected under this system are in this constitution, which is called the “selected arbitration provider”.
 3. 区块生产者的共识应实施仲裁制度，允许一个或多个仲裁提供者根据其在EOS的注册以及第11 \.4和11 \.5 \中规定的质量和程序要求参与.在该系统下选择的仲裁提供者属于这种结构，称为“选定的仲裁提供者”.
 4. The selected arbitration provider may be removed from the EOS Arbitration System only without its consent:
 4. 未经其同意，可以从EOS仲裁系统中删除所选仲裁提供者：
 1. if it stops meeting these requirements and / or additional requirements \(if any\) established by this constitution and / or the Ricardian contract of the arbitration system; or
-1. 如果它不再符合本宪法和/或仲裁制度的李嘉图合同所规定的这些要求和/或附加要求(如果有的话);要么
+1. 如果它不再符合本公约和/或仲裁制度的李嘉图合同所规定的这些要求和/或附加要求(如果有的话);要么
 2. by vote of the EOS Community Members
 2. 通过EOS社区成员的投票
 
@@ -195,7 +195,7 @@ __ __
 -
 -
 1. This Constitution may be changed or amended by a vote of the token holders with no less than 10% of the EOS tokens staked voting and no fewer than 10% more Yes than No votes, sustained for 30 continuous days within a 120 day period.
-1. 本章程可以通过代币持有人的投票进行更改或修改，其中不少于10％的EOS代币投票，并且在120天内连续30天持续不少于10％的肯定而不是无投票. .
+1. 本章程可以通过通证持有人的投票进行更改或修改，其中不少于10％的EOS通证投票，并且在120天内连续30天持续不少于10％的肯定而不是无投票. .
 
 1. __Further rules and protocols__
 1. __更多规则和协议__
@@ -203,31 +203,31 @@ __ __
 -
 -
 1. The consensus of the block producers has the right to provide additional rules and protocols, including the agreement of producers of blocks. The consensus of the producers of the blocks has the right to set the code. The established rules, protocols and code will fully comply with this constitution.<a id="footnote-ref-19"></a>[\[20\]](#footnote-19)
-1. 区块生产者的共识有权提供额外的规则和协议，包括块的生产者协议.块的生产者的共识有权设置代码.既定的规则，协议和代码将完全符合本宪法. <a id="footnote-ref-19"></a> [\[20\]](#footnote-19)
+1. 区块生产者的共识有权提供额外的规则和协议，包括块的生产者协议.块的生产者的共识有权设置代码.既定的规则，协议和代码将完全符合本公约. <a id="footnote-ref-19"></a> [\[20\]](#footnote-19)
 
 1. __Applicable law<a id="footnote-ref-20"></a>[\[21\]](#footnote-20)__
 1. __适用法律<a id="footnote-ref-20"></a> [\[21\]](#footnote-20)__
 1. This Constitution replaces all national laws.
-1. 本宪法取代所有国家法律.
+1. 本公约取代所有国家法律.
 
 2. If the law has binding provisions that impede the implementation of this Constitution, the parties, if and to the extent possible:
-2. 如果法律具有阻碍本宪法实施的具有约束力的规定，各方应尽可能：
+2. 如果法律具有阻碍本公约实施的具有约束力的规定，各方应尽可能：
 1. Choose a law that does not do this, or if it is impossible;
 1. 选择不执行此操作的法律，或者如果不可能;
 2. Modify this Constitution in a way that is closest in its meaning to such mandatory provisions, despite the fact that the arbitrator has the right to resolve the dispute fairly, without being tied to strict legal norms.
-2. 尽管仲裁员有权公平地解决争议，而不受严格的法律规范的约束，但修改本宪法的方式与其强制性条款的意义最接近.
+2. 尽管仲裁员有权公平地解决争议，而不受严格的法律规范的约束，但修改本公约的方式与其强制性条款的意义最接近.
 
 1. __Transition article__
 1. __Transition article__
 
 1. This statute replaces the interim Constitution at the date of its election by the community, unless the referendum system indicated otherwise.
-1. 除非公民投票制度另有说明，否则本章程在社区选举之日取代临时宪法.
+1. 除非公民投票制度另有说明，否则本章程在社区选举之日取代临时公约.
 
 2. Until additional rules are adopted in accordance with this Constitution, all the rules in force remain as they are in conformity with this Constitution. Any rights and obligations arising from this Constitution shall enter into force shall be respected.
-2. 在根据本宪法通过其他规则之前，所有现行规则仍然符合本宪法的规定.本宪法产生的任何权利和义务应当得到尊重.
+2. 在根据本公约通过其他规则之前，所有现行规则仍然符合本公约的规定.本公约产生的任何权利和义务应当得到尊重.
 
 3. The ECAF remains the chosen arbitrator in accordance with this Constitution until the EOS Community Members establish an arbitration system through a referendum.
-3. 在EOS社区成员通过公民投票建立仲裁制度之前，ECAF仍然是根据本宪法选择的仲裁员.
+3. 在EOS社区成员通过公民投票建立仲裁制度之前，ECAF仍然是根据本公约选择的仲裁员.
 
 --------
 --------
@@ -240,14 +240,14 @@ __ __
 2. <a id="footnote-1"></a>成员是直接或间接使用EOS的个体. [↑](#footnote-REF-1)
 
 3. <a id="footnote-2"></a> Ownership is an open concept. It is the most comprehensive set of rights a person \(legal entity or human being\) has regarding a good or right, an asset. The owner of the house is the person registered in the public registry \(in Europe at least\). The owner of a bike is the person that is entitled to sell it and use it \(unless he has rented it out\). The owner of a token is the person that is entitled to sell it and is entitled to receive the sales price. That person could be the key holder to such token, but the key holder could also hold the token for someone else. Than that someone else is the real owner. [↑](#footnote-ref-2)
-3. <a id="footnote-2"></a>所有权是一个开放的概念。它是一个人（法人或人类）对一个物品，权利或资产的最全面的一系列权利。房屋所有者是在公共登记处登记的人（至少在欧洲）。自行车的拥有者是有权出售并使用它的人（除非他出租了）。代币的所有者是有权出售它的人，并有权获得销售价格。那个人可能是此代币的密钥持有者。但是密钥持有人也可能手持他人代币。因此他人才是真正的所有者。 [↑](#footnote-REF-2)
+3. <a id="footnote-2"></a>所有权是一个开放的概念。它是一个人（法人或人类）对一个物品，权利或资产的最全面的一系列权利。房屋所有者是在公共登记处登记的人（至少在欧洲）。自行车的拥有者是有权出售并使用它的人（除非他出租了）。通证的所有者是有权出售它的人，并有权获得销售价格。那个人可能是此通证的密钥持有者。但是密钥持有人也可能手持他人通证。因此他人才是真正的所有者。 [↑](#footnote-REF-2)
 
 
 4. <a id="footnote-3"></a> This is to ensure EOS is not taken over by one party. It might be difficult to establish but we believe that the legal challenges \(including claims for damages\) an owner of more than 10% will encounter, are of such a magnitude that it is not worth taking the risk. We distinguished between ownership and voting. [↑](#footnote-ref-3)
 4. <a id="footnote-3"></a>这是为了确保EOS不被一方接管。可能很难确定，但我们认为超过10％的所有者将面临的法律挑战（包括损害索赔）的规模如此严重，以至于不值得承担风险。我们区分了所有权和投票权。[↑](#footnote-REF-3)
 
 5. <a id="footnote-4"></a> So if a Member owns two companies that each own 0,7% of the issued EOS tokens, both companies together can only cast 1% of the issued EOS tokens.  [↑](#footnote-ref-4)
-5. <a id="footnote-4"></a>因此，如果一个成员拥有两家公司，每家公司拥有已发行的EOS代币的0.7％，那么这两家公司一起只能投出1％的已发行EOS代币. [↑](#footnote-REF-4)
+5. <a id="footnote-4"></a>因此，如果一个成员拥有两家公司，每家公司拥有已发行的EOS通证的0.7％，那么这两家公司一起只能投出1％的已发行EOS通证. [↑](#footnote-REF-4)
 
 6. <a id="footnote-5"></a> These elements are often used to determine whether or not someone has a cartel in the off chain world. I am not fond of more or less subjective norms but they are needed to stop unwanted behaviour that falls outside of the clearly forbidden actions.  [↑](#footnote-ref-5)
 6. <a id="footnote-5"></a>这些元素通常用于确定某个成员是否在链下参与了卡特尔联盟.我不喜欢或多或少的主观规范，但他们需要停止不必要的行为, 在明确禁止的行动之外. [↑](#footnote-REF-5)
@@ -273,7 +273,7 @@ __ __
 12. <a id="footnote-11"></a>这通常是指，并且为了避免疑问，也适用于是否执行7 \.3 \.2 \中所采用的代码的决定.因此，除非英国石油公司认真地做出错误的判决(或严重疏忽错误)，否则英国石油公司不承担责任. [↑](#footnote-REF-11)
 
 13. <a id="footnote-12"></a>Developer \- a person or company that creates innovate products, such as software.This is to encourage the writing of code and \(smart\) contracts. Who shall be considered to be a developer shall have to be broadly interpreted \(and include also the writers of this constitution\). [↑](#footnote-ref-12)
-13. <a id="footnote-12"></a>开发人员\  - 创建创新产品的人或公司，例如软件.这是为了鼓励编写代码和\(智能\)合同.谁应被视为开发者必须广泛解释\(并包括本宪法的作者\). [↑](#footnote-REF-12)
+13. <a id="footnote-12"></a>开发人员\  - 创建创新产品的人或公司，例如软件.这是为了鼓励编写代码和\(智能\)合同.谁应被视为开发者必须广泛解释\(并包括本公约的作者\). [↑](#footnote-REF-12)
 
 14. <a id="footnote-13"></a>The arbitration system is a set of rules \(on the EOS network\) that the members of the EOS community obey in case of disputes. The arbitration system allows you to participate in resolving a dispute of any number of arbitration providers. Arbitration providers can compete with each other and demonstrate differences from other providers. So the principle is that the parties themselves choose their dispute resolution. They are free to do so. Even if it concerns EOS. Even if it regards disputes about this charter or the execution of the EOS core code. That must be done in their agreements and, in the event they have not done so, they can do so once the dispute has occurred. If they do not do so, the default dispute resolution comes into play. In the event of theft, there is no agreement between the parties \(parties here being the thief and his victim\) and therefore the default forum shall apply. Please note that the BPs are not obliged to follow awards from arbitrators other than those of the selected arbitration provider. We believe it is necessary to have one or more default arbitration providers. If not, this could lead to an unnecessary level of insecurity about the forum in the event the parties do not choose a forum or in the event such choice is invalid. [↑](#footnote-ref-13)
 14. <a id="footnote-13"></a>仲裁系统是一套规则\(在EOS网络上)，EOS社区的成员在发生争议时服从.仲裁系统允许您参与解决任何数量的仲裁提供者的争议.仲裁提供商可以相互竞争，并展示与其他提供商的差异.所以原则是当事人自己选择他们的争议解决方案.他们可以自由地这样做.即使它涉及到EOS .即使它涉及有关此章程的争议或执行EOS核心代码.这必须在他们的协议中完成，并且如果他们没有这样做，他们可以在争议发生后这样做.如果他们不这样做，默认的争议解决方案就会发挥作用.如果被盗，双方之间没有协议\(这里的当事人是小偷和他的受害者\)，因此默认论坛应适用.请注意，除了所选仲裁提供者的仲裁员之外，BP没有义务遵循仲裁员的裁决.我们认为有必要拥有一个或多个默认仲裁提供商.如果没有，如果当事人不选择论坛或者这种选择无效，这可能导致论坛不必要的不​​安全感. [↑](#footnote-REF-13)
@@ -296,7 +296,7 @@ It will be possible to have various providers for various problems. E.g. WIPO \(
 19. <a id="footnote-18"></a>我们认为调解通常可以提供快速而廉价的争议解决方案[↑](#footnote-REF-18)
 
 20. <a id="footnote-19"></a> As for the Sudo discussion: \(if we are correctly informed\), Sudo provides a way of exercising BPs powers that BPs already have but do it in a more streamlined manner. Such a system wouldn’t be against this Constitution. [↑](#footnote-ref-19)
-20. <a id="footnote-19"></a>至于Sudo的讨论：\(如果我们得到正确的通知\)，Sudo提供了一种锻炼BP已经拥有的BP权力的方法，但是以更简化的方式进行.这样的制度不会违反宪法. [↑](#footnote-REF-19)
+20. <a id="footnote-19"></a>至于Sudo的讨论：\(如果我们得到正确的通知\)，Sudo提供了一种锻炼BP已经拥有的BP权力的方法，但是以更简化的方式进行.这样的制度不会违反公约. [↑](#footnote-REF-19)
 
 21. <a id="footnote-20"></a> There is no applicable law stipulated here. That means that this charter should be interpreted literally in as far is possible under the applicable law found by applying applicable conflict of law. In the event of mandatory provisions that run contrary to this charter, the parties should try and circumvent those.That will not be easy.  This means that it is hard to predict if this charter shall function in all jurisdictions as it is meant to. This lead to uncertainty. To avoid such uncertainty, generally speaking, it is better to choose an applicable law system aforehand. We understand however that the community believes, understandably also,  that a choice of law would lead to too much centralization and to unfair advantages for some.  [↑](#footnote-ref-20)
 21. <a id="footnote-20"></a>这里没有规定适用的法律.这意味着，根据适用的法律适用法律，应尽可能按字面解释本章程.如果强制性规定与本章程相悖，各方应该试图规避那些.这并不容易.这意味着很难预测该章程是否应在所有司法管辖区内发挥作用.这导致了不确定性.一般来说，为避免这种不确定性，最好选择适用的法律制度.然而，我们理解，社区也相信，法律的选择会导致过多的集中化，并导致某些人的不公平优势. [↑](#footnote-REF-20)
