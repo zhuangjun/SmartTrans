@@ -1,131 +1,118 @@
 
-# Why You Can't Shortcut Trust
+# Bitcoin's Path to Method of Payment
 
-Trust is one of those words that is both loaded and ill-defined. We all recognize that trust is very important for nearly all human interactions, especially trade. The actual mechanics of trust, however, are not really well articulated or understood.
+The debate around what Bitcoin is or what Bitcoin _should be_ never seems to end. From 2010 when [Satoshi Nakamoto begged Wikileaks to not use Bitcoin for donations][1] to the debate over whether bitcoin use in darknet markets was good or not to the scaling debate that lasted from 2014–2017, debates about the utility of Bitcoin never seem to end.
 
-How do people trust in something? Why is trust important in money? More importantly, what does this have to do with bitcoin? In this article, we'll cover how trust in a money is established.
+Is Bitcoin Digital Gold? Is Bitcoin PayPal 2.0? Is Bitcoin the one money to rule them all? Who are you to talk about this stuff anyway? And who cares, isn't the market going to reveal people's preferences over time?
 
-**tl;dr Trust in a money requires time, and any successful currency needs to optimize for longevity over everything else.**
+In this article, I seek to answer these questions and more by looking at how Bitcoin is currently used and project out a bit as to how Bitcoin will evolve in the future.
 
-### The Mechanics of Trust in Money
+### Why do people want Bitcoin?
 
-At its core, money is all about trust: enough people need to _trust_ that the money is something that will keep its value, or else they won't want to hold it. And if people don't want to hold it, money will tend to trade at a discount until it becomes all but worthless.
+Like anything in a market economy, the price of Bitcoin is entirely dependent on supply and demand. This may seem strange since money is used to price everything else, but there is a supply and demand for money.
 
-![][2]
+![][2]![][3]![][3]
 
-Historically, people have trusted glass beads and Rai Stones as money due to their rarity, but their desirability was lost as soon as someone figured out how to easily reproduce them. For people to trust something as money, _scarcity_ needs to be guaranteed. But scarcity is just one of many characteristics that we want in a money.
+A money that's abundant will tend to have less demand and a money that's scarce will tend to have larger demand. We call a money that's abundant _easy money_ because it's easy to add to the supply. We call a money that's scarce _hard money_ because it's hard to add to the supply.
 
-### Ideal Characteristics of Money
+The main reason why people value Bitcoin is because it is hard money. There's an inborn instinct for humans to want scarce things and Bitcoin is limited in its supply by the 21 million cap. The 21 million cap has already lasted 9 years without changing and that makes Bitcoin's scarcity [easier to trust][4]. The people that value Bitcoin's scarcity are using Bitcoin as a _store of value_. That is, they are foregoing goods now for goods later. They are _saving_.
 
-As many others have noted, the ideal characteristics of money are scarcity, durability, censorship resistance, recognizability, fungibility, divisibility and portability. We can broadly separate these into two different categories:
+Furthermore, Bitcoin is also hard to confiscate and is unique among assets in this regard. There really aren't that many options that are provably scarce and are resistant to confiscation. Real estate stores value pretty well (as they say, land is scarce: they're not making any more), but is easily confiscatable. Stocks and bonds are also good stores of value, but are also easily seized by governments. Bitcoin is really the only asset that has both proven scarcity and confiscation-resistance.
 
-1. Qualities that make money _convenient_ or easy to transact in. Divisibility, portability, fungibility and recognizability all fit into this category.
-2. Qualities that make money _valuable_. This includes whether someone else can debase or steal your money without your permission. Scarcity, durability and bearer instrumentation all fit into this category.
+That's not to say that scarcity and the store of value uses are the only reasons that people want Bitcoin. There are people that want Bitcoin so they could buy something on the darknet markets or because they want to transfer some money to their relatives abroad. These are what I call _method of payment_ use cases for Bitcoin.
 
-Bitcoin has many of these properties, but what sets it apart from other forms of money is that Bitcoin is both digital and decentralized.
+### Store of Value >> Method of Payment
 
-![][5]
+The method of payment use cases have one thing in common. The people involved want the convenience that Bitcoin provides them, but don't care to hold the Bitcoin itself. People that use Bitcoin as a method of payment are concerned not about price, but about slippage, fees and volatility during the short window when they hold Bitcoin.
 
-Many moneys are digital (US Dollar, World of Warcraft gold, Linden Dollars), but no digital money until Bitcoin was actually decentralized. Likewise, many moneys are decentralized (gold, silver, salt), but until Bitcoin, none was actually digital. Decentralization is actually what give Bitcoin its _value _and digitization is what gives Bitcoin its _convenience_.
+![][5]![][6]![][6]
 
-### The Desire for Scarce Things
+For example, if someone wants to buy some LSD on the darknet markets, they first go and buy Bitcoin with their native currency (USD, say). Then they buy the product. The Bitcoin goes to the merchant, who then converts to their native currency (for simplicity, let's say USD).
 
-Humans have an innate desire for scarce things. This is evident in advertising. One of the easiest ways to get someone to buy a product is to convince them that it's rare. When people are convinced something is rare, they have a tendency to want it.
+Neither party holds Bitcoin for very long and neither cares about the Bitcoin price as long as the total fees (USD →BTC, BTC transfer, BTC →USD) are reasonable. Bitcoin could be $100 or $100,000, for the method of payment use case, the price doesn't matter. Convenience is what matters. Conversely, method-of-payment demand does not actually increase demand much for Bitcoin as the amount bought is sold soon after.
 
-![][7]
+The only real benefits of having more method-of-payment utility are that Bitcoin can increase convenience in very special cases (foreign remittances, darknet) and Bitcoin's liquidity can increase slightly as there are effectively more places to "sell" your Bitcoin, not for another currency, but for a good or service.
 
-The value they assign, however, depends entirely on how long they expect the item to remain scarce.
+For people that use Bitcoin for its scarcity, that is, as a store of value, price matters quite a bit. Talk to anyone who owns Bitcoin and price is something they keep track of obsessively. This is prima facie evidence that most people _don't_ use Bitcoin as a method of payment, but as a store of value.
 
-Certain goods have, as they say, a limited shelf life. When the Wii first came out, it was trading for a lot more than retail price because Nintendo didn't produce enough units. In other words, Wiis were scarce.
+### Competing on Method of Payment
 
-As production caught up, however, the price dropped. Nobody bought Wiis to hold for 5 years to sell again. They either bought to flip or they bought it to play with.
+Why is it that people value Bitcoin as a store of value so much more than as a method of payment?
 
-The lesson here is that in order for scarcity to work for money, it needs to _stay scarce_.
+![][7]![][8]![][8]
 
-### Two other properties required to establish trust
+Looking at the payment landscape, the answer should be clear. Consumers have many choices for method of payment already. Cash, Credit Cards, Debit Cards, Paypal, Venmo, Square Cash, Google Wallet, Apple Pay, Samsung Pay and even the good old bank check are among the many choices in the US for method of payment. WeChat in China, M-Pesa in Kenya and the Octapus Card in Hong Kong are even more convenient.
 
-Long term, people must have a good reason to believe that the scarcity of a money will last. The expectation of long-term scarcity of a money is what causes people to trust in a money. Ideally, that scarcity would be _immutable._
+All these payment methods are _much _more convenient than Bitcoin for nearly every type of transaction (restaurants, brick and mortar stores, e-commerce, etc). For method of payment, convenience is paramount and that means merchant acceptance.
 
-The other property is a bit more subtle: a money needs to be a bearer instrument so that third parties can't just seize the money at whim.
+Merchants don't want to keep Bitcoin (that is, use it as a store of value) which hinders its use as a method of payment. There are people that argue that a merchant can save on the 2–3% vs a credit card, but fail to realize the same merchant now has to convert these Bitcoins to USD and probably will have to pay in exchange fees and slippage in order to do so. At least the credit card fees are certain. The uncertainty around how much in fees that they'll pay due to exchanging to USD is then passed onto the customer in the form of higher prices and/or worse rates for BTC/USD than spot. In other words, using Bitcoin as a method of payment is not a very good deal for the customer to use Bitcoin and so they don't.
 
-![][9]
+![][9]![][10]![][10]
 
-What's important to notice about both immutability and bearer instrumentation is that a money can't have either property if there's a central point of failure. That is, if someone other than the nominal owner can remove its scarcity or confiscate it, then the owner needs to trust the other entity to not do those things.
+Accepting Bitcoin doesn't generally boost merchants' bottom lines very much. This is because merchants don't really want Bitcoin. Merchants view Bitcoin as a way to increase sales and thus convert any Bitcoin received immediately to their native currency. At best, this causes selling pressure for Bitcoin as there's more supply to be sold.
 
-This is generally not a good bet. You may trust the actions and judgment of the current central authority, but there's no guarantee that they will be in control forever. In fact, most centralized organizations collapse because the temptation to abuse such power eventually becomes too difficult to resist.
+Even if the spender of Bitcoin buys back that Bitcoin on the market, what they've actually done is use Bitcoin as a crappy credit card. There's multiple transactions, more conversion fees and less consumer protections. In other words, it's much less _convenient _and thus an inferior method of payment.
 
-### Keynesian Hubris
+### Holders Don't Like Spending
 
-Keynesians generally try to optimize for maximum spending, and thus seek to make money as _convenient_ to spend as possible. This is why it's so convenient to buy nearly anything in a Keynesian system, especially on credit. Keynesians encourage impulsive spending habits as a way to keep the economy flowing. Impulsiveness tends to hurt people long-term, so in reaction, many consumers purposely make spending more difficult ([freezing a credit card in an ice block][10] is a popular method).
+Trying to artificially create method-of-payment demand is putting the cart before the horse.
 
-![][12]
+First, the vast majority of people that hold Bitcoin aren't looking to use it as a method of payment. Holding cash in a bank and using a credit card is much more convenient for that. The people that value Bitcoin's scarcity do so because they believe Bitcoin will go up long-term, so spending it now wouldn't make much sense.
 
-In that respect, Keynesians emphasize the _convenience _properties of money like divisibility, portability, recognizability and to some degree, fungibility, even at the expense of the _value_ properties of money like scarcity, immutability and bearer instrumentation. Not coincidentally, various altcoins often tout these _convenience_ properties as the reason for their existence.
+![][11]![][12]![][12]
 
-### Long Term Value
+Second, the merchants don't want to keep the Bitcoin they receive and accepting Bitcoin as a method of payment is not magically going to make them want to. Much like giving a treadmill to an overweight relative isn't magically going to get them to want to be fit, adding a Bitcoin payment option for a merchant that doesn't value Bitcoin isn't going to make them want it as a store of value.
 
-Long term value accrues to money that has scarcity, securability and durability. These properties are often at odds with the fast movement of money.
+Artificial market intervention actually causes the reverse effect as merchants rightfully ask, "if this stuff is really valuable, why are you trying to dump it on me?"
 
-![][14]
+### How Bitcoin Will Become a Method of Payment
 
-Greater portability often means centralizing operations so a single point can process transactions faster. Greater fungibility also may mean trusting that there is no mathematical exploit of certain security assumptions that privacy coins make.
+So how will Bitcoin evolve into a method of payment if ever? Or will it "just" be Digital Gold?
 
-The more trust has to be given, whether to central entities or to the difficulty of certain math problems, the less valuable the money is. In other words, making money especially fast or convenient is often at odds with security, scarcity and decentralization.
+This question is ironic since it's posed by method-of-payment advocates to denigrate Bitcoin, but ignorant historically. People have used gold as a method of payment for thousands of years and not just as a store of value. From a monetary evolution standpoint, a few conditions have to be met before people start using a hard money as a method of payment in earnest.
 
-Ultimately, value accrues to the money that gains long term trust. No one would argue that a Wii is a great store of value because it traded for a lot of money at one point in time. Trust has to be earned, especially across time.
+First, the merchant has to _want_ the particular monetary medium _as a store of value_. Many, for marketing purposes _say_ that they like Bitcoin, but few truly _want _to keep it. You can tell they don't really want Bitcoin because they still accept other payment methods. Take for example black market merchants in Venezuela. Do they take Bolivars for their goods? Absolutely not. The Bolivar depreciates too fast so those merchants demand harder currency as a store of value.
 
-### Time is the ultimate judge
+![][13]![][14]![][15]
 
-The real test of long term value is time. A well known phenomenon called the [Lindy Effect][15], asserts that the longer something has survived the longer it can be expected to survive. This is so termed because someone noticed that Broadway shows tend to last about as long as they've already lasted. That is, a show that's lasted 15 years, lasts another 15 on average. A show that's lasted 1 year lasts another 1 on average.
+Second, the consumer has to desire the good or service so much that they're willing to part with their precious Bitcoin. Savers have a low time preference and are thus good at resisting sales tactics. The actual good or service must be truly worthwhile for holders to part with their money.
 
-Money can only really gain trust with the passage of time, which means that survival matters more than anything else.
+In other words, the merchant has to want Bitcoin as a _store of value_ and_ _produce higher quality goods to entice Bitcoin holders.
 
-![][17]
+At this point, merchants aren't desperate enough for Bitcoin; they don't even want to keep it when they get it. Furthermore, Bitcoin holders aren't tempted by what merchants are selling and use fiat instead. Until this gap closes, there won't be much Bitcoin flowing from holders to merchants, which is another way of saying that there won't be much usage as a method of payment.
 
-Me, hopefully, in about 20 years
+### The Futility of Intervention
 
-This is another reason why centralization is so terrible for long term value. Centralized entities are by their very nature, fragile. Centralized entities can't afford a mortal failure without jeopardizing everyone else that depends on it.
+Everyone in the Bitcoin community would like merchants to desire Bitcoin as a_ store of value_. Increasing method of payment adoption, however, doesn't change their desires. At best, this results in selling pressure on Bitcoin, lowering price. At worst, this results in misalignment of incentives, misallocation of resources and centralization.
 
-Conversely, a decentralized network is by nature anti-fragile: individual failures affect a much smaller group and thus, a decentralized network can afford a lot more mistakes. These mistakes in turn help all the other members of the network to learn what not to do. This in turn, makes the network stronger.
+![][16]![][14]![][17]
 
-### Hacking Trust
+This is indeed what's happened to BCH as they've tried to artificially create demand in the method of payment use case. Despite the millions spent on marketing, the billions spent on defending the peg against BTC and the time spent on centralized efforts to push the market toward the method of payment use case, BCH still has less transactions per day than DOGE.
 
-Many centralized entities try to bypass the need for long term proof by hacking trust itself. They use social signaling, hype, promises and the like to give the illusion that they've earned the trust, rather than actually proving worthy of that trust through time. ICOs, altcoins and hard forks have used these techniques to get people to trust them.
-
-![][19]
-
-Unfortunately, a lot of people have been fooled by these hacks and this bear market is teaching them some expensive, but valuable lessons. At least they're learning now when the market is still relatively small, and the population is becoming more immune to these trust hacks.
+When paternalistic interventionists act on wishful thinking instead of letting the market play out, disaster looms. As of this writing BCH has fallen 80% from its all time high against BTC. The market continues to punish their centralized malinvestment and if they don't learn their lessons soon, they'll be relegated to the dustbins of monetary history.
 
 ### Conclusion
 
-The priorities of Bitcoin align with long term value. The priorities of almost everything else, much like Amway and other get-rich-quick schemes, align with short term hype. Bitcoin focuses on decentralization and immutability, which provide long-term scarcity. Almost everything else promises these things, but none have Bitcoin's track record for delivery.
+Most people value Bitcoin for its scarcity. Ergo, anything else is a nice-to-have, not a must have. Lots of options exist for method of payment, but very few for store of value and none that are as confiscation-resistant as Bitcoin is.
 
-![][21]
+As Bitcoin adoption grows, merchants will start demanding Bitcoin _as a store of value _in lieu of any other currency. This is already happening to a degree in places like Turkey, Iran and Venezuela. When a large part of society wants Bitcoin as a store of value, only then will the method of payment use case emerge en masse.
 
-How I feel when I see coins like Tron go up in value
-
-Bitcoin is focused on the one thing that can prove its value. Time. As the last year has proven, this is not a 6-month game. This is a 20–50 year game. As many are finding out, it's painful to realize you've been playing the wrong game the whole time. It's not too late. The game is still just starting.
-
-[1]: https://cdn-images-1.medium.com/freeze/max/75/0*eQ5hQ4F9eHvOMZec.jpg?q=20
-[2]: https://cdn-images-1.medium.com/max/2000/0*eQ5hQ4F9eHvOMZec.jpg
-[3]: https://cdn-images-1.medium.com/freeze/max/75/0*mOb73L7Zw34jWl02?q=20
-[4]: https://medium.com/@jimmysong/undefined
-[5]: https://cdn-images-1.medium.com/max/2000/0*mOb73L7Zw34jWl02
-[6]: https://cdn-images-1.medium.com/freeze/max/75/0*sWX6KdeVMutwnRVa.jpg?q=20
-[7]: https://cdn-images-1.medium.com/max/2000/0*sWX6KdeVMutwnRVa.jpg
-[8]: https://cdn-images-1.medium.com/freeze/max/75/1*NBrP8xBPN3_Bm0By8dIWiQ.jpeg?q=20
-[9]: https://cdn-images-1.medium.com/max/2000/1*NBrP8xBPN3_Bm0By8dIWiQ.jpeg
-[10]: https://thefinancialdiet.com/i-tried-the-freezing-your-credit-card-thing-and-this-is-what-actually-happened/
-[11]: https://cdn-images-1.medium.com/freeze/max/75/0*fMXVCS1JaS6cEeuJ.png?q=20
-[12]: https://cdn-images-1.medium.com/max/2000/0*fMXVCS1JaS6cEeuJ.png
-[13]: https://cdn-images-1.medium.com/freeze/max/75/1*d9i0K1f1RpnWWdhxOK8fYw.jpeg?q=20
-[14]: https://cdn-images-1.medium.com/max/2000/1*d9i0K1f1RpnWWdhxOK8fYw.jpeg
-[15]: https://en.wikipedia.org/wiki/Lindy_effect
-[16]: https://cdn-images-1.medium.com/freeze/max/75/1*u6SxyqmjvOreQygf1QH7oQ.jpeg?q=20
-[17]: https://cdn-images-1.medium.com/max/2000/1*u6SxyqmjvOreQygf1QH7oQ.jpeg
-[18]: https://cdn-images-1.medium.com/freeze/max/75/1*jNa8vXcAq-a2n_oNq48O6g.png?q=20
-[19]: https://cdn-images-1.medium.com/max/2000/1*jNa8vXcAq-a2n_oNq48O6g.png
-[20]: https://cdn-images-1.medium.com/freeze/max/75/1*QgF3FcBqxvFROn-a5-Kq5w.jpeg?q=20
-[21]: https://cdn-images-1.medium.com/max/2000/1*QgF3FcBqxvFROn-a5-Kq5w.jpeg
+[1]: https://bitcointalk.org/index.php?topic=1735.msg26999#msg26999
+[2]: https://cdn-images-1.medium.com/freeze/max/75/0*RmLl3h35NrctSfsG?q=20
+[3]: https://cdn-images-1.medium.com/max/2000/0*RmLl3h35NrctSfsG
+[4]: https://medium.com/p/why-you-cant-shortcut-trust-a6fe866a8007
+[5]: https://cdn-images-1.medium.com/freeze/max/75/0*s_eWcDOgNfXEfLbB.jpg?q=20
+[6]: https://cdn-images-1.medium.com/max/2000/0*s_eWcDOgNfXEfLbB.jpg
+[7]: https://cdn-images-1.medium.com/freeze/max/75/0*IRhbEEP2G2ex_exP.jpg?q=20
+[8]: https://cdn-images-1.medium.com/max/2000/0*IRhbEEP2G2ex_exP.jpg
+[9]: https://cdn-images-1.medium.com/freeze/max/75/1*PtUnOyjkfAM9PJgOfCBa7w.jpeg?q=20
+[10]: https://cdn-images-1.medium.com/max/2000/1*PtUnOyjkfAM9PJgOfCBa7w.jpeg
+[11]: https://cdn-images-1.medium.com/freeze/max/75/0*oFUgsxfD8LZo-nho.jpg?q=20
+[12]: https://cdn-images-1.medium.com/max/2000/0*oFUgsxfD8LZo-nho.jpg
+[13]: https://cdn-images-1.medium.com/freeze/max/75/0*6YEJ8kR6QPc97CqZ.png?q=20
+[14]: https://medium.com/@jimmysong/undefined
+[15]: https://cdn-images-1.medium.com/max/2000/0*6YEJ8kR6QPc97CqZ.png
+[16]: https://cdn-images-1.medium.com/freeze/max/75/0*A4nzZbx5SBXxI-v2.jpg?q=20
+[17]: https://cdn-images-1.medium.com/max/2000/0*A4nzZbx5SBXxI-v2.jpg
 
   
