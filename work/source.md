@@ -1,138 +1,97 @@
 
-# Why Blockchain is Hard
+# Why Bitcoin Works
 
-The hype around blockchain is massive. To hear the blockchain hype train tell it, blockchain will now:
+The fact that Bitcoin has succeeded is beyond dispute. Bitcoin has lasted 9 years. Bitcoin has a $100B+ market cap. Bitcoin has had better uptime than almost anything else and has spawned a pretty large ecosystem of businesses, open source projects and investors. Perhaps most tellingly, Bitcoin has also spawned a large number of imitators that compete against it.
 
-1. Solve income inequality
-2. Make all data secure forever
-3. Make everything much more efficient and trustless
-4. Save dying babies
+What's not obvious is why Bitcoin works or has value in the first place. We know that Bitcoin has value, but what gives Bitcoin value? We know that Bitcoin acts like money but why does it act like money? We know the mechanics of how Bitcoin works, but why does Bitcoin work?
 
-What the heck is a blockchain, anyway? And can it really do all these things? Can blockchain bring something amazing to industries as diverse as health care, finance, supply chain management and music rights?
+![][2]
 
-And doesn't being for Bitcoin mean that you're pro-blockchain? How can you be for Bitcoin but say anything bad about the technology behind it?
+These questions and more are answered in Saifedean Ammous's new book [The Bitcoin Standard][3]. In this article, I'm _not _going to review the book exactly, but explore some of the powerful ideas that are presented in the book as a way to answer why Bitcoin works.
 
-In this article, I seek to answer a lot of these questions by looking at what a blockchain is and more importantly, what it's not.
+As far as what I thought of the book, it's very entertaining, and the book is worth buying just for the history of money alone. The thoroughly researched and logical explanations of what makes money useful were very insightful and the second and third order effects of monetary policy were well explained. This book is joining the select books that I reread every couple of years such as Taleb's Antifragile.
 
-### What is a blockchain?
+If you don't like spoilers, please stop here, read the book and come back. If you like reading about my take on some of the ideas as a way to evaluate whether you should read the book or not, please continue. With that out of the way, let's take a look at some of the really powerful ideas from the book itself.
 
-To examine some of these claims, we have to define what a blockchain is and herein lies a lot of the confusion. Many companies use the word "blockchain" to mean some sort of magical device by which all their data will never be wrong. Such a device, of course, does not exist, at least when the real world is involved.
+### Inflation Factors in Heavily into Time Preference
 
-![][1]![][2]![][2]
+Time preferences are critical to how a society functions. A high time preference person wants things now or as soon as possible. A low time preference person is willing to forego things now for something better later.
 
-So what is a blockchain? Technically speaking, a blockchain is a linked list of blocks and a block is a group of ordered transactions. If you didn't understand the last sentence, you can think of a blockchain as a subset of a database, with a few additional properties.
+A bunch of high time preference people will not think very much about the future. Instead of saving for tomorrow, they'll spend now, consume and not be very productive. They won't be saving for tomorrow, starting businesses or building large scale projects as they all require a lot of planning.
 
-The main thing distinguishing a blockchain from a normal database is that there are specific rules about how to put data into the database. That is, it cannot conflict with some other data that's already in the database (consistent), it's append-only (immutable), and the data itself is locked to an owner (ownable), it's replicable and available. Finally, everyone agrees on what the state of the things in the database are (canonical) without a central party (decentralized).
+As they say, Rome wasn't built in a day. Building civilization with all the systems and large capital projects require lots of people that have a low time preference.
 
-It is this last point that really is the holy grail of blockchain. Decentralization is very attractive because it implies there is _no single point of failure_. That is, no single authority will be able to take away your asset or change "history" to suit their needs. This immutable audit trail where you don't have to trust anyone is the benefit that everyone that's playing with this technology is looking for. This benefit, however, come at a great cost.
+![][5]
 
-### The Cost of Blockchains
+Saifedean argues in the book that monetary policy affects the time preferences of the population quite a bit. High inflation, or quick reduction of purchasing power of money causes people to have a high time preference. This is evident in hyperinflating economies as people in such countries spend their money as quickly as possible.
 
-The immutable audit trail uncontrolled by any single party is certainly useful, but there are many costs to create such a system. Let's examine some of the issues.
+What's even more intriguing is the idea that high time preferences bleed into other areas of life. Obesity and type 2 diabetes, for example, are caused by over-consumption of unhealthy food, which is indicative of a high time preference. A society that has a looser monetary policy would expect to see more obese people if this were true. Indeed, obesity has tripled worldwide in the last 40 years. Correlation is not causation, obviously, but this is worth investigating.
 
-#### Development is stricter and slower
+With Bitcoin, you have an iron-clad monetary policy. All inflation is expected and the supply is capped at 21 million. The behavior we would expect out of the people that own Bitcoin is that of people with a low time preference given the low inflation. At least anecdotally, this seems to be the case as most people start caring more about their saving a lot more once they get into Bitcoin. It's hard to tell which is the cause and which is the effect, but we can say that this is very much correlated.
 
-Creating a provably consistent system is not an easy task. A small bug could corrupt the entire database or cause some databases to be different than other ones. Of course, a corrupted or split database no longer has any consistency guarantees. Furthermore, all such systems have to be designed from the outset to be consistent. There is no "move fast and break things" in a blockchain. If you break things, you lose consistency and the blockchain becomes corrupted and worthless.
+Bitcoin holders have a low time preference and that causes them to make Bitcoin more scarce. This, in effect makes Bitcoin more valuable and more desirable, causing even more people, especially those with low time preference, to hold Bitcoin. This is a virtuous cycle that has caused Bitcoin's value to go up in the past 9 years.
 
-![][3]![][4]![][5]
+### Effort Will Always Go Into Increasing Money Supply
 
-You may be thinking, why can't you just fix the database or start over and move on? That would be easy enough to do in a centralized system, but this is very difficult in a decentralized one. You need consensus, or the agreement of all players in the system, in order to change the database. The blockchain has to be a public resource that's not under the control of a single entity (decentralized, remember?), or the entire effort is a very expensive way to create a slow, centralized database.
+One of the most enjoyable parts of the book is the discussion of the various mediums that were used as money in the past. These include wampums, rai stones and of course, precious metals. What killed most previous mediums as money is technology. Specifically, people figured out a way to produce a lot of the same medium, inflating the supply to no longer make the medium scarce.
 
-#### Incentive structures are difficult to design
+Expending effort creating money, granted it costs less than the actual value of the money itself, makes all the sense in the world. The money medium has value so getting more of it for less than its value is a no-brainer. What's more, these don't actually add to the productive capacity of an economy. Adding to the supply of money doesn't actually help anything, just redistributes the wealth to those creating more of the supply from those that save.
 
-Adding the right incentive structures and making sure that all actors in the system cannot abuse or corrupt the database is likewise a large consideration. A blockchain may be consistent, but that's not very useful if it's got a lot of frivolous, useless data in it because the costs of putting data into it are very low. Neither is a consistent blockchain useful if it has almost no data because the costs of putting data into it are very high.
+![][7]
 
-![][6]![][4]![][7]
+What's less understood is how much goes into creating more money supply in a fiat economy. Saifedean argues that a large part of the banking sector is essentially engaged in money creation activities. Given that banking takes up 7–10% of GDP in the US, you can see that this is an enormous redistribution of wealth that doesn't add productivity.
 
-What gives the data finality? How can you ensure that the rewards are aligned with the network goals? Why do nodes keep or update the data and what makes them choose one piece of data over another when they are in conflict? These are all incentive questions that need good answers and they need to be aligned not just at the beginning but at all points in the future as technology and companies change, otherwise the blockchain is not useful.
+Bitcoin's equivalent, of course, is proof-of-work mining. What's interesting about Bitcoin's creating more money supply is that it's got a secondary function. The act of creating more money in Bitcoin also adds to its security through proof-of-work. In a sense, creating more money supply in Bitcoin is not wasted like it is in any other monetary system. The redistribution of wealth is earned as adding security to the network has value. In a sense, the entire network is paying miners to add security. Eventually, it will only be the transactors paying miners to add security.
 
-Again, you may be wondering why you can't "fix" some broken incentive. Once again, this is easy in a centralized system, but in a decentralized one, you simply cannot change anything without consensus. There's no "fixing" anything unless there's agreement from _everyone_.
+Furthermore, this observation also makes clear the inferiority of proof-of-stake. Effort will be expended to create more money supply, we just don't know what form that will take as the work has no proof that it was done. Furthermore, that effort will _not_ add security to the network in any way and the work really will be wasted.
 
-#### Maintenance is very costly
+### Fiat Money is Not Yours
 
-A traditional centralized database only needs to be written to once. A blockchain needs to be written to thousands of times. A traditional centralized database needs to only checks the data once. A blockchain needs to check the data thousands of times. A traditional centralized database needs to transmit the data for storage only once. A blockchain needs to transmit the data thousands of times.
+One of the most eye opening parts of the book is the discussion of what happened in WWI. What started as a small war between Serbian separatists and the Austro-Hungarian empire became a global war that exhausted the coffers of nearly every country involved in the war. The difference between this and previous wars was the presence of central banking.
 
-The costs of maintaining a blockchain are orders of magnitude higher and the cost needs to be justified by utility. Most applications looking for some of the properties stated earlier like consistency and reliability can get such things for a whole lot cheaper utilizing integrity checks, receipts and backups.
+Specifically, fiat money allows central banks to inflate currency and that essentially takes value away from the owners of the currency without their consent. Instead of spending only the money the government has, fiat money allows the government to seize value from all owners of the money through inflation.
 
-#### Users are sovereign
+![][9]
 
-This can be really good as companies don't like the liability of having user data in the first place. This can be bad, however, if the user is "misbehaving". There's no way to kick out the user that's spamming your blockchain with frivolous data or has figured out a way to profit in some fashion that causes other users lots of inconvenience. This is related to the above observation that incentive structures have to be designed really, really well in that a user that figures out an exploit is not likely to give that up, especially if there's profit for the user.
+Inflation is not the only way fiat money can be seized. Since most money is not in cash, seizing the money held in bank accounts is another popular way for the government to confiscate money. AML/KYC laws around financial institutions are a way to closely monitor cash traffic to seize money from people the government does not approve of. The quick and slippery slope to tyranny starting from terrorists to marijuana dispensaries to pornographers to political opponents is an exercise left to the reader.
 
-You may be thinking that you can simply refuse service to malicious users, which would be very easy to do in a centralized service. However, unlike a centralized service, refusing service is difficult because no single entity has the authority to kick anyone out. The blockchain has to be impartial and enforce the rules defined by the software. If the rules are insufficient to deter bad behavior, you're out of luck. There is no "spirit" of the law here. You simply have to deal with malicious or misbehaving actors, possibly for a very long time.
+What's very different about Bitcoin is that the money is not controlled by a central party. Bitcoin is unseizable and requires the private key(s) to confiscate. This is not only different from fiat, but also from many altcoins. Tether has marked certain coins unredeemable. Ethereum has seized coins from people it deems "hackers".
 
-#### All upgrades are voluntary
+### Sound Money Allows for Planning
 
-A forced upgrade is not an option. The other players on the network have no obligation to change to your software. If they did, such a system would be much easier, faster and cheaper to build as a centralized system. The point of a blockchain is that it's not under the control of a single entity and this is violated with a forced upgrade.
+There are a lot of reasons why sound money is important for society, but the biggest one that I learned from the book is that sound money allows people to plan effectively. Fiat money is generally pretty good at being divisible or transmitting across large distances (exceptions being foreign remittances or micropayments). What fiat money is _not_ good at is being able to store value for the future (In the book, this concept is called salability across scales, distance and time).
 
-![][8]![][4]![][9]
+![][11]
 
-Instead, all upgrades have to be backwards-compatible. This is obviously quite difficult, especially if you want to add new features and even harder when thinking from a testing perspective. Each version of the software adds a lot to the test matrix and lengthens the time to release.
+Sound money allows for savings and savings allows for capital accumulation. When sufficient capital has been accumulated, that can be utilized to create larger-scale projects to make production more efficient. The example in the book is that of a fisherman using bare hands vs using savings to buy a fishing rod and nets. The latter is more efficient and allows for more production.
 
-Again, if this were a centralized system, this would be very easy to correct by no longer servicing older systems. You cannot do this, however in a decentralized system as you cannot force anyone to do anything.
+The sharp reader may be wondering why you wouldn't just fund that centrally and get the same benefits. Indeed, that's mostly what government expenditures try to do. Unfortunately, the decisions on _what_ to invest in then come down to government bureaucrats who don't have the financial incentive nor the expertise to determine what to invest in. The result is lots of malinvestment or waste. Think [corporate welfare][12], [bridges to nowhere][13] or [green energy boondoggles][14].
 
-#### Scaling is really hard
-
-Finally, scaling is at least several orders of magnitude harder than in a traditional centralized system. The reason is obvious. The same data has to live in hundreds or thousands of places than in a single place. The overhead of transmission, verification and storage is enormous as every single copy of the database must pay them instead of those costs being paid just once in a traditional, centralized database.
-
-You can, of course, reduce the burden by reducing the number of nodes. But then at that point, why do you need a decentralized system at all? Why not just make a centralized database if scaling costs are the main concern?
-
-### Centralization is a lot easier
-
-If you notice a theme, it's that decentralized systems are very difficult to work with, expensive to maintain, hard to upgrade and a pain to scale. A centralized database is much faster, less expensive, easier to maintain and easier to upgrade than a blockchain. So why do people keep using the word blockchain as if it's some panacea for all their problems?
-
-![][10]![][4]![][11]
-
-First, a lot of these industries that are being sold on blockchain are really overdue for IT infrastructure upgrades. Health care has notoriously terrible software. Financial settlement is still running on software from the 70's. Supply chain management software is both difficult to use and hard to install. Most companies in these industries resist upgrading because of the risk involved. There are lots of infrastructure upgrades that cost hundreds of millions and end up being rolled back anyway. Blockchain is a way to sell these IT infrastructure upgrades and make them a bit more appetizing.
-
-Second, blockchain is a way to look like you're on the leading edge of technology. Like it or not, the word "blockchain" has taken on a life of its own. Very few people actually understand what it is, but want to appear hip so use these words as a way to sound more intelligent. Just like "cloud" means someone else's computer and "AI" means a tweaked algorithm, "blockchain" in this context means a slow, expensive database.
-
-Third, people really don't like government control of certain industries and want a different adjudication mechanism than the legal framework which is often slow and expensive. To them, "blockchain" is really just a way to get rid of the heavy apparatus of government regulation. This is overselling what blockchain can do. Blockchain doesn't magically take away human conflict.
-
-The result is a lot of people that are hyped up on the promises without actually understanding the abilities or costs. What's worse, the actual technical details and costs are abstracted away from a lot of VCs and executives in such a way as to obscure what a blockchain can and can't do. Everyone under them become afraid to say that the emperor has no clothes and we have the situation that we have now.
-
-### So what is blockchain good for?
-
-We've already established that a blockchain is very expensive relative to centralized databases. So the only reason you should be using a blockchain is to decentralize. That is, remove the single point of failure or control.
-
-This naturally means that the software or database must not change things around often, if at all. There should be little upside to upgrading and much downside to screwing up or changing the rules.
-
-![][12]![][4]![][13]
-
-Most industries are not like this. Most industries require new features or upgrades and the freedom to change and expand as necessary. Given that blockchains are hard to upgrade, hard to change and hard to scale, most industries don't have much use for a blockchain.
-
-The one exception we've found is money. Unlike most industrial use cases, money is better if it doesn't change. Immutability and difficulty in changing the rules is a positive for money and not a detriment. This is why blockchain is the right tool for the job when it comes to Bitcoin.
-
-What's clear is that a lot of companies looking to use the blockchain are not really wanting a blockchain at all, but rather IT upgrades to their particular industry. This is all well and good, but using the word "blockchain" to get there is dishonest and overselling its capability.
+Entrepreneurs, on the other hand, have a huge financial incentive (especially loss aversion) and expertise to invest in that which has a higher probability of success. Furthermore, the successful entrepreneurs get more reward allowing them to invest more in large capital projects creating better and better investments with time.
 
 ### Conclusion
 
-Blockchain is a popular term these days and unfortunately, this "blockchain not Bitcoin" meme won't die. If you are a centralized service, a blockchain doesn't get you anything that you can't do a thousand times cheaper with a centralized database. If you are a decentralized service, then you're probably fooling yourself and not thinking about the single points of failure that exist in your system. There wouldn't be a "you" at all in a truly decentralized service.
+Bitcoin's main benefit to society can be understood as bringing back sound money. Sound money allows for capital accumulation which allows for investment, leading to better goods and services for less effort. This, in turn, benefits all of civilization. We're not there yet, but this is the main value proposition.
 
-![][14]![][4]![][15]
+Contrast this to our society which is based on fiat money and you can see the difference. Instead of a large number of rent seekers, we instead get entrepreneurs. Instead of people playing zero sum games, we get innovations that add to the pie.
 
-Biggest joke in this entire article
+In short, Bitcoin works because Bitcoin is sound money. And sound money changes everything. Bitcoin will change the role of government, how people relate to one another, how people will perceive the future, how everyone will plan, etc. Bitcoin is nothing less than a complete upheaval of the current fiat system with large second and third order effects that incentivize building instead of rent-seeking.
 
-Back in the early 2000's, there was a push by a lot of executives in the tech industry to use Java and XML. Despite these two things being _tools_ and not actual products, many executives insisted on their use, no matter how poor the fit was to what their engineers were trying to achieve. Blockchain is very much like that. Focus on the problems you're solving and the tools will make themselves readily apparent. Focus on tools that you want to use and you'll end up making [Rube Goldberg machines][16] that don't do anything particularly well.
+Welcome to the revolution.
 
-In a sense, current conceptions of blockchain are trying to do the impossible. They want the security of a decentralized system with the control of a centralized one. The desire is the best of both worlds, but what they end up getting is the worst of both worlds. You get the costs and difficulty of a decentralized system with the failure modes of a centralized one.
-
-Blockchain is used way too much as a buzzword to sell a lot of useless snake oil. The faster we get rid of the hype, the better off long-term we'll all be.
-
-[1]: https://cdn-images-1.medium.com/freeze/max/75/0*W3LI86Xp8u_JEGfc.jpg?q=20
-[2]: https://cdn-images-1.medium.com/max/2000/0*W3LI86Xp8u_JEGfc.jpg
-[3]: https://cdn-images-1.medium.com/freeze/max/75/0*91HRddStVsVPrkrj.gif?q=20
-[4]: https://medium.com/@jimmysong/undefined
-[5]: https://cdn-images-1.medium.com/max/2000/0*91HRddStVsVPrkrj.gif
-[6]: https://cdn-images-1.medium.com/freeze/max/75/0*BWJJGaiFbo0GZf-X.png?q=20
-[7]: https://cdn-images-1.medium.com/max/2000/0*BWJJGaiFbo0GZf-X.png
-[8]: https://cdn-images-1.medium.com/freeze/max/75/0*2zLakz1300A5rtDP.?q=20
-[9]: https://cdn-images-1.medium.com/max/2000/0*2zLakz1300A5rtDP.
-[10]: https://cdn-images-1.medium.com/freeze/max/75/1*u_NgjkwvW32vGbCMcvMU1w.jpeg?q=20
-[11]: https://cdn-images-1.medium.com/max/2000/1*u_NgjkwvW32vGbCMcvMU1w.jpeg
-[12]: https://cdn-images-1.medium.com/freeze/max/75/0*SPtJ3vhYCf5TH8L-.png?q=20
-[13]: https://cdn-images-1.medium.com/max/2000/0*SPtJ3vhYCf5TH8L-.png
-[14]: https://cdn-images-1.medium.com/freeze/max/75/0*eWISIQ4AQa2wzpjy.?q=20
-[15]: https://cdn-images-1.medium.com/max/2000/0*eWISIQ4AQa2wzpjy.
-[16]: https://medium.com/@michaelflaxman/icos-are-cancer-c404594f181b
+[1]: https://cdn-images-1.medium.com/freeze/max/75/1*4Sh2DEyCUtt0r53YtMtwgg.jpeg?q=20
+[2]: https://cdn-images-1.medium.com/max/2000/1*4Sh2DEyCUtt0r53YtMtwgg.jpeg
+[3]: https://www.amazon.com/Bitcoin-Standard-Decentralized-Alternative-Central/dp/1119473861/ref=sr_1_1?ie=UTF8&qid=1523847026&sr=8-1&keywords=the+bitcoin+standard
+[4]: https://cdn-images-1.medium.com/freeze/max/75/0*Jb8EOLiYhy_GaCaM.jpg?q=20
+[5]: https://cdn-images-1.medium.com/max/2000/0*Jb8EOLiYhy_GaCaM.jpg
+[6]: https://cdn-images-1.medium.com/freeze/max/75/0*9i4laDLu_pRWeIOA.?q=20
+[7]: https://cdn-images-1.medium.com/max/2000/0*9i4laDLu_pRWeIOA.
+[8]: https://cdn-images-1.medium.com/freeze/max/75/0*OPmBmYw99z5FUnD8.jpg?q=20
+[9]: https://cdn-images-1.medium.com/max/2000/0*OPmBmYw99z5FUnD8.jpg
+[10]: https://cdn-images-1.medium.com/freeze/max/75/0*nv0qaNCQsSDm5hqg.jpeg?q=20
+[11]: https://cdn-images-1.medium.com/max/2000/0*nv0qaNCQsSDm5hqg.jpeg
+[12]: https://www.heritage.org/testimony/corporate-welfare-wastes-taxpayer-and-economic-resources
+[13]: https://www.heritage.org/budget-and-spending/report/the-bridge-nowhere-national-embarrassment
+[14]: http://reason.com/archives/2011/09/13/the-renewable-energy-boondoggl
 
   
