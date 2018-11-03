@@ -1,14 +1,12 @@
 import codecs
 import shutil
 import uuid
+from util import require_translate
 
 file_translated="work/translated.md"
 file_output="work/published.md"
 file_header="template/header.md"
 file_footer="template/footer.md"
-
-def require_translate(content):
-    return content and not content.startswith("[") and not content.startswith("!")
 
 def read_file(file_input):
     with codecs.open(file_input,'r',encoding='utf8', errors='ignore') as fi:

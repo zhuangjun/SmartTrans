@@ -1,15 +1,13 @@
 from google.cloud import translate
 import codecs
 import re
+from util import require_translate
 
 translator = translate.Client()
 
 file_input="work/source.md"
 file_output="work/translated.md"
 translate_batch_size = 50
-
-def require_translate(content):
-    return content and not content.startswith("[") and not content.startswith("!")
 
 def replace_duplicated_image(source):
     m=re.match("(!\[\]\[\d+\])(!\[\]\[\d+\])(!\[\]\[\d+\])", source)
