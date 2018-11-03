@@ -1,5 +1,6 @@
 from google.cloud import translate
 import codecs
+import re
 
 translator = translate.Client()
 
@@ -9,6 +10,13 @@ translate_batch_size = 50
 
 def require_translate(content):
     return content and not content.startswith("[") and not content.startswith("!")
+
+def replace_duplicated_image(source):
+    m=re.match("(!\[\]\[\d+\])(!\[\]\[\d+\])(!\[\]\[\d+\])", source)
+    if m and len(m.groups()) == 3:
+        return m.group(3)
+    else:
+        return source
 
 def chunks(l, n):
     for i in range(0, len(l), n):
@@ -24,7 +32,7 @@ with codecs.open(file_input,'r',encoding='utf8') as fi:
 
     # read input
     for line in content:
-        source_items.append(line);
+        source_items.append(replace_duplicated_image(line));
 
     # split into batches
     source_item_chunks = chunks(source_items, translate_batch_size)
