@@ -36,7 +36,7 @@ with codecs.open(file_input,'r',encoding='utf8') as fi:
 
     # write to output
     i = 0
-    with codecs.open(file_output,'w',encoding='utf-16') as fo:
+    with codecs.open(file_output,'w',encoding='utf8') as fo:
         while i < len(source_items):
             fo.write(source_items[i]+"\n")
             
