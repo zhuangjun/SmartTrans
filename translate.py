@@ -16,7 +16,7 @@ for line in content:
     source_items.append(replace_duplicated_image(line))
 
 # do trans
-google_translated_items = google_trans(source_items)
+google_translated_items = replace_trans_terms(google_trans(source_items))
 # ms_translated_items = ms_trans(source_items)
 
 # build output items

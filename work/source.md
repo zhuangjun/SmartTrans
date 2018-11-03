@@ -1,146 +1,99 @@
-https://hackernoon.com/difference-between-sidechains-and-state-channels-2f5dfbd10707
+https://bitcoinmagazine.com/articles/battle-privacycoins-why-monero-hard-beat-and-hard-scale/
 
-State Channels and Sidechains are the two terms in Ethereum community that are often used interchangeably, thus causing mass confusion.
 
-But today we will get it clear.
+Based on blockchain technology, most cryptocurrencies have an open and public ledger. While this is required for these systems to work, it comes with a significant downside: Privacy is often quite limited. Government agencies, analytics companies and other interested parties — let's call them "spies" — have ways to analyze the public blockchains and peer-to-peer networks of cryptocurrencies like Bitcoin, to cluster addresses and tie them to IP addresses or other identifying information.  
 
-Go make a cup of coffee first, it's going to be a long one.
+Dissatisfied with Bitcoin's privacy features, several cryptocurrency projects have launched with the specific goal to improve on them over the years. And not without success. Several of these privacycoins are among the most popular cryptocurrencies on the market today.
 
-The purpose of this article is to clearly define:
+However, as detailed in this month's [cover story][1], Bitcoin's privacy features have recently seen significant improvements as well and are set to further improve over the coming months and years. This miniseries compares different privacycoins to the privacy offered by Bitcoin.
 
-* What are State channels ?
-* What are Sidechains ?
+In part two: Monero
 
-Then we will compare the two:
+#### Background
 
-* What problems are they trying to solve ?
-* Which is a better scaling solution among the two ?
+[Monero][2] (XMR) is a privacy-focused cryptocurrency. It is based on the innovative CryptoNote protocol which was first used in [Bytecoin][3], but that project was secretly 80 percent premined. Without any such premine, Monero launched in 2014 (initially as "[Bitmonero][4]"), in effect as the "honest" implementation of the CryptoNote protocol.
 
-Without wasting much time, let's get started.
+As such, Monero was one of the first altcoins not based on Bitcoin's codebase, and it still differs from Bitcoin in several ways. For example, Monero does not have a limited supply; instead, it has an emission schedule that will slightly inflate the money supply forever. Monero rolls out scheduled hard forks about twice a year, and its latest version also has an ASIC-resistant, proof-of-work algorithm, meaning the cryptocurrency is mined by GPUs and CPUs only.
 
-### What are State Channels ?
+While created by the pseudonymous developer thankful_for_today, this founder quickly wanted to take Monero into a direction the brand new community did not agree with; he was subsequently "fired" weeks after launch when the project was forked. Monero has since been led by a core team of about half a dozen developers. The best-known and visible of the group is Riccardo "Fluffypony" Spagni — though Spagni is not as active in Monero development as he used to be. Most of the other core team members are pseudonymous.
 
-State channels are a very broad and simple way to think about blockchain interactions which _could_ occur on the blockchain, but instead get conducted _off_ of the blockchain, without significantly increasing the risk of any participant. The most well known example of this strategy is the idea of [payment channels][1] in Bitcoin, which allow for instant fee-less payments to be sent directly between two parties. Here is a list of some of the State Channel Projects.
+XMR is accepted as payment on several dark net markets, for better or for worse, making it one of few altcoins that has found a non-niche use case beyond trading. Down from a top-five spot in early 2017, Monero claims the[ tenth][5] spot on altcoin market cap lists at the time of writing, making it the biggest privacy-centric coin on the market.
 
-[**10 State Channel Projects Every Blockchain Developer Should Know About**  
-_What are State Channels and why should I care The whole world is going through a blockchain revolution. But people…_hackernoon.com][2]
+#### Privacy
 
-> **State channels are the general form of payment channels, applying the same idea to any kind of state-altering operation normally performed on a blockchain**.
+Monero has privacy embedded in its protocol. Where Bitcoin and other coins offer privacy features as an option, Monero is one of few cryptocurrencies where privacy is both default and required. (Though users can opt to give up some of their privacy by sharing a so-called "view key.")
 
-Moving these interactions off of the chain without requiring any additional trust can lead to _significant_ improvements in cost and speed. State channels will be a critical part of scaling blockchain technologies to support higher levels of use.
+Monero achieves its privacy in two ways.
 
-The basic components of a state channel are very simple:
+Most notably, Monero achieves privacy through a clever trick called "[Ring Confidential Transactions][6]" (RingCT). RingCT is, in turn, best understood as a combination of two other cryptographic tricks: "ring signatures" and "Confidential Transactions."
 
-![][3]![][4]![][4]
+Like regular cryptographic signatures, ring signatures prove ownership of coins that are spent in a transaction ("inputs"). But with ring signatures, completely different coins can be added to the same transaction as "decoys," without revealing which one was really signed. This effectively "mixes" the coins, so spies don't know which coin was really spent and which were decoys. Right now, six decoys are added to each Monero transaction, and this will soon be increased to 10.
 
-A 2 way state channel
+On top of ring signatures, Confidential Transactions let users hide ("blind") the amounts in a transaction. Using a cryptographic trick called the Pedersen commitment, anyone can still perform math on the blinded amounts. This lets Monero users verify that the sending and receiving end of the transaction equal out; hence, ensuring no coins were created out of thin air. But only the sender and receiver of a transaction know how much money changed hands.
 
-1. **Part of the blockchain state is locked** via [multisignature][5] or some sort of smart contract, so that a specific set of participants must completely agree with each other to update it.
-2. **Participants update the state amongst themselves** by constructing and signing transactions that _could_ be submitted to the blockchain, but instead are merely held onto for now. Each new update "trumps" previous updates.
-3. Finally, **participants submit the state back to the blockchain**, which closes the state channel and unlocks the state again (usually in a different configuration than it started with).
+Additionally, Monero uses[ stealth addresses][7], as special types of addresses that are perhaps best understood as pieces of a cryptographic puzzle. In short, using a stealth address, the _sender__ _of a transaction can generate a new Monero address to send XMR to, with some additional data. This additional data can, in turn, be used by the _owner _of the stealth address (and only the owner of the stealth address) to generate the corresponding private key and access these funds. Importantly, no one but the sender and receiver know that the stealth address and the actual Monero address match. And because every sender would generate a new and unique receiving address, Monero users can post their stealth address anywhere, without worrying that corresponding transactions on the blockchain can be linked to them.
 
-That's it! If the "state" being updated between participants was a digital currency balance, then we would have a payment channel. Steps 1 and 3, which open and close the channel, involve blockchain operations. But **in step 2 an unlimited number of updates can be rapidly made without the need to involve the blockchain at all** — and this is where the power of state channels comes into play, because only steps 1 and 3 need to be published to the network, pay fees, or wait for [confirmations][6]. In fact, with careful planning and design, state channels can remain open almost indefinitely, and be used as part of larger [hub and spoke systems][7] to power an entire economy or ecosystem.
+#### Bitcoin
 
-Despite my simple description here, state/payment channels have generally been perceived as [quite complicated][8]. There are several reasons for this, and one of them is that **there are some important subtleties hidden in my phrasing** of the three steps. Let's take a closer look at what these simple phrases imply, starting with:
+Monero as a project takes privacy seriously, and the general commitment to hard forking in new or improved features whenever available has resulted in top-notch privacy overall. At the same time, while Bitcoin takes a much more conservative approach, its recent and upcoming privacy improvements are starting to offer some real competition.
 
-> could be submitted to the blockchain
+For example, stealth addresses are available on Bitcoin as well: [Samourai Wallet][8] offers stealth addresses as an option. But even generating a new address for each transaction (which many Bitcoin wallets do automatically) and not sharing it with anyone but the payer (which shouldn't be too difficult), goes a long way to realize similar privacy benefits. Stealth addresses are mainly useful where refreshing addresses isn't an option, like donation addresses posted on a website.
 
-In order for state channels to work, participants have to be assured that they _could_ publish the current state of the channel to the blockchain at any time. This results in some important limitations, such as the fact that **someone has to stay online** to protect each individual party's interests until the channel is closed.
+Consequently, RingCT is Monero's main selling point. Bitcoin's closest equivalent to RingCT is probably the Chaumian CoinJoin framework ZeroLink, which is (or will be) offered by [Wasabi Wallet][9], [Bob Wallet][10] and Samourai Wallet. ZeroLink lets users mix their coins, without needing to trust anyone with these coins or with their privacy.
 
-Imagine that when we initiated a payment channel I started with 100 bitcoins and you started with 10. If we first sign an update that transfers 10 of those bitcoins to me, and then _later_ sign an update that transfers 50 back to you, the later update is obviously more beneficial to you than the earlier one is. If you were to [unexpectedly lose internet access][9], and I were to pretend the second update never happened, I might be able to publish the first update to the blockchain and effectively _steal 50 bitcoins from you_! What you need is somebody to stay online with a copy of that later transaction so that they can "trump" the earlier one and make sure your bitcoins are protected. **It doesn't have to be you** — you could send a copy to many random servers who agree via smart contract to publish it only if needed (for a small fee of course). But however you do it, you need to be assured that the latest signed update to the state is available to trump all others. Which leads us to our next subtle phrase:
+RingCT and ZeroLink both have their own strengths and weaknesses.
 
-> Each new update "trumps" previous updates
+In short, ZeroLink can be used with many more participants at the same time (a hundred on Wasabi Wallet) versus Monero's much smaller number of six or ten decoys. In general, it's better to mix with more people. 
 
-To make this part of the state channel work, **the locking and unlocking mechanisms have to be properly designed** so that old state updates submitted to the blockchain have a chance to be corrected by the newer state updates which replaced them. **The simplest way is to have any unlocking attempt start a timer**, during which any _newer _update can replace the old update (restarting the timer as well). When the timer completes, the channel is closed and the state adjusted to reflect the last update received. The length of the timer would be chosen for each state channel, balancing the inconvenience of a long channel closing time with the increased safety it would provide against internet connection or [blockchain problems][10]. Alternatively, you could structure the channel with a financial penalty so that anyone publishing an inaccurate update to the blockchain will lose more than they could gain by pretending later transactions didn't happen.
+On the flipside, ZeroLink doesn't hide amounts. This means that all amounts in a mix must be equal, thereby meaning it can only be used for the specific purpose of mixing (as opposed to making direct payments). Both RingCT's and ZeroLink's strengths and weaknesses come with counter-strategies and improvements to make for a complex, scenario-dependent comparison.
 
-But the mechanism ends up not mattering very much, because (going back to the previous point) the game theory of this situation puts a twist on things. **As long as this mechanism is theoretically sound, it will probably never have to be used**. Actually going through the timer/penalty process may introduce extra fees, delays, or other inconveniences; given that _forcing_ someone into the mechanism can't give you any advantage anyways, **parties to a state channel will probably just close the channel out by mutually agreeing** on a final channel state. This final close-out operation needs to be fundamentally different from the normal "intermediate" updates (since it will bypass the "trumping" mechanism above), so **participants will only sign a final close-out transaction once for each portion of the state locked within a particular channel**.
+The more important differentiator, and probably Monero's main selling point, is that RingCT is default and mandatory, while ZeroLink is optional.
 
-The details of these "subtleties" aren't especially important. What it all ultimately breaks down to is that **participants open the channel by setting up a "judge"** smart contract, **sign promises to each other** which the judge can enforce and adjudicate if necessary, and then **close the channel by agreeing** amongst themselves so that the judge's adjudication isn't needed. As long as the "judge" mechanism can be assumed to be reliable, these promises can be counted as instant transfers, with the judge only appealed to in exceptional circumstances, such as when one party disappears.
+Therefore, on Bitcoin, only users who care about their privacy will likely mix their coins; those that feel they have "nothing to hide" will not. By extension, it's entirely possible that the very act of mixing itself would come to be seen as suspect. And while ZeroLink breaks the link of transaction history, that history of mixing is still visible on the blockchain.
 
-Of course, these details are only _part_ of the reason people think that state/payment channels are complicated. A much bigger one is that **Bitcoin payment channels _are _complicated**. Building a "judge" mechanism in Bitcoin with even [reasonably useful properties][11] is surprisingly intricate. But once you have a clear concept of state channels in general, you can see that **this only comes from trying to implement the idea in a constrained context**. Basic smart contract features like a timer mechanism and allowing two different paths to be taken depending on the signed message submitted are just plain harder to do in Bitcoin. Some of these features are being gradually added or built. By seeing that **payment channels are only a special subcase of the broader "state channel" idea**, we realise that this is a much broader technique, and that **state channels can apply to any smart contract** which deals with frequent updates between a defined set of participants. You can anticipate seeing this approach in many (if not most) distributed applications going forward.
+On Monero, in contrast, even users who don't care about privacy use RingCT and have their coins used as decoys. This increases anonymity for Monero users that do care about their privacy: they're not suspect for using RingCT. (Though like Zerolink mixing on Bitcoin, using Monero could, of course, be considered suspect _in and of itself_; there [are][11] [indications][12] that this is indeed the case.)
 
-Now we have a bit clear idea that what is a "state channel". So, let's move to side chain.
+And there is another flip side to the "mandatory privacy" solution. If too many Monero users that do not care about their privacy will go so far as to give up their privacy to spies, their combined data could go a long way in piecing together which coins in all other transactions act as decoys. This risk could become meaningful if [about half][13] of all Monero activity is compromised. In a world where exchanges and other regulatory compliant companies are among the biggest Monero users, this risk can't be dismissed.
 
-### What are SideChains ?
+This risk can be mitigated by increasing the ring size, that is, the number of decoys included in each transaction. Indeed, the ring size was increased to seven through the previous hard fork for this very reason, and it is why the ring size will increase to 11 soon. At that point, well over half of all Monero activity must be compromised before the risk becomes meaningful. The Monero core team considers this scenario very unlikely.
 
-> **A sidechain is a separate blockchain that is attached to its parent blockchain(mainchain) using a two-way peg.**
+Ideally, Monero's ring size would be increased even more — perhaps even to 100, putting it on par with Wasabi's ZeroLink implementation — however, that's not really possible. On Monero, increasing privacy comes at the cost of scalability.
 
-In other words, you can move assets to the sidechain and then back to the parent chain.
+#### Scalability
 
-![][12]![][13]![][13]
+A big downside of Monero's RingCT format is that it makes the system a magnitude less scalable than Bitcoin and just about every other cryptocurrency. Because all decoy coins must be included in a transaction, and the CT math used in these transactions is data heavy, Monero transactions are currently in the ballpark of 30 times bigger than Bitcoin transactions.
 
-sidechain
+This size will decrease considerably as the upcoming hard fork introduces a cryptographic efficiency trick called "[Bulletproofs][14]," which should shrink the size of transactions by about 80 percent. But even with the increased ring size, Monero transactions will be roughly 10 times the size as Bitcoin's. All this data must be transmitted and verified by all nodes (and miners) on the network.
 
-The two-way peg enables interchangeability of assets at a predetermined rate between the parent blockchain and the sidechain. The original blockchain is usually referred to as the 'main chain' and all additional blockchains are referred to as 'sidechains'. The blockchain platform Ardor refers to its sidechains as 'childchains'.
+Making matters worse, the Monero blockchain cannot be pruned in its entirety. Where Bitcoin's full node users can opt to get rid of old transaction data, much of Monero's transaction history remains relevant and must, therefore, be stored forever. This is currently 20 gigabytes and growing. (The total Monero blockchain is currently 60 gigabytes.)
 
-A user on the parent chain first has to send their coins to an output address, where the coins become locked so the user is unable to spend them elsewhere. Once the transaction has been completed, a confirmation is communicated across the chains followed by a waiting period for extra security. After the waiting period, the equivalent number of coins is released on the sidechain, allowing the user to access and spend them there. The reverse happens when moving back from a sidechain to the main chain.
+This is probably not an immediate problem, but only because Monero usage is two orders of magnitude below Bitcoin's: Monero only processes a couple thousand transactions per day, versus over 200,000 for Bitcoin. However, if the number of Monero transactions were to grow by a serious degree, the system could run into bottlenecks, for example, making it increasingly difficult for regular users to run Monero nodes.
 
-#### Federations
+Many of these Monero users could instead opt for more lightweight solutions, such as [remote nodes][15] or [light wallets][16]. But both of these come with privacy trade-offs, with their own risks and nuances. In short, relying on remote nodes is fairly secure and private in most cases, but a user could get unlucky if he relies on a spying node too much. Lightwallets are less private to begin with as they give up their view key, and they are particularly not recommended for cases where privacy is of particular importance.
 
-A federation is a group that serves as an intermediate point between a main chain and one of its sidechains. This group determines when the coins a user has used are locked up and released. The creators of the sidechain can choose the members of the federation. A problem with the federation structure is that it adds another layer between the main chain and the sidechain.
+In the end, Monero is undoubtedly one of the best privacycoins available — if not the best one. Still, if Bitcoin is used in a privacy-conscious manner, the difference between the two is probably smaller than some would expect. Monero's mandatory privacy and blinded amounts arguably still give it a leg up — but these features are in direct competition with scalability. How this situation evolves over time depends a lot on future technologies and is, therefore, hard to predict. It's not obvious that Monero's trade-offs will provide a more private system forever.
 
-Sidechains are responsible for their own security. If there isn't enough mining power to secure a sidechain, it could be hacked. Since each sidechain is independent, if it is hacked or compromised, the damage will be contained within that chain and won't affect the main chain. Conversely, should the main chain become compromised, the sidechain can still operate, but the peg will lose most of its value.
+_Also read the articles in this series on [Dash][17], [Verge][18], [Zcash][19] and [Mimblewimble][20]._
 
-Sidechains need their own miners. These miners can be incentivized through 'merged mining', whereby two separate cryptocurrencies, based on the same algorithm, are mined simultaneously.
-
-Here is a list of some of the Sidechain Projects.
-
-[**11 sidechain projects every blockchain developer should know about**  
-_The whole world is going through the blockchain revolution. But wait…is this really what we dreamed of? Present…_hackernoon.com][14]
-
-Now, we have a good understanding of sidechains too. So, let's put them to the ring.
-
-### What problems are they trying to solve ?
-
-> Both Sidechain and State Channel are tricks to improve the poor scalability of blockchains in general.
-
-They both follow a bit same model.
-
-* Locking up state/assets.
-* Doing transactions off the blockhain/mainchain.
-* Unlocking the state/assets from the state channel/sidechain.
-
-But despite this analogy, there are many differences between the two which arises from the point that **_in State Channels we do not use a separate blockchain whereas in Sidechains we use a separate blockchain_**. Let's see what are its consequences.
-
-### Which is a better scaling solution among the two ?
-
-To decide this, let's see their pros and cons.
-
-#### State Channel pros
-
-* **State channels have strong privacy properties: **This is because everything is happening "inside" a channel between participants, rather than broadcast publicly and recorded on-chain. Only the opening and closing transactions must be public. Whereas in sidechains every transaction is published on the sidechain which is received by every participant on the sidechain irrespective of the fact that you are not interacting with all of the participants on the sidechain.
-* **State channels have instant finality**, meaning that as soon as both parties sign a state update, it can be considered final. Both parties have a very high guarantee that, if necessary, they can "enforce" that state on-chain. But as discussed above that the state channel closing could take variable time considering the security level of the transaction. Whereas in sidechains you have a blockchain on the other side. So the finality depends on the mining power of the sidechain.
-
-#### State Channel **cons**
-
-* **_State Channels need 100% availability of all the participants involved: _**As we have discussed above that if anyone the participants goes unavailable, then this could prove costly to him. The participants can use someone to represent him if he goes unavailable, but the possibility of the representative getting attacked or bribed makes it a problem for state channel. Whereas in sidechains you don't have to be available all the time you are on the sidechain.
-* **_State channels are best used for applications with a defined set of participants: _**This is because the Judge contract(the contract used to lock the state) must always know the participants/entities (i.e. addresses) that are part of a given channel. We can add and remove people, but it requires a change to the contract each time. Whereas in sidechains there is no such limitation on the movement of the participants.
-* **_State Channels are particularly useful where participants are going to be exchanging many state updates over a long period of time:_ **This is because there is an initial cost to _creating_ a channel in deploying the Judge contract. But once it is deployed, the cost per state update inside that channel is extremely low.
-
-#### Sidechain pros
-
-* **_Sidechains are permanent. You don't have create your own sidechain for specific purpose if there is one present: _**Sidechains are created and maintained once made. We don't close sidechains, rather we lock the assets on sidechain to move back to the mainchain. This can be helpful in the way that anyone who is doing a specific task off blockchain/mainchain (for eg. [transacting in dogecoin][15]) will come to the same sidechain. So, you don't have to create separate chains for every new participant. Whereas in state channels you usually have to create a new channel to add a new participant. But projects such as Lightning , Raiden network have come up with brilliant solution for this. They create a mesh of participants so you don't have to create a new channel for every new participant you interact with. You can interact with participants indirectly creating a channel between you and recipient through some other participant who is common to both: you and the recipient.
-* **_Sidechains allow cryptocurrencies to interact with one another:_** They add flexibility and allow developers to experiment with Beta releases of Altcoins or software updates before pushing them on to the main chain. Traditional banking functions like issuing and tracking ownership of shares can be tested on sidechains before moving them onto main chains.
-
-#### Sidechain cons
-
-* **_Sidechains need a lot of initial investment to start off: _**To create a sidechain we need to have enough miners so that the network is safe from attackers. Also, we have to make it sure that they are up and running. Whereas there is no blockchain involved in state channels. So, no such requirement is needed.
-* **_A Federation is needed for sidechains: _**This adds another layer between the mainchain and the sidechain. This could prove as another weak point for the attackers to attack by bribing or attacking the federation. Whereas in state channel we just need a smart contract to do this for us.
-
-[1]: https://bitcoin.org/en/developer-guide#micropayment-channel
-[2]: https://hackernoon.com/10-state-channel-projects-every-blockchain-developer-should-know-about-293514a516fd "https://hackernoon.com/10-state-channel-projects-every-blockchain-developer-should-know-about-293514a516fd"
-[3]: https://cdn-images-1.medium.com/freeze/max/75/1*6eEGoEk7_bmt4JCNmCnKnA.png?q=20
-[4]: https://cdn-images-1.medium.com/max/2000/1*6eEGoEk7_bmt4JCNmCnKnA.png
-[5]: http://bitcoin.stackexchange.com/questions/3718/what-are-multi-signature-transactions
-[6]: https://en.bitcoin.it/wiki/Confirmation
-[7]: https://www.mail-archive.com/bitcoin-development@lists.sourceforge.net/msg06576.html
-[8]: https://www.youtube.com/watch?v=XdbsfRYskMk
-[9]: http://www.slashgear.com/three-arrested-for-trying-to-cut-undersea-internet-cable-27275579/
-[10]: https://bitcoin.org/en/alert/2015-07-04-spv-mining#list-of-forks
-[11]: http://www.tik.ee.ethz.ch/file/716b955c130e6c703fac336ea17b1670/duplex-micropayment-channels.pdf
-[12]: https://cdn-images-1.medium.com/freeze/max/75/1*hFdtS94EIFeSQGWREnNWJw.png?q=20
-[13]: https://cdn-images-1.medium.com/max/2000/1*hFdtS94EIFeSQGWREnNWJw.png
-[14]: https://hackernoon.com/13-sidechain-projects-every-blockchain-developer-should-know-about-804b65364107 "https://hackernoon.com/13-sidechain-projects-every-blockchain-developer-should-know-about-804b65364107"
-[15]: https://www.reddit.com/r/dogecoin/comments/61vg5k/dogethereum_we_can_do_this_dogether/
+[1]: https://bitcoinmagazine.com/articles/bitcoin-privacycoin-tech-making-bitcoin-more-private/
+[2]: https://getmonero.org/
+[3]: https://bytecoin.org/
+[4]: https://bitcointalk.org/index.php?topic=563821.0
+[5]: https://bitcoinmagazine.com/markets/
+[6]: https://www.ledgerjournal.org/ojs/index.php/ledger/article/view/34
+[7]: https://bitcoinmagazine.com/articles/stealth-transactions-and-reusable-payment-codes-how-bitcoin-addresses-can-be-hidden-in-plain-sight-1467743772/
+[8]: https://samouraiwallet.com/
+[9]: https://github.com/zkSNACKs/WalletWasabi/releases
+[10]: https://bobwallet.github.io/
+[11]: https://www.forbes.com/consent/?toURL=https://www.forbes.com/sites/astanley/2018/06/20/u-s-secret-service-action-needed-to-address-anonymous-cryptocurrencies/#4239159e3ca1
+[12]: https://bcfocus.com/news/changelly-withhold-hundreds-of-monero-due-to-high-risk-kyc-concerns/22326/
+[13]: https://docs.google.com/spreadsheets/d/1iLa_yklutjHqn_DrOlO_eTb00l4YDAezijX2J5r6P14/edit#gid=42724826
+[14]: https://bitcoinmagazine.com/articles/how-bulletproofs-could-make-bitcoin-privacy-less-costly/
+[15]: https://getmonero.org/resources/user-guides/remote_node_gui.html
+[16]: https://getmonero.org/downloads/#mobilelight
+[17]: https://bitcoinmagazine.com/articles/battle-privacycoins-why-dash-not-really-private/
+[18]: https://bitcoinmagazine.com/articles/battle-privacycoins-verge-offers-little-privacy-and-nothing-unique/
+[19]: https://bitcoinmagazine.com/articles/battle-privacycoins-zcash-groundbreaking-if-you-trust-it/
+[20]: https://bitcoinmagazine.com/articles/battle-privacycoins-what-we-know-about-grin-and-beams-mimblewimble/
 
   

@@ -1,8 +1,11 @@
 import codecs
 import re
+import json
 
 def require_translate(content):
-    return content and not content.startswith("[") and not content.startswith("!")
+    return content \
+        and not content.startswith("!") \
+        and not re.match("\[\d+\].+", content)
 
 def replace_duplicated_image(source):
     m=re.match("(!\[\]\[\d+\])(!\[\]\[\d+\])(!\[\]\[\d+\])", source)
@@ -14,6 +17,21 @@ def replace_duplicated_image(source):
 def chunks(l, n):
     for i in range(0, len(l), n):
         yield l[i:i + n]
+
+def load_trans_term():
+    with open('template/terms.json') as json_data:
+        term_json = json.load(json_data)
+        return term_json
+
+def replace_trans_terms(values):
+    term_json = load_trans_term()
+
+    result = []
+    for value in values:
+        for term in term_json:
+            value=value.replace(term["key"],term["value"])
+        result.append(value)
+    return result
 
 def read_file(file_input):
     with codecs.open(file_input,'r',encoding='utf8', errors='ignore') as fi:
