@@ -2,8 +2,7 @@ from google.cloud import translate
 import codecs
 from util import *
 from google_trans import *
-
-translator = translate.Client()
+from ms_trans import *
 
 file_input="work/source.md"
 file_output="work/translated.md"
@@ -17,7 +16,8 @@ for line in content:
     source_items.append(replace_duplicated_image(line))
 
 # do trans
-google_translated_items = google_tran(source_items)
+google_translated_items = google_trans(source_items)
+# ms_translated_items = ms_trans(source_items)
 
 # build output items
 i = 0
@@ -26,6 +26,7 @@ while i < len(source_items):
     
     if(require_translate(source_items[i])):
         output_items.append(google_translated_items[i])
+        # output_items.append(ms_translated_items[i])
 
     i += 1
 

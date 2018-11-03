@@ -3,7 +3,7 @@ from util import chunks
 
 translator = translate.Client()
 
-def google_tran(source_items):
+def google_trans(source_items):
     translated_items = []
 
     # split into batches
