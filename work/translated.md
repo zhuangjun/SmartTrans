@@ -1,4 +1,5 @@
 
+
 # Bitcoin's Path to Method of Payment
 ＃比特币的支付方式之路
 
