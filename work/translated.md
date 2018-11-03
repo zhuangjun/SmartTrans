@@ -4,7 +4,7 @@ https://bitcoinmagazine.com/articles/battle-privacycoins-why-monero-hard-beat-an
 
 
 Based on blockchain technology, most cryptocurrencies have an open and public ledger. While this is required for these systems to work, it comes with a significant downside: Privacy is often quite limited. Government agencies, analytics companies and other interested parties — let's call them "spies" — have ways to analyze the public blockchains and peer-to-peer networks of cryptocurrencies like Bitcoin, to cluster addresses and tie them to IP addresses or other identifying information.
-基于区块链技术，大多数数字货币都有一个开放的公共分类账。虽然这是这些系统工作所必需的，但它具有明显的缺点：隐私通常非常有限。政府机构，分析公司和其他感兴趣的团体 - 我们称之为“间谍” - 有办法分析公共区块链和比特币等数字货币的点对点网络，集群地址并将它们与IP地址或其他识别信息联系起来。
+基于区块链技术，大多数数字货币都有一个开放的公共账本。虽然这是这些系统工作所必需的，但它具有明显的缺点：隐私通常非常有限。政府机构，分析公司和其他感兴趣的团体 - 我们称之为“间谍” - 有办法分析公共区块链和比特币等数字货币的点对点网络，集群地址并将它们与IP地址或其他识别信息联系起来。
 
 Dissatisfied with Bitcoin's privacy features, several cryptocurrency projects have launched with the specific goal to improve on them over the years. And not without success. Several of these privacycoins are among the most popular cryptocurrencies on the market today.
 由于对比特币的隐私功能不满意，多个数字货币项目已启动，其具体目标是多年来对其进行改进。并非没有成功。其中一些隐私币是当今市场上最受欢迎的数字货币之一。
@@ -22,7 +22,7 @@ In part two: Monero
 [Monero][2]（XMR）是一种以隐私为重点的数字货币。它基于[Bytecoin][3]中首次使用的创新CryptoNote协议，但该项目秘密地提前80％。没有任何这样的预设，Monero在2014年推出（最初为“[Bitmonero][4]”），实际上是CryptoNote协议的“诚实”实现。
 
 As such, Monero was one of the first altcoins not based on Bitcoin's codebase, and it still differs from Bitcoin in several ways. For example, Monero does not have a limited supply; instead, it has an emission schedule that will slightly inflate the money supply forever. Monero rolls out scheduled hard forks about twice a year, and its latest version also has an ASIC-resistant, proof-of-work algorithm, meaning the cryptocurrency is mined by GPUs and CPUs only.
-因此，Monero是第一批不基于比特币代码库的山寨币，它在很多方面仍然与比特币不同。例如，Monero没有有限的供应;相反，它有一个排放计划，将永远略微膨胀货币供应。 Monero每年大约推出两次预定硬叉，其最新版本还具有ASIC抗性，工作量证明算法，这意味着数字货币仅由GPU和CPU开采。
+因此，Monero是第一批不基于比特币代码库的山寨币，它在很多方面仍然与比特币不同。例如，Monero没有有限的供应;相反，它有一个膨胀计划，将永远略微膨胀货币供应。 Monero每年大约推出两次预定硬叉，其最新版本还具有ASIC抗性，工作量证明算法，这意味着数字货币仅由GPU和CPU开采。
 
 While created by the pseudonymous developer thankful_for_today, this founder quickly wanted to take Monero into a direction the brand new community did not agree with; he was subsequently "fired" weeks after launch when the project was forked. Monero has since been led by a core team of about half a dozen developers. The best-known and visible of the group is Riccardo "Fluffypony" Spagni — though Spagni is not as active in Monero development as he used to be. Most of the other core team members are pseudonymous.
 虽然由假名开发者Thankful_for_today创建，但这位创始人很快就想让Monero走向全新社区不同意的方向;随后，当项目分叉后，他在发布几周后被“解雇”。此后，Monero由大约六位开发人员组成的核心团队领导。最着名和最引人注目的是Riccardo“Fluffypony”Spagni  - 尽管Spagni在Monero开发方面并不像以前那样活跃。大多数其他核心团队成员都是假名。
