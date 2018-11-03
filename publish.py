@@ -1,4 +1,6 @@
 import codecs
+import shutil
+import uuid
 
 file_translated="work/translated.md"
 file_output="work/published.md"
@@ -36,6 +38,7 @@ def append_translation(file_output, translation):
 
             i += 1
 
+
 translated_items = read_file(file_translated)
 header_items = read_file(file_header)
 footer_items = read_file(file_footer)
@@ -44,5 +47,8 @@ clean_file(file_output)
 append_file(file_output,header_items)
 append_translation(file_output, translated_items)
 append_file(file_output,footer_items)
+
+
+shutil.move(file_output,"finished/"+str(uuid.uuid1())+".md")
 
 print("Published.")
