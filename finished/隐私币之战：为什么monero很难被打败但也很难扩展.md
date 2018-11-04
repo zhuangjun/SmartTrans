@@ -1,15 +1,12 @@
+隐私币之战：为什么monero很难被打败但也很难扩展
 
-
-> 本文翻译自：
+> 本文翻译自：https://bitcoinmagazine.com/articles/battle-privacycoins-why-monero-hard-beat-and-hard-scale/
 >
 > 译者：[区块链中文字幕组](https://github.com/BlockchainTranslator/EOS) [小丹](https://github.com/zhuangjun)
 >
 > 翻译时间：2018-10-26
 
 ----------------------------------------------------
-
-https://bitcoinmagazine.com/articles/battle-privacycoins-why-monero-hard-beat-and-hard-scale/
-
 
 基于区块链技术，大多数数字货币都有一个开放的公共账本。虽然这是这些系统工作所必需的，但它具有明显的缺点：隐私通常非常有限。政府机构，分析公司和其他感兴趣的团体 - 我们称之为“间谍” - 有办法分析公共区块链和比特币等数字货币的点对点网络，集群地址并将它们与IP地址或其他识别信息联系起来。
 
