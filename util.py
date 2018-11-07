@@ -19,7 +19,7 @@ def chunks(l, n):
         yield l[i:i + n]
 
 def load_trans_term():
-    with open('template/terms.json') as json_data:
+    with codecs.open('template/terms.json','r',encoding='utf8') as json_data:
         term_json = json.load(json_data)
         return term_json
 
