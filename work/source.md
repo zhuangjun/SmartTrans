@@ -1,204 +1,55 @@
-https://medium.com/coinmonks/powered-by-lightning-part-2-5ef1e76e4288
+https://medium.com/mechanism-labs/finality-in-blockchain-consensus-d1f83c120a9a
 
-In the future we will be able to use the LN for the following time of payments:
+# Finality in Blockchain Consensus
 
-* Paying peers
-* Paying merchants
-* Programmable money (games, streaming entertainment, services, IoT, etc)
+Today, with the swipe of a credit card, I purchased a delightful matcha green tea (shout out to Asha in Berkeley). Just moments after the swipe, the vendor felt comfortable giving me the tea in exchange for the amount I paid. The vendor was certain that the transaction went through_, _that it would not later be reverted, that they were guaranteed to receive the dollar value which I had paid. In other words, the purchase was **_finalized_**. [Edit: Thanks to [Lawson Baker][1] and [Ari Paul][2] for pointing out the increased complexity behind credit card transaction finalization. (See Lawson's response starred on the right). Cash transactions achieve this property of immediate finality.]
 
-We'll take a look at each scenario and discuss how it can be done with Bitcoin and the Lightning Network.
+In the blockchain setting, **_finality_** is the affirmation that all well-formed blocks will not be revoked once committed to the blockchain. When users transact, they want to be confident that once their transactions go through, that the transactions cannot be arbitrarily changed or reversed. As such, in designing a blockchain consensus protocol, finality becomes vital. In current Nakamoto consensus based systems, 51% attacks and selfish mining threaten the health of the system by allowing the possibility for blocks to be revoked (eg. if a malicious actor is able to accumulate 51% of mining power, they can conduct a double spend attack). These protocols offer probabilistic finality, while others can guarantee absolute finality.
 
-### Entering Bitcoin
+### Types of Finality
 
-Firstly, how does Alice enter Bitcoin? Alice purchases it off an exchange of some sorts, by making a purchase with fiat, and withdrawing her Bitcoin to her mobile and hardware wallets. Mobile wallets for small, quick purchases, often referred to as a "hot wallet" and hardware wallets to store the bulk of her Bitcoin for security, often called a "cold wallet".
+**_Probabilistic finality_**_ _refers to the type of finality provided by chain-based protocols (eg. Bitcoin's Nakamoto consensus), in which the probability that a transaction will not be reverted increases as the block which contains that transaction sinks deeper into the chain. The deeper the block, the more likely that the fork containing that block is the longest chain. This is why it is recommended to wait until a transaction is 6 blocks deep into the Bitcoin blockchain, which takes around an hour, before following through on that transaction, to ensure that there is a very low likelihood of that transaction being reverted.
 
-The following is the typical flow:
+**_Absolute finality_**_ _refers to the type of finality provided by PBFT-based protocols (eg. Tendermint), in which a transaction is immediately considered finalized once it is included in a block and added to the blockchain. In this case, a leader will propose a block, and a sufficient fraction of a committee of validators will have to approve the block for it be committed.
 
-![][1]![][2]![][2]
+There is also the notion of **_economic finality_**_, _in which it becomes monetarily costly for a block to be reverted. In Proof of Stake based systems that employ slashing mechanisms (eg. Casper FFG, Tendermint), if a staker double signs on two blocks, their entire stake could get slashed, making it exceedingly expensive to harm finality. For example, if there is a network with 100 stakers, each who have staked $1 million dollars, then the total amount of stake present is $100 million dollars. If there are two blocks proposed at the same height, say B and B', and 66% of stakers vote on B ($66 million) and 66% vote on B' ($66 million), then at least 33% of stakers were malicious meaning the loss of at least $33 million.
 
-Buying and withdrawing Bitcoin
+### CAP Theorem and Finality
 
-In a lightning-powered future, Alice will do it no differently. From the same wallet that she currently uses as a hot wallet, she will open a channel with her exchange, creating her first lightning channel.
+While it may seem, trivially, as though absolute finality is more desirable than probabilistic finality, there are some fundamental tradeoffs which can make it better to choose a probabilistic favoring chain. Here it's useful to employ [**Eric Brewer's CAP Theorem**][3] when thinking about these tradeoffs between probabilistic and BFT based finality. The CAP Theorem states that in the case of a partition, a distributed system can only preserve either consistency or availability. A **_consistency_** preserving system would halt rather than let inaccurate transactions through. An **_availability_**_ _preserving system would continue even if it lets inaccurate transactions through. Consistency favoring systems provide BFT finality, while availability favoring systems provide probabilistic finality.
 
-> The semantics of "opening channels" will most likely be dropped in the future Bitcoin wallet to avoid confusing users. Instead, users will have a "lightning wallet" which will have software (Autopilot) that will open channels seamlessly behalf of the user; and these channels will be opened with a number of different nodes, not just an exchange node.
+![][4]
 
-The lightning wallet is accessed from Alice's mobile device, but the mobile device is capable of holding Bitcoin at both Layer 1 and Layer 2. Future mobile wallet apps should strive to have very clear user experience around the two layers; most likely treating the lightning wallet as the "everyday cash account", and the blockchain wallet as the "savings account". The hardware wallet would then be the "term deposit" or the "super fund".
+In making payments, users are often looking for the availability that probabilistically final chains provide (this is why many DAG based protocols, which favor availability over consistency, are focusing on supporting payments), however, many blockchain platforms offer more than payments, supporting decentralized applications backed by smart contracts. Different DApps can have varying preferences with regard to finality — DApps that require availability, for which it would be better if transactions were always able to get through regardless of some inaccuracies, would prefer probabilistically final chains, while DApps that prefer consistency, for which the whole application halting in lieu of inaccurate transactions going through is preferable, would prefer absolute final chains. Finality fundamentally affects user experience.
 
-We'll soon see why her Mobile Wallet should have both Layer 1 and Layer 2 Bitcoin. Just a note; Layer 1 Bitcoin is always the same as Layer 2 Bitcoin, but Layer 1 Bitcoin can be viewed as unencumbered, whilst Layer 2 Bitcoin has been signed into a conditional wallet. To relate to the legacy finance system, Layer 1 Bitcoin is akin to cash in a bank account, whilst Layer 2 Bitcoin is akin to your Paypal balance — it's the same cash, but both you and Paypal have oversight on your Paypal balance.
+### Finality in PoS Consensus
 
-> Note: with Bitcoin, your assets can never be seized in Layer 1 or Layer 2, unlike bank accounts and your PayPal balance, which are just database en特里结构s and can be wiped at any time.
+In our [**Meta-Analysis of Alternative Consensus Protocols**][5], we considered the finality guarantees of certain major PoS platforms. We considered Tendermint, Thunderella, Algorand, Dfinity, Ouroboros Genesis, Casper FFG, and Casper CBC. Here, we'll provide a brief overview of these finality guarantees, however, it's important to examine these protocols as a whole in deciding which to employ versus just considering one parameter (in this case finality guarantees).
 
-![][3]![][4]![][5]
+**Tendermint: **Tendermint achieves absolute finality. Any block that receives both ⅔ or more pre-votes and pre-commits is finalized. This process continues indefinitely unless ⅓ or more validators become unresponsive, in which case the network halts — as such, Tendermint prefers consistency over availability. When PoS slashing rules are applied to Tendermint, the protocol also achieves economic finality.
 
-Alice opens a lightning channel with her Exchange.
+**Thunderella: **Thunderella's fast path provides absolute finality. Any maximum sequence of transactions with no gaps that has been notarized is considered fully confirmed output. If ¾ of the fast path committee are honest and online and the proposer is honest then valid transactions are instantly confirmed. However, the fast path confirmation is different from overall finality — it is optimistic finality. Transactions are fully finalized once they are recorded on the underlying blockchain, which can either be chain based or BFT based. As Thunderella falls back to an underlying blockchain in the case that the fast path fails, it prioritizes availability.
 
-Alice can now do the following:
+**Algorand: **Algorand achieves probabilistic finality. As long as an attacker controls less than ⅓ of the protocol's monetary value, Algorand can guarantee that the probability for forks is negligible allowing the protocol to operate in strong synchrony reaching definitive agreement on each block. In weak synchrony, Algorand may fork, but uses BA* to come to agreement on which fork to choose. As such, transactions in Algorand are eventually finalized when the protocol returns to strong synchrony. Algorand prioritizes consistency over availability, preferring to produce empty blocks generating unproductive progress rather than sacrificing on consistency.
 
-* Add Bitcoin to her lightning wallet, or withdraw it
-* Spend Bitcoin from her lightning wallet
+**Dfinity: **Dfinity achieves probabilistic finality, The probability of finality increases as the block weight on a chain increases. This assumes that each round _r_, there is a time when we can rule out any further notarized blocks being received. At this rule out time, we can finalize round _r _because we know that the notarized blocks already contain all the chain tips that can possibly resolve beyond round _r._ There is a guarantee of near-instant finality as under normal operations, in round _r_, every transaction included in a block for round _r _is final for an observer after two confirmation plus the network propagation delay. Dfinity prioritizes consistency in that if the network splits, it automatically causes the random beacon to pause, not allowing either of halves of the network to continue.
 
-#### Adding and withdrawing Bitcoin
+**Ouroboros Genesis: **Genesis can achieve probabilistic finality based on their chain selection rule. The rule is that for a short range (up to _k _blocks, where _k _is the security parameter), follow the longest chain, and for long range (more than _k _blocks), use the plenitude rule, meaning look at the period of time right after the fork occurs after the current chain and select the denser of the chains.
 
-Alice will want to keep topping up her Bitcoin wallet. She can do this by the following:
+**Casper FFG: **Casper FFG aims to give chain-based systems absolute / economic finality, which is achieved when a ⅔ supermajority of the committee, weighted by stake, sign a block. Casper FFG is built such that it will never finalize conflicting checkpoint even if an adversary has control over the underlying blockchain's proposal mechanism. However, since FFG provides safety and the proposal mechanism provides liveness, an adversary could prevent Casper from finalizing future checkpoints by stalling consensus. FFG prioritizes consistency in that it does not allow for checkpoint finalization without a ⅔ supermajority of validators agreeing, otherwise finalization will not occur. FFG also allows for economic finality through slashing mechanisms.
 
-1. Send cash to her exchange
-2. Add Bitcoin directly from her mobile blockchain wallet
-3. Add Bitcoin directly from her hardware wallet
+**Casper TFG: **TFG achieves absolute finality under validators with different fault tolerance thresholds. That is, the protocol is asynchronously safe and BFT, allowing for validators to have different fault tolerance thresholds.
 
-Adding Bitcoin directly to her Lightning Wallet is called "splicing", and Alice can splice-in from any other on-chain wallet she owns. When Alice sends cash to the exchange and buys Bitcoin, the exchange will be splicing-in from their on-chain wallet into her channel.
+Blocks being reverted can result in losses of millions or dollars or impact fundamental actions in decentralized applications. As such, understanding finality is crucial both in building robust blockchain platforms and in choosing platforms on which to develop applications.
 
-![][6]![][4]![][7]
+_Acknowledgements: A special thanks to [__Zubin Koticha_][6]_ and [__Aparna Krishnan_][7]_ for discussions and feedback that contributed heavily to this post._
 
-Alice can keep filling her Lightning Wallet by sending cash to her Exchange
-
-To Alice this is all completely seamless. She can view her Lightning Wallet's balance and is able to add to it from any mechanism she desires. Under the hood, her wallet is performing a series of atomic on-chain transactions in order to place her Bitcoin into her Lightning Wallet.
-
-Withdrawing Bitcoin is simply the above actions in reverse:
-
-1. Withdraw Bitcoin to cash: withdraw via her exchange
-2. Withdraw Bitcoin to her Layer 1 wallet: splice out from her lightning wallet
-3. Withdraw Bitcoin to her cold wallet: splice out from her lightning wallet
-
-#### Spending Bitcoin
-
-Once Alice has a Lightning Wallet with a balance, she can spend to anyone else that is on the Lightning Network. She enters her recipient's address and sends the payment. Her mobile wallet performs the following actions:
-
-* Calculates the best route to Bob
-* Sends the payment and waits for receipt
-
-![][8]![][4]![][9]
-
-In the case that Alice opened her channel(s) with her local exchange, the payment will be routed first via the exchange's node, this is the "gateway node". The last node in the payment route will be the node that Bob's wallet first connected to, also called a gateway node. This is likely to be an exchange node, simply because exchange nodes are in the best positions to on-board new users onto Lightning efficiently. Bridge nodes are nodes that open channels with other nodes, and have more outgoing liquidity than incoming.
-
-Gateway nodes perform important functions in the payment flow, and can make or break Alice's payment experience. Luckily there is a lot of innovation happening right now, so we'll talk about that.
-
-> It is in Alice and Bob's interest to open a number of channels with different gateway nodes for privacy, redundancy and reliability.
-
-#### Issues
-
-Some immediate issues in the payment flow above, as well as their solutions, are discussed:
-
-1. Bob doesn't have a lightning wallet.
-
-> In this case, Alice's smart mobile wallet will detect that Bob's address is not a lightning address, and will instead send Bob Layer 1 Bitcoin seamlessly.
-
-2\. Alice's lightning wallet doesn't have enough Bitcoin to make the payment at Layer 1 or Layer 2.
-
-> The future smart mobile wallet will be able to inform Alice that she will need to either top up her Lightning Wallet, or withdraw from her Lightning Wallet.
-
-3\. Bob is not online to receive his lighting payment
-
-> If Bob cannot receive the payment as he is not online, then it will fail and route back to Alice. Alice's wallet will then ask Alice to pay Bob with Layer 1 Bitcoin, which can be sent if Bob is not online.
-
-4\. The payment route that Alice selects fails due liquidity or reliability
-
-> Alice's smart wallet will be able to re-try the payment with a different route.
-
-5\. Bob's node doesn't have enough Bitcoin to route to Bob.
-
-> For Bob to receive $100, then $100 needs to be on the other side of Bob's channel; ie, with his exchange. This may not be the case, in which case then Alice will be unable to pay Bob, through no fault of either Bob or Alice. The solution to this is for Alice to open a channel directly with Bob.
-
-We can see that the main issues circulate around Bob and his node. If Alice encounters any issues with her payment choice or liquidity, she can make corrections _before_ she sends the payment. However, she is at the mercy of Bob's payment limitations and his node.
-
-The solution to this is that Bob receives payments _at his node_ instead of directly to his wallet. His node can then inform him of an incoming payment via email, sms or push notification, and then he has the ability to go online and withdraw any incoming payments to his wallet.
-
-Bob may choose to run his own node, or he may open an account at his lightning-enabled exchange and let their node accumulate payments for him.
-
-![][10]![][4]![][11]
-
-Bob receives a notification of an incoming payment
-
-#### E-commerce and Paying Merchants
-
-Making payments to peers is fairly easy although with some issues discussed above, but Lightning comes into its own when paying merchants or making e-commerce payments.
-
-The main reason for this is that Merchants and e-commerce payment solutions will be running their own infrastructure and will care less about verifying each payment absolutely. Instead, they will be accumulating daily takings, and making batch withdrawals in cycles.
-
-Additionally, merchants will more likely choose to receive payments in legacy fiat or stablecoins to pay tax, salaries and other business expenses. Thus it makes even more sense that they will have a merchant account at a local exchange and let the exchange handle incoming payments.
-
-![][12]![][4]![][13]
-
-A Merchant will likely use Exchange Infrastructure
-
-### **Atomic Multi-path Payments (AMP)**
-
-We mentioned before that Alice's wallet will be able to choose the route to Bob, but that's only scratching the surface.
-
-AMP is revolutionary feature yet to be built on Lightning, as it was only [conceived recently][14]. The main issue with Lightning currently is that payments can only be made across channels that already have existing liquidity, ie, a $10 payment can only be sent across a channel that already has $10 in it.
-
-AMP allows payments to be atomically sent across many different channels at once, and Bob will receive all of them, or none of them. As an example, Alice wishes to pay Bob $1000. Instead of sending a single $1000 payment that will likely fail, Alice can send 1000 $1 payments. Each payment goes across a different route and when Bob receives them all, he will have the full $1000.
-
-When we thought Lightning allowed unicast payments, AMP allows _multi-cast_ payments. This has ground-breaking improvements to the following characteristics of Lightning:
-
-1. **Reliability.** Each channel will have an extremely likely chance of already having $1 in it, so the overall reliability of the payment will quickly go to 100%.
-2. **Fee competitive.** Nodes who attempt to charge high fees will quickly lose selection from routes and will lose traffic. They will always have to charge highly competitive fees to attract traffic.
-
-![][15]![][4]![][16]
-
-An AMP Payment
-
-Here in this diagram Alice pays Bob $10 with two $5 payments. The routes are chosen to maximise reliability and liquidity. We can see that apart from the gateway nodes, no single node knew of the full payment size, nor who was paying who. As a result, the more payments are made across the network, the faster to re-balance and more healthy the entire network becomes. This is all thanks to AMP.
-
-### Programmable Money
-
-Lightning enables Bitcoin to become Programmable Money. In the future, all of Alice's devices will have a lighting wallet to enable them to quickly pay on behalf of Alice, programmatically. Her self-driving car, her phone, her fridge will all have wallets and Alice will be able to set rules about how they pay, and how much. Such as:
-
-* Phone to pay no more than $10/month for fast internet
-* Fridge to pay $200/week for her grocery bills, set by her menu
-* Car to spend no more than $10/week on tolls
-
-Alice will be able to top them all up from her primary wallet, sending liquidity to them. She'll get notified whenever they get low, as well as how much they are spending on behalf of her. As they will only spend with Alice's permission, Alice will never be charged for something she didn't know about, and she'll have complete control of spending.
-
-Alice will never be able to spend more than she has, which means she'll never accrue debt.
-
-![][17]![][4]![][18]
-
-The future of Money
-
-### A node in every house
-
-We can see that the health and useability of the Lightning Network really comes down to the number of nodes and funded channels there are available. Additionally, it is in Alice, Bob and the merchants' best interests to run their own nodes as they can make better choices around fees, liquidity and privacy.
-
-The good thing is that running a Lightning node will quickly become a very trivial thing, to the point where the household of the future will bundle the internet router with a Bitcoin and a Lightning node. Members of each household will simply connect their mobile wallets with their own node, and it will run 24/7 as they currently do.
-
-Some awesome nodes coming into production include the [Casa Node][19] and [RaspiBlitz][20].
-
-Ensuring that the Bitcoin network of the future remains accessible to all, so that anyone can host a node at home, is becoming more and more important. As such I am firmly in the Segwit + 1mb block limit camp. Currently the Bitcoin chain is 185GB, and takes about a day to sync on typical devices. Single chip computers (RPi) can be synced just as fast by being pre-loaded with a pre-validated chain-set.
-
-We'll discuss in Part 5 of this series how we can foreseeably on-board the entire world onto Bitcoin and the Lightning Network with the _no change_ to the current Bitcoin blockchain parameters, as well the massive benefits the current design choices of Bitcoin actually give us.
-
-### Conclusion
-
-Lightning is a massive improvement to how we can use and spend Bitcoin and is part of a broader movement where we are slowly transitioning to debt-free, programmable money with complete control of spending.
-
-However, there are some limitations to how we will use Lightning, mainly around the recipient of the payment. The good news is there is massive amount of innovation happening in this area and most issues will likely be readily solved.
-
-Get started here: 
-
-### Acknowledgements
-
-Many thanks to @ln_master_hub and [BTCPay Server][21] for giving me feedback on this article and some technicals.
-
-[1]: https://cdn-images-1.medium.com/freeze/max/75/1*HdEa1dDLpS5oARt6bdLkEw.png?q=20
-[2]: https://cdn-images-1.medium.com/max/2000/1*HdEa1dDLpS5oARt6bdLkEw.png
-[3]: https://cdn-images-1.medium.com/freeze/max/75/1*0_s_nZmOI8J6aRjiPm4dWA.png?q=20
-[4]: https://medium.com/coinmonks/undefined
-[5]: https://cdn-images-1.medium.com/max/2000/1*0_s_nZmOI8J6aRjiPm4dWA.png
-[6]: https://cdn-images-1.medium.com/freeze/max/75/1*VKKWuJePgDZceb8Hv3CzGA.png?q=20
-[7]: https://cdn-images-1.medium.com/max/2000/1*VKKWuJePgDZceb8Hv3CzGA.png
-[8]: https://cdn-images-1.medium.com/freeze/max/75/1*5IeUobntmEAeYp7zSL1IAQ.png?q=20
-[9]: https://cdn-images-1.medium.com/max/2000/1*5IeUobntmEAeYp7zSL1IAQ.png
-[10]: https://cdn-images-1.medium.com/freeze/max/75/1*gy3KJppKCj47xFzhhOU3kw.png?q=20
-[11]: https://cdn-images-1.medium.com/max/2000/1*gy3KJppKCj47xFzhhOU3kw.png
-[12]: https://cdn-images-1.medium.com/freeze/max/75/1*7pSMjQ6Wo357uqgIS9R1tA.png?q=20
-[13]: https://cdn-images-1.medium.com/max/2000/1*7pSMjQ6Wo357uqgIS9R1tA.png
-[14]: https://lists.linuxfoundation.org/pipermail/lightning-dev/2018-February/000993.html
-[15]: https://cdn-images-1.medium.com/freeze/max/75/1*0eAD3iOyWTr69_NnBAOmlQ.png?q=20
-[16]: https://cdn-images-1.medium.com/max/2000/1*0eAD3iOyWTr69_NnBAOmlQ.png
-[17]: https://cdn-images-1.medium.com/freeze/max/75/1*SY47XnjsrWxcFBItyGWhLQ.png?q=20
-[18]: https://cdn-images-1.medium.com/max/2000/1*SY47XnjsrWxcFBItyGWhLQ.png
-[19]: https://store.casa/lightning-node/
-[20]: https://github.com/rootzoll/raspiblitz
-[21]: https://medium.com/@BtcpayServer
+[1]: https://twitter.com/lwsnbaker
+[2]: https://twitter.com/AriDavidPaul/status/1035337279219347456
+[3]: https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf
+[4]: https://cdn-images-1.medium.com/max/2000/0*fcdj_vNNJJDR34S9
+[5]: https://github.com/Mechanism-Labs/MetaAnalysis-of-Alternative-Consensus-Protocols
+[6]: https://twitter.com/snarkyzk?lang=en
+[7]: http://twitter.com/aparnalocked
 
   
