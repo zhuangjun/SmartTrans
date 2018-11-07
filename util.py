@@ -47,3 +47,7 @@ def append_file(file_output, content_items):
     with codecs.open(file_output,'a+',encoding='utf8') as fo:
         for content in content_items:
             fo.write(content+"\n")
+
+def write_file(file_output, content):
+    with codecs.open(file_output,'w',encoding='utf8') as fo:
+            fo.write(content)
