@@ -30,6 +30,8 @@ def replace_trans_terms(values):
     for value in values:
         for term in term_json:
             value=value.replace(term["key"],term["value"])
+            #replace #hello -> # hello
+            #replace 1.hello -> 1. hello
         result.append(value)
     return result
 

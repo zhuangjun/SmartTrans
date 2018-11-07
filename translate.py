@@ -2,7 +2,7 @@ from google.cloud import translate
 import codecs
 from util import *
 from google_trans import *
-from ms_trans import *
+# from ms_trans import *
 
 file_input="work/source.md"
 file_output="work/translated.md"
