@@ -1,75 +1,55 @@
+https://medium.com/mechanism-labs/finality-in-blockchain-consensus-d1f83c120a9a
 
-# Stablecoins: What you need to know
+# Finality in Blockchain Consensus
 
-Stablecoins have been around for a long time since the advent of BitShares back in 2014. They've gotten more popular with the utilization of Tether on the Omni network and backed by the same people as BitFinex. Let's dive straight in and discuss what they're for.
+Today, with the swipe of a credit card, I purchased a delightful matcha green tea (shout out to Asha in Berkeley). Just moments after the swipe, the vendor felt comfortable giving me the tea in exchange for the amount I paid. The vendor was certain that the transaction went through_, _that it would not later be reverted, that they were guaranteed to receive the dollar value which I had paid. In other words, the purchase was **_finalized_**. [Edit: Thanks to [Lawson Baker][1] and [Ari Paul][2] for pointing out the increased complexity behind credit card transaction finalization. (See Lawson's response starred on the right). Cash transactions achieve this property of immediate finality.]
 
-![][1]![][2]![][2]
+In the blockchain setting, **_finality_** is the affirmation that all well-formed blocks will not be revoked once committed to the blockchain. When users transact, they want to be confident that once their transactions go through, that the transactions cannot be arbitrarily changed or reversed. As such, in designing a blockchain consensus protocol, finality becomes vital. In current Nakamoto consensus based systems, 51% attacks and selfish mining threaten the health of the system by allowing the possibility for blocks to be revoked (eg. if a malicious actor is able to accumulate 51% of mining power, they can conduct a double spend attack). These protocols offer probabilistic finality, while others can guarantee absolute finality.
 
-### What are stablecoins?
+### Types of Finality
 
-Stablecoins are a dollar-denominated cryptocurrency. The supposed benefits are that you get the convenience of cryptocurrency (fast settlement, less regulatory hurdles, etc) with the stability of the dollar (or another fiat currency). This makes arbitraging between exchanges more convenient, for example, allowing for a more stable BTC price between exchanges.
+**_Probabilistic finality_**_ _refers to the type of finality provided by chain-based protocols (eg. Bitcoin's Nakamoto consensus), in which the probability that a transaction will not be reverted increases as the block which contains that transaction sinks deeper into the chain. The deeper the block, the more likely that the fork containing that block is the longest chain. This is why it is recommended to wait until a transaction is 6 blocks deep into the Bitcoin blockchain, which takes around an hour, before following through on that transaction, to ensure that there is a very low likelihood of that transaction being reverted.
 
-Generally, 1 token of the stablecoin (SteemIt Dollars, Basis, Tether, etc) is supposed to be worth $1. The rate fluctuates in the market as Tether's traded as low as $0.85, but that's supposed to be the exception, not the norm. Some are supposed to be able to be converted to USD directly like Tether. Others have mechanisms to change the value towards $1 should the token price go up or down like Basis.
+**_Absolute finality_**_ _refers to the type of finality provided by PBFT-based protocols (eg. Tendermint), in which a transaction is immediately considered finalized once it is included in a block and added to the blockchain. In this case, a leader will propose a block, and a sufficient fraction of a committee of validators will have to approve the block for it be committed.
 
-### How do they work?
+There is also the notion of **_economic finality_**_, _in which it becomes monetarily costly for a block to be reverted. In Proof of Stake based systems that employ slashing mechanisms (eg. Casper FFG, Tendermint), if a staker double signs on two blocks, their entire stake could get slashed, making it exceedingly expensive to harm finality. For example, if there is a network with 100 stakers, each who have staked $1 million dollars, then the total amount of stake present is $100 million dollars. If there are two blocks proposed at the same height, say B and B', and 66% of stakers vote on B ($66 million) and 66% vote on B' ($66 million), then at least 33% of stakers were malicious meaning the loss of at least $33 million.
 
-There are two types fully backed and algorithmic, and they're both more or less centralized. Fully backed stablecoins have a fully reserved backing of the money in a bank. That is, for every $1 of the stablecoin that exists, $1 is in the bank. This is what Tether is purported to be doing. Algorithmic stablecoins have a market mechanism to change the price of the currency so the currency follows the dollar.
+### CAP Theorem and Finality
 
-![][3]![][4]![][5]
+While it may seem, trivially, as though absolute finality is more desirable than probabilistic finality, there are some fundamental tradeoffs which can make it better to choose a probabilistic favoring chain. Here it's useful to employ [**Eric Brewer's CAP Theorem**][3] when thinking about these tradeoffs between probabilistic and BFT based finality. The CAP Theorem states that in the case of a partition, a distributed system can only preserve either consistency or availability. A **_consistency_** preserving system would halt rather than let inaccurate transactions through. An **_availability_**_ _preserving system would continue even if it lets inaccurate transactions through. Consistency favoring systems provide BFT finality, while availability favoring systems provide probabilistic finality.
 
-### Are they actually stable?
+![][4]
 
-Tether's been stable for a long time. Apparently, the possibility that the Tethers are backed by USD in some bank is enough for it to trade at parity _most of the time_. As with anything centralized there are additional risk factors that come into play that affect the stability of the fully backed stablecoins.
+In making payments, users are often looking for the availability that probabilistically final chains provide (this is why many DAG based protocols, which favor availability over consistency, are focusing on supporting payments), however, many blockchain platforms offer more than payments, supporting decentralized applications backed by smart contracts. Different DApps can have varying preferences with regard to finality — DApps that require availability, for which it would be better if transactions were always able to get through regardless of some inaccuracies, would prefer probabilistically final chains, while DApps that prefer consistency, for which the whole application halting in lieu of inaccurate transactions going through is preferable, would prefer absolute final chains. Finality fundamentally affects user experience.
 
-For example, having the bank account seized would almost immediately make the actual Tethers drop significantly in value as they would no longer be backed.
+### Finality in PoS Consensus
 
-Secondly, the algorithmic stablecoins that try to keep the peg through market-based incentives fluctuate more often, and require peg-correcting buys/sells to kick in. Basis does this through bond sales and subsequent redemption. SteemIt Dollars does this through an automated buy/sell using some reserve SteemIt tokens.
+In our [**Meta-Analysis of Alternative Consensus Protocols**][5], we considered the finality guarantees of certain major PoS platforms. We considered Tendermint, Thunderella, Algorand, Dfinity, Ouroboros Genesis, Casper FFG, and Casper CBC. Here, we'll provide a brief overview of these finality guarantees, however, it's important to examine these protocols as a whole in deciding which to employ versus just considering one parameter (in this case finality guarantees).
 
-### What's the risk?
+**Tendermint: **Tendermint achieves absolute finality. Any block that receives both ⅔ or more pre-votes and pre-commits is finalized. This process continues indefinitely unless ⅓ or more validators become unresponsive, in which case the network halts — as such, Tendermint prefers consistency over availability. When PoS slashing rules are applied to Tendermint, the protocol also achieves economic finality.
 
-First, if the coin is fully or partially backed by dollars in a bank, the bank account can get seized. This can be due to a variety of things, including AML/KYC laws, socialization of accounts or any number of government actions.
+**Thunderella: **Thunderella's fast path provides absolute finality. Any maximum sequence of transactions with no gaps that has been notarized is considered fully confirmed output. If ¾ of the fast path committee are honest and online and the proposer is honest then valid transactions are instantly confirmed. However, the fast path confirmation is different from overall finality — it is optimistic finality. Transactions are fully finalized once they are recorded on the underlying blockchain, which can either be chain based or BFT based. As Thunderella falls back to an underlying blockchain in the case that the fast path fails, it prioritizes availability.
 
-![][6]![][4]![][7]
+**Algorand: **Algorand achieves probabilistic finality. As long as an attacker controls less than ⅓ of the protocol's monetary value, Algorand can guarantee that the probability for forks is negligible allowing the protocol to operate in strong synchrony reaching definitive agreement on each block. In weak synchrony, Algorand may fork, but uses BA* to come to agreement on which fork to choose. As such, transactions in Algorand are eventually finalized when the protocol returns to strong synchrony. Algorand prioritizes consistency over availability, preferring to produce empty blocks generating unproductive progress rather than sacrificing on consistency.
 
-Second, there are a whole lot of other centralization risks. The custodians of Tether can embezzle the money somehow. The bank could close the account and cause a drawn-out legal battle. The dollars could be fractionally reserved instead of fully backed, in which case a bank run could cause the price of the coin to drop dramatically.
+**Dfinity: **Dfinity achieves probabilistic finality, The probability of finality increases as the block weight on a chain increases. This assumes that each round _r_, there is a time when we can rule out any further notarized blocks being received. At this rule out time, we can finalize round _r _because we know that the notarized blocks already contain all the chain tips that can possibly resolve beyond round _r._ There is a guarantee of near-instant finality as under normal operations, in round _r_, every transaction included in a block for round _r _is final for an observer after two confirmation plus the network propagation delay. Dfinity prioritizes consistency in that if the network splits, it automatically causes the random beacon to pause, not allowing either of halves of the network to continue.
 
-Third, there are risks related to algorithmic manipulations. Bonds bought in Basis could expire without paying anything. There are software updates to consider and the centralized development team could introduce a bug that could ruin the monetary policy.
+**Ouroboros Genesis: **Genesis can achieve probabilistic finality based on their chain selection rule. The rule is that for a short range (up to _k _blocks, where _k _is the security parameter), follow the longest chain, and for long range (more than _k _blocks), use the plenitude rule, meaning look at the period of time right after the fork occurs after the current chain and select the denser of the chains.
 
-### Why can't we have a stablecoin without risk?
+**Casper FFG: **Casper FFG aims to give chain-based systems absolute / economic finality, which is achieved when a ⅔ supermajority of the committee, weighted by stake, sign a block. Casper FFG is built such that it will never finalize conflicting checkpoint even if an adversary has control over the underlying blockchain's proposal mechanism. However, since FFG provides safety and the proposal mechanism provides liveness, an adversary could prevent Casper from finalizing future checkpoints by stalling consensus. FFG prioritizes consistency in that it does not allow for checkpoint finalization without a ⅔ supermajority of validators agreeing, otherwise finalization will not occur. FFG also allows for economic finality through slashing mechanisms.
 
-The reason is something called the [Impossible Trinity][8]. There are three things that central bankers want and they are:
+**Casper TFG: **TFG achieves absolute finality under validators with different fault tolerance thresholds. That is, the protocol is asynchronously safe and BFT, allowing for validators to have different fault tolerance thresholds.
 
-1. Independent monetary policy or the ability to issue/destroy tokens by its own policy and not by another organization's
-2. Free capital flows or the ability to convert to something else at will
-3. Peg to another currency or stability with respect to another currency
+Blocks being reverted can result in losses of millions or dollars or impact fundamental actions in decentralized applications. As such, understanding finality is crucial both in building robust blockchain platforms and in choosing platforms on which to develop applications.
 
-![][9]![][4]![][10]
+_Acknowledgements: A special thanks to [__Zubin Koticha_][6]_ and [__Aparna Krishnan_][7]_ for discussions and feedback that contributed heavily to this post._
 
-Clearly, a stablecoin to be stable needs to have #3. #2 is what makes a cryptocurrency useful. #1 is the only way that any of these stablecoins can make money.
-
-You can only have 2 of these three and for Bitcoin, #3 is what is sacrificed and hence the fluctuations in price.
-
-Stablecoins are trying to get all three and it's usually done in a way as to hide the risk involved.
-
-### Should I invest in stablecoins?
-
-If you have the ability to redeem stablecoins quickly and easily and trust the issuer, then stablecoins may be useful to you. In other words, if you don't mind the centralization risk of a fully-backed coin, this is something that you may be able to use in lieu of dollars in your bank account.
-
-Algorithmic coins are a lot riskier as they are _not_ fully backed and that means there's risk of losing money simply due to market forces.
-
-### Conclusion
-
-Stablecoins are a centralized cryptocurrency that happens to be stable with the dollar. In that sense, it's a lot more practical than almost every altcoin as at least there's a peg to a lot of people's unit of account. The fully backed coins are centralized, but at least it's very clear that they are and they're not pretending to be decentralized unlike so many altcoins.
-
-[1]: https://cdn-images-1.medium.com/freeze/max/33/0*kY7G6-LJ0IbLSBtq.jpg?q=20
-[2]: https://cdn-images-1.medium.com/max/880/0*kY7G6-LJ0IbLSBtq.jpg
-[3]: https://cdn-images-1.medium.com/freeze/max/33/0*3ll8KQHAM55NrEmY.jpg?q=20
-[4]: https://medium.com/@jimmysong/undefined
-[5]: https://cdn-images-1.medium.com/max/880/0*3ll8KQHAM55NrEmY.jpg
-[6]: https://cdn-images-1.medium.com/freeze/max/33/0*BgzqK08klKSbeGTV.gif?q=20
-[7]: https://cdn-images-1.medium.com/max/880/0*BgzqK08klKSbeGTV.gif
-[8]: https://en.wikipedia.org/wiki/Impossible_trinity
-[9]: https://cdn-images-1.medium.com/freeze/max/33/0*nqHnD16foR7x3Lg8.png?q=20
-[10]: https://cdn-images-1.medium.com/max/880/0*nqHnD16foR7x3Lg8.png
+[1]: https://twitter.com/lwsnbaker
+[2]: https://twitter.com/AriDavidPaul/status/1035337279219347456
+[3]: https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf
+[4]: https://cdn-images-1.medium.com/max/2000/0*fcdj_vNNJJDR34S9
+[5]: https://github.com/Mechanism-Labs/MetaAnalysis-of-Alternative-Consensus-Protocols
+[6]: https://twitter.com/snarkyzk?lang=en
+[7]: http://twitter.com/aparnalocked
 
   
