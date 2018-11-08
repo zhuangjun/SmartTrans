@@ -1,171 +1,119 @@
 
-https://medium.com/zkcapital/to-blockchain-or-to-not-blockchain-40e6a3a60f46
-https://medium.com/zkcapital/to-blockchain-or-to-not-blockchain-40e6a3a60f46
+https://medium.com/@jimmysong/crypto-keynesian-lunacy-16bb9193a58
+https://medium.com/@jimmysong/crypto-keynesian-lunacy-16bb9193a58
 
-# To Blockchain or To Not Blockchain
-# 到区块链或非区块链
+# Crypto-Keynesian Lunacy
+# 加密凯恩斯主义的疯狂
 
-The hype surrounding Blockchains has exaggerated the realistic capabilities and applications of this new technology. This frenzy made it hard on businesses, developers, and investors to understand the practical limitations and to identify the right applications that are appropriate for Blockchain or distributed ledger technology.
-区块链的炒作夸大了这项新技术的现实能力和应用。这种狂热使企业，开发人员和投资者难以理解实际限制并找出适合区块链或分布式账本技术的正确应用。
+My article on [smart contracts][1] has had quite a reaction, much like the blockchain article before it. I've had a lot of praise and criticism on [the article][1], much coming from the Ethereum/altcoin crowd which didn't like what I said.
+我关于[智能合约][1]的文章有很多反应，就像之前的区块链文章一样。我对[文章][1]有很多赞美和批评，很多来自以太坊/山寨币的人群，不像我说的那样。
 
-[Karl Wüst][1] and [Arthur Gervais][2] from [ETH Zurich][3] have recently published a peer-reviewed paper¹ that presents a structured methodology that can help determine the suitable technical solution to solve a particular application problem. In this blog post, we will go through this methodology and explain some examples applied in the paper.
-来自[苏黎世联邦理工学院][3]的[KarlWüst][1]和[Arthur Gervais][2]最近发表了一份同行评审论文¹，提出了一种结构化方法，可以帮助确定解决特定应用问题的合适技术解决方案。在这篇博文中，我们将介绍这种方法并解释本文中应用的一些示例。
+Chief among the critics vying for my attention is one Kyle Samani, who more or less threw the kitchen sink at my arguments in the form of a [19 message-long tweet][2] storm about my article. I don't follow him on Twitter and wouldn't have noticed, were it not for him specifically pinging me on telegram to take a look.
+争夺我注意力的评论家中的主要人物是Kyle Samani，他或多或少地以我的论文的形式发表了一篇关于我文章的[19条长篇推文][2]风暴。我不会在Twitter上关注他，也不会注意到，如果不是他专门用电报打电话给我看看。
 
-### Technology Comparison
-### 技术比较
+Now, I don't normally spend my time arguing with people that are seeking to waste my time, but in this case, I'm going to make an exception because he so clearly embodies what I call [Crypto-Keynesian lunacy][3]. In this article, I'm going to make the case that the economic world view of people like Kyle are fundamentally what drives his criticism and not the technical or social reality.
+现在，我通常不会花时间和那些想浪费我时间的人争论，但在这种情况下，我会做一个例外，因为他很清楚地体现了我所说的[加密 - 凯恩斯主义的疯狂][3] ]。在本文中，我将说明像凯尔这样的人的经济世界观基本上是推动他的批评而不是技术或社会现实的原因。
+
+### Crypto-Keynesian Fallacy #1: Aggregate Numbers Tell an Accurate Story
+## #
+
+The first argument for smart contracts is that there's a lot more "developer activity" on Ethereum's Turing-complete Solidity. This argument is about as useful as focusing on aggregate demand and aggregate supply that Keynesians love so much. Economic activity by itself doesn't tell you anything. People could be trading the same egg back and forth for a dollar a billion times and that would count in the economic activity statistics as a billion dollars of activity. The aggregate numbers simply don't mean very much because they have at best a very weak correlation with the actual value added.
+智能合约的第一个论点是，以太坊的图灵 - 完全结合度还有更多的“开发者活动”。这个论点与关注凯恩斯主义者非常喜爱的总需求和总供给一样有用。经济活动本身并不能告诉你任何事情。人们可以以10亿美元的价格来回交易相同的鸡蛋，并将经济活动统计数据计算为10亿美元的活动。总数并不意味着很多，因为它们最多与实际增加值的相关性非常弱。
 
 ![][5]
 
-Comparison between the main different types of state persistence¹.
-主要不同类型的状态持久性的比较¹。
+Belief that developer activity actually means a lot is mistaking action for value. It's true that creating value requires activity, but not all activity adds value. In fact, a lot of activity reduces value. Actually figuring out which activity is valuable and which add nothing or even have a negative effect is not easy and requires a lot of research and technical due diligence. This is why Keynesians focus on easily measured numbers, not on actual reality. Looking at easily measured numbers is much easier than doing the hard work of actually evaluating complicated situations. Crypto-Keynesians do the same thing.
+开发者活动实际上意味着很多的信念是错误的价值行为。创造价值确实需要活动，但并非所有活动都能增加价值。事实上，很多活动都会降低价值。实际上，确定哪些活动是有价值的，哪些活动没有增加甚至产生负面影响并不容易，需要大量的研究和技术尽职调查。这就是为什么凯恩斯主义者关注的是容易测量的数字，而不是实际的现实。查看容易测量的数字要比实际评估复杂情况的艰苦工作容易得多。 Crypto-Keynesians做同样的事情。
 
-Blockchains are append-only ledgers that basically persist (save) state. State can be transaction information, or program data, or hashed documents, etc. Basically, any information that needs to be persisted. Databases have been there for this task for decades. Moreover, Blockchains present a new class of technology used for state persistence — with additional features including digital signatures and tamper resistance. Let us revise the three main technologies:
-区块链是仅附加分类账，基本上持久（保存）状态。状态可以是交易信息，程序数据或哈希文档等。基本上，任何需要持久化的信息。数十年来，数据库已经完成了这项任务。此外，Blockchains提供了一种用于状态持久性的新技术 - 具有数字签名和防篡改等附加功能。让我们修改三个主要技术：
+If you look at protocol development [Bitcoin has many more devs][6]. Most of the "developer activity" on Ethereum is in ICO development and not protocol development. ICOs have been a cash cow for ICO issuers for over a year now. But raising money does not mean you're adding value any more than digging and filling a ditch adds value. Most of these projects have zero users or even a product. Many haven't released anything for years, nor do they need to since they have no obligations to the token holders.
+如果你看协议开发[比特币有更多的开发者][6]。以太坊上的大多数“开发者活动”都是在ICO开发中而不是协议开发中。 ICO发行人一年多来一直是ICO的摇钱树。但筹集资金并不意味着你增加价值不仅仅是挖掘和填补沟渠增加价值。这些项目中的大多数都没有用户甚至是产品。许多人多年来没有发布任何东西，他们也不需要，因为他们对代币持有者没有义务。
 
-#### Databases
-#### 数据库
+![][9]
 
-First of all, **databases** (single, parallel, or distributed) have been used for decades to persist state and query data. Decades worth of research have been invested to optimize the different layers of query processing and state persistence.
-首先，**数据库**（单个，并行或分布式）已经使用了数十年，以保持状态和查询数据。已经投入了数十年的研究来优化查询处理和状态持久性的不同层。
-* Naturally, they have the highest performance in terms of transaction throughput and query latency.
-*当然，它们在交易吞吐量和查询延迟方面具有最高性能。
-* However, all along, they have been designed to be centrally managed by a single authority. Hence, no consensus mechanism is required across different parties.
-*但是，一直以来，它们都被设计为由单一机构集中管理。因此，不同方之间不需要达成共识机制。
+In other words, developer activity is a really poor proxy for usefulness or value-add and ultimately, activity does not mean success. Google Glass, for example had a lot of developer activity, but that didn't mean it was actually useful, viable or successful.
+换句话说，开发人员活动对于有用性或增值是一个非常糟糕的代理，最终，活动并不意味着成功。例如，Google Glass有很多开发人员活动，但这并不意味着它实际上是有用的，可行的或成功的。
 
-#### **Permissionless Blockchains**
-#### **无可比区块链**
+### Crypto-Keynesian Fallacy #2: Centrally Designed Systems Work Better than Organic Bottom-Up Reality-Tested Systems
+## #
 
-Permissionless Blockchains are public ledgers (state) that are not managed by a centralized authority. That is, the ledger is distributed across a dynamic network of peers that can include illegitimate entities too.
-无权区块链是不由集中管理机构管理的公共分类账（州）。也就是说，分类帐分布在可以包括非法实体的动态对等网络中。
+Keynesians are famous for their faith in central planning, especially as a way to increase demand. Entire industries like health care, education and housing have felt the heavy hand of government intervention and desire to do "what's best for us" despite our protests. Crypto-Keynesians are the same way. Their faith in centrally planning products perfectly from the outset is astonishing and largely driven by hopium.
+凯恩斯主义者以其对中央计划的信心而闻名，特别是作为增加需求的一种方式。尽管我们有抗议活动，但医疗保健，教育和住房等整个行业都感受到了政府干预的重手，并渴望做出“对我们最有利的事情”。加密 - 凯恩斯主义是一样的。他们从一开始就完美地集中规划产品的信念令人惊讶，并且主要受到啤酒花的驱动。
 
-* The brilliance of Satoshi, was to present a design that maintains **consensus** on the distributed state in a dynamic and trustless network. This means that permissionless Blockchains can tolerate a (fraction of the) network with byzantine or untrusted behaviour.
-*Satoshi的光彩，是在动态和无信任的网络中呈现一种在分布式状态上保持**共识的设计。这意味着无权限的区块链可以容忍具有拜占庭或不可信行为的（部分）网络。
-* **As everything comes with a price**, the tradeoff here is **performance cost (throughput and latency)**. In bitcoin, the drastic performance hit is because of the POW protocol itself which by design is slow. In comparison to normal databases, in any permissionless Blockchain, **a performance hit is inevitable.** Because no matter what, to maintain the consistency of the distributed state, there has to be communication between the different peers in the (geographically distributed) network.
-***因为一切都带有价格**，这里的权衡是**性能成本（吞吐量和延迟）**。在比特币中，性能的急剧下降是因为POW协议本身在设计上很慢。与普通数据库相比，在任何无权限的区块链中，**性能损失是不可避免的。**因为无论如何，为了保持分布式状态的一致性，必须在（地理上分布的）不同对等体之间进行通信。网络。
+What's more, a lot of these centrally designed systems are much less efficient and require a lot more overhead. Provably fair gambling can be done without the large overhead of an expensive blockchain. You can [prove something existed][10] at a certain point in time without the cost of millions of transactions that get replicated thousands of times. The hubris of central planning is that they not only think everything will work, but that it's the best solution from the outset.
+更重要的是，许多这些集中设计的系统效率低得多，需要更多的开销。可以证明公平赌博没有昂贵的区块链的大量开销。你可以[在某个时间点证明存在的东西][10]而不需要数百万次交易的成本被复制数千次。中央计划的狂妄性在于，他们不仅认为一切都会奏效，而且从一开始就是最好的解决方案。
 
-#### **Permissioned Blockchains**
-#### **许可的区块链**
+But that's assuming something works. Most of the projects in the crypto space have added zero value. In fact, many have swindled, scammed and stolen as to subtract value. The fact that so many projects have failed to deliver value should be humbling. Instead, for a Crypto-Keynesian, this is only evidence that the big use-case are just around the corner and that new and interesting breakthroughs are only a few months away. They believe that raising money/hiring people is evidence that actual value is about to be delivered soonish™.
+但这是假设有效的方法。加密空间中的大多数项目都增加了零值。事实上，许多人已经欺骗，诈骗和被盗，以减去价值。这么多项目未能实现价值的事实应该是令人羞愧的。相反，对于加密凯恩斯主义者来说，这只是证据表明大用例即将到来，新的有趣突破只有几个月之后。他们认为，筹集资金/雇用人员是证明实际价值即将交付的证据。
 
-Permissioned Blockchains represent a hybrid design choice. In particular, they are not centralized to a single entity, yet they are authorized to a small set of preselected trusted peers that can write state.
-Permissioned Blockchains代表混合设计选择。特别是，它们不是集中到单个实体，而是被授权给可以写状态的一小组预先选择的可信对等体。
+![][12]
 
-* Since the database network is not scaled to a large number of public nodes, as in the case for permissionless Blockchains, its performance in terms of throughput and latency is much better.
-*由于数据库网络没有扩展到大量公共节点，如无权区块链的情况，其在吞吐量和延迟方面的性能要好得多。
-* Nonetheless, its performance cannot compete with a centralized database.
-*尽管如此，其性能无法与集中式数据库竞争。
+The bottom-up reality is that most people simply don't care to use these systems unless heavily incentivized to do so. Usually, that means that the users are actually investors, which is a nice way of saying that the users are really in a [Multi-Level Marketing][13] scheme searching for new investors that will use the systems in the same way.
+自下而上的现实是，大多数人根本不关心使用这些系统，除非有很大的激励。通常，这意味着用户实际上是投资者，这是一种很好的方式，可以说用户真的在[多层次营销][13]方案中寻找将以相同方式使用系统的新投资者。
 
-After looking at these different systems, it is easy to realize that there is no one-size-fits-all solution. Everything is a trade-off. Different applications have different requirements and hence different appropriate solutions.
-在查看这些不同的系统后，很容易意识到没有一个通用的解决方案。一切都是权衡。不同的应用有不同的要求，因此有不同的适当解
+Systems are really, really hard to design and are very rarely right the first time. As any startup veteran will tell you, it's really hard to find a product-market fit and many not only try different models, but often pivot to entire different industries for that reason. Successful startups try lots of things to see which things work and iterate. The best startups find solutions to existing problems. By contrast, most of these crypto startups are trying to find problems for the crap that they want to build.
+系统真的非常非常难以设计，而且很少是第一次使用。正如任何创业老手都会告诉你的那样，很难找到适合产品市场的产品，许多人不仅尝试不同的模型，而且经常因此而转向整个不同的行业。成功的初创公司会尝试很多东西来看看哪些东西可以工作和迭代。最好的创业公司找到现有问题的解决方案。相比之下，这些加密初创公司中的大多数都试图为他们想要构建的垃圾找到问题。
 
-### "Do you need a Blockchain?" Flowchart
-### “你需要区块链吗？”流程图
+What's really scary about blockchain systems is that you really can't iterate or change things very much without throwing out all pretense of decentralization. Thus, Crypto-Keynesians have to believe any investments they make will be correct and successful _on the first try_. This is simply not the reality of complex systems or markets. At best, the iterations in these projects are very slow, enormously expensive and really hard to change.
+区块链系统真正令人害怕的是，如果不抛弃所有去中心化的借口，你真的无法迭代或改变事物。因此，Crypto-Keynesians必须相信他们所做的任何投资都是正确的，并且在第一次尝试时也是成功的。这根本不是复杂系统或市场的现实。充其量，这些项目中的迭代非常缓慢，非常昂贵并且很难改变。
 
-![][8]
+### Crypto-Keynesian Fallacy #3: Everyone Will Do Things Exactly As Expected
+## #
 
-Flowchart for choosing the right technology¹. TTP represents Trusted Third Party and a writer is an instance that writes state to a database or Blockchain.
-选择正确技术的流程图¹。 TTP表示可信第三方，编写器是将状态写入数据库或区块链的实例。
+The most hilarious part of Kyle's tweet storm was saying how the NBA.com server would be the source of truth and therefore, Oracles could be trusted and smart contracts can be useful for non-digital stuff.
+凯尔的推特风暴中最热闹的部分是说NBA.com服务器将如何成为事实的来源，因此，可以信任Oracles，智能合约可以用于非数字化的东西。
 
-This section describes a generic high-level flowchart presented in the paper to find the appropriate technology for your application. Note that a writer is an entity that writes state into the database or blockchain.
-本节介绍了本文中提供的通用高级流程图，以便为您的应用程序找到合适的技术。请注意，编写器是将状态写入数据库或区块链的实体。
+Remember, the Oracle is the last word on the smart contract. There is no further adjudication in a decentralized setting. You can't appeal to another judge should something go wrong. You simply have to accept _whatever the Oracle says_.
+请记住，Oracle是智能合约的最后一个词。在去中心化的环境中没有进一步的裁决。如果出现问题，你不能诉诸另一位法官。您只需接受_无论Oracle说什么_。
 
-1. If your application does not require state to be persisted, then obviously there is **no need for a blockchain or any database.**
-1. 如果您的应用程序不要求保持状态，那么显然不需要区块链或任何数据库。**
-2. Similarly, if there is **one writer **(of state), then **a blockchain does not provide any additional guarantees** than a regular database. On the contrary, a database would be more suitable as it is more efficient in terms of performance.
-2. 同样，如果有**一个作家**（州），那么**区块链不提供任何额外保证**而不是常规数据库。相反，数据库更合适，因为它在性能方面更有效。
-3. Otherwise, if there is more than one state-writer we take another route. The question then becomes, **is it sufficient to have a online TTP (Trusted Third Party), or in other words, does it need to be tamper-proof**. If the application cannot rely on a single trusted entity we can further move forward to see if we still need a blockchain. **Otherwise, a blockchain is not required,** it would be more efficient -in terms of performance- to rely on a centralized entity.
-3. 否则，如果有多个国家作家，我们采取另一条路线。那么问题就变成了，**是否足以拥有在线TTP（可信第三方），或者换句话说，它是否需要防篡改**。如果应用程序不能依赖单个可信实体，我们可以进一步前进，看看我们是否还需要区块链。**否则，不需要区块链，**在性能方面，依靠集中实体会更有效率。
-4. The next question is **"is the identity of all state-writers known?"**. If they are not known as the case in a dynamic trustless network, e.g., the Internet, then a **permissionless blockchain** is the right way to go.
-4. 接下来的问题是**“所有国家作家的身份是否已知？”**。如果在动态无信任网络（例如互联网）中不知道它们的情况，那么**许可区块链**是正确的方法。
-5. Otherwise, if the identity is known, then the next question is **"do the writers trust each other?"**, if it is a yes, **then again a blockchain is not needed anymore**, a database with shared write access is sufficient. Otherwise, if the writers do not trust each other, then the right technology to be used is a **permissioned blockchain**.
-5. 否则，如果身份已知，那么下一个问题是**“作者是否相互信任？”**，如果是，则**再次不再需要区块链**，数据库使用共享写访问就足够了。否则，如果作者不相互信任，那么使用的正确技术是**许可的区块链**。
-6. Finally, if it is a permissioned blockchain, depending on whether public verifiability is required, anyone is allowed to read the state (public permissioned blockchain) or the set of readers may also be restricted (private permissioned blockchain).
-6. 最后，如果它是一个经过许可的区块链，根据是否需要公开可验证性，任何人都可以阅读该州（公共许可区块链）或者该组读者也可能受到限制（私人许可区块链）。
+Apparently, this enormous attack surface an Oracle adds is not really even considered. Who controls the data feed from nba.com? Can that get hacked? Would anyone in a gambling situation be incentivized to affect this feed? Say you got 100–1 odds on the Cavaliers when they were down 3–0 to the Warriors and bet $1M on the Cavs. Would you have incentive to hack the servers so you could be paid out in a bearer instrument? Would you be incentivized to bribe the nba.com IT guy? Would you kidnap the person's family? After all, you would only need to change the Oracle's vote. Given that the ambitions of these projects are to take over the entire sports betting market ($3B/yr), this is not just theoretical.
+显然，甲骨文增加的这个巨大的攻击面甚至都没有考虑过。谁控制来自nba.com的数据Feed？可以被黑客攻击吗？赌博情况下的任何人都会被激励影响这个饲料吗？假设你在骑士队以3比0战胜勇士队并在骑士队投注100万美元时获得了100-1赔率。您是否有动力破解服务器，以便您可以通过不记名工具获得支付？你会被激励贿赂nba.com IT人吗？你会绑架这个人的家人吗？毕竟，您只需要更改Oracle的投票。鉴于这些项目的目标是接管整个体育博彩市场（每年3美元），这不仅仅是理论上的。
 
-### Examples of Applications
-### 应用程序示例
+![][15]
 
-Lets walk through a bunch of examples here to understand what applications do make sense on blockchains and which don't and why.
-让我们来看看这里的一些例子，以了解哪些应用程序对区块链有意义，哪些没有，为什么。
+An adversarial network requires a lot of thought about the actual incentives. In addition, the more complicated the system is, the more you have to test out what holes in the incentive structure there might be. Most of these projects are ridiculously complicated. Bitcoin, by comparison, is orders of magnitude simpler and less vulnerable in terms of incentive structure. To think that you've designed an incentive structure that's correct on the first try is absolute lunacy and reflects a lack of real world experience.
+对抗性网络需要对实际激励进行大量思考。此外，系统越复杂，您就越需要测试激励结构中可能出现的漏洞。大多数这些项目都非常复杂。相比之下，比特币在激励结构方面更简单，更不容易受到攻击。认为你设计的第一次尝试是正确的激励结构是绝对的疯狂，反映了缺乏真实的世界经验。
 
-#### Applications that DO NOT need a Blockchain
-#### 不需要区块链的应用程序
-
-![][10]
-
-Supply Chain Management Systems¹
-供应链管理系统¹
-
-* **Supply Chain Management: **This is indeed one of the applications that arise repeatedly in the space. Lets follow the flowchart to identify which technology suits it best.
-***供应链管理：**这确实是该领域反复出现的应用之一。让我们按照流程图确定哪种技术最适合。
-1. An SCM certainly requires to store data.
-1. SCM当然需要存储数据。
-2. Multiple writers are involved, i.e. the different participants of the SCM that own a certain share of the final product.
-2. 涉及多个作者，即SCM的不同参与者拥有最终产品的特定份额。
-3. Continuing our methodology, a SCM could technically likely always use an online TTP. For example, [Skuchain][11] acknowledged to only require a single source of trust, which would however remove the decentralized component of the blockchain, and thus be equivalent to a trusted central server.
-3. 继续我们的方法，SCM在技术上可能总是使用在线TTP。例如，[Skuchain][11]承认只需要一个单一的信任来源，但是会删除区块链的去中心化组件，因此相当于一个受信任的中央服务器。
-4. If that is not possible, at least all writers will be known, which leaves us to choose between a **permissioned or no blockchain.**
-4. 如果不可能，至少所有作者都会被知道，这使我们可以选择**许可或不允许区块链。**
-5. SCMs** **have the inherent problem of the interface between the digital and the physical world. A human, or some machine under the control of a single writer, typically is required to register that a certain good has arrived in a warehouse, and if, for example, its quality is appropriate. If there is no trust in the operation of these employees, then the whole supply chain is technically compromised as any data can be supplied by a malicious writer. If, on the other hand, all writers are trusted, **a blockchain is not needed,** because a regular database with shared write access can be used instead.
-5. SCM****具有数字和物理世界之间接口的固有问题。人或某个机器控制下的某台机器通常需要注册某个商品已到达仓库，例如，如果其质量合适。如果对这些员工的运营不信任，那么整个供应链在技术上会受到损害，因为恶意作者可以提供任何数据。另一方面，如果所有编写者都是可信的，**不需要区块链，**因为可以使用具有共享写访问权限的常规数据库。
-
-Note that if through some technical means, the connection between the digital and physical world could be realized in a secure manner, then the previous reasoning might change.
-请注意，如果通过某种技术手段，数字和物理世界之间的连接可以以安全的方式实现，那么之前的推理可能会改变。
-
-* **Internet of Things: **Many have suggested possible use cases for blockchain technology in the Internet of Things (IoT) in combination with smart contracts with the aim to provide autonomous systems that pay for resources that they consume and get paid for resources that they provide. As the system is inherently decentralized with entities that do not trust each other, using a blockchain seems natural. However, as with supply chain management, **the interface between the physical and the digital world poses a potential problem.** If computers supply values that were read from sensors to the blockchain, the blockchain does not guarantee the correctness of these values. If only automation is desired, a blockchain may not be necessary if a trusted party can be used instead.
-***物联网：**许多人已经建议物联网（IoT）中区块链技术的可能用例与智能合同相结合，旨在提供自主系统来支付他们消耗的资源并获得资源支付他们提供的。由于系统本质上是与不相互信任的实体去中心化的，因此使用区块链似乎很自然。但是，与供应链管理一样，**物理世界和数字世界之间的界面存在潜在问题。**如果计算机提供从传感器读取到区块链的值，则区块链不保证这些值的正确性。如果只需要自动化，如果可以使用可信方，则可能不需要区块链。
-
-#### Applications Suitable on the Blockchain
-#### 应用适用于区块链
-
-* **Interbank and International payments**: For financial applications, blockchain technology seems well suited in general, since parties are generally risk averse and do not want to rely on strong trust assumptions. Following our
-***银行间和国际支付**：对于金融应用，区块链技术似乎非常适合，因为各方通常都是风险规避，并且不想依赖强有力的信任假设。跟着我们
-1. In Interbank payments we have multiple parties (the banks) that act as writers and who want to exchange value and transactions. So there is state to be persisted.
-1. 在银行间支付方面，我们有多方（银行）作为作家并希望交换价值和交易。所以有状态要坚持下去。
-2. The banks are the writers, and hence there is more than one writer.
-银行是作家，因此不止一位作家。
-3. In the case of single currency systems, the central bank can operate as a TTP.
-3. 在单一货币系统的情况下，中央银行可以作为TTP运作。
-4. Otherwise, there is another setting where the central bank does not want to act as a verifier for every transaction but only act as a certificate authority giving out licenses to banks to participate in the system. This means that all writers of the system are known and we can use** **a** permissioned blockchain**
-4. 否则，还有另一种设置，即中央银行不希望作为每项交易的验证者，而只是作为证书颁发机构向银行发放许可证以参与该系统。这意味着系统的所有编写者都是已知的，我们可以使用******许可的区块链**
-* **Trading and Fair Exchange Protocols: **Similarly, the exchange of digital goods is likely to be feasible without a trusted dispute mediator and hence it is the perfectly suitable for blockchains, while the exchange of physical goods still requires a trusted third party in case of disputes.
-***交易和公平交易协议：**同样，如果没有可靠的争议调解员，数字商品的交换可能是可行的，因此它非常适合区块链，而实物商品的交换仍然需要可信赖的第三方如有任何争议。
-* **E-Voting:** Similarly, E-Voting has properties that blockchains can help with. For example, on one hand, privacy is a main requirement as votes should be anonymous to prevent coercion. On the other hand, e-voting should provide some sort of public verifiability. Due to the requirements, it seems reasonable that blockchain technology can help to achieve these desired properties.
-***E-Voting：**同样，E-Voting具有区块链可以帮助的属性。例如，一方面，隐私是主要要求，因为投票应该是匿名的，以防止强制。另一方面，电子投票应提供某种公共可验证性。由于这些要求，区块链技术可以帮助实现这些所需的特性似乎是合理的。
+The usual response by a Crypto-Keynesian when faced with such questions is to refer you to some added incentives in the system like additional Oracles, bonded Oracles, or some such. It's usually a half-baked idea that anyone can figure out holes to in 5 minutes, but that's the normal response. There's probably a solution to every possible attack vector, but most of the time, each "solution" creates an even bigger attack surface. Eventually the solutions get so complicated and so hard to analyze that the flaws can only be revealed by the cold, hard slap of reality.
+Crypto-Keynesian在面对这些问题时通常的反应是在系统中引用一些额外的激励措施，例如额外的Oracles，保护的Oracles或其他类似的东西。这通常是一个半生不熟的想法，任何人都可以在5分钟内找到漏洞，但这是正常的反应。每种可能的攻击向量都可能有解决方案，但大多数情况下，每个“解决方案”都会创建一个更大的攻击面。最终，解决方案变得如此复杂，难以分析，只能通过现实的冷酷实施来揭示缺陷。
 
 ### Conclusion
 ### 结论
 
-In contrast to conventional wisdom, Blockchains are not a solution for all technical problems. In fact, they are more appropriate for a class of applications that satisfy a set of requirements. **In particular, those that sacrifice performance in favour of decentralization and tamper-proof consistent state.** Nonetheless, **many of the "promised" applications are currently still not applicable for the Blockchain, e.g., supply chain management.** One should be really careful when being approached by enthusiastic developers and business owners who are strongly biased by the hype and who don't really question the underlying technicals and necessities of their solutions. **Until now, it seems that applications that deal with digital goods and services and that require trust are the most appropriate for blockchains.**
-与传统观点相反，区块链不是解决所有技术问题的解决方案。实际上，它们更适合满足一系列要求的一类应用程序。**尤其是那些牺牲性能以支持去中心化和防篡改一致状态的人。**尽管如此，**许多“承诺”的申请目前仍然不适用于区块链，例如供应链管理。**当被热情的开发者和企业主接触时，应该非常小心，他们对炒作有强烈的偏见，并且没有真正质疑他们的解决方案的基础技术和必要性。**到目前为止，处理数字商品和服务以及需要信任的应用程序似乎最适合区块链。**
+The real weakness of Keynesianism is the belief you can get something for nothing. It's the [broken window fallacy][16] in a macro form.
+凯恩斯主义的真正弱点是相信你可以无所作为。这是宏观形式的[破窗谬误][16]。
 
-### References:
-### 参考文献：
+![][18]
 
-1- [Do you need a blockchain?][12]
-1- [你需要区块链吗？][12]
+Crypto-Keynesianism makes essentially the same error. Developer activity by itself means very little. Centralized systems generally don't work very well on the ground. Incentives are really hard to get right. This is why we have so many ICOs. They are "doing something", but not adding value. You may be raising money, you may be hiring people, you may be donating to some causes but you're not adding value until the market buys your product or service. And no, you don't get to brag about how "successful" you are until you've actually added value and not anytime before then.
+加密凯恩斯主义基本上会产生同样的错误。开发人员活动本身意味着很少。集中系统通常在地面上不能很好地工作。激励措施真的很难做到。这就是我们有这么多ICO的原因。他们“做某事”，但没有增加价值。您可能正在筹集资金，您可能正在招聘人员，您可能会捐赠某些原因，但在市场购买您的产品或服务之前，您不会增加价值。不，你不会吹嘘自己是多么“成功”，直到你真正增加价值，而不是在此之前的任何时候。
 
-### If you like this post or if you have any further questions or suggestions, please reach out to me on [Twitter][13] or [LinkedIn][14].
-### 如果您喜欢这篇文章，或者如果您有任何其他问题或建议，请通过[Twitter][13]或[LinkedIn][14]联系我。
+The real innovation was and always has been Bitcoin. Bitcoin is sound money and sound money is what allows you to preserve value over the long term. That, in turn allows people to save for large capital projects which, in turn, [build up civilization][19]. [Crypto-Austrians][3] believe this is the basis for building in the future, not in these pie-in-the-sky projects that don't deliver value.
+真正的创新一直是比特币。比特币是合理的金钱，声音金钱可以让您长期保持价值。这反过来又允许人们为大型资本项目储蓄，而这些项目反过来又会[建立文明][19]。 [Crypto-Austrians][3]相信这是未来建设的基础，而不是这些无法实现价值的天空项目。
 
-**_Disclaimer: Information in this article is for educational purposes only and cannot be taken as investment advice._**
-**_免责声明：本文中的信息仅用于教育目的，不能作为投资建议._**
+Crypto-Keynesians believe success is simply having money. They are two separate things. You can make money by adding to civilization or you can make money by rent-seeking. The former should be applauded. The latter should be despised.
+Crypto-Keynesians认为成功只是赚钱。它们是两个不同的东西。你可以通过增加文明赚钱，或者你可以通过寻租来赚钱。前者应该受到称赞。应该鄙视后者。
 
-![][15]
+The ICO boom makes clear that Crypto-Keynesians can't tell the difference. This leads to the building products that add "activity" but fail in delivering any sort of value, in effect digging and filling ditches and pretending that means something. This is Crypto-Keynesian lunacy.
+ICO的繁荣表明Crypto-Keynesians无法区分。这导致建筑产品增加了“活动”但却无法提供任何价值，实际上挖掘和填充沟渠并假装意味着什么。这是加密 - 凯恩斯主义的疯狂。
 
-[1]: http://www.syssec.ethz.ch/people/kwuest.html
-[2]: http://arthurgervais.com
-[3]: https://en.wikipedia.org/wiki/ETH_Zurich
-[4]: https://cdn-images-1.medium.com/freeze/max/75/1*Pt3opBhD8m1fB3X3G3-JYw.png?q=20
-[5]: https://cdn-images-1.medium.com/max/2000/1*Pt3opBhD8m1fB3X3G3-JYw.png
-[6]: https://cdn-images-1.medium.com/freeze/max/75/1*6bK0WrMyKKD6znhEkWAucQ.png?q=20
-[7]: https://medium.com/zkcapital/undefined
-[8]: https://cdn-images-1.medium.com/max/2000/1*6bK0WrMyKKD6znhEkWAucQ.png
-[9]: https://cdn-images-1.medium.com/freeze/max/75/1*3YV2pHqvVKy00e25-Rqq3g.png?q=20
-[10]: https://cdn-images-1.medium.com/max/2000/1*3YV2pHqvVKy00e25-Rqq3g.png
-[11]: http://www.skuchain.com
-[12]: https://eprint.iacr.org/2017/375.pdf
-[13]: https://twitter.com/Drmelseidy
-[14]: https://www.linkedin.com/in/mohamed-elseidy/
-[15]: https://cdn-images-1.medium.com/max/2000/1*U69UW0VzPkDKgvEeqYE1uQ.png
+[1]: https://medium.com/@jimmysong/the-truth-about-smart-contracts-ae825271811f
+[2]: https://twitter.com/KyleSamani/status/1006366936530391041
+[3]: https://medium.com/@jimmysong/segwit2x-post-mortem-divorce-of-crypto-austrians-and-crypto-keynesians-87960b11ce4c
+[4]: https://cdn-images-1.medium.com/freeze/max/75/1*DHABOQIUXUJ3dCJKsWXmvg.jpeg?q=20
+[5]: https://cdn-images-1.medium.com/max/2000/1*DHABOQIUXUJ3dCJKsWXmvg.jpeg
+[6]: https://twitter.com/mflaxman/status/1006573882038542338
+[7]: https://cdn-images-1.medium.com/freeze/max/75/1*jX3qDnC0Gw3EFy-paqLiSw.jpeg?q=20
+[8]: https://medium.com/@jimmysong/undefined
+[9]: https://cdn-images-1.medium.com/max/2000/1*jX3qDnC0Gw3EFy-paqLiSw.jpeg
+[10]: https://medium.com/@jimmysong/alternatives-to-blockchain-9f858c0a1f2d
+[11]: https://cdn-images-1.medium.com/freeze/max/75/1*o9juj3fNouvU21exuuEPJw.png?q=20
+[12]: https://cdn-images-1.medium.com/max/2000/1*o9juj3fNouvU21exuuEPJw.png
+[13]: https://en.wikipedia.org/wiki/Multi-level_marketing
+[14]: https://cdn-images-1.medium.com/freeze/max/75/0*0RUSi3LJ8TNg988j.gif?q=20
+[15]: https://cdn-images-1.medium.com/max/2000/0*0RUSi3LJ8TNg988j.gif
+[16]: https://en.wikipedia.org/wiki/Parable_of_the_broken_window
+[17]: https://cdn-images-1.medium.com/freeze/max/75/1*Qt1kMgUwc6p77D2I8VMugg.jpeg?q=20
+[18]: https://cdn-images-1.medium.com/max/2000/1*Qt1kMgUwc6p77D2I8VMugg.jpeg
+[19]: https://medium.com/@jimmysong/why-bitcoin-works-fe32879a73f5
 
 
