@@ -7,7 +7,6 @@ from util import *
 articleUrl= sys.argv[1] 
 
 file_soure = "work/source.md"
-apiKey = "vTz1MLzLOcCbwLNy9Qkw9ydyOzRqjNgpjIHbWQCC"
 
 req = urlreq.Request("http://heckyesmarkdown.com/go/?read=1&u="+articleUrl)
 response = urlreq.urlopen(req).read().decode('utf-8')
