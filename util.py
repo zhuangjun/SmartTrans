@@ -30,9 +30,20 @@ def replace_trans_terms(values):
     for value in values:
         for term in term_json:
             value=value.replace(term["key"],term["value"])
-            #replace #hello -> # hello
             #replace 1.hello -> 1. hello
+            
+        #replace #hello -> # hello
+        m=re.match("(#+)(\S+)", value)
+        if m and len(m.groups()) == 2:
+            value = m.group(1)+" "+m.group(2)
+
+        #replace 1.hello -> 1. hello
+        m1=re.match("(\d+\.)(\S+)", value)
+        if m1 and len(m1.groups()) == 2:
+            value = m1.group(1)+" "+m1.group(2)
+
         result.append(value)
+        
     return result
 
 def read_file(file_input):
