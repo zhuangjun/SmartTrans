@@ -1,119 +1,270 @@
 
-https://medium.com/@jimmysong/crypto-keynesian-lunacy-16bb9193a58
-https://medium.com/@jimmysong/crypto-keynesian-lunacy-16bb9193a58
+https://hackernoon.com/on-the-network-effects-of-stores-of-value-4286f6c98cdc
+https://hackernoon.com/on-the-network-effects-of-stores-of-value-4286f6c98cdc
 
-# Crypto-Keynesian Lunacy
-# 加密凯恩斯主义的疯狂
+# On The Network Effects Of Stores Of Value
+# 关于价值存储的网络效应
 
-My article on [smart contracts][1] has had quite a reaction, much like the blockchain article before it. I've had a lot of praise and criticism on [the article][1], much coming from the Ethereum/altcoin crowd which didn't like what I said.
-我关于[智能合约][1]的文章有很多反应，就像之前的区块链文章一样。我对[文章][1]有很多赞美和批评，很多来自以太坊/山寨币的人群，不像我说的那样。
+This post is a spiritual successor to [The Smart Contract Network Effect Fallacy][1].
+这篇文章是[智能合约网络效应谬误][1]的精神继承者。
 
-Chief among the critics vying for my attention is one Kyle Samani, who more or less threw the kitchen sink at my arguments in the form of a [19 message-long tweet][2] storm about my article. I don't follow him on Twitter and wouldn't have noticed, were it not for him specifically pinging me on telegram to take a look.
-争夺我注意力的评论家中的主要人物是Kyle Samani，他或多或少地以我的论文的形式发表了一篇关于我文章的[19条长篇推文][2]风暴。我不会在Twitter上关注他，也不会注意到，如果不是他专门用电报打电话给我看看。
+Bitcoin has a network effect. Many crypto evangelists assert that the network effect of Bitcoin is so strong that [hyperbitcoinization][2] is inevitable.
+比特币具有网络效应。许多加密福音传道者断言，比特币的网络效应是如此强大，以至于[超比特币化][2]是不可避免的。
 
-Now, I don't normally spend my time arguing with people that are seeking to waste my time, but in this case, I'm going to make an exception because he so clearly embodies what I call [Crypto-Keynesian lunacy][3]. In this article, I'm going to make the case that the economic world view of people like Kyle are fundamentally what drives his criticism and not the technical or social reality.
-现在，我通常不会花时间和那些想浪费我时间的人争论，但在这种情况下，我会做一个例外，因为他很清楚地体现了我所说的[加密 - 凯恩斯主义的疯狂][3] ]。在本文中，我将说明像凯尔这样的人的经济世界观基本上是推动他的批评而不是技术或社会现实的原因。
+But this is not quite right. Bitcoin's network effect as digital gold is not what many assert that it is. Network effects are nuanced, and generally misunderstood.
+但这不太对。比特币作为数字黄金的网络效应并不像许多人所说的那样。网络效应是微妙的，并且通常被误解。
 
-### Crypto-Keynesian Fallacy #1: Aggregate Numbers Tell an Accurate Story
-## #
+In this essay, I'll explore the network effects of Bitcoin as digital gold, and as digital cash. I'll also explore other competitive moats that are not network effects.
+在这篇文章中，我将探讨比特币作为数字黄金和数字现金的网络效应。我还将探索其他不具备网络效应的竞争性护城河。
 
-The first argument for smart contracts is that there's a lot more "developer activity" on Ethereum's Turing-complete Solidity. This argument is about as useful as focusing on aggregate demand and aggregate supply that Keynesians love so much. Economic activity by itself doesn't tell you anything. People could be trading the same egg back and forth for a dollar a billion times and that would count in the economic activity statistics as a billion dollars of activity. The aggregate numbers simply don't mean very much because they have at best a very weak correlation with the actual value added.
-智能合约的第一个论点是，以太坊的图灵 - 完全结合度还有更多的“开发者活动”。这个论点与关注凯恩斯主义者非常喜爱的总需求和总供给一样有用。经济活动本身并不能告诉你任何事情。人们可以以10亿美元的价格来回交易相同的鸡蛋，并将经济活动统计数据计算为10亿美元的活动。总数并不意味着很多，因为它们最多与实际增加值的相关性非常弱。
+For general background, I recommend this [Medium post][3], this a16z [slideshow][4], this [Techstars post][5], and this post on [data network effects][6]. For longer-form reading on network effects and technology platforms more generally, I recommend [Platform Scale][7] and books by the author Sangeet Choudary.
+对于一般背景，我推荐这个[Medium post][3]，这个a16z [幻灯片][4]，这[Techstars帖子][5]，以及[数据网络效果][6]上的这篇文章。对于更广泛的网络效应和技术平台的长篇阅读，我推荐[平台规模][7]和作者Sangeet Choudary的书籍。
 
-![][5]
+**Foundations Of Network Effects**
+**网络效应的基础**
 
-Belief that developer activity actually means a lot is mistaking action for value. It's true that creating value requires activity, but not all activity adds value. In fact, a lot of activity reduces value. Actually figuring out which activity is valuable and which add nothing or even have a negative effect is not easy and requires a lot of research and technical due diligence. This is why Keynesians focus on easily measured numbers, not on actual reality. Looking at easily measured numbers is much easier than doing the hard work of actually evaluating complicated situations. Crypto-Keynesians do the same thing.
-开发者活动实际上意味着很多的信念是错误的价值行为。创造价值确实需要活动，但并非所有活动都能增加价值。事实上，很多活动都会降低价值。实际上，确定哪些活动是有价值的，哪些活动没有增加甚至产生负面影响并不容易，需要大量的研究和技术尽职调查。这就是为什么凯恩斯主义者关注的是容易测量的数字，而不是实际的现实。查看容易测量的数字要比实际评估复杂情况的艰苦工作容易得多。 Crypto-Keynesians做同样的事情。
+Network effects are an _emergent_ _property_ that occur when:
+网络效应是_emergent__property_，在以下情况下发生：
 
-If you look at protocol development [Bitcoin has many more devs][6]. Most of the "developer activity" on Ethereum is in ICO development and not protocol development. ICOs have been a cash cow for ICO issuers for over a year now. But raising money does not mean you're adding value any more than digging and filling a ditch adds value. Most of these projects have zero users or even a product. Many haven't released anything for years, nor do they need to since they have no obligations to the token holders.
-如果你看协议开发[比特币有更多的开发者][6]。以太坊上的大多数“开发者活动”都是在ICO开发中而不是协议开发中。 ICO发行人一年多来一直是ICO的摇钱树。但筹集资金并不意味着你增加价值不仅仅是挖掘和填补沟渠增加价值。这些项目中的大多数都没有用户甚至是产品。许多人多年来没有发布任何东西，他们也不需要，因为他们对代币持有者没有义务。
+_A product or service becomes more valuable to its existing users as more people use it._
+_随着越来越多的人使用它，产品或服务对现有用户变得更有价值._
+
+There are a few different kinds of network effects:
+有几种不同的网络效应：
+
+_Direct Network Effects_ — increases in usage lead to direct increases in value.
+_直接网络效应_ - 使用量的增加导致价值的直接增加。
 
 ![][9]
 
-In other words, developer activity is a really poor proxy for usefulness or value-add and ultimately, activity does not mean success. Google Glass, for example had a lot of developer activity, but that didn't mean it was actually useful, viable or successful.
-换句话说，开发人员活动对于有用性或增值是一个非常糟糕的代理，最终，活动并不意味着成功。例如，Google Glass有很多开发人员活动，但这并不意味着它实际上是有用的，可行的或成功的。
+Direct network effects work because existing users gain the option to interact with an increasing number of people as the underlying product/service is adopted. Basically all closed-loop communication networks exhibit this type of network effect, including Internet-based services such as Facebook and Whatsapp.
+直接网络效应起作用，因为当采用基础产品/服务时，现有用户可以选择与越来越多的人进行交互。基本上所有闭环通信网络都表现出这种类型的网络效应，包括基于互联网的服务，如Facebook和Whatsapp。
 
-### Crypto-Keynesian Fallacy #2: Centrally Designed Systems Work Better than Organic Bottom-Up Reality-Tested Systems
-## #
+_Indirect Network Effects — _increased usage of the product spawns the production of increasingly valuable complementary goods, which results in an increase in the value of the original product. Operating systems (OS) are the most famous type of product that benefit from indirect network effects. App developers are drawn to build on an OS to reach consumers; by building an app for a given OS, that OS becomes more attractive to new consumers, creating a larger market for future app developers.
+_间接网络效应 - 产品使用量的增加会产生越来越有价值的互补产品，从而导致原始产品价值的增加。操作系统（OS）是受益于间接网络效应的最着名的产品类型。应用程序开发人员习惯于在操作系统上构建以吸引消费者;通过为给定的操作系统构建应用程序，该操作系统对新消费者更具吸引力，为未来的应用开发者创造更大的市场。
 
-Keynesians are famous for their faith in central planning, especially as a way to increase demand. Entire industries like health care, education and housing have felt the heavy hand of government intervention and desire to do "what's best for us" despite our protests. Crypto-Keynesians are the same way. Their faith in centrally planning products perfectly from the outset is astonishing and largely driven by hopium.
-凯恩斯主义者以其对中央计划的信心而闻名，特别是作为增加需求的一种方式。尽管我们有抗议活动，但医疗保健，教育和住房等整个行业都感受到了政府干预的重手，并渴望做出“对我们最有利的事情”。加密 - 凯恩斯主义是一样的。他们从一开始就完美地集中规划产品的信念令人惊讶，并且主要受到啤酒花的驱动。
+_Two Sided Network Effects_ — increases in usage by one set of users increases the value of a complementary product to another distinct set of users, and vice versa. Some famous examples include eBay, Uber and Lyft, AirBnB, and Amazon's marketplace business. In each of these networks, consumers benefit from more choice and competition among suppliers, which drives more consumers, which attracts more suppliers.
+_Two Sided Network Effects_ - 一组用户使用量的增加会使补充产品的价值增加到另一组不同的用户，反之亦然。一些着名的例子包括eBay，Uber和Lyft，AirBnB以及亚马逊的市场业务。在这些网络中，消费者可以从供应商的更多选择和竞争中受益，从而吸引更多的消费者，从而吸引更多的供应商。
 
-What's more, a lot of these centrally designed systems are much less efficient and require a lot more overhead. Provably fair gambling can be done without the large overhead of an expensive blockchain. You can [prove something existed][10] at a certain point in time without the cost of millions of transactions that get replicated thousands of times. The hubris of central planning is that they not only think everything will work, but that it's the best solution from the outset.
-更重要的是，许多这些集中设计的系统效率低得多，需要更多的开销。可以证明公平赌博没有昂贵的区块链的大量开销。你可以[在某个时间点证明存在的东西][10]而不需要数百万次交易的成本被复制数千次。中央计划的狂妄性在于，他们不仅认为一切都会奏效，而且从一开始就是最好的解决方案。
+_Data Network Effects_ — when a product, generally powered by machine learning, becomes smarter as it acquires more data users. Data network effects occur in most modern cloud-based apps today, though their relative strengths vary widely by use case and sophistication.
+_Data Network Effects_ - 当通常由机器学习提供支持的产品随着获取更多数据用户而变得更加智能时。数据网络效应发生在当今大多数现代基于云的应用程序中，尽管它们的相对优势因用例和复杂程度而有很大差异。
 
-But that's assuming something works. Most of the projects in the crypto space have added zero value. In fact, many have swindled, scammed and stolen as to subtract value. The fact that so many projects have failed to deliver value should be humbling. Instead, for a Crypto-Keynesian, this is only evidence that the big use-case are just around the corner and that new and interesting breakthroughs are only a few months away. They believe that raising money/hiring people is evidence that actual value is about to be delivered soonish™.
-但这是假设有效的方法。加密空间中的大多数项目都增加了零值。事实上，许多人已经欺骗，诈骗和被盗，以减去价值。这么多项目未能实现价值的事实应该是令人羞愧的。相反，对于加密凯恩斯主义者来说，这只是证据表明大用例即将到来，新的有趣突破只有几个月之后。他们认为，筹集资金/雇用人员是证明实际价值即将交付的证据。
+**Quantifying The Strength Of Network Effects**
+**量化网络效应的力量**
 
-![][12]
+Measuring the precise strength of network effects is rather difficult. It's not an exact science.
+测量网络效应的精确强度相当困难。这不是一门精确的科学。
 
-The bottom-up reality is that most people simply don't care to use these systems unless heavily incentivized to do so. Usually, that means that the users are actually investors, which is a nice way of saying that the users are really in a [Multi-Level Marketing][13] scheme searching for new investors that will use the systems in the same way.
-自下而上的现实是，大多数人根本不关心使用这些系统，除非有很大的激励。通常，这意味着用户实际上是投资者，这是一种很好的方式，可以说用户真的在[多层次营销][13]方案中寻找将以相同方式使用系统的新投资者。
+It's particularly challenging because the marginal value of additional users to the system changes over time. For example, many of my friends have begun to delete their Facebook profiles in the last few years. Facebook is approximately just as useful to me now as it was 3 years ago. The loss of 5% or even 10% of my Facebook friends has relatively little impact on my Facebook experience because I still have 500 other friends who use Facebook.
+这特别具有挑战性，因为系统中其他用户的边际价值会随着时间而变化。例如，我的很多朋友在过去几年里已经开始删除他们的Facebook个人资料。 Facebook现在和3年前一样对我有用。我的Facebook朋友损失5％甚至10％对我的Facebook体验的影响相对较小，因为我还有500个使用Facebook的朋友。
 
-Systems are really, really hard to design and are very rarely right the first time. As any startup veteran will tell you, it's really hard to find a product-market fit and many not only try different models, but often pivot to entire different industries for that reason. Successful startups try lots of things to see which things work and iterate. The best startups find solutions to existing problems. By contrast, most of these crypto startups are trying to find problems for the crap that they want to build.
-系统真的非常非常难以设计，而且很少是第一次使用。正如任何创业老手都会告诉你的那样，很难找到适合产品市场的产品，许多人不仅尝试不同的模型，而且经常因此而转向整个不同的行业。成功的初创公司会尝试很多东西来看看哪些东西可以工作和迭代。最好的创业公司找到现有问题的解决方案。相比之下，这些加密初创公司中的大多数都试图为他们想要构建的垃圾找到问题。
+It is often said that the defensive moat of a network-effect bound business can be quantified using [Metcalfe's Law][10], which states that the value of a network is proportional to the square of the number of users. For readability, it can be said the network effect of businesses that are subject to Metcalfe's law have a network effect of n^2.
+人们常说，网络效应约束企业的防御护城河可以使用[梅特卡夫定律][10]来量化，该法律规定网络的价值与用户数量的平方成正比。为了便于阅读，可以说受Metcalfe定律影响的企业的网络效应具有n ^ 2的网络效应。
 
-What's really scary about blockchain systems is that you really can't iterate or change things very much without throwing out all pretense of decentralization. Thus, Crypto-Keynesians have to believe any investments they make will be correct and successful _on the first try_. This is simply not the reality of complex systems or markets. At best, the iterations in these projects are very slow, enormously expensive and really hard to change.
-区块链系统真正令人害怕的是，如果不抛弃所有去中心化的借口，你真的无法迭代或改变事物。因此，Crypto-Keynesians必须相信他们所做的任何投资都是正确的，并且在第一次尝试时也是成功的。这根本不是复杂系统或市场的现实。充其量，这些项目中的迭代非常缓慢，非常昂贵并且很难改变。
+Since Metcalfe proposed this working definition of the value of a network, it's been thoroughly [debunked][11]. There are [no known networks][12] that exhibit a network effect of n^2 in perpetuity as they grow. Moreover, the original assumption driving n^2 was that all connections in a network are equally valuable. Instead, it's it's more commonly recognized that the network effects of most networks are likely closer to n*log(n) than n^2.
+由于Metcalfe提出了这个网络价值的工作定义，因此它被彻底[揭穿][11]。有[没有已知的网络][12]随着它们的成长，永久性地表现出n ^ 2的网络效应。此外，驱动n ^ 2的原始假设是网络中的所有连接同样有价值。相反，人们更常识别的是，大多数网络的网络效应可能比n ^ 2更接近n*log（n）。
 
-### Crypto-Keynesian Fallacy #3: Everyone Will Do Things Exactly As Expected
-## #
+While this certainly makes more sense than n^2 (nothing can grow quadratically forever), even n*log(n) is a perpetually super-linear curve. What we see in reality is that not only are all connections not equally valuable, but that after a certain point, the value of each marginal connection in the system begins to decrease (e.g. the next 10M Facebook users in Asia are worth very little to existing American users).
+虽然这肯定比n ^ 2更有意义（没有任何东西可以永久地平方增长），但即使n*log（n）也是永久的超线性曲线。我们在现实中看到的是，不仅所有连接都不具有同等价值，而且在某一点之后，系统中每个边际连接的价值开始下降（例如，亚洲的下一个10M Facebook用户对现有的价值很小美国用户）。
 
-The most hilarious part of Kyle's tweet storm was saying how the NBA.com server would be the source of truth and therefore, Oracles could be trusted and smart contracts can be useful for non-digital stuff.
-凯尔的推特风暴中最热闹的部分是说NBA.com服务器将如何成为事实的来源，因此，可以信任Oracles，智能合约可以用于非数字化的东西。
-
-Remember, the Oracle is the last word on the smart contract. There is no further adjudication in a decentralized setting. You can't appeal to another judge should something go wrong. You simply have to accept _whatever the Oracle says_.
-请记住，Oracle是智能合约的最后一个词。在去中心化的环境中没有进一步的裁决。如果出现问题，你不能诉诸另一位法官。您只需接受_无论Oracle说什么_。
-
-Apparently, this enormous attack surface an Oracle adds is not really even considered. Who controls the data feed from nba.com? Can that get hacked? Would anyone in a gambling situation be incentivized to affect this feed? Say you got 100–1 odds on the Cavaliers when they were down 3–0 to the Warriors and bet $1M on the Cavs. Would you have incentive to hack the servers so you could be paid out in a bearer instrument? Would you be incentivized to bribe the nba.com IT guy? Would you kidnap the person's family? After all, you would only need to change the Oracle's vote. Given that the ambitions of these projects are to take over the entire sports betting market ($3B/yr), this is not just theoretical.
-显然，甲骨文增加的这个巨大的攻击面甚至都没有考虑过。谁控制来自nba.com的数据Feed？可以被黑客攻击吗？赌博情况下的任何人都会被激励影响这个饲料吗？假设你在骑士队以3比0战胜勇士队并在骑士队投注100万美元时获得了100-1赔率。您是否有动力破解服务器，以便您可以通过不记名工具获得支付？你会被激励贿赂nba.com IT人吗？你会绑架这个人的家人吗？毕竟，您只需要更改Oracle的投票。鉴于这些项目的目标是接管整个体育博彩市场（每年3美元），这不仅仅是理论上的。
+In practice, _best case_ network effects resemble an S-curve more than n^2 or n*log(n).
+在实践中，_best case_网络效果类似于大于n ^ 2或n*log（n）的S曲线。
 
 ![][15]
 
-An adversarial network requires a lot of thought about the actual incentives. In addition, the more complicated the system is, the more you have to test out what holes in the incentive structure there might be. Most of these projects are ridiculously complicated. Bitcoin, by comparison, is orders of magnitude simpler and less vulnerable in terms of incentive structure. To think that you've designed an incentive structure that's correct on the first try is absolute lunacy and reflects a lack of real world experience.
-对抗性网络需要对实际激励进行大量思考。此外，系统越复杂，您就越需要测试激励结构中可能出现的漏洞。大多数这些项目都非常复杂。相比之下，比特币在激励结构方面更简单，更不容易受到攻击。认为你设计的第一次尝试是正确的激励结构是绝对的疯狂，反映了缺乏真实的世界经验。
+There are many case studies that empirically demonstrate the S-curve nature of network effects in practice. This is why the Macintosh survived the 90s (if the network effect of Windows was actually n^2, Apple probably wouldn't have survived), why there are so many messaging apps (Whatsapp, Telegram, Facebook Messenger, Signal, etc), why Lyft can effectively compete with Uber (I don't care how many drivers are on the road as long as I get a car in less than two minutes), and why so many specialty e-commerce stores can compete with Amazon.
+有许多案例研究在实践中凭经验证明了网络效应的S曲线性质。这就是为什么Macintosh在90年代幸存下来（如果Windows的网络效应实际上是n ^ 2，Apple可能不会幸免），为什么有这么多的消息应用程序（Whatsapp，Telegram，Facebook Messenger，Signal等），为什么Lyft可以有效地与Uber竞争（我不在乎有多少司机在路​​上，只要我在不到两分钟内买到一辆车），以及为什么这么多专业电子商务商店可以与亚马逊竞争。
 
-The usual response by a Crypto-Keynesian when faced with such questions is to refer you to some added incentives in the system like additional Oracles, bonded Oracles, or some such. It's usually a half-baked idea that anyone can figure out holes to in 5 minutes, but that's the normal response. There's probably a solution to every possible attack vector, but most of the time, each "solution" creates an even bigger attack surface. Eventually the solutions get so complicated and so hard to analyze that the flaws can only be revealed by the cold, hard slap of reality.
-Crypto-Keynesian在面对这些问题时通常的反应是在系统中引用一些额外的激励措施，例如额外的Oracles，保护的Oracles或其他类似的东西。这通常是一个半生不熟的想法，任何人都可以在5分钟内找到漏洞，但这是正常的反应。每种可能的攻击向量都可能有解决方案，但大多数情况下，每个“解决方案”都会创建一个更大的攻击面。最终，解决方案变得如此复杂，难以分析，只能通过现实的冷酷实施来揭示缺陷。
+Why do people continue to say that networks are subject to n^2 or n*log(n) network effects given the very high-profile examples as evidence to the contrary? Because in all three curves, it's very hard to discern the difference between the left-most part of each curve:
+为什么人们继续说网络受到n ^ 2或n*log（n）网络效应的影响，因为非常高调的例子作为相反的证据？因为在所有三条曲线中，很难辨别每条曲线最左边部分之间的差异：
 
-### Conclusion
-### 结论
+![][17]
 
-The real weakness of Keynesianism is the belief you can get something for nothing. It's the [broken window fallacy][16] in a macro form.
-凯恩斯主义的真正弱点是相信你可以无所作为。这是宏观形式的[破窗谬误][16]。
+It's the right half of each curve — the part that only occurs once a network has achieved critical mass — in which these three curves materially diverge. The n^2 curve continues to accelerate upwards quadratically. The n*log(n) curve also accelerates upwards in perpetuity, albeit at a much lower rate. On the other hand, the S-curve turns from super-linear to sub-linear as the network crosses some saturation point.
+它是每条曲线的右半部分 - 只有在网络达到临界质量时才出现的部分 - 这三条曲线实质上分歧。 n ^ 2曲线继续以二次方式向上加速。 n*log（n）曲线也会永久性地向上加速，尽管速度要低得多。另一方面，当网络穿过某个饱和点时，S曲线从超线性变为次线性。
 
-![][18]
+Of course, not all networks are subject to identical S-curves. And not all networks are even subject to the _best-case _network effects of an S-curve.
+当然，并非所有网络都遵循相同的S曲线。并非所有网络都受到S曲线的_best-case_network效应的影响。
 
-Crypto-Keynesianism makes essentially the same error. Developer activity by itself means very little. Centralized systems generally don't work very well on the ground. Incentives are really hard to get right. This is why we have so many ICOs. They are "doing something", but not adding value. You may be raising money, you may be hiring people, you may be donating to some causes but you're not adding value until the market buys your product or service. And no, you don't get to brag about how "successful" you are until you've actually added value and not anytime before then.
-加密凯恩斯主义基本上会产生同样的错误。开发人员活动本身意味着很少。集中系统通常在地面上不能很好地工作。激励措施真的很难做到。这就是我们有这么多ICO的原因。他们“做某事”，但没有增加价值。您可能正在筹集资金，您可能正在招聘人员，您可能会捐赠某些原因，但在市场购买您的产品或服务之前，您不会增加价值。不，你不会吹嘘自己是多么“成功”，直到你真正增加价值，而不是在此之前的任何时候。
+Some network effects never achieve exponential-like network effects such as the left half of the S-curve. Some networks are only subject to log(n) network effects from inception, making them perpetually sub-linear, as opposed to the S-curve, which is super-linear at first.
+一些网络效应永远不会达到像指数一样的网络效应，例如S曲线的左半部分。一些网络从一开始就仅受到log（n）网络效应的影响，使得它们永远是次线性的，而不是S曲线，它首先是超线性的。
 
-The real innovation was and always has been Bitcoin. Bitcoin is sound money and sound money is what allows you to preserve value over the long term. That, in turn allows people to save for large capital projects which, in turn, [build up civilization][19]. [Crypto-Austrians][3] believe this is the basis for building in the future, not in these pie-in-the-sky projects that don't deliver value.
-真正的创新一直是比特币。比特币是合理的金钱，声音金钱可以让您长期保持价值。这反过来又允许人们为大型资本项目储蓄，而这些项目反过来又会[建立文明][19]。 [Crypto-Austrians][3]相信这是未来建设的基础，而不是这些无法实现价值的天空项目。
+The most common example of a log(n) network effect is an exchange for a liquid, fungible good. Even if you make the very aggressive assumption that each additional user increases daily liquidity, the marginal value of that extra liquidity becomes increasingly worthless to all existing users. This holds true even from the earliest days of a network. This curve is never super-linear; it's always sub-linear.
+log（n）网络效应最常见的例子是交换液体，可替代的商品。即使您做出非常积极的假设，即每个额外的用户都会增加每日流动性，那么额外流动性的边际价值对于所有现有用户来说变得越来越没价值。即使从网络的早期开始也是如此。这条曲线永远不是超线性的;它总是次线性的。
 
-Crypto-Keynesians believe success is simply having money. They are two separate things. You can make money by adding to civilization or you can make money by rent-seeking. The former should be applauded. The latter should be despised.
-Crypto-Keynesians认为成功只是赚钱。它们是两个不同的东西。你可以通过增加文明赚钱，或者你可以通过寻租来赚钱。前者应该受到称赞。应该鄙视后者。
+Let's consider a simple case in which each new user trading for some fungible good adds .01% to the daily liquidity of the good.
+让我们考虑一个简单的案例，其中每个新用户交易某些可替代商品会使商品的每日流动性增加0.01％。
 
-The ICO boom makes clear that Crypto-Keynesians can't tell the difference. This leads to the building products that add "activity" but fail in delivering any sort of value, in effect digging and filling ditches and pretending that means something. This is Crypto-Keynesian lunacy.
-ICO的繁荣表明Crypto-Keynesians无法区分。这导致建筑产品增加了“活动”但却无法提供任何价值，实际上挖掘和填充沟渠并假装意味着什么。这是加密 - 凯恩斯主义的疯狂。
+When there are 100 users, daily liquidity is 1% of the market cap of the good.
+当有100个用户时，每日流动性是商品市值的1％。
 
-[1]: https://medium.com/@jimmysong/the-truth-about-smart-contracts-ae825271811f
-[2]: https://twitter.com/KyleSamani/status/1006366936530391041
-[3]: https://medium.com/@jimmysong/segwit2x-post-mortem-divorce-of-crypto-austrians-and-crypto-keynesians-87960b11ce4c
-[4]: https://cdn-images-1.medium.com/freeze/max/75/1*DHABOQIUXUJ3dCJKsWXmvg.jpeg?q=20
-[5]: https://cdn-images-1.medium.com/max/2000/1*DHABOQIUXUJ3dCJKsWXmvg.jpeg
-[6]: https://twitter.com/mflaxman/status/1006573882038542338
-[7]: https://cdn-images-1.medium.com/freeze/max/75/1*jX3qDnC0Gw3EFy-paqLiSw.jpeg?q=20
-[8]: https://medium.com/@jimmysong/undefined
-[9]: https://cdn-images-1.medium.com/max/2000/1*jX3qDnC0Gw3EFy-paqLiSw.jpeg
-[10]: https://medium.com/@jimmysong/alternatives-to-blockchain-9f858c0a1f2d
-[11]: https://cdn-images-1.medium.com/freeze/max/75/1*o9juj3fNouvU21exuuEPJw.png?q=20
-[12]: https://cdn-images-1.medium.com/max/2000/1*o9juj3fNouvU21exuuEPJw.png
-[13]: https://en.wikipedia.org/wiki/Multi-level_marketing
-[14]: https://cdn-images-1.medium.com/freeze/max/75/0*0RUSi3LJ8TNg988j.gif?q=20
-[15]: https://cdn-images-1.medium.com/max/2000/0*0RUSi3LJ8TNg988j.gif
-[16]: https://en.wikipedia.org/wiki/Parable_of_the_broken_window
-[17]: https://cdn-images-1.medium.com/freeze/max/75/1*Qt1kMgUwc6p77D2I8VMugg.jpeg?q=20
-[18]: https://cdn-images-1.medium.com/max/2000/1*Qt1kMgUwc6p77D2I8VMugg.jpeg
-[19]: https://medium.com/@jimmysong/why-bitcoin-works-fe32879a73f5
+When there are 1,000 users, daily liquidity is 10% of the market cap of the good.
+当有1000个用户时，每日流动性是商品市值的10％。
+
+When there are 10,000 users, daily liquidity is 100% of the market cap of the good.
+当有10,000个用户时，每日流动性是商品市值的100％。
+
+When there are 100,000 users, daily liquidity is 1,000% of the market cap of the good (10x daily turnover).
+当有10万用户时，每日流动性是商品市值的1000％（每日营业额10倍）。
+
+If a user owns .1% of the goods in being traded, the value of the liquidity provided by each marginal users becomes increasingly worthless. Technically, slippage will decrease as the number of users and therefore liquidity grows, but in practice the marginal liquidity benefit will be so low that it will be imperceptible not just to a given user, but all existing users.
+如果用户拥有交易中的0.1％的商品，则每个边际用户提供的流动性价值变得越来越无价值。从技术上讲，随着用户数量和流动性的增长，滑点将会减少，但实际上边际流动性收益将会非常低，以至于不仅对特定用户而且对所有现有用户来说都是不可察觉的。
+
+All exchanges for a given fungible asset have a network effect of approximately log(n), which can be visualized as follows:
+给定可替换资产的所有交易所具有大约log（n）的网络效应，其可视化如下：
+
+![][19]
+
+There is ample evidence that this is empirically true. If the network effects of exchanges for fungible goods were super-linear at any point on the curve, we wouldn't have so many crypto exchanges. What we can observe is that if an exchange has some liquidity — a fraction of that of the market leader — it's often enough to sustain a viable exchange, and to provide reasonable liquidity to market participants.
+有充分的证据表明这是经验上的。如果可互换商品交换的网络效应在曲线上的任何一点都是超线性的，我们就不会有这么多的加密交换。我们可以观察到，如果交易所具有一定的流动性 - 只是市场领导者的一小部分 - 通常足以维持可行的交易所，并为市场参与者提供合理的流动性。
+
+**The Network Effect Of Digital Gold**
+**数字黄金的网络效应**
+
+Which type of network effect does digital gold exhibit?
+数字黄金展示了哪种类型的网络效应？
+
+To answer this question, let's walk through the mechanics of how users will use digital gold.
+要回答这个问题，让我们来看看用户如何使用数字黄金的机制。
+
+The purpose of a store of value such as digital gold is to… store value for consumption at some later date. Other than the time in which the digital gold is converted into something else, digital gold just sits there, doing nothing. It doesn't benefit from the addition or removal of new users.
+数字黄金等价值存储的目的是......在以后某个时间存储消费价值。除了将数字黄金转换成其他东西的时候，数字黄金只是坐在那里，什么都不做。它不会从添加或删除新用户中受益。
+
+When a user wants to liquidate their digital gold to consume some other good or service, she needs to find liquidity: someone who is willing to purchase the digital gold. This can be done at an exchange that specializes in fungible digital gold.
+当用户想要清算他们的数字黄金以消费其他商品或服务时，她需要找到流动性：愿意购买数字黄金的人。这可以在专门从事可互换数字黄金的交易所完成。
+
+The utility of digital gold is a function of its liquidity. As described above, this means that the network effect for Bitcoin can be approximated as log(n).
+数字黄金的效用是其流动性的一个功能。如上所述，这意味着比特币的网络效应可以近似为log（n）。
+
+**The Network Effect Of Digital Cash**
+**数字现金的网络效应**
+
+Which type of network effect does digital cash exhibit?
+数字现金表现出哪种网络效应？
+
+To answer this question, let's walk through the mechanics of how users will use digital cash.
+要回答这个问题，让我们来看看用户如何使用数字现金的机制。
+
+The purpose of digital cash is to both store value and be used as a medium of exchange. Additionally, digital cash can become a unit of account.
+数字现金的目的是既存储价值又用作交换媒介。此外，数字现金可以成为一个帐户单位。
+
+The utility of digital cash in aggregate therefore is a function of how many merchants want to accept payment for goods and services in digital cash.
+因此，数字现金在总体上的效用取决于有多少商家想要以数字现金接受货物和服务的支付。
+
+This resembles the direct network effect (the telephone diagram) as described above. The more people who accept payment using digital cash, the more merchants existing users can do business with.
+这类似于如上所述的直接网络效应（电话图）。使用数字现金接受付款的人越多，现有用户可以与之开展业务的商家就越多。
+
+All major global currencies exhibit this network effect in their respective jurisdictions. Because merchants and consumers must pay taxes in each jurisdiction in the native fiat currency of their country, they choose to receive wages (employees) and revenues (businesses) in the form of the local fiat currency. This creates a powerful network effect, as very few people want to take on the balance sheet risk of holding a currency that's subject to price-fluctuations relative to the currency with which they purchase goods/services and pay taxes with.
+所有主要全球货币在各自的司法管辖区都表现出这种网络效应。由于商人和消费者必须在其所在国家的法定货币的每个司法管辖区纳税，他们选择以当地法定货币的形式获得工资（雇员）和收入（企业）。这产生了强大的网络效应，因为很少有人想要承担资产负债表风险，即持有相对于他们购买商品/服务并缴税的货币价格波动的货币。
+
+Intuitively, this is likely to be subject to an S-curve network effect. The first 50% merchants that accept digital cash for payment make it exponentially more useful than the second 50%.
+直觉上，这很可能受到S曲线网络效应的影响。接受数字现金支付的前50％商家使其比第二个50％的指数更具有用性。
+
+**Store Of Value Vs Utility**
+**价值存储与实用工具**
+
+Bitcoin maximalists will argue that the argument presented above is based on semantics. Specifically, they'll argue "Of course new users will make Bitcoin more valuable. They'll buy it and hold it, by definition making it more valuable! The liquidity argument is a red herring."
+比特币极端主义者会争辩说上面提出的论点是基于语义的。具体来说，他们会争辩说“当然新用户会让比特币变得更有价值。他们会购买并持有它，从定义上讲它更有价值！流动性论证是一个红色的鲱鱼。”
+
+While this is true in a narrow sense, it ignores the competitive reality: what if something else becomes digital cash and achieves a super-linear network effect? That's the broader point I'm making. The sub-linear network effect of liquidity alone is, in isolation, a red herring. But if something else becomes digital cash with a super-linear network effect while Bitcoin remains digital gold with a sub-linear network effect, then Bitcoin will be surpassed.
+虽然这在狭义上是正确的，但它忽略了竞争现实：如果其他东西变成数字现金并实现超线性网络效应呢？这是我正在做的更广泛的观点。仅流动性的亚线性网络效应就是孤立的红鲱鱼。但如果其他东西变成具有超线性网络效应的数字现金，而比特币仍然是具有亚线性网络效应的数字黄金，那么比特币将被超越。
+
+In crypto circles, this framing is often presented as the [store of value (SoV) vs. utility debate][20]. The SoV view is based upon reflexivity: The more people hold it, the more valuable it becomes, therefore driving more people to hold it.
+在加密圈中，这种框架通常表现为[存储价值（SoV）与效用辩论][20]。 SoV视图基于反身性：拥有它的人越多，它变得越有价值，因此驱使更多的人持有它。
+
+Of course, reflexivity works going up and down. This creates excessive volatility and therefore instability, defeating the purpose of a store of value entirely. It's very easy to believe the SoV hypothesis when the price only increases. But when the price decreases, the underlying value of the utility value creates an organic price floor.
+当然，反身性工作起伏不定。这会造成过度的波动，从而造成不稳定，完全破坏了储值的目的。当价格仅上涨时，很容易相信SoV假设。但是当价格下降时，公用事业价值的潜在价值会产生有机价格下限。
+
+It's easy forget how early we are with regard to cryptocurrency. There are 7 billion people on Earth. Less than 50 million have any cryptocurrency. We're at less than 1% global saturation. In a world of open-source software where [every feature can be copied][21], the key to winning is to achieve network effects as quickly as possible. And this is why the strength of the underlying network effect is so important. Over tens and hundreds of millions of users, these benefits compound (or fail to), creating massive differences in the terminal value of the network.
+很容易忘记数字货币的早期程度。地球上有70亿人。不到5000万人拥有任何数字货币。我们的全球饱和度不到1％。在[可以复制每个功能]的开源软件世界中[21]，获胜的关键是尽快实现网络效果。这就是为什么潜在网络效应的力量如此重要的原因。超过数万和数亿用户，这些好处复合（或失败），造成网络终端价值的巨大差异。
+
+**Other Moats**
+**其他护城河**
+
+Network effects are just one type of competitive moat. There are many types of moats.
+网络效应只是竞争性护城河的一种。有许多类型的护城河。
+
+The other moats that Bitcoin maximalists espouse are "brand recognition" and third-party ecosystem integrations such as exchanges, ATMs, other financial products, hardware and mobile wallets, etc.
+比特币极端主义者所支持的其他护城河是“品牌认知”和第三方生态系统集成，如交易所，ATM，其他金融产品，硬件和移动钱包等。
+
+To explore the power of these moats, I'll compare Bitcoin against Ethereum. This is not to suggest that Ethereum specifically is likely to overtake Bitcoin. Rather, it's mean to serve as an example of what a competitive network can achieve in less than three years since launch.
+为了探索这些护城河的力量，我将比特币与以太坊进行比较。这并不是说以太坊特别有可能超过比特币。相反，它意味着作为竞争网络自推出后不到三年内可以实现的目标的一个例子。
+
+Brand recognition is indeed a moat. Bitcoin is the leader among cryptocurrencies. But to suggest that its brand is somehow untouchable is simply false. No brand is untouchable.
+品牌认知确实是一种护城河。比特币是数字货币的领导者。但是，建议其品牌在某种程度上是不可触及的，这简直是错误的。没有品牌是不可触及的。
+
+There is not a good way to measure brand value of an open, permissionless brand like Bitcoin, but we can use Google trends as a crude measurement tool.
+没有一种很好的方法来衡量像比特币这样的开放，无许可的品牌的品牌价值，但我们可以将谷歌趋势作为一种粗略的衡量工具。
+
+![][23]
+
+Bitcoin is blue, Ethereum is red. At the time of largest divergence, Bitcoin was about 11x as frequently searched as Ethereum. Today, the difference is 8x. Given how volatile and rapidly evolving the space is, this lead could be wiped out within a few years.
+比特币是蓝色的，以太币是红色的。在最大分歧的时候，比特币的搜索频率是以太网的11倍。今天，差异是8倍。考虑到空间的波动性和快速变化，这一领先优势可能会在几年内消失。
+
+What about third-party integrations? Here, Ethereum is almost on par with Bitcoin:
+第三方集成怎么样？在这里，以太坊几乎与比特币相提并论：
+
+Exchanges — All major exchanges support fiat pairs with Bitcoin and Ethereum.
+交易所 - 所有主要交易所都支持比特币和以太坊的法定货币对。
+
+Hardware wallets — All major hardware wallets support both Bitcoin and Ethereum.
+硬件钱包 - 所有主要硬件钱包都支持比特币和以太坊。
+
+ATMs — To the best of my knowledge, all crypto ATMs support both.
+ATMs  - 据我所知，所有加密ATM都支持这两种方式。
+
+Mobile wallets — Both Bitcoin and Ethereum have a plethora of mobile wallets for iOS and Android.
+移动钱包 - 比特币和以太坊都有大量适用于iOS和Android的移动钱包。
+
+Other financial products — Bitcoin has a lead with CME, CBOE, and NASDAQ futures. But given Ethereum's trajectory, it seems quite reasonable that it will achieve parity within 24 months.
+其他金融产品 - 比特币领先CME，CBOE和纳斯达克期货。但鉴于以太坊的发展轨迹，它将在24个月内达到平价似乎是合理的。
+
+Again, my point is not that Ethereum is set to overtake Bitcoin, but rather that the range of 3rd party integrations is not insurmountable.
+同样，我的观点并不是说以太坊会超越比特币，而是第三方集成的范围并非不可克服。
+
+**Conclusion**
+**结论**
+
+Network effects and competitive moats are generally misunderstood. Contrary to popular belief, there are no networks that exhibit n^2 network effects, and in fact many exhibit log(n) network effects, notably fungible asset exchanges. Bitcoin as digital gold will be subject to the perpetually sub-linear log(n) network effect, whereas Bitcoin as digital cash can achieve super-linear network effects as crypto adoption grows from <1% to 50% of the global population. The cryptocurrency that becomes the dominant store-of-value will _by definition_ need to exhibit super-linear network effects as it grows.
+网络效应和竞争性护城河通常被误解。与流行的看法相反，没有网络表现出n ^ 2网络效应，事实上许多网络表现出log（n）网络效应，特别是可互换的资产交换。作为数字黄金的比特币将受到永久的亚线性log（n）网络效应，而比特币作为数字现金可以实现超线性网络效应，因为加密采用率从全球人口的&lt;1％增加到50％。成为主要价值存储的数字货币将在定义时随着它的增长呈现出超线性网络效应。
+
+Moreover, other types of competitive moats such as brand and broader ecosystem integrations do not exhibit increasing returns to scale, and can be easily overcome by a competitive network with super-linear network effects. We already have ample evidence that this is true.
+此外，品牌和更广泛的生态系统集成等其他类型的竞争性护城河并没有表现出越来越大的规模收益，并且可以通过具有超线性网络效应的竞争网络轻松克服。我们已经有足够的证据表明这是事实。
+
+The battle to be the [super-mega winner][20] of crypto is just beginning. On the left-most 1% of all of the network effect curves, the differences are not easily discernible. It's easy to think that network effects have started to kick in before they actually have.
+成为加密的[超级大赢家][20]的战斗才刚刚开始。在所有网络效应曲线的最左侧1％中，差异不容易辨别。人们很容易认为网络效应在实际发生之前已经开始发挥作用。
+
+Thanks to [Chris Dixon][24] and [Matt Huang][25] for providing feedback on this essay.
+感谢[Chris Dixon][24]和[Matt Huang][25]提供有关本文的反馈。
+
+![][27]
+
+[1]: https://multicoin.capital/smart-contract-network-effect-fallacy/
+[2]: https://medium.com/@adamtache/the-many-faces-of-bitcoin-1c298570d191
+[3]: https://medium.com/evergreen-business-weekly/the-power-of-network-effects-why-they-make-such-valuable-companies-and-how-to-harness-them-5d3fbc3659f8
+[4]: https://a16z.com/2016/03/07/all-about-network-effects/
+[5]: https://www.techstars.com/content/accelerators/understanding-network-effects/
+[6]: http://mattturck.com/the-power-of-data-network-effects/
+[7]: http://platformed.info/
+[8]: https://cdn-images-1.medium.com/freeze/max/75/0*7eEBxFp0Y96lxPZf.?q=20
+[9]: https://cdn-images-1.medium.com/max/2000/0*7eEBxFp0Y96lxPZf.
+[10]: https://en.wikipedia.org/wiki/Metcalfe%27s_law
+[11]: https://spectrum.ieee.org/computing/networks/metcalfes-law-is-wrong
+[12]: https://vitalik.ca/general/2017/07/27/metcalfe.html
+[13]: https://cdn-images-1.medium.com/freeze/max/75/0*yS9KviJBbGZ7GcY6.?q=20
+[14]: https://hackernoon.com/undefined
+[15]: https://cdn-images-1.medium.com/max/2000/0*yS9KviJBbGZ7GcY6.
+[16]: https://cdn-images-1.medium.com/freeze/max/75/0*y6IaXAd2kqYNEy27.?q=20
+[17]: https://cdn-images-1.medium.com/max/2000/0*y6IaXAd2kqYNEy27.
+[18]: https://cdn-images-1.medium.com/freeze/max/75/0*RRcu4YGZdEXKGrgK.?q=20
+[19]: https://cdn-images-1.medium.com/max/2000/0*RRcu4YGZdEXKGrgK.
+[20]: https://multicoin.capital/2018/03/15/paths-to-tens-of-trillions/
+[21]: https://multicoin.capital/2018/04/25/good-artists-copy-great-artists-steal/
+[22]: https://cdn-images-1.medium.com/freeze/max/75/0*GvvkJeosqwI3hyyv.?q=20
+[23]: https://cdn-images-1.medium.com/max/2000/0*GvvkJeosqwI3hyyv.
+[24]: https://twitter.com/cdixon
+[25]: https://twitter.com/matthuang
+[26]: https://cdn-images-1.medium.com/freeze/max/75/1*QCV7h713dLgy5COZTyBLdQ@2x.png?q=20
+[27]: https://cdn-images-1.medium.com/max/2000/1*QCV7h713dLgy5COZTyBLdQ@2x.png
 
 
