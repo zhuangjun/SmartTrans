@@ -1,177 +1,118 @@
-https://thecontrol.co/understanding-decentralized-identity-433abb343279
+[Source](https://medium.com/xpring/layer-3-is-for-interoperability-ca387fa5f7e2 "Permalink to Layer 3 Is for Interoperability – Xpring – Medium")
 
-# Understanding Decentralized Identity
+# Layer 3 Is for Interoperability – Xpring – Medium
 
-## A Missing Piece of Infrastructure for the dApp Ecosystem
+## The Protocol Stack for the Internet of Value
 
-Every cryptographer's fantasy is that all of us are born with private key chips embedded in our brains so that we can always identify who we are without worrying about identity theft or fraud. Unfortunately, we don't live in such a cyberpunk utopia, so we're currently left with a broken system of passwords and social security numbers that keep on getting stolen.
+Layer 2 technologies such as [Lightning][1] and [Plasma][2] are said to ["promise big strides in scalability, interoperability and functionality"][3] for blockchains. However, most Layer 2 projects focus primarily on scalability and only occasionally mention interoperability. Why? This isn't just a matter of timing or stage of development. This is actually how it should be, because **Layer 2 is for scaling. Layer 3 is for interoperability.**
 
-Meanwhile, blockchain technology offers the promise to revolutionize digital identity by returning ownership of personal data from companies and governments to individuals, such that individuals have the power to share their data with others and revoke it as they please.
+Scaling and interoperability are complementary but separate concerns that are best addressed through different protocol layers. To make this case, I'll give a bit of background on the purpose of layered protocol architectures and the roles of Layers 1, 2, and 3. I'll also explain how separating scalability and interoperability improves the solutions for both and paves the way for an Internet of Value whose design is surprisingly analogous to the internet itself.
 
-To dive deeper into why blockchain technology is useful for identity, we first need to understand the concept of identity from a philosophical lens. Consider the following thought experiment — two marbles that look and feel exactly the same are placed next to each other. While the two marbles have the same **essence** (bits and atoms), they are distinct in **identity** because we can label each marble with a unique identifier such as Marble A and Marble B.
+### The Purpose of Layered Protocols
 
-But such an identifier disappears once we mix up both marbles in a bag and are then asked to identify which is Marble A and which is Marble B. One solution to this identity problem is to have an omniscient watcher that always sees which marble is which even while they're being mixed. This works because **time**, as the fourth dimension of space, acts as a [temporal indicator of identity][1]. Blockchains, which are immutable logs of past states, provide temporal continuity and are thus useful for keeping track of identity even when [physical circumstances change][2].
+> It is always possible to agglutinate multiple separate problems into a single complex interdependent solution. In most cases this is a bad idea. _  
+_\- [RFC 1925: The Twelve Networking Truths][4]
 
-Identity is one of the most important missing pieces of Web 3 infrastructure, and there are a number of projects taking different approaches to building an identity layer that the entire dApp ecosystem can use. The two primary layers that entrepreneurs are focused on today are **namespaces** and **attestations**.
+The internet is the best example of a layered protocol architecture, and this design was a key factor in the internet's growth and usefulness. Different pieces of functionality are split into separate protocols that build on one another, rather than being bundled together in one monolithic system.
 
-### Namespaces
+For example, the Internet Protocol (IP) is built upon different underlying networking technologies or "link layer" protocols, such as Ethernet and WiFi. Because IP was designed as a separate layer, it is not tied to any specific networking technology and is able to work the same way over many different types of wired or wireless connections.
 
-A key piece to decentralized identity is how people, devices, and other entities in the world are identified without a centrally owned registry.
+![][5]
 
-For blockchains, right now we identify ourselves with addresses — a long string of characters such as 0x9992437898114d2770522e050883d6b2dfc48326 that is largely unmeaningful and difficult to remember. What if we could instead map each address to a unique, human-readable name?
+The "hourglass" architecture of the Internet: IP abstracts away the differences between underlying networks and applications built on top of it
 
-![][3]![][4]![][5]
+Layered protocol architectures provide a number of important benefits:
 
-In computer science, **namespaces **are used to organize objects such that they can be identified without name collisions between multiple objects that share the same name. Examples of namespaces include file systems (assigning names to files) and DNS (assigning names to websites).
+* **Interoperability - **IP works across many different networking technologies by abstracting away their differences. As long as a link can send data, IP can communicate over it. This means we can connect seamlessly no matter what type of underlying network we are using.
+* **Upgradeability - **Abstractions enable different layers to evolve separately. While the internet was built in the 1970s, the fact that IP abstracts away the different networking technologies has enabled us to upgrade from dial-up to fiber optic and 4G links. The higher level protocols did not need to change, but our connections keep getting faster as newer networking technologies are developed.
+* **Common Infrastructure for Multiple Use Cases - **IP is also independent of any particular use case, which enables the same infrastructure to be used for applications ranging from the Web to email and Voice over IP (VoIP). If the internet had been built specifically for file transfers, we might have needed whole separate networks for each different use case. Instead, we have a single internet that can be used for many types of communication.
 
-Similarly, for blockchains we want to maintain a global table of unique key-value pairs of addresses and names. Furthermore, we ideally want such a table to be secure, decentralized, and human-meaningful all at the same time. Is this even possible? We're running straight into Zooko's triangle.
+Layering is an essential tool for designing systems like the internet or Internet of Value, but deciding which features fit into which layers is the hardest part. Too many layers makes the system overly complex, but too much bundling hampers interoperability and upgradeability.
 
-#### Zooko's Triangle
+### A Protocol Stack for the Internet of Value
 
-![][6]![][4]![][7]
+The Interledger protocol stack has direct parallels with the internet protocol suite, largely because we found that splitting functionality into analogous layers helped solve issues at each level. Here, I'll briefly go through each of the layers to explain their roles and show the benefits of focusing Layer 3 on interoperability.
 
-[Zooko's Triangle][8], named after the CEO of Zcash Zooko Wilcox, is a trilemma of three desirable properties for a naming system in a network.
+![][6]
 
-* **Secure:** When you look up a name you get the correct value and not that of an impersonator.
-* **Decentralized:** No central authority controls all the names.
-* **Human-meaningful:** The name is something you can actually remember instead of some long random string of characters.
+The Interledger Protocol (ILP) connects and abstracts away the differences between Layer 2 technologies
 
-Zooko claimed that no digital name can achieve more than two of the above properties. Some examples examined with this framework in mind:
+### Layer 1: Ledgers
 
-* [**DNSSEC**][9], a security extension to DNS, offers a decentralized human-meaningful naming scheme but is not secure against compromises to the root server.
-* **Bitcoin **addresses are secure and decentralized but are not human-meaningful.
-* [**I2P**][10], a protocol for anonymous censorship-resistant peer-to-peer communication, uses name translation services that are secure (by running locally) and provide human-meaningful names but need to use authorities in a decentralized network.
+Blockchains and other types of ledgers are like the physical cables that underpin the internet. Digital communication is ultimately made possible by wired and wireless links that connect individual devices and carry data between them. Similarly, ledgers are the foundation of the Internet of Value, because they enable two people that accept the same asset or hold accounts in the same system to transact.
 
-#### Squaring the triangle
+Like physical cables, ledgers and blockchains need additional protocols built on top of them to facilitate the exchange of data or money. In the case of blockchains, the main issues are scaling transaction throughput and lowering latencies while maintaining decentralization.
 
-Ever since Zooko conjectured his trilemma, there have been several solutions to Zooko's triangle. Nick Szabo first proposed a solution in his paper "[Secure Property Titles with Owner Authority][11]", which illustrated that all three properties could be achieved up to the limits of Byzantine fault tolerance.
+Ledgers are destined to be performance bottlenecks because they are logically centralized. Whether a ledger is maintained in a centralized or decentralized fashion, it needs a single consistent, shared state of accounts and balances to ensure that money cannot be "double-spent". Updating widely shared state is always going to be relatively expensive and slow. The bottleneck will either be the speed of consensus in a distributed ledger, or the performance of a single machine in the case of a centralized ledger. Improving ledger scalability is very useful, but moving common and repeated transactions off of the main ledger using Layer 2 protocols will increase throughput and lower latencies even more.
 
-Aaron Swartz later described a [naming system][12] based on Bitcoin that uses PoW to establish consensus of name ownership. This solution inspired the creation of [Namecoin][13]. Namecoin was the first fork of Bitcoin and was the underlying blockchain for [Dot-Bit][14], the first implementation of a decentralized DNS that squares Zooko's triangle. Dot-Bit works by allowing users to forward their current domains to .bit addresses.
+### Layer 2: Local Area Networks
 
-Since its release seven years ago, Namecoin has had [very little adoption][15] mainly due to a poor user experience. There are hundreds of thousands of squatted domains but only about 30 developed Dot-Bit websites. There are also rumors that Namecoin developers approached Google and ICANN at some point for potential partnerships, which defeats the purpose of building a decentralized DNS to replace central authorities.
+Layer 2 solutions for scaling blockchains are analogous to the link layer protocols of the internet stack, such as Ethernet and WiFi. This layer creates bilateral links or Local Area Networks (LANs)* that allow directly connected parties or devices to communicate efficiently over the underlying network.
 
-[Onename][16], later developed in March 2014 by Princeton researchers Ryan Shea and Muneeb Ali, is another identity system that stores usernames and personal profile data on the Bitcoin blockchain. Today, Onename is the registrar (like GoDaddy) for namespaces on the [Blockstack][17] dApp platform. Onename is also the technology that enables Blockstack users to retain ownership of all their personal data across various dApps, reducing the [data monopoly power][18] that Google and Facebook currently have.
+Layer 2 technologies for blockchains are designed to enable fast, cheap, high-throughput transactions over the underlying ledger, generally by using a form of programmatic escrow. This category includes bilateral technologies like [payment channels][7] and [generalized state channels][8], as well as multilateral solutions including payment channel networks like [Lightning][9] and [Raiden][10], [sidechains][11], and [Plasma][12]. Each of these enable faster, cheaper transactions by allowing pairs or smaller groups of account holders to transact without needing to interact with the main ledger each time.
 
-[ENS][19] is a DNS for Ethereum that is simultaneously secure and decentralized. A smart contract serves as the registrar that manages and updates Ethereum names instead of using a centralized service like GoDaddy. Anyone can create a human-readable .eth subdomain, and the ENS resolver acts as a translator that converts names to addresses. For wallets that support ENS such as Metamask, MyCrypto, and Status, you can send money to a memorable name like 'alice.eth' instead of '0x4cbe58c50480…'. Since its launch, ENS has over 160,000 names registered with over 3.2 million ETH deposited to bid on names.
+#### Programmatic Escrow
 
-![][20]![][4]![][21]
+The core mechanism of Layer 2 solutions is a form of programmatic escrow. Assets are first put into a holding account, script, or smart contract on the main ledger. Then, two or more parties can carry out numerous fast transactions by updating their local state to change the allocation of the escrowed assets. If or when the parties want to close out their off-ledger relationship, they present the final state to the main ledger, which checks its validity and distributes the escrowed assets accordingly.
 
-[Handshake][22] is a new, exciting project led by Joseph Poon (creator of Lightning Network and Plasma) to decentralize [DNS root zones][23] and replace ICANN and certificate authorities. Handshake is built on a new UTXO blockchain where all peer-to-peer full nodes are root servers that host the root zone file, making the root zone uncensorable, permissionless, and free of gatekeepers. Already, projects such as [Namebase][24] are making Handshake easy to use by allowing users to register top-level domains on the Handshake blockchain and by building a wallet and exchange for Handshake coins (HNS).
+Importantly, the features offered by the underlying ledger directly determine the types of functionality the Layer 2 system can include, because ledgers vary in the types of programmatic escrow they support.
 
-![][25]![][4]![][26]
+> Layer 2 solutions are necessarily tied to certain ledgers, because they leverage specific capabilities in the underlying Layer 1 system.
 
-From the diagram above, projects such as Dot-Bit and ENS are decentralizing .bit and .eth addresses respectively, while Handshake takes it a step further to decentralize ICANN, the gatekeeper for root zone files. Source: [zk Capital][27]
+This is why [Lightning is defined in terms of Bitcoin scripts][13], [Raiden uses specific Ethereum smart contracts][14], and Plasma implementations would similarly use well-specified smart contracts. Lightning may work with specific (SegWit-supporting) forks of Bitcoin like Litecoin, and Raiden and Plasma may work with other blockchains that use the Ethereum Virtual Machine (EVM). However, Each Layer 2 technology would be worse if they tried to support ledgers with vastly different sets of features (for example, [Lightning without SegWit][15] or Plasma implemented using only Bitcoin scripts). This is completely fine though! Layer 2 scaling solutions can and should take advantage of every capability provided by the underlying ledger.
 
-Overall, Handshake is a very ambitious project that has the potential to change how DNS and naming services operate. Gaining adoption will be very difficult given operating system defaults for DNS in addition to disrupting the monopolies of incumbent certificate authorities such as Verisign.
+The close connection between Layers 1 and 2 is precisely why we need a separate layer for interoperability. True interoperability is all about abstraction and requires minimizing the set of features the protocol uses. The fewer features the interoperability layer expects from the layer below, the more heterogeneous networks it can connect. Since Layer 2 solutions can and should leverage specific Layer 1 capabilities, we need a separate layer for interoperability that uses as few ledger-specific functions as possible.
 
-Other projects attempting to come up with a solution to Zooko's triangle include [OpenAlias][28] and [Portal Network][29].
+### Layer 3: Interoperability
 
-### Attestations
+The purpose of Layer 3 is to abstract away the differences between different Layer 1 and 2 technologies to connect vastly different types of networks. This is the role of the Internet Protocol (IP) on the internet and the Interledger Protocol (ILP) in the Internet of Value.
 
-Having a namespace that is secure, decentralized, and human-meaningful all at the same time isn't enough for a decentralized identity system. To illustrate, when OneName launched someone immediately claimed the username +gavin, so OneName later had to reserve +gavinandresen for the Bitcoin core developer himself.
+The core protocol of the internet stack, IP, routes packets of data across networks while abstracting away the differences between the underlying telecommunication technologies. The internet was successful precisely because it used such a clean abstraction and was able to connect _everything_, from phone lines (via dial-up), to cellular and satellite networks, to dedicated fiber optic cables — and even [carrier pigeons][16].
 
-To prevent someone from impersonating someone else online, we need to verify that each person is actually who they claim to be. As an example, before you can rent a property on Airbnb, you must verify your email and phone number and optionally your Facebook, LinkedIn, and Google accounts. In this case, Airbnb acts as the trusted intermediary — both buyers and sellers trust that Airbnb has done the verification process properly. But in the dApp world, we no longer have trusted third parties, yet we still need to verify someone's identity before allowing smart contracts to execute.
+The only feature IP requires of underlying networks is the ability to send data. It does not depend on any additional features or even guarantees of speed or reliability. Because of its simple abstraction, IP was able to create a universal network of networks that today connects over half of the human population.
 
-As a result, attestations are the backbone of trust and reputation in a decentralized identity system. In the physical world, we attest our identity with documents like a driver's license or passport. These documents assert facts about us such as our name, age, or eye color. But driver's licenses don't exist on the Internet. Instead, we need to somehow find a way to link real-world identity to cryptographic identity. The jury is still out as to how to best pull this off, and many groups are pursuing a range of approaches.
+#### Minimal Abstraction Over Layer 2 Networks
 
-#### Self-sovereign identity products
+In the Internet of Value, ILP packetizes value like IP packetizes data. It routes packets of money across networks while abstracting away the differences between assets and ledger or Layer 2 technologies. Like IP, the core of ILP is the network-agnostic packet and address format.
 
-One solution is to have a standalone identity product. Such an identity product would need to support four essential features:
+**The only feature ILP requires of the underlying layer is the ability to send value.** It does not require any special transaction types, functionality, or programmatic escrow. Faster, cheaper transactions improve the user experience, but even they are not strictly required.
 
-1. An identity has some sort of unique identifier. (The best architecture for storing such identifiers is a namespace described earlier that squares Zooko's triangle.)
-2. Third-parties can make claims about an identity. Claims are attributes such as name, address, email, etc.
-3. There is some way of asking a user for their identity.
-4. There is some way of looking up claims about an identity.
+ILP's minimal abstraction enables interoperability with all types of Layer 1 and 2 networks, including those that were not designed to be interoperable. To date, it has been used to connect the Bitcoin Lightning Network, bilateral Ethereum payment channels, and XRP payment channels — three very different Layer 2 systems. Work is underway to connect all other types of Layer 1 and 2 systems (and you should [get involved!][17]).
 
-![][30]![][4]![][31]
+For a full description of how the protocol works, see [Interledger: How to Interconnect All Blockchains and Value Networks][18]. To see all of the features that were removed from ILP to make the core protocol and abstraction as simple and interoperable as possible, read [Simplifying Interledger: The Graveyard of Possible Protocol Features][19].
 
-Facebook and Twitter are attesting claims to someone's Blockstack identity.
+_Layers 4 and 5 are not the focus of this post but you can read [__STREAMing Money and Data Over ILP_][20]_ to learn about STREAM, the recommended Layer 4 transport protocol inspired by [__QUIC_][21]_. Keep an eye out for future posts on Layer 5 and application-specific protocols built on ILP and STREAM._
 
-A standalone product for identity has the benefit of being **self-sovereign**. A self-sovereign identity is a digital identity that is portable across different dApps, does not depend on any government or company, and can never be taken away. Unlike in the current Internet, as soon as you give your social security number to someone, it can be used anywhere without your consent which could potentially lead to identity theft. Self-sovereign identity allows you to connect to dApps while retaining control of attributes such as social security number that attest your identity without ever having to make a copy of that data.
+### Conclusion: Separating Scaling and Interoperability
 
-There are numerous groups trying to build the de-facto standard for self-sovereign identity.
+Scaling and interoperability are complementary, but they are fundamentally different types of problems that are best solved by separate protocol layers. Scalability solutions like Lightning and Plasma work best when they leverage the full range of features provided by their underlying ledgers. In contrast, interoperability protocols like Interledger require minimal abstractions that enable them to work across vastly different types of underlying networks.
 
-[ERC 725][32] is a proposed standard for managing on-chain identity on the Ethereum blockchain. Created by Fabian Vogelsteller, who also created the widely successful ERC 20 token standard, an ERC 725 identity contract contains a cryptographic signature proving that the owner of the contract controls a particular claim to their identity such as an email or phone number. [Origin Protocol][33], a protocol for creating shared economies without intermediaries, uses ERC 725 to verify claims on identity before allowing smart contracts to execute.
+A subtle benefit of separating the link layer and interoperability layer is highlighted by the fact that the internet still works today. The Internet Protocol was designed for computers _the size of rooms_ and yet it is still applicable to cell phones and Internet of Things devices. By reducing the features IP required from the underlying networks, it also allowed for significant later improvements in the underlying technologies. This would have been impossible if IP had been built on specific features or APIs of networks at the time it was developed.
 
-[uPort][34] is a self-sovereign identity wallet that gives you complete control over your identity and personal data. Developed by ConsenSys, uPort lets you create an identity on Ethereum, securely login to dApps without passwords, manage your personal information and verifications, and approve Ethereum transactions and digitally sign files. uPort also recently developed a new decentralized data storage solution called [3Box][35], which allows Ethereum users to upload and share their information across dApps using any wallet. uPort has partnered with the Swiss canton of Zug to offer digital IDs to residents to connect real-world identities to the blockchain.
+We are nowhere near the end of the development of Layer 1 and Layer 2 blockchain or ledger systems. By abstracting away the differences between these with Layer 3, we can build better, more technology-agnostic user experiences while allowing for future developments that will make the Internet of Value faster, cheaper, and more efficient.
 
-![][36]![][4]![][37]
+![][22]
 
-uPort improves upon the ERC 725 standard by decomposing the monolithic identity smart contract. Their new layered architecture proposal is [ERC 780][38]. Source: [uPort][39]
+[1]: https://lightning.network
+[2]: https://plasma.io
+[3]: https://www.coindesk.com/layer-2-blockchain-tech-even-bigger-deal-think/
+[4]: https://tools.ietf.org/html/rfc1925
+[5]: https://cdn-images-1.medium.com/max/1600/1*-jsi9gHospcC2Cd5nR9lJw.png
+[6]: https://cdn-images-1.medium.com/max/1600/1*n7X3cGN2J2T2doadWTnfXg.png
+[7]: https://en.bitcoin.it/wiki/Payment_channels
+[8]: https://medium.com/l4-media/generalized-state-channels-on-ethereum-de0357f5fb44
+[9]: http://lightning.network/
+[10]: https://raiden.network/
+[11]: https://www.blockstream.com/sidechains.pdf
+[12]: https://www.plasma.io/
+[13]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md
+[14]: https://raiden-network.readthedocs.io/en/stable/spec.html
+[15]: https://segwit.org/is-segregated-witness-necessary-to-implement-the-lightning-network-6c4545a9f9f1
+[16]: https://www.blug.linux.no/rfc1149/writeup/
+[17]: https://interledger.org/community.html
+[18]: https://medium.com/xpring/interledger-how-to-interconnect-all-blockchains-and-value-networks-74f432e64543
+[19]: https://medium.com/interledger-blog/simplifying-interledger-the-graveyard-of-possible-protocol-features-b35bf67439be
+[20]: https://medium.com/interledger-blog/streaming-money-and-data-over-ilp-fabd76fc991e
+[21]: https://en.wikipedia.org/wiki/QUIC
+[22]: https://cdn-images-1.medium.com/max/1600/1*7hlPpmJCRNhI_IlF1Th30g.png
 
-[Civic][40], led by serial entrepreneur Vinny Lingham, is a dApp built on Ethereum for identity verification. In Civic's decentralized ecosystem, a user needs to have their identity verified before a requester, such as a company selling a service, can accept the user as a customer. To do so, validators verify the user's claims by cross referencing documents with government databases. Once validators verify the user's identity, they attest this information with the root of a Merkle tree that has the user's claims as the leaves.
-
-Other similar identity products include [Sovrin][41], [Evernym][42], and [Nuggets][43]. Given how many groups of people are trying to tackle the identity problem, the [Decentralized Identity Foundation][44], which counts more than 50 partner organizations, is coordinating various attempts at decentralized identity with the goal of making these systems interoperable so users aren't left with their personal data fragmented across multiple protocols.
-
-#### Will decentralized identity become centralized again?
-
-An issue with self-sovereign identity is what to do if a user's private key gets lost or stolen. Should the attacker get the keys to the kingdom? Remember, we don't live in a cyberpunk utopia where we have private keys embedded in our brains. Maybe this issue would require identity to be held by trusted third parties.
-
-Coinbase recently acquired a startup called Distributed Systems, which is developing a decentralized identity standard for dApps called the [Clear Protocol][45]. In doing so, Coinbase may look to build a "Facebook Connect" for crypto to make it much easier for users to sign up and connect their crypto wallets. Given that Coinbase has KYC data on its 20 million customers, Coinbase could leverage its treasure trove of identity data for dApps.
-
-![][46]![][4]![][47]
-
-Web 3 identity could eventually look something like this.
-
-It is also [speculated][48] that Facebook's blockchain team is building an identity and single sign-on platform for dApps given how much personal information about us Facebook owns. This became apparent during the #DeleteFacebook campaign when users downloaded .zip files of all their personal data and were shocked by how much Facebook knew about them.
-
-[Telegram Passport][49] is another unified authorization method for services that require personal identification. Using Telegram Passport, you can upload all your documents once and instantly share your data with services that require real-world ID.
-
-### So what?
-
-Although anonymity and pseudonymity are frequently cited as use cases for cryptocurrencies, identity solutions are still strongly needed for many new crypto native behaviors like on-chain governance and token curated registries. In particular, voting systems, such as [quadratic voting][50], rely heavily on verifiable, separate human identities because an individual could multiply his or her effective influence dramatically by misrepresenting him or herself as multiple individuals. Likewise, identity continues to be the bottleneck for these systems to be resistant to Sybil-like attacks and work effectively at scale.
-
-In my view, a layered identity architecture that combines the best **namespace** product and the best **attestation** product is the most promising approach. It'll be interesting to see what identity solution the crypto community converges on moving forward.
-
-[1]: https://www.youtube.com/watch?v=p4Gotl9vRGs
-[2]: https://en.wikipedia.org/wiki/Ship_of_Theseus
-[3]: https://cdn-images-1.medium.com/freeze/max/75/1*wH7y54tVBeMl4qbuR4xRkQ.png?q=20
-[4]: https://thecontrol.co/undefined
-[5]: https://cdn-images-1.medium.com/max/1500/1*wH7y54tVBeMl4qbuR4xRkQ.png
-[6]: https://cdn-images-1.medium.com/freeze/max/75/0*4-p3LjTM6_oSr03_?q=20
-[7]: https://cdn-images-1.medium.com/max/2000/0*4-p3LjTM6_oSr03_
-[8]: https://en.wikipedia.org/wiki/Zooko%27s_triangle
-[9]: https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
-[10]: https://en.wikipedia.org/wiki/I2P
-[11]: https://nakamotoinstitute.org/secure-property-titles/
-[12]: http://www.aaronsw.com/weblog/squarezooko
-[13]: https://namecoin.org/
-[14]: https://bit.namecoin.org/
-[15]: https://cointelegraph.com/news/why-namecoin-didnt-take-off-a-cautionary-tale
-[16]: https://onename.com/
-[17]: https://blockstack.org/
-[18]: https://blog.usejournal.com/power-in-the-age-of-the-feudal-internet-20e106a2e2ce
-[19]: https://ens.domains/
-[20]: https://cdn-images-1.medium.com/freeze/max/75/1*OPF5WdlfrP1bzdS23eR_Og.png?q=20
-[21]: https://cdn-images-1.medium.com/max/2000/1*OPF5WdlfrP1bzdS23eR_Og.png
-[22]: https://handshake.org/
-[23]: https://en.wikipedia.org/wiki/DNS_root_zone
-[24]: https://namebase.io/
-[25]: https://cdn-images-1.medium.com/freeze/max/75/0*_0QzsqLdiy7SXlPF?q=20
-[26]: https://cdn-images-1.medium.com/max/2000/0*_0QzsqLdiy7SXlPF
-[27]: https://medium.com/zkcapital/handshake-ens-and-decentralized-naming-services-explained-2e69a1ca1313
-[28]: https://openalias.org/
-[29]: https://www.portal.network/
-[30]: https://cdn-images-1.medium.com/freeze/max/75/0*q6fHkmzj4FfXMfUj?q=20
-[31]: https://cdn-images-1.medium.com/max/2000/0*q6fHkmzj4FfXMfUj
-[32]: https://github.com/ethereum/EIPs/issues/725
-[33]: https://medium.com/originprotocol/managing-identity-with-a-ui-for-erc-725-5c7422b38c09
-[34]: https://www.uport.me/
-[35]: https://github.com/uport-project/3box?utm_source=uPort+Community&utm_campaign=3d1bcebbe0-EMAIL_CAMPAIGN_2018_08_21_08_07&utm_medium=email&utm_term=0_994f874fec-3d1bcebbe0-155602509
-[36]: https://cdn-images-1.medium.com/freeze/max/75/1*hGnoujbEowM8t3NEJ7sWiQ.png?q=20
-[37]: https://cdn-images-1.medium.com/max/2000/1*hGnoujbEowM8t3NEJ7sWiQ.png
-[38]: https://github.com/ethereum/EIPs/issues/780
-[39]: https://medium.com/uport/different-approaches-to-ethereum-identity-standards-a09488347c87
-[40]: https://www.civic.com/
-[41]: https://sovrin.org/
-[42]: https://www.evernym.com/
-[43]: https://nuggets.life/
-[44]: http://identity.foundation/
-[45]: https://medium.com/dsys/build-the-next-big-decentralized-application-with-cleargraph-4b1f34d2675
-[46]: https://cdn-images-1.medium.com/freeze/max/75/1*GlDsSJIM7IyRiFU8wcUdYQ.png?q=20
-[47]: https://cdn-images-1.medium.com/max/1500/1*GlDsSJIM7IyRiFU8wcUdYQ.png
-[48]: https://techcrunch.com/2018/08/10/facecoin/
-[49]: https://telegram.org/blog/passport
-[50]: https://medium.com/@VitalikButerin/liberation-through-radical-decentralization-22fc4bedc2ac
-
-  

@@ -1,237 +1,165 @@
 
-https://thecontrol.co/understanding-decentralized-identity-433abb343279
-https://thecontrol.co/understanding-decentralized-identity-433abb343279
+[Source](https://medium.com/xpring/layer-3-is-for-interoperability-ca387fa5f7e2 "Permalink to Layer 3 Is for Interoperability – Xpring – Medium")
+[来源]（https://medium.com/xpring/layer-3-is-for-interoperability-ca387fa5f7e2“第3层的永久链接是互操作性 -  Xpring  - 中等”）
 
-# Understanding Decentralized Identity
-# 理解去中心化身份
+# Layer 3 Is for Interoperability – Xpring – Medium
+# 第三层是为了互操作性
 
-## A Missing Piece of Infrastructure for the dApp Ecosystem
-# #
+## The Protocol Stack for the Internet of Value
+## 价值互联网的协议栈
 
-Every cryptographer's fantasy is that all of us are born with private key chips embedded in our brains so that we can always identify who we are without worrying about identity theft or fraud. Unfortunately, we don't live in such a cyberpunk utopia, so we're currently left with a broken system of passwords and social security numbers that keep on getting stolen.
-每个密码学家的幻想都是我们所有人都天生就有嵌入我们大脑的私钥芯片，这样我们就可以随时识别我们的身份而不必担心身份盗用或欺诈。不幸的是，我们并没有生活在这样一个计算机朋克的乌托邦中，所以我们目前留下了一个破损的密码和社会安全号码系统，这些密码和社会安全号码一直被盗。
+Layer 2 technologies such as [Lightning][1] and [Plasma][2] are said to ["promise big strides in scalability, interoperability and functionality"][3] for blockchains. However, most Layer 2 projects focus primarily on scalability and only occasionally mention interoperability. Why? This isn't just a matter of timing or stage of development. This is actually how it should be, because **Layer 2 is for scaling. Layer 3 is for interoperability.**
+像[Lightning][1]和[Plasma][2]这样的第2层技术被称为[“在可扩展性，互操作性和功能性方面取得重大进展”][3]用于区块链。但是，大多数第2层项目主要关注可扩展性，偶尔也会提到互操作性。为什么？这不仅仅是时间或发展阶段的问题。实际上它应该是这样的，因为**第2层用于扩展。第3层用于互操作性。**
 
-Meanwhile, blockchain technology offers the promise to revolutionize digital identity by returning ownership of personal data from companies and governments to individuals, such that individuals have the power to share their data with others and revoke it as they please.
-同时，区块链技术通过将个人数据的所有权从公司和政府归还给个人，使个人有权与他人共享数据并随意撤销数据，从而有望彻底改变数字身份。
+Scaling and interoperability are complementary but separate concerns that are best addressed through different protocol layers. To make this case, I'll give a bit of background on the purpose of layered protocol architectures and the roles of Layers 1, 2, and 3. I'll also explain how separating scalability and interoperability improves the solutions for both and paves the way for an Internet of Value whose design is surprisingly analogous to the internet itself.
+扩展和互操作性是互补的，但是通过不同的协议层可以最好地解决这些问题。为了说明这一点，我将介绍分层协议体系结构的目的以及第1,2和3层的角色。我还将解释分离可伸缩性和互操作性如何改进两者的解决方案并铺平价值互联网的方式，其设计与互联网本身惊人地类似。
 
-To dive deeper into why blockchain technology is useful for identity, we first need to understand the concept of identity from a philosophical lens. Consider the following thought experiment — two marbles that look and feel exactly the same are placed next to each other. While the two marbles have the same **essence** (bits and atoms), they are distinct in **identity** because we can label each marble with a unique identifier such as Marble A and Marble B.
-为了更深入地了解区块链技术对于身份有用的原因，我们首先需要从哲学视角理解身份的概念。考虑以下思想实验 - 两个看起来和感觉完全相同的大理石彼此相邻放置。虽然两个大理石具有相同的**精华**（位和原子），但它们在**身份**中是不同的，因为我们可以用大理石A和大理石B等唯一标识符标记每个大理石。
+### The Purpose of Layered Protocols
+### 分层协议的目的
 
-But such an identifier disappears once we mix up both marbles in a bag and are then asked to identify which is Marble A and which is Marble B. One solution to this identity problem is to have an omniscient watcher that always sees which marble is which even while they're being mixed. This works because **time**, as the fourth dimension of space, acts as a [temporal indicator of identity][1]. Blockchains, which are immutable logs of past states, provide temporal continuity and are thus useful for keeping track of identity even when [physical circumstances change][2].
-但是，一旦我们将两个弹珠混合在一个袋子中然后被要求识别哪个是大理石A并且哪个是大理石B，这样的标识符就消失了。这个身份问题的一个解决方案是拥有一个无所不知的观察者，总是看到哪个大理石是哪个他们混在一起。这是有效的，因为**时间**，作为空间的第四维，作为[身份的时间指标][1]。区块链是过去状态的不可变日志，提供了时间连续性，因此即使在[物理环境发生变化]时也可用于跟踪身份[2]。
+> It is always possible to agglutinate multiple separate problems into a single complex interdependent solution. In most cases this is a bad idea. _
+> 始终可以将多个单独的问题凝聚成一个复杂的相互依赖的解决方案。在大多数情况下，这是一个坏主意。_
+_\- [RFC 1925: The Twelve Networking Truths][4]
+_\- [RFC 1925：十二网络真相][4]
 
-Identity is one of the most important missing pieces of Web 3 infrastructure, and there are a number of projects taking different approaches to building an identity layer that the entire dApp ecosystem can use. The two primary layers that entrepreneurs are focused on today are **namespaces** and **attestations**.
-身份是Web 3基础架构中最重要的缺失部分之一，并且有许多项目采用不同的方法来构建整个dApp生态系统可以使用的身份层。企业家今天关注的两个主要层面是**名称空间**和**证明**。
+The internet is the best example of a layered protocol architecture, and this design was a key factor in the internet's growth and usefulness. Different pieces of functionality are split into separate protocols that build on one another, rather than being bundled together in one monolithic system.
+互联网是分层协议架构的最佳范例，这种设计是互联网增长和实用性的关键因素。不同的功能部分被分成彼此构建的单独协议，而不是在一个单片系统中捆绑在一起。
 
-### Namespaces
-### 命名空间
-
-A key piece to decentralized identity is how people, devices, and other entities in the world are identified without a centrally owned registry.
-去中心化身份的关键部分是如何在没有集中注册的情况下识别世界上的人，设备和其他实体。
-
-For blockchains, right now we identify ourselves with addresses — a long string of characters such as 0x9992437898114d2770522e050883d6b2dfc48326 that is largely unmeaningful and difficult to remember. What if we could instead map each address to a unique, human-readable name?
-对于区块链，现在我们用地址标识自己 - 一长串字符，例如0x9992437898114d2770522e050883d6b2dfc48326，这在很大程度上是无意义的，难以记住。如果我们可以将每个地址映射到一个唯一的，人类可读的名称，该怎么办？
+For example, the Internet Protocol (IP) is built upon different underlying networking technologies or "link layer" protocols, such as Ethernet and WiFi. Because IP was designed as a separate layer, it is not tied to any specific networking technology and is able to work the same way over many different types of wired or wireless connections.
+例如，因特网协议（IP）建立在不同的底层网络技术或“链路层”协议上，例如以太网和WiFi。由于IP被设计为单独的层，因此它不依赖于任何特定的网络技术，并且能够以相同的方式在许多不同类型的有线或无线连接上工作。
 
 ![][5]
 
-In computer science, **namespaces **are used to organize objects such that they can be identified without name collisions between multiple objects that share the same name. Examples of namespaces include file systems (assigning names to files) and DNS (assigning names to websites).
-在计算机科学中，**名称空间**用于组织对象，使得可以在没有共享相同名称的多个对象之间的名称冲突的情况下识别它们。命名空间的示例包括文件系统（为文件指定名称）和DNS（为网站指定名称）。
+The "hourglass" architecture of the Internet: IP abstracts away the differences between underlying networks and applications built on top of it
+互联网的“沙漏”架构：IP抽象了底层网络和基于它构建的应用程序之间的差异
 
-Similarly, for blockchains we want to maintain a global table of unique key-value pairs of addresses and names. Furthermore, we ideally want such a table to be secure, decentralized, and human-meaningful all at the same time. Is this even possible? We're running straight into Zooko's triangle.
-类似地，对于区块链，我们希望维护一个包含地址和名称的唯一键值对的全局表。此外，理想情况下，我们希望这样的表格同时具有安全性，去中心化性和人性意义。这有可能吗？我们直接进入Zooko的三角形。
+Layered protocol architectures provide a number of important benefits:
+分层协议架构提供了许多重要的好处：
 
-#### Zooko's Triangle
+* **Interoperability - **IP works across many different networking technologies by abstracting away their differences. As long as a link can send data, IP can communicate over it. This means we can connect seamlessly no matter what type of underlying network we are using.
+**互操作性**IP可以通过抽象出差异来适用于许多不同的网络技术。只要链接可以发送数据，IP就可以通过它进行通信。这意味着无论我们使用何种类型的底层网络，我们都可以无缝连接。
+* **Upgradeability - **Abstractions enable different layers to evolve separately. While the internet was built in the 1970s, the fact that IP abstracts away the different networking technologies has enabled us to upgrade from dial-up to fiber optic and 4G links. The higher level protocols did not need to change, but our connections keep getting faster as newer networking technologies are developed.
+**可升级性**抽象可以使不同的层分别进化。虽然互联网是在20世纪70年代建立的，但IP抽象出不同的网络技术这一事实使我们能够从拨号升级到光纤和4G链路。更高级别的协议不需要改变，但随着更新的网络技术的发展，我们的连接越来越快。
+* **Common Infrastructure for Multiple Use Cases - **IP is also independent of any particular use case, which enables the same infrastructure to be used for applications ranging from the Web to email and Voice over IP (VoIP). If the internet had been built specifically for file transfers, we might have needed whole separate networks for each different use case. Instead, we have a single internet that can be used for many types of communication.
+**多用途案例的通用基础设施**IP也独立于任何特定用例，这使得相同的基础架构可用于从Web到电子邮件和IP语音（VoIP）的应用程序。如果互联网是专门为文件传输而构建的，那么我们可能需要为每个不同的用例提供完整的独立网络。相反，我们有一个可用于多种类型通信的互联网。
+
+Layering is an essential tool for designing systems like the internet or Internet of Value, but deciding which features fit into which layers is the hardest part. Too many layers makes the system overly complex, but too much bundling hampers interoperability and upgradeability.
+分层是设计互联网或价值互联网等系统的重要工具，但决定哪些特征适合哪些层是最难的部分。太多的层使系统过于复杂，但过多的捆绑会妨碍互操作性和可升级性。
+
+### A Protocol Stack for the Internet of Value
+### 价值互联网的协议栈
+
+The Interledger protocol stack has direct parallels with the internet protocol suite, largely because we found that splitting functionality into analogous layers helped solve issues at each level. Here, I'll briefly go through each of the layers to explain their roles and show the benefits of focusing Layer 3 on interoperability.
+Interledger协议栈与互联网协议套件有直接的相似之处，主要是因为我们发现将功能拆分为类似层有助于解决每个级别的问题。在这里，我将简要介绍每个层来解释它们的作用，并展示将第3层集中在互操作性上的好处。
+
+![][6]
+
+The Interledger Protocol (ILP) connects and abstracts away the differences between Layer 2 technologies
+Interledger Protocol（ILP）连接并抽象出第2层技术之间的差异
+
+### Layer 1: Ledgers
+### 第1层：账本
+
+Blockchains and other types of ledgers are like the physical cables that underpin the internet. Digital communication is ultimately made possible by wired and wireless links that connect individual devices and carry data between them. Similarly, ledgers are the foundation of the Internet of Value, because they enable two people that accept the same asset or hold accounts in the same system to transact.
+区块链和其他类型的分类帐就像支撑互联网的物理电缆。数字通信最终通过有线和无线链路实现，这些链路连接各个设备并在它们之间传输数据。同样，分类账是价值互联网的基础，因为它们使两个接受同一资产的人或在同一系统中持有账户进行交易。
+
+Like physical cables, ledgers and blockchains need additional protocols built on top of them to facilitate the exchange of data or money. In the case of blockchains, the main issues are scaling transaction throughput and lowering latencies while maintaining decentralization.
+与物理电缆，分类账和区块链一样，需要在其上构建额外的协议，以便于数据或资金的交换。在区块链的情况下，主要问题是缩放交易吞吐量和降低延迟，同时保持去中心化。
+
+Ledgers are destined to be performance bottlenecks because they are logically centralized. Whether a ledger is maintained in a centralized or decentralized fashion, it needs a single consistent, shared state of accounts and balances to ensure that money cannot be "double-spent". Updating widely shared state is always going to be relatively expensive and slow. The bottleneck will either be the speed of consensus in a distributed ledger, or the performance of a single machine in the case of a centralized ledger. Improving ledger scalability is very useful, but moving common and repeated transactions off of the main ledger using Layer 2 protocols will increase throughput and lower latencies even more.
+分类帐注定会成为性能瓶颈，因为它们在逻辑上是集中的。无论分类账是以集中还是去中心化的方式维护，它都需要一个统一的，共享的账户和余额状态，以确保资金不会“双重花费”。更新广泛共享状态总是相对昂贵且缓慢。瓶颈将是分布式账本中的共识速度，或者是集中式分类账中单台机器的性能。提高分类帐可伸缩性非常有用，但使用第2层协议从主分类帐中移除常见和重复交易将提高吞吐量并降低延迟。
+
+### Layer 2: Local Area Networks
+### 第2层：局域网
+
+Layer 2 solutions for scaling blockchains are analogous to the link layer protocols of the internet stack, such as Ethernet and WiFi. This layer creates bilateral links or Local Area Networks (LANs)* that allow directly connected parties or devices to communicate efficiently over the underlying network.
+用于缩放区块链的第2层解决方案类似于互联网堆栈的链路层协议，例如以太网和WiFi。该层创建双边链路或局域网（LAN）*，允许直接连接的各方或设备通过底层网络进行有效通信。
+
+Layer 2 technologies for blockchains are designed to enable fast, cheap, high-throughput transactions over the underlying ledger, generally by using a form of programmatic escrow. This category includes bilateral technologies like [payment channels][7] and [generalized state channels][8], as well as multilateral solutions including payment channel networks like [Lightning][9] and [Raiden][10], [sidechains][11], and [Plasma][12]. Each of these enable faster, cheaper transactions by allowing pairs or smaller groups of account holders to transact without needing to interact with the main ledger each time.
+区块链的第2层技术旨在通过使用一种程序化托管方式在底层分类账上实现快速，廉价，高吞吐量的交易。此类别包括[支付通道][7]和[广义国家通道][8]等双边技术，以及包括[闪电网络][9]和[雷电网络][10]，[侧链]等支付通道网络的多边解决方案[11]，和[等离子][12]。通过允许成对或较小的账户持有者组进行交易而不需要每次与主分类账交互，这些中的每一个都能够实现更快，更便宜的交易。
+
+#### Programmatic Escrow
 ### #
 
-![][7]
+The core mechanism of Layer 2 solutions is a form of programmatic escrow. Assets are first put into a holding account, script, or smart contract on the main ledger. Then, two or more parties can carry out numerous fast transactions by updating their local state to change the allocation of the escrowed assets. If or when the parties want to close out their off-ledger relationship, they present the final state to the main ledger, which checks its validity and distributes the escrowed assets accordingly.
+第2层解决方案的核心机制是程序化托管的一种形式。资产首先被放入主分类账的持有账户，脚本或智能合约中。然后，两个或更多方可以通过更新其本地状态来执行多次快速交易以改变托管资产的分配。如果当事人想要结束其分类账关系，他们会将最终状态呈现给主分类账，主分类账检查其有效性并相应地分配托管资产。
 
-[Zooko's Triangle][8], named after the CEO of Zcash Zooko Wilcox, is a trilemma of three desirable properties for a naming system in a network.
-[Zooko's Triangle][8]以Zcash Zooko Wilcox的首席执行官命名，是网络中命名系统的三个理想属性的三难。
+Importantly, the features offered by the underlying ledger directly determine the types of functionality the Layer 2 system can include, because ledgers vary in the types of programmatic escrow they support.
+重要的是，底层分类帐提供的功能直接决定了第2层系统可以包含的功能类型，因为分类帐在它们支持的程序托管类型方面有所不同。
 
-* **Secure:** When you look up a name you get the correct value and not that of an impersonator.
-***安全：**当您查找名称时，您将获得正确的值而不是模仿者的值。
-* **Decentralized:** No central authority controls all the names.
-***去中心化：**没有中央机关控制所有名称。
-* **Human-meaningful:** The name is something you can actually remember instead of some long random string of characters.
-***人性化：**这个名字是你可以记住的，而不是一些长长的随机字符串。
+> Layer 2 solutions are necessarily tied to certain ledgers, because they leverage specific capabilities in the underlying Layer 1 system.
+> 第2层解决方案必然与某些分类账相关联，因为它们利用底层第1层系统中的特定功能。
 
-Zooko claimed that no digital name can achieve more than two of the above properties. Some examples examined with this framework in mind:
-Zooko声称没有数字名称可以实现上述两个以上的属性。考虑到这个框架的一些例子：
+This is why [Lightning is defined in terms of Bitcoin scripts][13], [Raiden uses specific Ethereum smart contracts][14], and Plasma implementations would similarly use well-specified smart contracts. Lightning may work with specific (SegWit-supporting) forks of Bitcoin like Litecoin, and Raiden and Plasma may work with other blockchains that use the Ethereum Virtual Machine (EVM). However, Each Layer 2 technology would be worse if they tried to support ledgers with vastly different sets of features (for example, [Lightning without SegWit][15] or Plasma implemented using only Bitcoin scripts). This is completely fine though! Layer 2 scaling solutions can and should take advantage of every capability provided by the underlying ledger.
+这就是为什么[闪电网络是根据比特币脚本定义][13]，[雷电网络使用特定的以太坊智能合约][14]，等离子实现同样会使用明确指定的智能合约。 闪电网络可以使用比特币（如Litecoin）的特定（SegWit支持）分叉，Raiden和Plasma可以与使用以太坊虚拟机（EVM）的其他区块链一起使用。但是，如果每个第2层技术试图支持具有完全不同功能集的分类账（例如，[没有SegWit的Lightning][15]或仅使用比特币脚本实现的Plasma），则每个第2层技术会更糟。这完全没问题！第2层扩展解决方案可以并且应该利用底层分类帐提供的每个功能。
 
-* [**DNSSEC**][9], a security extension to DNS, offers a decentralized human-meaningful naming scheme but is not secure against compromises to the root server.
-*[**DNSSEC**][9]是DNS的安全扩展，它提供了一种去中心化的人性化命名方案，但不能安全地防止对根服务器的攻击。
-* **Bitcoin **addresses are secure and decentralized but are not human-meaningful.
-***比特币**地址是安全和去中心化的，但不具有人类意义。
-* [**I2P**][10], a protocol for anonymous censorship-resistant peer-to-peer communication, uses name translation services that are secure (by running locally) and provide human-meaningful names but need to use authorities in a decentralized network.
-*[**I2P**][10]，一种用于匿名审查的对等通信协议，使用安全的名称翻译服务（通过本地运行）并提供人性化的名称，但需要使用权限去中心化的网络。
+The close connection between Layers 1 and 2 is precisely why we need a separate layer for interoperability. True interoperability is all about abstraction and requires minimizing the set of features the protocol uses. The fewer features the interoperability layer expects from the layer below, the more heterogeneous networks it can connect. Since Layer 2 solutions can and should leverage specific Layer 1 capabilities, we need a separate layer for interoperability that uses as few ledger-specific functions as possible.
+第1层和第2层之间的紧密连接正是我们需要一个单独的互操作层的原因。真正的互操作性完全取决于抽象，并且需要最小化协议使用的功能集。互操作层期望从下面的层中获得的功能越少，它可以连接的异构网络就越多。由于第2层解决方案可以并且应该利用特定的第1层功能，因此我们需要一个单独的互操作层，使用尽可能少的分类帐特定功能。
 
-#### Squaring the triangle
-#### 正方形三角形
+### Layer 3: Interoperability
+### 第3层：互操作性
 
-Ever since Zooko conjectured his trilemma, there have been several solutions to Zooko's triangle. Nick Szabo first proposed a solution in his paper "[Secure Property Titles with Owner Authority][11]", which illustrated that all three properties could be achieved up to the limits of Byzantine fault tolerance.
-自从Zooko推测他的三难以来，Zooko的三角形有几种解决方案。 Nick Szabo在他的论文“[所有者权威的安全财产标题][11]”中首次提出了一个解决方案，该文件说明所有三个属性都可以达到拜占庭容错的极限。
+The purpose of Layer 3 is to abstract away the differences between different Layer 1 and 2 technologies to connect vastly different types of networks. This is the role of the Internet Protocol (IP) on the internet and the Interledger Protocol (ILP) in the Internet of Value.
+第3层的目的是抽象出不同的第1层和第2层技术之间的差异，以连接不同类型的网络。这是互联网上的互联网协议（IP）和价值互联网中的Interledger协议（ILP）的作用。
 
-Aaron Swartz later described a [naming system][12] based on Bitcoin that uses PoW to establish consensus of name ownership. This solution inspired the creation of [Namecoin][13]. Namecoin was the first fork of Bitcoin and was the underlying blockchain for [Dot-Bit][14], the first implementation of a decentralized DNS that squares Zooko's triangle. Dot-Bit works by allowing users to forward their current domains to .bit addresses.
-Aaron Swartz后来描述了基于比特币的[命名系统][12]，它使用PoW建立了名称所有权的共识。这个解决方案激发了[Namecoin][13]的创造。 Namecoin是比特币的第一个分支，是[Dot-Bit][14]的基础区块链，是第一个实现Zooko三角形的去中心化DNS。 Dot-Bit的工作原理是允许用户将当前域转发到.bit地址。
+The core protocol of the internet stack, IP, routes packets of data across networks while abstracting away the differences between the underlying telecommunication technologies. The internet was successful precisely because it used such a clean abstraction and was able to connect _everything_, from phone lines (via dial-up), to cellular and satellite networks, to dedicated fiber optic cables — and even [carrier pigeons][16].
+互联网堆栈的核心协议IP通过网络路由数据包，同时抽象出底层电信技术之间的差异。互联网之所以成功，恰恰是因为它使用了如此简洁的抽象，能够连接一切，从电话线（通过拨号）到蜂窝和卫星网络，再到专用光缆 - 甚至[载体鸽][16] 。
 
-Since its release seven years ago, Namecoin has had [very little adoption][15] mainly due to a poor user experience. There are hundreds of thousands of squatted domains but only about 30 developed Dot-Bit websites. There are also rumors that Namecoin developers approached Google and ICANN at some point for potential partnerships, which defeats the purpose of building a decentralized DNS to replace central authorities.
-自七年前发布以来，Namecoin [很少采用][15]主要是由于用户体验不佳。有数十万个被蹲的域名，但只有大约30个开发了Dot-Bit网站。还有传闻称，Namecoin开发商在某种程度上与谷歌和ICANN就潜在的合作关系进行了接触，这违背了建立去中心化式DNS以取代中央政府的目的。
+The only feature IP requires of underlying networks is the ability to send data. It does not depend on any additional features or even guarantees of speed or reliability. Because of its simple abstraction, IP was able to create a universal network of networks that today connects over half of the human population.
+IP需要底层网络的唯一功能是发送数据的能力。它不依赖于任何附加功能，甚至不依赖于速度或可靠性。由于其简单的抽象，IP能够创建一个通用的网络网络，如今连接了超过一半的人口。
 
-[Onename][16], later developed in March 2014 by Princeton researchers Ryan Shea and Muneeb Ali, is another identity system that stores usernames and personal profile data on the Bitcoin blockchain. Today, Onename is the registrar (like GoDaddy) for namespaces on the [Blockstack][17] dApp platform. Onename is also the technology that enables Blockstack users to retain ownership of all their personal data across various dApps, reducing the [data monopoly power][18] that Google and Facebook currently have.
-[Onename][16]，后来由普林斯顿研究人员Ryan Shea和Muneeb Ali于2014年3月开发，是另一种身份系统，用于存储比特币区块链上的用户名和个人资料数据。今天，Onename是[Blockstack][17] dApp平台上名称空间的注册商（如GoDaddy）。 Onename也是使Blockstack用户能够保留各种dApp所有个人数据所有权的技术，从而降低了谷歌和Facebook目前拥有的[数据垄断能力][18]。
+#### Minimal Abstraction Over Layer 2 Networks
+#### 第2层网络上的最小抽象
 
-[ENS][19] is a DNS for Ethereum that is simultaneously secure and decentralized. A smart contract serves as the registrar that manages and updates Ethereum names instead of using a centralized service like GoDaddy. Anyone can create a human-readable .eth subdomain, and the ENS resolver acts as a translator that converts names to addresses. For wallets that support ENS such as Metamask, MyCrypto, and Status, you can send money to a memorable name like 'alice.eth' instead of '0x4cbe58c50480…'. Since its launch, ENS has over 160,000 names registered with over 3.2 million ETH deposited to bid on names.
-[ENS][19]是以太坊的DNS，同时是安全和去中心化的。智能合约用作管理和更新以太坊名称的注册商，而不是像GoDaddy那样使用集中式服务。任何人都可以创建一个人类可读的.eth子域，ENS解析器充当将名称转换为地址的转换器。对于支持ENS的钱包，例如Metamask，MyCrypto和Status，你可以将钱汇给一个令人难忘的名字，比如'alice.eth'而不是'0x4cbe58c50480 ......'。自推出以来，ENS已注册超过160,000个名称，其中包含超过320万个ETH，用于竞标名称。
+In the Internet of Value, ILP packetizes value like IP packetizes data. It routes packets of money across networks while abstracting away the differences between assets and ledger or Layer 2 technologies. Like IP, the core of ILP is the network-agnostic packet and address format.
+在价值互联网中，ILP打包像IP打包数据一样的价值。它通过网络路由数据包，同时抽象出资产和分类账或第2层技术之间的差异。与IP一样，ILP的核心是与网络无关的数据包和地址格式。
 
-![][21]
+**The only feature ILP requires of the underlying layer is the ability to send value.** It does not require any special transaction types, functionality, or programmatic escrow. Faster, cheaper transactions improve the user experience, but even they are not strictly required.
+**ILP对底层的唯一要求是能够发送值。**它不需要任何特殊的交易类型，功能或程序化托管。更快，更便宜的交易改善了用户体验，但即使它们也不是严格要求的。
 
-[Handshake][22] is a new, exciting project led by Joseph Poon (creator of Lightning Network and Plasma) to decentralize [DNS root zones][23] and replace ICANN and certificate authorities. Handshake is built on a new UTXO blockchain where all peer-to-peer full nodes are root servers that host the root zone file, making the root zone uncensorable, permissionless, and free of gatekeepers. Already, projects such as [Namebase][24] are making Handshake easy to use by allowing users to register top-level domains on the Handshake blockchain and by building a wallet and exchange for Handshake coins (HNS).
-[Handshake][22]是一个由Joseph Poon（闪电网络和等离子的创建者）领导的新的令人兴奋的项目，用于去中心化[DNS根区域][23]并取代ICANN和证书颁发机构。握手建立在新的UTXO区块链上，其中所有对等完整节点都是托管根区域文件的根服务器，使根区域不受限制，无权限且没有网守。已经有了[Namebase][24]这样的项目，通过允许用户在握手区块链上注册顶级域名，并通过构建钱包和交换握手币（HNS），使握手变得易于使用。
+ILP's minimal abstraction enables interoperability with all types of Layer 1 and 2 networks, including those that were not designed to be interoperable. To date, it has been used to connect the Bitcoin Lightning Network, bilateral Ethereum payment channels, and XRP payment channels — three very different Layer 2 systems. Work is underway to connect all other types of Layer 1 and 2 systems (and you should [get involved!][17]).
+ILP的最小抽象实现了与所有类型的第1层和第2层网络的互操作性，包括那些不能设计为可互操作的网络。到目前为止，它已被用于连接比特币闪电网络，双边以太坊支付通道和XRP支付通道 - 三个截然不同的第2层系统。正在进行连接所有其他类型的第1层和第2层系统的工作（你应该[参与其中！][17]）。
 
-![][26]
+For a full description of how the protocol works, see [Interledger: How to Interconnect All Blockchains and Value Networks][18]. To see all of the features that were removed from ILP to make the core protocol and abstraction as simple and interoperable as possible, read [Simplifying Interledger: The Graveyard of Possible Protocol Features][19].
+有关协议如何工作的完整描述，请参阅[Interledger：如何互连所有区块链和价值网络][18]。要查看从ILP中删除的所有功能，以使核心协议和抽象尽可能简单和可互操作，请阅读[简化Interledger：可能的协议功能的墓地][19]。
 
-From the diagram above, projects such as Dot-Bit and ENS are decentralizing .bit and .eth addresses respectively, while Handshake takes it a step further to decentralize ICANN, the gatekeeper for root zone files. Source: [zk Capital][27]
-从上图中可以看出，Dot-Bit和ENS等项目分别对.bit和.eth地址进行了去中心化，而Handshake则进一步去中心化了ICANN（根区域文件的守门人）的权力。资料来源：[zk Capital][27]
+_Layers 4 and 5 are not the focus of this post but you can read [__STREAMing Money and Data Over ILP_][20]_ to learn about STREAM, the recommended Layer 4 transport protocol inspired by [__QUIC_][21]_. Keep an eye out for future posts on Layer 5 and application-specific protocols built on ILP and STREAM._
+_Layers 4和5不是这篇文章的重点，但你可以阅读[__STREAMing Money and Data Over ILP_][20]_来了解STREAM，这是一个受[__QUIC_][21]_启发的推荐的第4层传输协议。留意第5层的未来帖子以及基于ILP和STREAM构建的特定于应用程序的协议。
 
-Overall, Handshake is a very ambitious project that has the potential to change how DNS and naming services operate. Gaining adoption will be very difficult given operating system defaults for DNS in addition to disrupting the monopolies of incumbent certificate authorities such as Verisign.
-总的来说，握手是一个非常雄心勃勃的项目，有可能改变DNS和命名服务的运作方式。除了破坏Verisign等现有证书颁发机构的垄断之外，鉴于DNS的操作系统默认设置，获得采用将非常困难。
+### Conclusion: Separating Scaling and Interoperability
+### 结论：分离缩放和互操作性
 
-Other projects attempting to come up with a solution to Zooko's triangle include [OpenAlias][28] and [Portal Network][29].
-试图提出Zooko三角形解决方案的其他项目包括[OpenAlias][28]和[Portal Network][29]。
+Scaling and interoperability are complementary, but they are fundamentally different types of problems that are best solved by separate protocol layers. Scalability solutions like Lightning and Plasma work best when they leverage the full range of features provided by their underlying ledgers. In contrast, interoperability protocols like Interledger require minimal abstractions that enable them to work across vastly different types of underlying networks.
+扩展和互操作性是互补的，但它们是基本上不同类型的问题，最好通过单独的协议层解决。 Lightning和Plasma等可扩展性解决方案在利用其底层分类账提供的全部功能时效果最佳。相比之下，像Interledger这样的互操作性协议需要最少的抽象，使它们能够跨越不同类型的底层网络。
 
-### Attestations
-### 认证
+A subtle benefit of separating the link layer and interoperability layer is highlighted by the fact that the internet still works today. The Internet Protocol was designed for computers _the size of rooms_ and yet it is still applicable to cell phones and Internet of Things devices. By reducing the features IP required from the underlying networks, it also allowed for significant later improvements in the underlying technologies. This would have been impossible if IP had been built on specific features or APIs of networks at the time it was developed.
+分离链路层和互操作性层的一个微妙好处是因为互联网今天仍然有用。互联网协议是为计算机设计的 - 房间大小_但它仍然适用于手机和物联网设备。通过降低底层网络所需的IP功能，它还允许在底层技术方面进行重大改进。如果IP是在开发时基于网络的特定功能或API构建的，那么这是不可能的。
 
-Having a namespace that is secure, decentralized, and human-meaningful all at the same time isn't enough for a decentralized identity system. To illustrate, when OneName launched someone immediately claimed the username +gavin, so OneName later had to reserve +gavinandresen for the Bitcoin core developer himself.
-同时具有安全，去中心化和人性化的命名空间对于去中心化的身份系统来说是不够的。为了说明，当OneName发布时，有人立即声称用户名为+ gavin，因此OneName后来不得不为比特币核心开发人员自己保留+ gavinandresen。
+We are nowhere near the end of the development of Layer 1 and Layer 2 blockchain or ledger systems. By abstracting away the differences between these with Layer 3, we can build better, more technology-agnostic user experiences while allowing for future developments that will make the Internet of Value faster, cheaper, and more efficient.
+我们还远未结束第1层和第2层区块链或分类帐系统的开发。通过抽象这些与第3层之间的差异，我们可以构建更好的，更加技术无关的用户体验，同时允许未来的发展，使互联网价值更快，更便宜，更高效。
 
-To prevent someone from impersonating someone else online, we need to verify that each person is actually who they claim to be. As an example, before you can rent a property on Airbnb, you must verify your email and phone number and optionally your Facebook, LinkedIn, and Google accounts. In this case, Airbnb acts as the trusted intermediary — both buyers and sellers trust that Airbnb has done the verification process properly. But in the dApp world, we no longer have trusted third parties, yet we still need to verify someone's identity before allowing smart contracts to execute.
-为了防止某人在网上冒充他人，我们需要验证每个人实际上是他们声称的人。例如，在Airbnb上租房产之前，您必须验证您的电子邮件和电话号码以及您的Facebook，LinkedIn和Google帐户。在这种情况下，Airbnb充当可信赖的中间人 - 买家和卖家都相信Airbnb已经正确地完成了验证过程。但是在dApp世界中，我们不再拥有受信任的第三方，但在允许智能合约执行之前，我们仍需要验证某人的身份。
+![][22]
 
-As a result, attestations are the backbone of trust and reputation in a decentralized identity system. In the physical world, we attest our identity with documents like a driver's license or passport. These documents assert facts about us such as our name, age, or eye color. But driver's licenses don't exist on the Internet. Instead, we need to somehow find a way to link real-world identity to cryptographic identity. The jury is still out as to how to best pull this off, and many groups are pursuing a range of approaches.
-因此，证明是去中心化身份系统中信任和声誉的支柱。在物质世界中，我们用驾驶执照或护照等文件证明我们的身份。这些文件断言了我们的事实，例如我们的姓名，年龄或眼睛颜色。但是，互联网上不存在驾驶执照。相反，我们需要以某种方式找到一种方法将现实世界身份与加密身份联系起来。关于如何最好地解决这个问题，评委们仍然没有考虑，许多团体正在采取一系列措施。
-
-#### Self-sovereign identity products
-#### 自我主权身份产品
-
-One solution is to have a standalone identity product. Such an identity product would need to support four essential features:
-一种解决方案是拥有独立的身份产品。这样的身份产品需要支持四个基本特征：
-
-1. An identity has some sort of unique identifier. (The best architecture for storing such identifiers is a namespace described earlier that squares Zooko's triangle.)
-1. 身份具有某种唯一标识符。
-2. Third-parties can make claims about an identity. Claims are attributes such as name, address, email, etc.
-2. 第三方可以就身份提出要求。声明是名称，地址，电子邮件等属性。
-3. There is some way of asking a user for their identity.
-3. 有一种方式可以询问用户的身份。
-4. There is some way of looking up claims about an identity.
-4. 有一些方法可以查找有关身份的声明。
-
-![][31]
-
-Facebook and Twitter are attesting claims to someone's Blockstack identity.
-Facebook和Twitter正在证明对某人的Blockstack身份的主张。
-
-A standalone product for identity has the benefit of being **self-sovereign**. A self-sovereign identity is a digital identity that is portable across different dApps, does not depend on any government or company, and can never be taken away. Unlike in the current Internet, as soon as you give your social security number to someone, it can be used anywhere without your consent which could potentially lead to identity theft. Self-sovereign identity allows you to connect to dApps while retaining control of attributes such as social security number that attest your identity without ever having to make a copy of that data.
-一个独立的身份产品具有**自我主权**的好处。自我主权身份是一种数字身份，可以在不同的dApp之间移植，不依赖于任何政府或公司，永远不会被带走。与当前的互联网不同，只要您将社会安全号码提供给某人，就可以在未经您同意的情况下在任何地方使用，这可能会导致身份盗用。自我主权身份允许您连接到dApp，同时保留对社会安全号码等属性的控制，这些属性可以证明您的身份，而无需复制该数据。
-
-There are numerous groups trying to build the de-facto standard for self-sovereign identity.
-有许多团体试图建立自我主权身份的事实上的标准。
-
-[ERC 725][32] is a proposed standard for managing on-chain identity on the Ethereum blockchain. Created by Fabian Vogelsteller, who also created the widely successful ERC 20 token standard, an ERC 725 identity contract contains a cryptographic signature proving that the owner of the contract controls a particular claim to their identity such as an email or phone number. [Origin Protocol][33], a protocol for creating shared economies without intermediaries, uses ERC 725 to verify claims on identity before allowing smart contracts to execute.
-[ERC 725][32]是用于管理以太坊区块链上的链上身份的建议标准。 ERC 725身份合同由Fabian Vogelsteller创建，他也创建了广泛成功的ERC 20通证标准，其中包含加密签名，证明合同所有者控制对其身份的特定声明，如电子邮件或电话号码。 [原始协议][33]，一种在没有中间人的情况下创建共享经济的协议，在允许智能合约执行之前，使用ERC 725来验证对身份的主张。
-
-[uPort][34] is a self-sovereign identity wallet that gives you complete control over your identity and personal data. Developed by ConsenSys, uPort lets you create an identity on Ethereum, securely login to dApps without passwords, manage your personal information and verifications, and approve Ethereum transactions and digitally sign files. uPort also recently developed a new decentralized data storage solution called [3Box][35], which allows Ethereum users to upload and share their information across dApps using any wallet. uPort has partnered with the Swiss canton of Zug to offer digital IDs to residents to connect real-world identities to the blockchain.
-[uPort][34]是一个自我主权身份钱包，可让您完全控制自己的身份和个人数据。由ConsenSys开发，uPort允许您在以太坊上创建身份，安全地登录到没有密码的dApp，管理您的个人信息和验证，以及批准以太坊交易和数字签名文件。 uPort最近还开发了一种新的去中心化式数据存储解决方案，称为[3Box][35]，它允许以太坊用户使用任何钱包在dApp上传和共享他们的信息。 uPort与瑞士Zug州合作，为居民提供数字身份证，将现实身份与区块链联系起来。
-
-![][37]
-
-uPort improves upon the ERC 725 standard by decomposing the monolithic identity smart contract. Their new layered architecture proposal is [ERC 780][38]. Source: [uPort][39]
-uPort通过分解整体身份智能合约来改进ERC 725标准。他们新的分层架构提案是[ERC 780][38]。资料来源：[uPort][39]
-
-[Civic][40], led by serial entrepreneur Vinny Lingham, is a dApp built on Ethereum for identity verification. In Civic's decentralized ecosystem, a user needs to have their identity verified before a requester, such as a company selling a service, can accept the user as a customer. To do so, validators verify the user's claims by cross referencing documents with government databases. Once validators verify the user's identity, they attest this information with the root of a Merkle tree that has the user's claims as the leaves.
-[Civic][40]由连续企业家Vinny Lingham领导，是一个基于以太坊进行身份验证的dApp。在Civic的去中心化式生态系统中，用户需要在请求者（例如销售服务的公司）可以接受用户作为客户之前验证其身份。为此，验证者通过与政府数据库交叉引用文档来验证用户的声明。一旦验证器验证了用户的身份，他们就会以Merkle树的根证明这些信息，该树的用户声称为叶子。
-
-Other similar identity products include [Sovrin][41], [Evernym][42], and [Nuggets][43]. Given how many groups of people are trying to tackle the identity problem, the [Decentralized Identity Foundation][44], which counts more than 50 partner organizations, is coordinating various attempts at decentralized identity with the goal of making these systems interoperable so users aren't left with their personal data fragmented across multiple protocols.
-其他类似的身份产品包括[Sovrin][41]，[Evernym][42]和[Nuggets][43]。鉴于有多少人正试图解决身份问题，[去中心化的身份基金会][44]，其中包括50多个合作伙伴组织，正在协调各种去中心化身份的尝试，目的是使这些系统具有互操作性，因此用户不会他们的个人数据在多个协议中去中心化。
-
-#### Will decentralized identity become centralized again?
-#### 去中心化的身份会再次中心化吗？
-
-An issue with self-sovereign identity is what to do if a user's private key gets lost or stolen. Should the attacker get the keys to the kingdom? Remember, we don't live in a cyberpunk utopia where we have private keys embedded in our brains. Maybe this issue would require identity to be held by trusted third parties.
-自我主权身份的问题是如果用户的私钥丢失或被盗，该怎么办。攻击者是否应该获得王国的钥匙？请记住，我们不是生活在一个计算机朋克的乌托邦，我们的大脑中嵌入了私钥。也许这个问题需要由受信任的第三方持有身份。
-
-Coinbase recently acquired a startup called Distributed Systems, which is developing a decentralized identity standard for dApps called the [Clear Protocol][45]. In doing so, Coinbase may look to build a "Facebook Connect" for crypto to make it much easier for users to sign up and connect their crypto wallets. Given that Coinbase has KYC data on its 20 million customers, Coinbase could leverage its treasure trove of identity data for dApps.
-Coinbase最近收购了一家名为Distributed Systems的初创公司，该公司正在为dApp开发一种称为[Clear Protocol]的去中心化身份标准[45]。在这样做的过程中，Coinbase可能会为加密构建一个“Facebook Connect”，以便用户更容易注册并连接他们的加密钱包。考虑到Coinbase拥有其2000万客户的KYC数据，Coinbase可以利用其针对dApp的大量身份数据。
-
-![][47]
-
-Web 3 identity could eventually look something like this.
-Web 3身份最终可能看起来像这样。
-
-It is also [speculated][48] that Facebook's blockchain team is building an identity and single sign-on platform for dApps given how much personal information about us Facebook owns. This became apparent during the #DeleteFacebook campaign when users downloaded .zip files of all their personal data and were shocked by how much Facebook knew about them.
-[推测][48] Facebook的区块链团队正在为dApp建立一个身份和单点登录平台，因为Facebook拥有多少个人信息。在#DeleteFacebook广告系列中，当用户下载所有个人数据的.zip文件时，这一点就变得明显，并且对Facebook对它们的了解程度感到震惊。
-
-[Telegram Passport][49] is another unified authorization method for services that require personal identification. Using Telegram Passport, you can upload all your documents once and instantly share your data with services that require real-world ID.
-[Telegram Passport][49]是另一种需要个人识别的服务的统一授权方法。使用Telegram Passport，您可以上传所有文档，并立即与需要真实身份ID的服务共享您的数据。
-
-### So what?
-## #
-
-Although anonymity and pseudonymity are frequently cited as use cases for cryptocurrencies, identity solutions are still strongly needed for many new crypto native behaviors like on-chain governance and token curated registries. In particular, voting systems, such as [quadratic voting][50], rely heavily on verifiable, separate human identities because an individual could multiply his or her effective influence dramatically by misrepresenting him or herself as multiple individuals. Likewise, identity continues to be the bottleneck for these systems to be resistant to Sybil-like attacks and work effectively at scale.
-虽然匿名和假名经常被引用作数字货币的使用案例，但许多新的加密本机行为（如链式治理和通证策划注册表）仍然强烈需要身份解决方案。特别是，诸如[二次投票][50]之类的投票系统在很大程度上依赖于可验证的，独立的人类身份，因为个人可以通过歪曲他或她自己作为多个人来大大增加他或她的有效影响力。同样，身份仍然是这些系统抵抗类似Sybil攻击并在规模上有效工作的瓶颈。
-
-In my view, a layered identity architecture that combines the best **namespace** product and the best **attestation** product is the most promising approach. It'll be interesting to see what identity solution the crypto community converges on moving forward.
-在我看来，结合最佳**命名空间**产品和最佳**证明**产品的分层身份架构是最有前途的方法。看看加密社区在前进中收敛的身份解决方案会很有趣。
-
-[1]: https://www.youtube.com/watch?v=p4Gotl9vRGs
-[2]: https://en.wikipedia.org/wiki/Ship_of_Theseus
-[3]: https://cdn-images-1.medium.com/freeze/max/75/1*wH7y54tVBeMl4qbuR4xRkQ.png?q=20
-[4]: https://thecontrol.co/undefined
-[5]: https://cdn-images-1.medium.com/max/1500/1*wH7y54tVBeMl4qbuR4xRkQ.png
-[6]: https://cdn-images-1.medium.com/freeze/max/75/0*4-p3LjTM6_oSr03_?q=20
-[7]: https://cdn-images-1.medium.com/max/2000/0*4-p3LjTM6_oSr03_
-[8]: https://en.wikipedia.org/wiki/Zooko%27s_triangle
-[9]: https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions
-[10]: https://en.wikipedia.org/wiki/I2P
-[11]: https://nakamotoinstitute.org/secure-property-titles/
-[12]: http://www.aaronsw.com/weblog/squarezooko
-[13]: https://namecoin.org/
-[14]: https://bit.namecoin.org/
-[15]: https://cointelegraph.com/news/why-namecoin-didnt-take-off-a-cautionary-tale
-[16]: https://onename.com/
-[17]: https://blockstack.org/
-[18]: https://blog.usejournal.com/power-in-the-age-of-the-feudal-internet-20e106a2e2ce
-[19]: https://ens.domains/
-[20]: https://cdn-images-1.medium.com/freeze/max/75/1*OPF5WdlfrP1bzdS23eR_Og.png?q=20
-[21]: https://cdn-images-1.medium.com/max/2000/1*OPF5WdlfrP1bzdS23eR_Og.png
-[22]: https://handshake.org/
-[23]: https://en.wikipedia.org/wiki/DNS_root_zone
-[24]: https://namebase.io/
-[25]: https://cdn-images-1.medium.com/freeze/max/75/0*_0QzsqLdiy7SXlPF?q=20
-[26]: https://cdn-images-1.medium.com/max/2000/0*_0QzsqLdiy7SXlPF
-[27]: https://medium.com/zkcapital/handshake-ens-and-decentralized-naming-services-explained-2e69a1ca1313
-[28]: https://openalias.org/
-[29]: https://www.portal.network/
-[30]: https://cdn-images-1.medium.com/freeze/max/75/0*q6fHkmzj4FfXMfUj?q=20
-[31]: https://cdn-images-1.medium.com/max/2000/0*q6fHkmzj4FfXMfUj
-[32]: https://github.com/ethereum/EIPs/issues/725
-[33]: https://medium.com/originprotocol/managing-identity-with-a-ui-for-erc-725-5c7422b38c09
-[34]: https://www.uport.me/
-[35]: https://github.com/uport-project/3box?utm_source=uPort+Community&utm_campaign=3d1bcebbe0-EMAIL_CAMPAIGN_2018_08_21_08_07&utm_medium=email&utm_term=0_994f874fec-3d1bcebbe0-155602509
-[36]: https://cdn-images-1.medium.com/freeze/max/75/1*hGnoujbEowM8t3NEJ7sWiQ.png?q=20
-[37]: https://cdn-images-1.medium.com/max/2000/1*hGnoujbEowM8t3NEJ7sWiQ.png
-[38]: https://github.com/ethereum/EIPs/issues/780
-[39]: https://medium.com/uport/different-approaches-to-ethereum-identity-standards-a09488347c87
-[40]: https://www.civic.com/
-[41]: https://sovrin.org/
-[42]: https://www.evernym.com/
-[43]: https://nuggets.life/
-[44]: http://identity.foundation/
-[45]: https://medium.com/dsys/build-the-next-big-decentralized-application-with-cleargraph-4b1f34d2675
-[46]: https://cdn-images-1.medium.com/freeze/max/75/1*GlDsSJIM7IyRiFU8wcUdYQ.png?q=20
-[47]: https://cdn-images-1.medium.com/max/1500/1*GlDsSJIM7IyRiFU8wcUdYQ.png
-[48]: https://techcrunch.com/2018/08/10/facecoin/
-[49]: https://telegram.org/blog/passport
-[50]: https://medium.com/@VitalikButerin/liberation-through-radical-decentralization-22fc4bedc2ac
-
+[1]: https://lightning.network
+[2]: https://plasma.io
+[3]: https://www.coindesk.com/layer-2-blockchain-tech-even-bigger-deal-think/
+[4]: https://tools.ietf.org/html/rfc1925
+[5]: https://cdn-images-1.medium.com/max/1600/1*-jsi9gHospcC2Cd5nR9lJw.png
+[6]: https://cdn-images-1.medium.com/max/1600/1*n7X3cGN2J2T2doadWTnfXg.png
+[7]: https://en.bitcoin.it/wiki/Payment_channels
+[8]: https://medium.com/l4-media/generalized-state-channels-on-ethereum-de0357f5fb44
+[9]: http://lightning.network/
+[10]: https://raiden.network/
+[11]: https://www.blockstream.com/sidechains.pdf
+[12]: https://www.plasma.io/
+[13]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md
+[14]: https://raiden-network.readthedocs.io/en/stable/spec.html
+[15]: https://segwit.org/is-segregated-witness-necessary-to-implement-the-lightning-network-6c4545a9f9f1
+[16]: https://www.blug.linux.no/rfc1149/writeup/
+[17]: https://interledger.org/community.html
+[18]: https://medium.com/xpring/interledger-how-to-interconnect-all-blockchains-and-value-networks-74f432e64543
+[19]: https://medium.com/interledger-blog/simplifying-interledger-the-graveyard-of-possible-protocol-features-b35bf67439be
+[20]: https://medium.com/interledger-blog/streaming-money-and-data-over-ilp-fabd76fc991e
+[21]: https://en.wikipedia.org/wiki/QUIC
+[22]: https://cdn-images-1.medium.com/max/1600/1*7hlPpmJCRNhI_IlF1Th30g.png
 
