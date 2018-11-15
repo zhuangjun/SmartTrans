@@ -1,165 +1,114 @@
 
-[Source](https://medium.com/xpring/layer-3-is-for-interoperability-ca387fa5f7e2 "Permalink to Layer 3 Is for Interoperability – Xpring – Medium")
-[来源]（https://medium.com/xpring/layer-3-is-for-interoperability-ca387fa5f7e2“第3层的永久链接是互操作性 -  Xpring  - 中等”）
+[Source](https://www.coindesk.com/a-7-year-legal-fight-led-this-dev-to-build-unstoppable-ethereum-storage "Permalink to A 7-Year Legal Fight Led This Dev to Build Unstoppable Ethereum Storage")
+[来源]（https://www.coindesk.com/a-7-year-legal-fight-led-this-dev-to-build-unstoppable-ethereum-storage“7年法律斗争的永久链接带来了这个开发构建不可阻挡的以太坊存储“）
 
-# Layer 3 Is for Interoperability – Xpring – Medium
-# 第三层是为了互操作性
+# A 7-Year Legal Fight Led This Dev to Build Unstoppable Ethereum Storage
+# 为期7年的法律斗争带领这个开发人员建立不可阻挡的以太坊存储
 
-## The Protocol Stack for the Internet of Value
-## 价值互联网的协议栈
+"If you build it strong enough, the law will follow."
+“如果你把它建得足够强大，法律就会随之而来。”
 
-Layer 2 technologies such as [Lightning][1] and [Plasma][2] are said to ["promise big strides in scalability, interoperability and functionality"][3] for blockchains. However, most Layer 2 projects focus primarily on scalability and only occasionally mention interoperability. Why? This isn't just a matter of timing or stage of development. This is actually how it should be, because **Layer 2 is for scaling. Layer 3 is for interoperability.**
-像[Lightning][1]和[Plasma][2]这样的第2层技术被称为[“在可扩展性，互操作性和功能性方面取得重大进展”][3]用于区块链。但是，大多数第2层项目主要关注可扩展性，偶尔也会提到互操作性。为什么？这不仅仅是时间或发展阶段的问题。实际上它应该是这样的，因为**第2层用于扩展。第3层用于互操作性。**
+That's how Daniel Nagy, the lead developer behind Swarm – ethereum's decentralized storage-layer – described his "takeaway lesson" after a seven-year legal battle over his use of an early file-sharing network called Direct Connect (DC).
+这就是Swarm的核心开发人员Daniel Nagy  - 以太坊的去中心化存储层 - 在他使用一个名为Direct Connect（DC）的早期文件共享网络进行了长达7年的法律纠纷之后，描述了他的“外卖课程”。
 
-Scaling and interoperability are complementary but separate concerns that are best addressed through different protocol layers. To make this case, I'll give a bit of background on the purpose of layered protocol architectures and the roles of Layers 1, 2, and 3. I'll also explain how separating scalability and interoperability improves the solutions for both and paves the way for an Internet of Value whose design is surprisingly analogous to the internet itself.
-扩展和互操作性是互补的，但是通过不同的协议层可以最好地解决这些问题。为了说明这一点，我将介绍分层协议体系结构的目的以及第1,2和3层的角色。我还将解释分离可伸缩性和互操作性如何改进两者的解决方案并铺平价值互联网的方式，其设计与互联网本身惊人地类似。
+A precursor to peer-to-peer file sharing service [Bittorrent][1], DC is a technology that is now "perfectly and completely obsolete," according to the developer.
+据开发人员称，DC是对等文件共享服务的前身[Bittorrent][1]，DC是一种现在“完全和完全过时”的技术。
 
-### The Purpose of Layered Protocols
-### 分层协议的目的
+Accused of copyright infringement for hosting a DC node, "I had a bit of a legal fight over it and I won," he told CoinDesk.
+他告诉CoinDesk，他指控托管一个DC节点侵犯了版权，“我对它进行了一些法律斗争，我赢了。”
 
-> It is always possible to agglutinate multiple separate problems into a single complex interdependent solution. In most cases this is a bad idea. _
-> 始终可以将多个单独的问题凝聚成一个复杂的相互依赖的解决方案。在大多数情况下，这是一个坏主意。_
-_\- [RFC 1925: The Twelve Networking Truths][4]
-_\- [RFC 1925：十二网络真相][4]
+In the aftermath of that fight, Nagy – who founded of the Hungarian branch of the Electronic Frontier Foundation – joined the [Ethereum Foundation][2], where he was inspired to look deeper into censorship-resistant technology for file storage.
+在那场斗争之后，Nagy--电子前沿基金会的匈牙利分会成立 - 加入了[以太坊基金会][2]，在那里他受到启发，更深入地研究用于文件存储的抗审查技术。
 
-The internet is the best example of a layered protocol architecture, and this design was a key factor in the internet's growth and usefulness. Different pieces of functionality are split into separate protocols that build on one another, rather than being bundled together in one monolithic system.
-互联网是分层协议架构的最佳范例，这种设计是互联网增长和实用性的关键因素。不同的功能部分被分成彼此构建的单独协议，而不是在一个单片系统中捆绑在一起。
+In particular, Nagy's experience in the courts initiated his work on Swarm, a [hotly anticipated][3] storage layer for ethereum, where he focuses on systems architecture and privacy-preserving cryptography.
+特别是，Nagy在法庭上的经历开始了他对Swarm的工作，Swarm是一个[备受期待的][3]以太坊存储层，他专注于系统架构和隐私保护密码学。
 
-For example, the Internet Protocol (IP) is built upon different underlying networking technologies or "link layer" protocols, such as Ethernet and WiFi. Because IP was designed as a separate layer, it is not tied to any specific networking technology and is able to work the same way over many different types of wired or wireless connections.
-例如，因特网协议（IP）建立在不同的底层网络技术或“链路层”协议上，例如以太网和WiFi。由于IP被设计为单独的层，因此它不依赖于任何特定的网络技术，并且能够以相同的方式在许多不同类型的有线或无线连接上工作。
+With Swarm, Nagy is fixated on how to make decentralized storage robust enough that legal repercussions of this kind can't happen – in what he describes as "an arms race" between developers and regulators.
+通过Swarm，Nagy专注于如何使去中心化存储足够强大，以至于不会发生这种法律影响 - 他称之为开发商和监管机构之间的“军备竞赛”。
 
-![][5]
+"This is an arms race, and since we can develop stuff and the marginal cost of replication is zero, we will win this arms race, and I think everybody knows that," he told CoinDesk.
+“这是一场军备竞赛，由于我们可以开发东西，复制的边际成本为零，我们将赢得这场军备竞赛，我想每个人都知道，”他告诉CoinDesk。
 
-The "hourglass" architecture of the Internet: IP abstracts away the differences between underlying networks and applications built on top of it
-互联网的“沙漏”架构：IP抽象了底层网络和基于它构建的应用程序之间的差异
+An ethereum initiative that has been active since the early days of the platform, Swarm seeks to provide a mechanism for the blockchain to offload some of its historical data, as well as handle file-storage more broadly.
+作为平台早期活跃的以太坊计划，Swarm寻求为区块链提供一种机制，以卸载其部分历史数据，以及更广泛地处理文件存储。
 
-Layered protocol architectures provide a number of important benefits:
-分层协议架构提供了许多重要的好处：
+With an emphasis on "efficiency, speed, confidentiality, and security," the decentralized storage-layer is built with the aim of rendering the cost of attack so expensive that the legal system is forced to update itself in response.
+由于强调“效率，速度，机密性和安全性”，去中心化式存储层的构建目的是使攻击成本过高，以至于法律系统不得不自行更新。
 
-* **Interoperability - **IP works across many different networking technologies by abstracting away their differences. As long as a link can send data, IP can communicate over it. This means we can connect seamlessly no matter what type of underlying network we are using.
-**互操作性**IP可以通过抽象出差异来适用于许多不同的网络技术。只要链接可以发送数据，IP就可以通过它进行通信。这意味着无论我们使用何种类型的底层网络，我们都可以无缝连接。
-* **Upgradeability - **Abstractions enable different layers to evolve separately. While the internet was built in the 1970s, the fact that IP abstracts away the different networking technologies has enabled us to upgrade from dial-up to fiber optic and 4G links. The higher level protocols did not need to change, but our connections keep getting faster as newer networking technologies are developed.
-**可升级性**抽象可以使不同的层分别进化。虽然互联网是在20世纪70年代建立的，但IP抽象出不同的网络技术这一事实使我们能够从拨号升级到光纤和4G链路。更高级别的协议不需要改变，但随着更新的网络技术的发展，我们的连接越来越快。
-* **Common Infrastructure for Multiple Use Cases - **IP is also independent of any particular use case, which enables the same infrastructure to be used for applications ranging from the Web to email and Voice over IP (VoIP). If the internet had been built specifically for file transfers, we might have needed whole separate networks for each different use case. Instead, we have a single internet that can be used for many types of communication.
-**多用途案例的通用基础设施**IP也独立于任何特定用例，这使得相同的基础架构可用于从Web到电子邮件和IP语音（VoIP）的应用程序。如果互联网是专门为文件传输而构建的，那么我们可能需要为每个不同的用例提供完整的独立网络。相反，我们有一个可用于多种类型通信的互联网。
+According to Nagy, that's because a fully robust network, "can actually inform decision making, even to the point of how law is interpreted by judges and enforcers."
+根据纳吉的说法，这是因为一个完全健全的网络，“实际上可以为决策提供信息，甚至可以通过法官和执法者解释法律的方式。”
 
-Layering is an essential tool for designing systems like the internet or Internet of Value, but deciding which features fit into which layers is the hardest part. Too many layers makes the system overly complex, but too much bundling hampers interoperability and upgradeability.
-分层是设计互联网或价值互联网等系统的重要工具，但决定哪些特征适合哪些层是最难的部分。太多的层使系统过于复杂，但过多的捆绑会妨碍互操作性和可升级性。
+He told CoinDesk:
+他告诉CoinDesk：
 
-### A Protocol Stack for the Internet of Value
-### 价值互联网的协议栈
+> "They don't want to enforce unenforceable laws."
+> “他们不想强制执行无法执行的法律。”
 
-The Interledger protocol stack has direct parallels with the internet protocol suite, largely because we found that splitting functionality into analogous layers helped solve issues at each level. Here, I'll briefly go through each of the layers to explain their roles and show the benefits of focusing Layer 3 on interoperability.
-Interledger协议栈与互联网协议套件有直接的相似之处，主要是因为我们发现将功能拆分为类似层有助于解决每个级别的问题。在这里，我将简要介绍每个层来解释它们的作用，并展示将第3层集中在互操作性上的好处。
+## Unstoppable storage
+## 不可阻挡的存储空间
 
-![][6]
+Intended to provide a base infrastructure for a decentralized internet, Swarm splits information up between the computers of different network participants.
+Swarm旨在为去中心化的互联网提供基础架构，Swarm在不同网络参与者的计算机之间分配信息。
 
-The Interledger Protocol (ILP) connects and abstracts away the differences between Layer 2 technologies
-Interledger Protocol（ILP）连接并抽象出第2层技术之间的差异
+To protect this layer from censorship – what Nagy defines as taking information out of circulation – decentralization and privacy are vital.
+为了保护这一层免受审查 -  Nagy定义为将信息从流通中取出 - 去中心化和隐私至关重要。
 
-### Layer 1: Ledgers
-### 第1层：账本
+For example, what developers call "redundancy" is key to how Swarm protects against censorship. This refers to the duplication of critical system components of a system – creating, in effect, a "swarm" of machines.
+例如，开发人员称之为“冗余”是Swarm如何防止审查的关键。这指的是系统的关键系统组件的重复 - 实际上是创建一个“群”的机器。
 
-Blockchains and other types of ledgers are like the physical cables that underpin the internet. Digital communication is ultimately made possible by wired and wireless links that connect individual devices and carry data between them. Similarly, ledgers are the foundation of the Internet of Value, because they enable two people that accept the same asset or hold accounts in the same system to transact.
-区块链和其他类型的分类帐就像支撑互联网的物理电缆。数字通信最终通过有线和无线链路实现，这些链路连接各个设备并在它们之间传输数据。同样，分类账是价值互联网的基础，因为它们使两个接受同一资产的人或在同一系统中持有账户进行交易。
+"If you have multiple channels of communication, multiple locations of storage, then censoring becomes more expensive because you need to find all of them and shut down all of them," he told CoinDesk.
+“如果你有多个通信通道，多个存储位置，那么审查会变得更加昂贵，因为你需要找到所有这些并关闭所有这些，”他告诉CoinDesk。
 
-Like physical cables, ledgers and blockchains need additional protocols built on top of them to facilitate the exchange of data or money. In the case of blockchains, the main issues are scaling transaction throughput and lowering latencies while maintaining decentralization.
-与物理电缆，分类账和区块链一样，需要在其上构建额外的协议，以便于数据或资金的交换。在区块链的情况下，主要问题是缩放交易吞吐量和降低延迟，同时保持去中心化。
+While it's possible to store information in a transparent way on Swarm, much of Nagy's work has focused on how to ensure sensitive information remains private, even when stored on someone else's computer.
+虽然可以在Swarm上以透明的方式存储信息，但Nagy的大部分工作都集中在如何确保敏感信息保密，即使存储在别人的计算机上也是如此。
 
-Ledgers are destined to be performance bottlenecks because they are logically centralized. Whether a ledger is maintained in a centralized or decentralized fashion, it needs a single consistent, shared state of accounts and balances to ensure that money cannot be "double-spent". Updating widely shared state is always going to be relatively expensive and slow. The bottleneck will either be the speed of consensus in a distributed ledger, or the performance of a single machine in the case of a centralized ledger. Improving ledger scalability is very useful, but moving common and repeated transactions off of the main ledger using Layer 2 protocols will increase throughput and lower latencies even more.
-分类帐注定会成为性能瓶颈，因为它们在逻辑上是集中的。无论分类账是以集中还是去中心化的方式维护，它都需要一个统一的，共享的账户和余额状态，以确保资金不会“双重花费”。更新广泛共享状态总是相对昂贵且缓慢。瓶颈将是分布式账本中的共识速度，或者是集中式分类账中单台机器的性能。提高分类帐可伸缩性非常有用，但使用第2层协议从主分类帐中移除常见和重复交易将提高吞吐量并降低延迟。
+To do this, Swarm uses what is called "counter mode" encryption. If there's a dispute, the protocol shares a small piece of encrypted data that can verify ownership without revealing any other information.
+为此，Swarm使用所谓的“计数器模式”加密。如果存在争议，协议会共享一小段加密数据，可以在不泄露任何其他信息的情况下验证所有权。
 
-### Layer 2: Local Area Networks
-### 第2层：局域网
+In order to access the stored information remotely, Swarm uses public and private key pairs.
+为了远程访问存储的信息，Swarm使用公钥和私钥对。
 
-Layer 2 solutions for scaling blockchains are analogous to the link layer protocols of the internet stack, such as Ethernet and WiFi. This layer creates bilateral links or Local Area Networks (LANs)* that allow directly connected parties or devices to communicate efficiently over the underlying network.
-用于缩放区块链的第2层解决方案类似于互联网堆栈的链路层协议，例如以太网和WiFi。该层创建双边链路或局域网（LAN）*，允许直接连接的各方或设备通过底层网络进行有效通信。
+As such, participants will host encrypted data chunks on their laptops, and in most jurisdictions, can do so with a degree of plausible deniability – also meaning that, because Swarm nodes don't hold the keys to unlock data, they won't be at risk of legal trouble.
+因此，参与者将在他们的笔记本电脑上托管加密数据块，并且在大多数司法管辖区，可以通过一定程度的合理拒绝来做到这一点 - 这也意味着，因为Swarm节点不能保存解锁数据的密钥，所以它们不会面临法律纠纷的风险。
 
-Layer 2 technologies for blockchains are designed to enable fast, cheap, high-throughput transactions over the underlying ledger, generally by using a form of programmatic escrow. This category includes bilateral technologies like [payment channels][7] and [generalized state channels][8], as well as multilateral solutions including payment channel networks like [Lightning][9] and [Raiden][10], [sidechains][11], and [Plasma][12]. Each of these enable faster, cheaper transactions by allowing pairs or smaller groups of account holders to transact without needing to interact with the main ledger each time.
-区块链的第2层技术旨在通过使用一种程序化托管方式在底层分类账上实现快速，廉价，高吞吐量的交易。此类别包括[支付通道][7]和[广义国家通道][8]等双边技术，以及包括[闪电网络][9]和[雷电网络][10]，[侧链]等支付通道网络的多边解决方案[11]，和[等离子][12]。通过允许成对或较小的账户持有者组进行交易而不需要每次与主分类账交互，这些中的每一个都能够实现更快，更便宜的交易。
+According to Nagy, that's important because attack-resistant storage is essential to healthy societies.
+根据纳吉的说法，这很重要，因为抗攻击存储对于健康的社会至关重要。
 
-#### Programmatic Escrow
-### #
+"Storage is the shared experience of humanity," he told CoinDesk, adding:
+“存储是人类共享的体验，”他告诉CoinDesk，并补充道：
 
-The core mechanism of Layer 2 solutions is a form of programmatic escrow. Assets are first put into a holding account, script, or smart contract on the main ledger. Then, two or more parties can carry out numerous fast transactions by updating their local state to change the allocation of the escrowed assets. If or when the parties want to close out their off-ledger relationship, they present the final state to the main ledger, which checks its validity and distributes the escrowed assets accordingly.
-第2层解决方案的核心机制是程序化托管的一种形式。资产首先被放入主分类账的持有账户，脚本或智能合约中。然后，两个或更多方可以通过更新其本地状态来执行多次快速交易以改变托管资产的分配。如果当事人想要结束其分类账关系，他们会将最终状态呈现给主分类账，主分类账检查其有效性并相应地分配托管资产。
+> "The difference between hunter gatherers and us is exclusively the amount of stored information that we have access to. There is no other difference between us."
+> “狩猎采集者和我们之间的区别仅仅是我们可以访问的存储信息量。我们之间没有其他区别。”
 
-Importantly, the features offered by the underlying ledger directly determine the types of functionality the Layer 2 system can include, because ledgers vary in the types of programmatic escrow they support.
-重要的是，底层分类帐提供的功能直接决定了第2层系统可以包含的功能类型，因为分类帐在它们支持的程序托管类型方面有所不同。
+## Future directives
+## 未来指令
 
-> Layer 2 solutions are necessarily tied to certain ledgers, because they leverage specific capabilities in the underlying Layer 1 system.
-> 第2层解决方案必然与某些分类账相关联，因为它们利用底层第1层系统中的特定功能。
+The storage protocol is currently in public alpha, meaning that while still under heavy development, but today, anyone can run a Swarm node.
+存储协议目前处于公共alpha状态，这意味着虽然仍处于繁重的开发阶段，但今天，任何人都可以运行Swarm节点。
 
-This is why [Lightning is defined in terms of Bitcoin scripts][13], [Raiden uses specific Ethereum smart contracts][14], and Plasma implementations would similarly use well-specified smart contracts. Lightning may work with specific (SegWit-supporting) forks of Bitcoin like Litecoin, and Raiden and Plasma may work with other blockchains that use the Ethereum Virtual Machine (EVM). However, Each Layer 2 technology would be worse if they tried to support ledgers with vastly different sets of features (for example, [Lightning without SegWit][15] or Plasma implemented using only Bitcoin scripts). This is completely fine though! Layer 2 scaling solutions can and should take advantage of every capability provided by the underlying ledger.
-这就是为什么[闪电网络是根据比特币脚本定义][13]，[雷电网络使用特定的以太坊智能合约][14]，等离子实现同样会使用明确指定的智能合约。 闪电网络可以使用比特币（如Litecoin）的特定（SegWit支持）分叉，Raiden和Plasma可以与使用以太坊虚拟机（EVM）的其他区块链一起使用。但是，如果每个第2层技术试图支持具有完全不同功能集的分类账（例如，[没有SegWit的Lightning][15]或仅使用比特币脚本实现的Plasma），则每个第2层技术会更糟。这完全没问题！第2层扩展解决方案可以并且应该利用底层分类帐提供的每个功能。
+Going forward, the protocol will also offer incentives in the form of ether (ethereum's native cryptocurrency) for participants in the Swarm network. This aspect is still being fine-tuned.
+展望未来，该协议还将为以太网（以太坊的本地数字货币）形式提供针对Swarm网络参与者的激励。这方面仍在进行微调。
 
-The close connection between Layers 1 and 2 is precisely why we need a separate layer for interoperability. True interoperability is all about abstraction and requires minimizing the set of features the protocol uses. The fewer features the interoperability layer expects from the layer below, the more heterogeneous networks it can connect. Since Layer 2 solutions can and should leverage specific Layer 1 capabilities, we need a separate layer for interoperability that uses as few ledger-specific functions as possible.
-第1层和第2层之间的紧密连接正是我们需要一个单独的互操作层的原因。真正的互操作性完全取决于抽象，并且需要最小化协议使用的功能集。互操作层期望从下面的层中获得的功能越少，它可以连接的异构网络就越多。由于第2层解决方案可以并且应该利用特定的第1层功能，因此我们需要一个单独的互操作层，使用尽可能少的分类帐特定功能。
+Additionally, according to Nagy, Swarm encryption has been designed to be "as smart contract friendly as possible," in order to ensure that dapp developers can seamlessly integrate the technology.
+此外，根据Nagy的说法，Swarm加密被设计为“尽可能智能合约”，以确保dapp开发人员能够无缝集成该技术。
 
-### Layer 3: Interoperability
-### 第3层：互操作性
+That's because while primarily intended to store smart contract information and other blockchain data in a decentralized way, Swarm has other, more far-reaching use cases on the horizon.
+这是因为虽然主要用于以去中心化的方式存储智能合约信息和其他区块链数据，但Swarm还有其他更为深远的用例。
 
-The purpose of Layer 3 is to abstract away the differences between different Layer 1 and 2 technologies to connect vastly different types of networks. This is the role of the Internet Protocol (IP) on the internet and the Interledger Protocol (ILP) in the Internet of Value.
-第3层的目的是抽象出不同的第1层和第2层技术之间的差异，以连接不同类型的网络。这是互联网上的互联网协议（IP）和价值互联网中的Interledger协议（ILP）的作用。
+For example, the project has secured a number of partnerships over the past year, including video streaming startup Livepeer and Datafund, a privacy-centric data management protocol.
+例如，该项目在过去一年中获得了许多合作伙伴关系，包括视频流媒体创业公司Livepeer和Datafund，这是一种以隐私为中心的数据管理协议。
 
-The core protocol of the internet stack, IP, routes packets of data across networks while abstracting away the differences between the underlying telecommunication technologies. The internet was successful precisely because it used such a clean abstraction and was able to connect _everything_, from phone lines (via dial-up), to cellular and satellite networks, to dedicated fiber optic cables — and even [carrier pigeons][16].
-互联网堆栈的核心协议IP通过网络路由数据包，同时抽象出底层电信技术之间的差异。互联网之所以成功，恰恰是因为它使用了如此简洁的抽象，能够连接一切，从电话线（通过拨号）到蜂窝和卫星网络，再到专用光缆 - 甚至[载体鸽][16] 。
+Nagy is also using Swarm to build a censorship-resistant social media platform called BeeFree, working with fellow Ethereum Foundation developer Dimitry Khokhlov. Their goal is to use the technology in a bid to create an alternative to platforms with heavier forms of censorship.
+Nagy还使用Swarm建立一个名为BeeFree的审查抵制社交媒体平台，与以太坊基金会开发人员Dimitry Khokhlov合作。他们的目标是利用这项技术，为更严格的审查形式的平台创造一种替代方案。
 
-The only feature IP requires of underlying networks is the ability to send data. It does not depend on any additional features or even guarantees of speed or reliability. Because of its simple abstraction, IP was able to create a universal network of networks that today connects over half of the human population.
-IP需要底层网络的唯一功能是发送数据的能力。它不依赖于任何附加功能，甚至不依赖于速度或可靠性。由于其简单的抽象，IP能够创建一个通用的网络网络，如今连接了超过一半的人口。
+"We have access to a kind of shared pool of knowledge that humanity has accumulated, and if that is being censored, that makes us much much much dumber as a society," Nagy said.
+“我们可以获得人类积累的一种共享知识库，如果这种知识被审查，那将使我们成为一个社会的笨拙，”纳吉说。
 
-#### Minimal Abstraction Over Layer 2 Networks
-#### 第2层网络上的最小抽象
+[_Storage facilities][4] via Shutterstock_
+[_存储设施][4]通过Shutterstock_
 
-In the Internet of Value, ILP packetizes value like IP packetizes data. It routes packets of money across networks while abstracting away the differences between assets and ledger or Layer 2 technologies. Like IP, the core of ILP is the network-agnostic packet and address format.
-在价值互联网中，ILP打包像IP打包数据一样的价值。它通过网络路由数据包，同时抽象出资产和分类账或第2层技术之间的差异。与IP一样，ILP的核心是与网络无关的数据包和地址格式。
-
-**The only feature ILP requires of the underlying layer is the ability to send value.** It does not require any special transaction types, functionality, or programmatic escrow. Faster, cheaper transactions improve the user experience, but even they are not strictly required.
-**ILP对底层的唯一要求是能够发送值。**它不需要任何特殊的交易类型，功能或程序化托管。更快，更便宜的交易改善了用户体验，但即使它们也不是严格要求的。
-
-ILP's minimal abstraction enables interoperability with all types of Layer 1 and 2 networks, including those that were not designed to be interoperable. To date, it has been used to connect the Bitcoin Lightning Network, bilateral Ethereum payment channels, and XRP payment channels — three very different Layer 2 systems. Work is underway to connect all other types of Layer 1 and 2 systems (and you should [get involved!][17]).
-ILP的最小抽象实现了与所有类型的第1层和第2层网络的互操作性，包括那些不能设计为可互操作的网络。到目前为止，它已被用于连接比特币闪电网络，双边以太坊支付通道和XRP支付通道 - 三个截然不同的第2层系统。正在进行连接所有其他类型的第1层和第2层系统的工作（你应该[参与其中！][17]）。
-
-For a full description of how the protocol works, see [Interledger: How to Interconnect All Blockchains and Value Networks][18]. To see all of the features that were removed from ILP to make the core protocol and abstraction as simple and interoperable as possible, read [Simplifying Interledger: The Graveyard of Possible Protocol Features][19].
-有关协议如何工作的完整描述，请参阅[Interledger：如何互连所有区块链和价值网络][18]。要查看从ILP中删除的所有功能，以使核心协议和抽象尽可能简单和可互操作，请阅读[简化Interledger：可能的协议功能的墓地][19]。
-
-_Layers 4 and 5 are not the focus of this post but you can read [__STREAMing Money and Data Over ILP_][20]_ to learn about STREAM, the recommended Layer 4 transport protocol inspired by [__QUIC_][21]_. Keep an eye out for future posts on Layer 5 and application-specific protocols built on ILP and STREAM._
-_Layers 4和5不是这篇文章的重点，但你可以阅读[__STREAMing Money and Data Over ILP_][20]_来了解STREAM，这是一个受[__QUIC_][21]_启发的推荐的第4层传输协议。留意第5层的未来帖子以及基于ILP和STREAM构建的特定于应用程序的协议。
-
-### Conclusion: Separating Scaling and Interoperability
-### 结论：分离缩放和互操作性
-
-Scaling and interoperability are complementary, but they are fundamentally different types of problems that are best solved by separate protocol layers. Scalability solutions like Lightning and Plasma work best when they leverage the full range of features provided by their underlying ledgers. In contrast, interoperability protocols like Interledger require minimal abstractions that enable them to work across vastly different types of underlying networks.
-扩展和互操作性是互补的，但它们是基本上不同类型的问题，最好通过单独的协议层解决。 Lightning和Plasma等可扩展性解决方案在利用其底层分类账提供的全部功能时效果最佳。相比之下，像Interledger这样的互操作性协议需要最少的抽象，使它们能够跨越不同类型的底层网络。
-
-A subtle benefit of separating the link layer and interoperability layer is highlighted by the fact that the internet still works today. The Internet Protocol was designed for computers _the size of rooms_ and yet it is still applicable to cell phones and Internet of Things devices. By reducing the features IP required from the underlying networks, it also allowed for significant later improvements in the underlying technologies. This would have been impossible if IP had been built on specific features or APIs of networks at the time it was developed.
-分离链路层和互操作性层的一个微妙好处是因为互联网今天仍然有用。互联网协议是为计算机设计的 - 房间大小_但它仍然适用于手机和物联网设备。通过降低底层网络所需的IP功能，它还允许在底层技术方面进行重大改进。如果IP是在开发时基于网络的特定功能或API构建的，那么这是不可能的。
-
-We are nowhere near the end of the development of Layer 1 and Layer 2 blockchain or ledger systems. By abstracting away the differences between these with Layer 3, we can build better, more technology-agnostic user experiences while allowing for future developments that will make the Internet of Value faster, cheaper, and more efficient.
-我们还远未结束第1层和第2层区块链或分类帐系统的开发。通过抽象这些与第3层之间的差异，我们可以构建更好的，更加技术无关的用户体验，同时允许未来的发展，使互联网价值更快，更便宜，更高效。
-
-![][22]
-
-[1]: https://lightning.network
-[2]: https://plasma.io
-[3]: https://www.coindesk.com/layer-2-blockchain-tech-even-bigger-deal-think/
-[4]: https://tools.ietf.org/html/rfc1925
-[5]: https://cdn-images-1.medium.com/max/1600/1*-jsi9gHospcC2Cd5nR9lJw.png
-[6]: https://cdn-images-1.medium.com/max/1600/1*n7X3cGN2J2T2doadWTnfXg.png
-[7]: https://en.bitcoin.it/wiki/Payment_channels
-[8]: https://medium.com/l4-media/generalized-state-channels-on-ethereum-de0357f5fb44
-[9]: http://lightning.network/
-[10]: https://raiden.network/
-[11]: https://www.blockstream.com/sidechains.pdf
-[12]: https://www.plasma.io/
-[13]: https://github.com/lightningnetwork/lightning-rfc/blob/master/03-transactions.md
-[14]: https://raiden-network.readthedocs.io/en/stable/spec.html
-[15]: https://segwit.org/is-segregated-witness-necessary-to-implement-the-lightning-network-6c4545a9f9f1
-[16]: https://www.blug.linux.no/rfc1149/writeup/
-[17]: https://interledger.org/community.html
-[18]: https://medium.com/xpring/interledger-how-to-interconnect-all-blockchains-and-value-networks-74f432e64543
-[19]: https://medium.com/interledger-blog/simplifying-interledger-the-graveyard-of-possible-protocol-features-b35bf67439be
-[20]: https://medium.com/interledger-blog/streaming-money-and-data-over-ilp-fabd76fc991e
-[21]: https://en.wikipedia.org/wiki/QUIC
-[22]: https://cdn-images-1.medium.com/max/1600/1*7hlPpmJCRNhI_IlF1Th30g.png
+[1]: https://www.coindesk.com/tag/bittorrent/
+[2]: https://www.coindesk.com/tag/ethereum-foundation/
+[3]: https://www.coindesk.com/ethereums-holy-trinity-takes-shape-swarm-testnet-arrives/
+[4]: https://www.shutterstock.com/image-illustration/3d-illustration-server-room-data-center-1085748269?src=DAx1W8Yh9ecfOrCIkJ7iiA-1-63
 
