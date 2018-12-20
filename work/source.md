@@ -1,77 +1,68 @@
-[Source](https://www.coindesk.com/a-7-year-legal-fight-led-this-dev-to-build-unstoppable-ethereum-storage "Permalink to A 7-Year Legal Fight Led This Dev to Build Unstoppable Ethereum Storage")
+[Source](https://medium.com/datadriveninvestor/the-next-generation-of-stable-coins-is-here-69caf2a6b058 "Permalink to The next generation of Stable coins is here… – Data Driven Investor – Medium")
 
-# A 7-Year Legal Fight Led This Dev to Build Unstoppable Ethereum Storage
+# The next generation of Stable coins is here… – Data Driven Investor – Medium
 
-"If you build it strong enough, the law will follow."
+![Go to the profile of Faisal Khan][1]
 
-That's how Daniel Nagy, the lead developer behind Swarm – ethereum's decentralized storage-layer – described his "takeaway lesson" after a seven-year legal battle over his use of an early file-sharing network called Direct Connect (DC).
+![][2]
 
-A precursor to peer-to-peer file sharing service [Bittorrent][1], DC is a technology that is now "perfectly and completely obsolete," according to the developer.
+The pace of newer stable coins entering the digital assets' market has picked up this year even though new scalable solutions continue to emerge for the Blockchain networks and the Cryptocurrencies volatility tracks an all-time low. For those of you who are new to the concept, stable coins act as a store of value since they are backed by fiat currencies (1:1), most notably to the U.S dollar. The peg also addresses the problem of volatility for which Cryptocurrencies have been traditionally criticized. The oldest stable coin [**Tether (USDT)**][3], however, has been embroiled in a spiral of never-ending controversies. Tether dropped to as low as $0.84 against the US dollar on news reports that Cryptocurrency exchange Bitfinex was facing insolvency — both Tether & Bitfinex have the same CEO. This has given other aspiring entrants to improve on the weaknesses of the pioneer coin & occupy the stable coin space.
 
-Accused of copyright infringement for hosting a DC node, "I had a bit of a legal fight over it and I won," he told CoinDesk.
+![][4]
 
-In the aftermath of that fight, Nagy – who founded of the Hungarian branch of the Electronic Frontier Foundation – joined the [Ethereum Foundation][2], where he was inspired to look deeper into censorship-resistant technology for file storage.
+Two such coins [**Gemini Dollar (GUSD)**][5] and [**Paxos Standard (PAX)**][6], both regulated by the New York State Department of Financial Services, started circulating about a couple of months ago. Both these USD pegged digital coins have made inroads in the market already sitting at №4 & №2 respectively by market cap among other stable coins as shown in the chart above. PAX has achieved a bigger market cap & more acceptability with listing in four digital exchanges — Binance, OKEx, ZB.com, and Coinbene. It so happens that in Cryptoverse two months amounts to an eternity… as we have had two more significant additions to the Stable coins in the form of [**USD Coin (USDC)**][7] & **HUSD**.
 
-In particular, Nagy's experience in the courts initiated his work on Swarm, a [hotly anticipated][3] storage layer for ethereum, where he focuses on systems architecture and privacy-preserving cryptography.
+### USD Coin
 
-With Swarm, Nagy is fixated on how to make decentralized storage robust enough that legal repercussions of this kind can't happen – in what he describes as "an arms race" between developers and regulators.
+One of the biggest Cryptocurrency exchanges Coinbase & digital payments company [**Circle**][8]** **jointly launched a new stable coin USDC on the former's professional Crypto trading platform Coinbase Pro — which is basically a newer version of its old trading platform, GDAX with a better user interface, no fees, crypto trading pairs & support for three fiat currencies (USD, Euro & Pound) in margin trading. The backing of this ERC20 based stable coin by two big names of the industry has added credibility to the project. Apart from the regular features of pegging to USD with a collateralization feature, USDC offers the following advantages:
+* Sending & Receiving money to and from Ethereum wallets instantly
+* Swapping between U.S Dollar & USDC with no conversion fees
+* The digital dollar (USDC) can be used anywhere in the Crypto ecosystem of dApps, exchanges & blockchain-based games or wherever the ERC20 standard is utilized
+* Programmability of USDC makes it easier for Fintech companies & developers making use of the private key feature of the digital coin on public Ethereum blockchain
+* Finally, the collateralized fiat money would be available for reporting & public auditing, something that has been a thorny issue for Tether
 
-"This is an arms race, and since we can develop stuff and the marginal cost of replication is zero, we will win this arms race, and I think everybody knows that," he told CoinDesk.
+For now, transactions will be supported in selected jurisdictions which will be expanded to other areas in the future. Also trading in Crypto cross pairs (BTC/USDC etc.) will be available once sufficient liquidity is established.
 
-An ethereum initiative that has been active since the early days of the platform, Swarm seeks to provide a mechanism for the blockchain to offload some of its historical data, as well as handle file-storage more broadly.
+![][9]
 
-With an emphasis on "efficiency, speed, confidentiality, and security," the decentralized storage-layer is built with the aim of rendering the cost of attack so expensive that the legal system is forced to update itself in response.
+### HUSD
 
-According to Nagy, that's because a fully robust network, "can actually inform decision making, even to the point of how law is interpreted by judges and enforcers."
+The World's third largest Cryptocurrency exchange, Huobi, also launched a new stable coin HUSD, which it calls as a comprehensive and integrated solution for all stable coins. HUSD aims to solve the complexity of choosing between the available stable coins & minimizing the conversion costs between them. In all practicality, HUSD is establishing an ecosystem of stable coins where it will be the common medium of exchange or you can also call it the Stable coin of Stable coins! Currently, HUSD system offers support for four of its predecessors — **PAX, TUSD, USDC, GUSD** with the intention of adding more stable coins to its system once the standards are set in place and initial transactions go smoothly. In addition, Huobi claims these advantages of using the HUSD system:
+* Safety from any single stable coin risk & convenience of seamless transactions
+* Offers additional stability since Huobi bears the risk of an instability of a stable coin
+* Absolutely zero fees or commission for all the stable coin conversions in the system
 
-He told CoinDesk:
+Users will be able to see their balance as an aggregate of all four stable coins in the form of HUSD where they will also have the choice of cashing out in any of the four stable coins in the system.
 
-> "They don't want to enforce unenforceable laws."
+### Xank
 
-## Unstoppable storage
+And finally, I would like to briefly talk about an upcoming project called [**Xank**][10] — a free floating Cryptocurrency with price volatility and an innovative new feature called the "Stable Pay". The project claims itself to be the successor of stable coins. Xanx claims that the current lineup of stable coins is still vulnerable to central control of the underlying fiat currencies, huge collateral requirements & susceptibility to sustained downturns in the market. Since it is a free floating digital coin, Xank is technically not a stable coin but due to its hedging feature, it competes in the stable coin space.
 
-Intended to provide a base infrastructure for a decentralized internet, Swarm splits information up between the computers of different network participants.
+This is how it works… Let's assume 1 Xank=$1USD. You sell $100 USD to an exchange and receive 100 Xank. The next day, you realize that you will be traveling a few months later and need 100 USD. You could just wait until December but given Crypto volatility, that's quite a risk. So instead, you engage in Stable Pay and fix your Xank:USD rate at the prevailing rate of 1 Xank=1USD.
 
-To protect this layer from censorship – what Nagy defines as taking information out of circulation – decentralization and privacy are vital.
+So what happens in December? If 1 Xank=$1USD, the Stable Pay was unnecessary and you only pay the small fee (0.1%) and gain peace of mind. But if Xank goes up in price and 1 Xank=2 USD, you will sell 100 Xank to the exchange and receive 100 USD. What happens to the extra 100 USD? It goes into the Xank Reserve. In this situation, you lose out due to the FX hedge.
 
-For example, what developers call "redundancy" is key to how Swarm protects against censorship. This refers to the duplication of critical system components of a system – creating, in effect, a "swarm" of machines.
+How about if Xank price falls in December? Let's say 1 Xank=0.50 USD. You sell 100 Xank to the exchange and receive $50 USD but you're short $50 USD. In this situation, the Xank Reserve sells 100 Xank to the exchange, receives $50 USD and gives it to you. Although Xank price dropped, the FX hedge/Stable Pay worked in your benefit. It will be interesting to see how this works out in real world scenario.
 
-"If you have multiple channels of communication, multiple locations of storage, then censoring becomes more expensive because you need to find all of them and shut down all of them," he told CoinDesk.
+Despite the persistent downturn seen in 2018, Cryptocurrencies have continued to evolve as we see the spirit of innovation powering the digital transformation.
 
-While it's possible to store information in a transparent way on Swarm, much of Nagy's work has focused on how to ensure sensitive information remains private, even when stored on someone else's computer.
+**Recent Articles:**
 
-To do this, Swarm uses what is called "counter mode" encryption. If there's a dispute, the protocol shares a small piece of encrypted data that can verify ownership without revealing any other information.
+Stay in touch: [Twitter][11] | [LinkedIn][12] | [Tradealike][13] | [StockTwits][14] | [Telegram][15]
 
-In order to access the stored information remotely, Swarm uses public and private key pairs.
-
-As such, participants will host encrypted data chunks on their laptops, and in most jurisdictions, can do so with a degree of plausible deniability – also meaning that, because Swarm nodes don't hold the keys to unlock data, they won't be at risk of legal trouble.
-
-According to Nagy, that's important because attack-resistant storage is essential to healthy societies.
-
-"Storage is the shared experience of humanity," he told CoinDesk, adding:
-
-> "The difference between hunter gatherers and us is exclusively the amount of stored information that we have access to. There is no other difference between us."
-
-## Future directives
-
-The storage protocol is currently in public alpha, meaning that while still under heavy development, but today, anyone can run a Swarm node.
-
-Going forward, the protocol will also offer incentives in the form of ether (ethereum's native cryptocurrency) for participants in the Swarm network. This aspect is still being fine-tuned.
-
-Additionally, according to Nagy, Swarm encryption has been designed to be "as smart contract friendly as possible," in order to ensure that dapp developers can seamlessly integrate the technology.
-
-That's because while primarily intended to store smart contract information and other blockchain data in a decentralized way, Swarm has other, more far-reaching use cases on the horizon.
-
-For example, the project has secured a number of partnerships over the past year, including video streaming startup Livepeer and Datafund, a privacy-centric data management protocol.
-
-Nagy is also using Swarm to build a censorship-resistant social media platform called BeeFree, working with fellow Ethereum Foundation developer Dimitry Khokhlov. Their goal is to use the technology in a bid to create an alternative to platforms with heavier forms of censorship.
-
-"We have access to a kind of shared pool of knowledge that humanity has accumulated, and if that is being censored, that makes us much much much dumber as a society," Nagy said.
-
-[_Storage facilities][4] via Shutterstock_
-
-[1]: https://www.coindesk.com/tag/bittorrent/
-[2]: https://www.coindesk.com/tag/ethereum-foundation/
-[3]: https://www.coindesk.com/ethereums-holy-trinity-takes-shape-swarm-testnet-arrives/
-[4]: https://www.shutterstock.com/image-illustration/3d-illustration-server-room-data-center-1085748269?src=DAx1W8Yh9ecfOrCIkJ7iiA-1-63
+[1]: https://cdn-images-1.medium.com/fit/c/100/100/1*CulJK76n2Bh9toxVA0yScg.jpeg
+[2]: https://cdn-images-1.medium.com/max/1600/0*rTb7n-xt5fc6Ay58
+[3]: https://tether.to/
+[4]: https://cdn-images-1.medium.com/max/1600/0*jFYRD4fSpb8rQfDK
+[5]: https://gemini.com/dollar/
+[6]: https://www.paxos.com/standard/
+[7]: https://www.circle.com/en/usdc
+[8]: https://www.circle.com/
+[9]: https://cdn-images-1.medium.com/max/1600/0*dqZERAaip04mvZwD
+[10]: https://xank.io/
+[11]: https://twitter.com/fklivestolearn
+[12]: https://www.linkedin.com/in/faisal-khan-2a3009b/
+[13]: http://www.tradealike.com/
+[14]: https://stocktwits.com/trade_nut
+[15]: https://t.me/joinchat/IWzyHBGWCFwPQTe8Tm5H_Q
 

@@ -1,91 +1,95 @@
 
+[Source](https://medium.com/datadriveninvestor/the-next-generation-of-stable-coins-is-here-69caf2a6b058 "Permalink to The next generation of Stable coins is here… – Data Driven Investor – Medium")
+[来源]（https://medium.com/datadriveninvestor/the-next-generation-of-stable-coins-is-here-69caf2a6b058“下一代稳定通证的固定链接在这里......  - 数据驱动的投资者 - 中等” ）
 
-# **Blockchains vs. Hashgraphs**
-# **区块链对比哈希图
+# The next generation of Stable coins is here… – Data Driven Investor – Medium
+# 下一代稳定通证就在这里......
+
+![Go to the profile of Faisal Khan][1]
 
 ![][2]
 
-Blockchain and Hashgraph data structures.
-Blockchain和Hashgraph数据结构。
-
-**Blockchain Technology**
-**区块链技术**
-
-Blockchains are one form of distributed ledger technology. Not all distributed ledgers employ a chain of blocks to provide a secure and valid distributed consensus.
-区块链是分布式账本技术的一种形式。并非所有分布式分类账都采用一系列区块来提供安全有效的分布式共识。
-
-A blockchain is distributed across and managed by peer-to-peer networks. Since it is a distributed ledger, it can exist without a centralized authority or server managing it, and its data quality can be maintained by database replication and computational trust.
-区块链分布在对等网络上并由对等网络管理。由于它是一个分布式分类帐，因此可以在没有集中授权或服务器管理的情况下存在，并且可以通过数据库复制和计算信任来维护其数据质量。
-
-However, the structure of the blockchain makes it distinct from other kinds of distributed ledgers. Data on a blockchain is grouped together and organized in blocks. The blocks are then linked to one another and secured using cryptography.
-但是，区块链的结构使其与其他种类的分布式分类账不同。区块链上的数据被组合在一起并以块的形式组织。然后将这些块相互链接并使用密码术进行保护。
-
-A blockchain is essentially a continuously growing list of records. Its append-only structure only allows addition of data to the database: altering or deleting previously entered data on earlier blocks is impossible. Blockchain technology is therefore well-suited for recording events, managing records, processing transactions, tracing assets, and voting.
-区块链本质上是一个不断增长的记录列表。它的仅附加结构只允许向数据库添加数据：更改或删除先前在早期块上输入的数据是不可能的。因此，区块链技术非常适合记录事件，管理记录，处理交易，跟踪资产和投票。
-
-Cryptocurrencies, such as Bitcoin, pioneered blockchain technology. Bitcoin's big rally in late 2017, and the ensuing media frenzy, brought cryptocurrencies into the mainstream public imagination. Governments, businesses, economists and enthusiasts are now considering ways to apply blockchain technology to other uses.
-像比特币这样的数字货币是区块链技术的先驱。比特币在2017年底的大涨，以及随之而来的媒体狂潮，将数字货币带入了主流的公众想象中。政府，企业，经济学家和爱好者正在考虑将区块链技术应用于其他用途的方法。
+The pace of newer stable coins entering the digital assets' market has picked up this year even though new scalable solutions continue to emerge for the Blockchain networks and the Cryptocurrencies volatility tracks an all-time low. For those of you who are new to the concept, stable coins act as a store of value since they are backed by fiat currencies (1:1), most notably to the U.S dollar. The peg also addresses the problem of volatility for which Cryptocurrencies have been traditionally criticized. The oldest stable coin [**Tether (USDT)**][3], however, has been embroiled in a spiral of never-ending controversies. Tether dropped to as low as $0.84 against the US dollar on news reports that Cryptocurrency exchange Bitfinex was facing insolvency — both Tether & Bitfinex have the same CEO. This has given other aspiring entrants to improve on the weaknesses of the pioneer coin & occupy the stable coin space.
+尽管新的可扩展解决方案继续出现在区块链网络中，并且数字货币的波动性达到了历史最低水平，但今年进入数字资产市场的新稳定通证的步伐已经有所回升。对于那些不熟悉这一概念的人来说，稳定的通证可以作为一种价值储存，因为它们是由法定货币（1：1）支持的，最显着的是美元。该挂钩还解决了传统上一直批评数字货币的波动性问题。然而，最古老的稳定通证[**Tether（USDT）**][3]卷入了一场永无休止的争议。由于数字货币兑换Bitfinex面临破产的新闻报道，Tether与美元汇率跌至0.84美元，Tether和Bitfinex都拥有相同的首席执行官。这使得其他有抱负的参赛者能够改善先锋通证的弱点并占据稳定的通证空间。
 
 ![][4]
 
-Blockchain Structure.
-区块链结构。
+Two such coins [**Gemini Dollar (GUSD)**][5] and [**Paxos Standard (PAX)**][6], both regulated by the New York State Department of Financial Services, started circulating about a couple of months ago. Both these USD pegged digital coins have made inroads in the market already sitting at №4 & №2 respectively by market cap among other stable coins as shown in the chart above. PAX has achieved a bigger market cap & more acceptability with listing in four digital exchanges — Binance, OKEx, ZB.com, and Coinbene. It so happens that in Cryptoverse two months amounts to an eternity… as we have had two more significant additions to the Stable coins in the form of [**USD Coin (USDC)**][7] & **HUSD**.
+纽约州金融服务部监管的两枚此类通证[**Gemini Dollar（GUSD）**][5]和[**Paxos Standard（PAX）**][6]开始流传一对夫妇几个月前。这些美元挂钩的数字通证已经进入市场，已经分别位于№4和№2市场上限，其他稳定通证如上图所示。通过在四个数字交易所（Binance，OKEx，ZB.com和Coinbene）上市，PAX实现了更大的市值和更大的可接受性。事实上，在Cryptoverse中，两个月相当于永恒...因为我们已经以[**USD Coin（USDC）**][7]和**HUSD**的形式对稳定通证进行了两次更重要的补充。
 
-**Hashgraph Technology**
-**哈希图技术**
+### USD Coin
+### 美元通证
 
-Hashgraphs are also a form of distributed ledger technology.
-哈希图也是分布式账本技术的一种形式。
+One of the biggest Cryptocurrency exchanges Coinbase & digital payments company [**Circle**][8]** **jointly launched a new stable coin USDC on the former's professional Crypto trading platform Coinbase Pro — which is basically a newer version of its old trading platform, GDAX with a better user interface, no fees, crypto trading pairs & support for three fiat currencies (USD, Euro & Pound) in margin trading. The backing of this ERC20 based stable coin by two big names of the industry has added credibility to the project. Apart from the regular features of pegging to USD with a collateralization feature, USDC offers the following advantages:
+最大的Cryptocurrency交易所之一Coinbase和数字支付公司[**Circle**][8]****在前专业的Crypto交易平台Coinbase Pro上联合推出了一款新的稳定通证USDC  - 这基本上是它的新版本旧的交易平台，GDAX拥有更好的用户界面，无需支付费用，加密交易对以及对保证金交易中三种法定货币（美元，欧元和英镑）的支持。这个基于ERC20的稳定通证的支持得到了该行业的两个大名，为该项目增添了可信度。除了通过抵押功能与美元挂钩的常规功能外，USDC还具有以下优势：
+* Sending & Receiving money to and from Ethereum wallets instantly
+*立即向以太网钱包发送和接收资金
+* Swapping between U.S Dollar & USDC with no conversion fees
+*在美元和美元之间交换，无需转换费
+* The digital dollar (USDC) can be used anywhere in the Crypto ecosystem of dApps, exchanges & blockchain-based games or wherever the ERC20 standard is utilized
+*数字美元（USDC）可用于dApps，交换和基于区块链的游戏的Crypto生态系统中的任何地方，或者在使用ERC20标准的任何地方
+* Programmability of USDC makes it easier for Fintech companies & developers making use of the private key feature of the digital coin on public Ethereum blockchain
+*USDC的可编程性使Fintech公司和开发人员更容易利用公共以太坊区块链上的数字通证的私钥功能
+* Finally, the collateralized fiat money would be available for reporting & public auditing, something that has been a thorny issue for Tether
+*最后，抵押的法定货币将可用于报告和公共审计，这对于Tether来说是一个棘手的问题
 
-A hashgraph is a patented algorithm that promises the benefits of the blockchain (decentralization, distribution, and security through the use of hashing) without the drawback of low transaction speed. It was created by Leemon Baird and is the intellectual property of the Swirlds Corporation, which Baird founded.
-哈希图是一种专利算法，它承诺区块链的好处（通过使用哈希来去中心化，分发和安全），而没有低交易速度的缺点。它由Leemon Baird创建，是Baird创立的Swirlds公司的知识产权。
+For now, transactions will be supported in selected jurisdictions which will be expanded to other areas in the future. Also trading in Crypto cross pairs (BTC/USDC etc.) will be available once sufficient liquidity is established.
+目前，将在选定的司法管辖区内支持交易，这些管辖区将在未来扩展到其他领域。一旦建立足够的流动性，也可以进行加密交叉对（BTC / USDC等）的交易。
 
-While Bitcoin allows for approximately 5 transactions per second and Ethereum allows for approximately 15 transactions per second, a hashgraph can process thousands of transactions per second.
-虽然比特币每秒允许大约5笔交易，而以太网每秒允许大约15笔交易，但哈希图每秒可处理数千笔交易。
+![][9]
 
-The hashgraph algorithm operates through two techniques: Gossip about Gossip, and Virtual Voting.
-哈希图算法通过两种技术运作：关于Gossip协议和虚拟投票。
+### HUSD
+### HUSD
 
-To understand Gossip about Gossip, imagine five members: A, B, C, D, and E. Each member starts with a transaction, which results in an 'event'. Then, each member calls another randomly selected member and the two share their transaction history. For example, D calls B and shares D's transaction history with B. This type of call happens repeatedly, with each member randomly calling another member and sharing its transaction history. So, B now randomly selects another member (let's say C), and shares its transaction history, which includes D's transaction history. Simultaneously, E may have called A, and so on. Each call results in an event, and each event holds the hashes of all previous blocks.So, once a member learns about a new piece of information, this information quickly spreads until everyone knows of it.
-要了解关于Gossip协议，想象五个成员：A，B，C，D和E.每个成员都以一个交易开始，这会产生一个“事件”。然后，每个成员调用另一个随机选择的成员，并且两者共享他们的交易历史记例如，D呼叫B并与B共享D的交易历史。这种类型的呼叫重复发生，每个成员随机呼叫另一个成员并共享其交易历史。因此，B现在随机选择另一个成员（比方说C），并分享其交易历史，其中包括D的交易历史。同时，E可能已经调用A，依此类推。每次调用都会产生一个事件，每个事件都会保留所有先前块的哈希值。因此，一旦成员了解到新信息，这些信息就会迅速传播，直到每个人都知道它为止。
+The World's third largest Cryptocurrency exchange, Huobi, also launched a new stable coin HUSD, which it calls as a comprehensive and integrated solution for all stable coins. HUSD aims to solve the complexity of choosing between the available stable coins & minimizing the conversion costs between them. In all practicality, HUSD is establishing an ecosystem of stable coins where it will be the common medium of exchange or you can also call it the Stable coin of Stable coins! Currently, HUSD system offers support for four of its predecessors — **PAX, TUSD, USDC, GUSD** with the intention of adding more stable coins to its system once the standards are set in place and initial transactions go smoothly. In addition, Huobi claims these advantages of using the HUSD system:
+世界第三大数字货币交易所Huobi也推出了新的稳定通证HUSD，它称之为所有稳定通证的全面综合解决方案。 HUSD旨在解决在可用稳定通证之间进行选择的复杂性，并最大限度地降低它们之间的转换成本。实际上，HUSD正在建立一个稳定的通证生态系统，它将成为常见的交换媒介，或者你也可以将它称为稳定通证的稳定通证！目前，HUSD系统为其四个前身提供支持 - **PAX，TUSD，USDC，GUSD**，目的是在标准设置到位且初始交易顺利进行后，为其系统增加更多稳定的通证。此外，Huobi声称使用HUSD系统的这些优点：
+* Safety from any single stable coin risk & convenience of seamless transactions
+*任何单一稳定通证的安全风险和无缝交易的便利性
+* Offers additional stability since Huobi bears the risk of an instability of a stable coin
+*由于Huobi承受稳定通证不稳定的风险，因此提供额外的稳定性
+* Absolutely zero fees or commission for all the stable coin conversions in the system
+*系统中所有稳定通证转换的绝对零费用或佣金
 
-Virtual voting aims to reach a consensus on the order of transactions. Here's how it works: first, the events are divided into rounds. The hashgraph algorithm has a definite mathematical answer for when a round is created. Here, for the sake of simplicity, imagine that a round has approximately ten events. Now, each member votes to determine which event should qualify as a 'famous witness'. To understand how this happens, imagine that each of the members with an event in the next round looks backwards to each event in the current round to see if it can trace its lineage back to the current round's event. If it can trace its lineage back to an event, it votes yes for that event, and if not, it votes no. The current round event with the most votes is crowned the famous witness for the current round, and provides the definitive order of transactions.
-虚拟投票旨在就交易顺序达成共识。以下是它的工作原理：首先，事件分为几轮。哈希图算法在创建回合时具有明确的数学答案。在这里，为了简单起见，想象一轮有大约十个事件。现在，每个成员投票决定哪个事件应该有资格成为“着名证人”。要了解这是如何发生的，想象一下，在下一轮中有事件的每个成员都会向后查看当前回合中的每个事件，看看它是否可以将其血统追溯到当前回合的事件。如果它可以将其血统追溯到一个事件，那么它对该事件投赞成票，如果没有，则投票否决定。本轮巡回赛获得最多票数，是本轮的着名证人，并提供了明确的交易顺序。
+Users will be able to see their balance as an aggregate of all four stable coins in the form of HUSD where they will also have the choice of cashing out in any of the four stable coins in the system.
+用户将能够看到他们的余额为HUSD形式的所有四个稳定通证的总和，他们还可以选择在系统中的四个稳定通证中的任何一个中兑现。
 
-![][6]
+### Xank
+### Xank
 
-Hashgraph Structure.
-哈希图结构。
+And finally, I would like to briefly talk about an upcoming project called [**Xank**][10] — a free floating Cryptocurrency with price volatility and an innovative new feature called the "Stable Pay". The project claims itself to be the successor of stable coins. Xanx claims that the current lineup of stable coins is still vulnerable to central control of the underlying fiat currencies, huge collateral requirements & susceptibility to sustained downturns in the market. Since it is a free floating digital coin, Xank is technically not a stable coin but due to its hedging feature, it competes in the stable coin space.
+最后，我想简要谈谈一个名为[**Xank**][10]的即将推出的项目 - 一个价格波动的自由浮动数字货币和一个名为“稳定支付”的创新新功能。该项目声称自己是稳定通证的继承者。 Xanx声称，目前的稳定通证阵容仍然容易受到基础法定货币的中央控制，巨大的抵押要求以及市场持续低迷的敏感性。由于它是一个自由浮动的数字通证，Xank在技术上不是一个稳定的通证，但由于它的对冲功能，它在稳定的通证空间竞争。
 
-**Private and Public**
-**私有和公有**
+This is how it works… Let's assume 1 Xank=$1USD. You sell $100 USD to an exchange and receive 100 Xank. The next day, you realize that you will be traveling a few months later and need 100 USD. You could just wait until December but given Crypto volatility, that's quite a risk. So instead, you engage in Stable Pay and fix your Xank:USD rate at the prevailing rate of 1 Xank=1USD.
+这就是它的工作方式......让我们假设1 Xank = $ 1USD。您向交易所出售100美元并获得100 Xank。第二天，你意识到你将在几个月后旅行，需要100美元。您可能要等到12月，但鉴于加密的波动性，这是一个非常大的风险。因此，您可以参与稳定支付并修复您的Xank：美元汇率，现行汇率为1 Xank = 1USD。
 
-Both hashgraphs and blockchains can exist in public form or in permissioned private forms for enterprise use. Anyone can participate in the public open versions of these technologies. While several public blockchains such as Ethereum exist, the only public version of a hashgraph is called Hedera Hashgraph.
-哈希图和区块链都可以以公共形式或以允许的私有形式存在以供企业使用。任何人都可以参与这些技术的公开开放版本。虽然存在诸如以太坊之类的几个公共区块链，但哈希图的唯一公共版本称为Hedera Hashgraph。
+So what happens in December? If 1 Xank=$1USD, the Stable Pay was unnecessary and you only pay the small fee (0.1%) and gain peace of mind. But if Xank goes up in price and 1 Xank=2 USD, you will sell 100 Xank to the exchange and receive 100 USD. What happens to the extra 100 USD? It goes into the Xank Reserve. In this situation, you lose out due to the FX hedge.
+那么12月会发生什么？如果1 Xank = 1美元，那么稳定支付是不必要的，您只需支付少量费用（0.1％）并获得高枕无忧。但如果Xank价格上涨且1 Xank = 2美元，您将卖出100 Xank到交易所并获得100美元。额外的100美元会发生什么？它进入了Xank Reserve。在这种情况下，您因外汇对冲而亏损。
 
-**Open Source vs. Patented**
-**开源与专利**
+How about if Xank price falls in December? Let's say 1 Xank=0.50 USD. You sell 100 Xank to the exchange and receive $50 USD but you're short $50 USD. In this situation, the Xank Reserve sells 100 Xank to the exchange, receives $50 USD and gives it to you. Although Xank price dropped, the FX hedge/Stable Pay worked in your benefit. It will be interesting to see how this works out in real world scenario.
+如果Xank价格在12月下跌怎么样？假设1 Xank = 0.50 USD。您向交易所出售100 Xank并获得50美元，但您只需50美元。在这种情况下，Xank Reserve向交易所出售100 Xank，收到50美元并交给您。虽然Xank价格下跌，但外汇对冲/稳定支付对您有利。看看它在现实世界中如何运作将会很有趣。
 
-Blockchain technology is mostly open source and has a huge community that builds and contributes to various blockchain efforts, from cryptocurrencies to utility tokens. Additionally, blockchain enthusiasts have generally doubted the trustworthiness of traditional institutions, and played up the decentralized nature of blockchains as their defining quality.
-区块链技术大多是开源的，并且拥有庞大的社区，可以构建并促进各种区块链工作，从数字货币到公用事业代币。此外，区块链爱好者普遍怀疑传统机构的可信度，并将区块链的去中心化性质作为其定义的质量。
+Despite the persistent downturn seen in 2018, Cryptocurrencies have continued to evolve as we see the spirit of innovation powering the digital transformation.
+尽管2018年持续低迷，但随着我们看到创新精神推动数字化转型，Cryptocurrencies不断发展。
 
-On the other hand, hashgraphs are based on a patented algorithm that is owned by Swirlds, and therefore any new hashgraph initiative will rely on Swirlds.
-另一方面，哈希图基于Swirlds拥有的专利算法，因此任何新的哈希图计划都将依赖于Swirlds。
+**Recent Articles:**
+**最近的文章：**
 
-**Conclusion**
-**结论**
+Stay in touch: [Twitter][11] | [LinkedIn][12] | [Tradealike][13] | [StockTwits][14] | [Telegram][15]
+保持联系：[推特][11] | [LinkedIn][12] | [Tradealike][13] | [StockTwits][14] | [电报][15]
 
-Blockchains and hashgraphs are two implementations of distributed ledger technology. Blockchains employ a single chain of blocks to provide a validated, secure, and distributed consensus. This technology underlies Bitcoin and cryptocurrencies, but also a range of use cases including payments, supply chain, and identity management. Meanwhile, the hashgraph is a patented algorithm that uses the Gossip about Gossip and Virtual Voting techniques across several, parallel lines to achieve fast and secure ledgers. Blockchains are more mainstream and more likely to be public. The Hadera Hasgraph is the only public implementation of the hashgraph algorithm.
-区块链和哈希图是分布式账本技术的两种实现。区块链使用单个链块来提供经过验证的，安全的和分布式的共识。该技术是比特币和数字货币的基础，也是一系列用例，包括支付，供应链和身份管理。同时，哈希图是一种专利算法，它使用Gossip关于Gossip和虚拟投票技术跨越几条平行线来实现快速和安全的分类账。区块链更主流，更有可能公开。 Hadera Hasgraph是哈希图算法的唯一公开实现。
-
-Soon, we will begin to see more novel implementations of distributed ledger technology, beyond the blockchain and the hashgraph.
-很快，我们将开始在区块链和哈希图之外看到更多新颖的分布式分类帐技术实现。
-
-[1]: https://cdn-images-1.medium.com/freeze/max/75/1*LTwVMAiBZBtgzdJp3fjhaA.png?q=20
-[2]: https://cdn-images-1.medium.com/max/2000/1*LTwVMAiBZBtgzdJp3fjhaA.png
-[3]: https://cdn-images-1.medium.com/freeze/max/75/1*LmE-r7mimGPsBCEgg3_ILQ.png?q=20
-[4]: https://cdn-images-1.medium.com/max/2000/1*LmE-r7mimGPsBCEgg3_ILQ.png
-[5]: https://cdn-images-1.medium.com/freeze/max/75/1*jovbYIVvMwWj8DI-TK2jyg.png?q=20
-[6]: https://cdn-images-1.medium.com/max/2000/1*jovbYIVvMwWj8DI-TK2jyg.png
-
+[1]: https://cdn-images-1.medium.com/fit/c/100/100/1*CulJK76n2Bh9toxVA0yScg.jpeg
+[2]: https://cdn-images-1.medium.com/max/1600/0*rTb7n-xt5fc6Ay58
+[3]: https://tether.to/
+[4]: https://cdn-images-1.medium.com/max/1600/0*jFYRD4fSpb8rQfDK
+[5]: https://gemini.com/dollar/
+[6]: https://www.paxos.com/standard/
+[7]: https://www.circle.com/en/usdc
+[8]: https://www.circle.com/
+[9]: https://cdn-images-1.medium.com/max/1600/0*dqZERAaip04mvZwD
+[10]: https://xank.io/
+[11]: https://twitter.com/fklivestolearn
+[12]: https://www.linkedin.com/in/faisal-khan-2a3009b/
+[13]: http://www.tradealike.com/
+[14]: https://stocktwits.com/trade_nut
+[15]: https://t.me/joinchat/IWzyHBGWCFwPQTe8Tm5H_Q
 
